@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mapa Literario de Chile – Talleres de Poesía</title>
+<title>Mapa Literario de Chile – Talleres, Revistas, Publicaciones en Dictadura y las Poetas de este Periodo</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"/>
@@ -33,6 +33,13 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     margin: 0 0 3px 0;
     letter-spacing: 1px;
 }
+.header-left .subtitle {
+    color: #c9a227;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+}
 .header-left p {
     color: #a89880;
     font-size: 13px;
@@ -43,6 +50,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     display: flex;
     gap: 10px;
     align-items: center;
+    flex-wrap: wrap;
 }
 .header-right select {
     background: #3a3020;
@@ -54,6 +62,100 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     cursor: pointer;
 }
 .header-right select:hover { border-color: #8c6a33; }
+
+#map { flex: 1; }
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-left h1 {
+        font-size: 18px;
+    }
+    .header-left .subtitle {
+        font-size: 12px;
+    }
+    .header-left p {
+        font-size: 11px;
+    }
+    .header-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .header-right select {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    .toggle-poets-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+    
+    /* Popup responsive */
+    .leaflet-popup-content {
+        min-width: 280px;
+        max-width: 320px;
+    }
+    .popup-header {
+        padding: 12px 15px;
+    }
+    .popup-header h3 {
+        font-size: 16px;
+    }
+    .poeta-profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .poeta-foto, .poeta-foto-placeholder {
+        width: 60px;
+        height: 75px;
+    }
+    .accordion-header {
+        padding: 10px 15px;
+    }
+    .accordion-content {
+        padding: 10px 15px;
+    }
+    
+    /* Panel lateral responsive */
+    .poets-panel {
+        width: 100%;
+        right: 0;
+        top: auto;
+        bottom: 50px;
+        max-height: 50vh;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    /* Footer responsive */
+    #copyright-footer {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+    #copyright-footer span {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-left h1 {
+        font-size: 15px;
+    }
+    .leaflet-popup-content {
+        min-width: 250px;
+        max-width: 290px;
+    }
+    .popup-header h3 {
+        font-size: 14px;
+    }
+    .pub-card h5 {
+        font-size: 13px;
+    }
+}
 
 #map { flex: 1; }
 
@@ -589,7 +691,8 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
 <div class="header">
     <div class="header-left">
         <h1>Mapa Literario de Chile</h1>
-        <p>Talleres de poesía, publicaciones y movimientos literarios (1970s–1990)</p>
+        <p class="subtitle">Talleres, Revistas, Publicaciones en Dictadura y las Poetas de este Periodo</p>
+        <p>Chile, 1973–1990</p>
     </div>
     <div class="header-right">
         <select id="typeFilter">
@@ -6892,12 +6995,9 @@ function createPoetaPopup(p) {
         
         if (talleresHtml || revistasHtml) {
             conexionesContent = `
-                <div class="conexiones-section">
-                    <h6>🔗 Participación en talleres y revistas</h6>
-                    ${talleresHtml}
-                    ${revistasHtml}
-                    <p style="font-size: 10px; color: #888; margin-top: 8px;">Click en un nombre para ver la conexión en el mapa</p>
-                </div>
+                ${talleresHtml}
+                ${revistasHtml}
+                <p style="font-size: 10px; color: #888; margin-top: 8px;">Click en un nombre para ver la conexión en el mapa</p>
             `;
         }
     }
@@ -6940,8 +7040,18 @@ function createPoetaPopup(p) {
                     <h4>📚 Publicaciones ${p.publicaciones && p.publicaciones.length > 0 ? `<span class="count">${p.publicaciones.length}</span>` : ''}</h4>
                     <span class="arrow">▶</span>
                 </div>
-                <div class="accordion-content">${pubContent}${conexionesContent}</div>
+                <div class="accordion-content">${pubContent}</div>
             </div>
+            
+            ${conexionesContent ? `
+            <div class="accordion-section">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h4>🔗 Talleres y Revistas</h4>
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="accordion-content">${conexionesContent}</div>
+            </div>
+            ` : ''}
             
             <div class="accordion-section">
                 <div class="accordion-header" onclick="toggleAccordion(this)">
