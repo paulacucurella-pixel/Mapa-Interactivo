@@ -7096,6 +7096,12 @@ function updatePoetsList(poetasList) {
 window.focusOnPoet = function(nombre) {
     const marker = poetMarkers[nombre];
     if (marker) {
+        // Cerrar el panel de poetas en móvil
+        const panel = document.getElementById('poetsPanel');
+        if (window.innerWidth <= 768) {
+            panel.classList.remove('open');
+        }
+        
         // Hacer zoom al marcador
         map.setView(marker.getLatLng(), 12);
         // Abrir el popup después de un pequeño delay
@@ -7170,6 +7176,36 @@ document.getElementById('typeFilter').addEventListener('change', function() {
         · Todos los derechos reservados
     </span>
 </div>
+
+<script>
+// Footer colapsable en móvil
+(function() {
+    const footer = document.getElementById('copyright-footer');
+    if (window.innerWidth <= 768) {
+        // En móvil, colapsar después de 4 segundos
+        setTimeout(() => {
+            footer.style.transition = 'all 0.3s ease';
+            footer.style.padding = '4px 10px';
+            footer.style.fontSize = '9px';
+            footer.innerHTML = '<strong>© Paula Cucurella 2025</strong> · <a href="mailto:paulacucurella@gmail.com" style="color: #8B4513; text-decoration: none;">Contacto</a>';
+        }, 4000);
+        
+        // Expandir al tocar
+        footer.addEventListener('click', function() {
+            if (footer.style.fontSize === '9px') {
+                footer.style.padding = '6px 10px';
+                footer.style.fontSize = '10px';
+                footer.innerHTML = '<strong>© Paula Cucurella 2025</strong> · Mapa Literario Chile 1973-1990<br><a href="mailto:paulacucurella@gmail.com" style="color: #8B4513; text-decoration: none; font-size: 9px;">paulacucurella@gmail.com</a>';
+                setTimeout(() => {
+                    footer.style.padding = '4px 10px';
+                    footer.style.fontSize = '9px';
+                    footer.innerHTML = '<strong>© Paula Cucurella 2025</strong> · <a href="mailto:paulacucurella@gmail.com" style="color: #8B4513; text-decoration: none;">Contacto</a>';
+                }, 3000);
+            }
+        });
+    }
+})();
+</script>
 
 </body>
 </html>
