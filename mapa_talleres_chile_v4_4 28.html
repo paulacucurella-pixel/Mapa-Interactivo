@@ -94,31 +94,81 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         padding: 6px 10px;
     }
     
-    /* Popup responsive */
+    /* Popup responsive - MÁS PEQUEÑO */
     .leaflet-popup-content {
-        min-width: 280px;
-        max-width: 320px;
+        min-width: 260px !important;
+        max-width: 300px !important;
+    }
+    .leaflet-popup-content-wrapper {
+        max-height: 70vh !important;
+        overflow: hidden !important;
     }
     .popup-header {
-        padding: 12px 15px;
+        padding: 10px 12px !important;
     }
     .popup-header h3 {
-        font-size: 16px;
+        font-size: 15px !important;
+    }
+    .popup-header .region {
+        font-size: 11px !important;
+    }
+    .popup-header .tipo-badge {
+        font-size: 10px !important;
+        padding: 2px 6px !important;
     }
     .poeta-profile {
-        flex-direction: column;
+        flex-direction: row !important;
         align-items: center;
-        text-align: center;
+        gap: 10px !important;
     }
     .poeta-foto, .poeta-foto-placeholder {
-        width: 60px;
-        height: 75px;
+        width: 50px !important;
+        height: 65px !important;
+        font-size: 8px !important;
+    }
+    .poeta-info h3 {
+        font-size: 14px !important;
+    }
+    .poeta-dates {
+        font-size: 11px !important;
+    }
+    .popup-body {
+        max-height: 45vh !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
     }
     .accordion-header {
-        padding: 10px 15px;
+        padding: 10px 12px !important;
+    }
+    .accordion-header h4 {
+        font-size: 13px !important;
     }
     .accordion-content {
-        padding: 10px 15px;
+        padding: 10px 12px !important;
+        font-size: 12px !important;
+    }
+    .accordion-content p {
+        font-size: 12px !important;
+        margin: 6px 0 !important;
+    }
+    .pub-card {
+        padding: 8px !important;
+        margin-bottom: 8px !important;
+    }
+    .pub-card h5 {
+        font-size: 12px !important;
+    }
+    .pub-meta {
+        font-size: 10px !important;
+    }
+    .existencias-list {
+        font-size: 10px !important;
+    }
+    .exist-item {
+        font-size: 10px !important;
+    }
+    .fuente-item {
+        font-size: 10px !important;
     }
     
     /* Panel lateral responsive */
@@ -126,18 +176,18 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         width: 100%;
         right: 0;
         top: auto;
-        bottom: 50px;
+        bottom: 40px;
         max-height: 50vh;
         border-radius: 8px 8px 0 0;
     }
     
     /* Footer responsive */
     #copyright-footer {
-        padding: 6px 10px;
-        font-size: 10px;
+        padding: 4px 10px !important;
+        font-size: 9px !important;
     }
     #copyright-footer span {
-        font-size: 9px;
+        font-size: 8px !important;
     }
 }
 
@@ -146,14 +196,18 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         font-size: 15px;
     }
     .leaflet-popup-content {
-        min-width: 250px;
-        max-width: 290px;
+        min-width: 240px !important;
+        max-width: 280px !important;
     }
     .popup-header h3 {
-        font-size: 14px;
+        font-size: 13px !important;
     }
-    .pub-card h5 {
-        font-size: 13px;
+    .popup-body {
+        max-height: 40vh !important;
+    }
+    .poeta-foto, .poeta-foto-placeholder {
+        width: 45px !important;
+        height: 58px !important;
     }
 }
 
@@ -6975,8 +7029,10 @@ function createPoetaPopup(p) {
                 p.conexiones.talleres.map(t => {
                     const tallerData = talleres.find(tal => tal.nombre.toLowerCase().includes(t.nombre.toLowerCase().split(' ')[0]));
                     const tallerCoords = tallerData ? JSON.stringify(tallerData.coords) : 'null';
+                    const safePoetName = p.nombre.replace(/'/g, "\\'");
+                    const safeTallerName = t.nombre.replace(/'/g, "\\'");
                     return `<span class="conexion-item" 
-                        onclick="zoomToConnection(${poetaCoords}, ${tallerCoords}, '${p.nombre}', '${t.nombre}')"
+                        onclick="zoomToConnection(${poetaCoords}, ${tallerCoords}, '${safePoetName}', '${safeTallerName}')"
                         title="Click para ver conexión en el mapa">${t.nombre}</span>`;
                 }).join('') + '</div>';
         }
@@ -6987,8 +7043,10 @@ function createPoetaPopup(p) {
                 p.conexiones.revistas.map(r => {
                     const revistaData = talleres.find(tal => tal.nombre.toLowerCase().includes(r.nombre.toLowerCase().split(' ')[0]));
                     const revistaCoords = revistaData ? JSON.stringify(revistaData.coords) : 'null';
+                    const safePoetName = p.nombre.replace(/'/g, "\\'");
+                    const safeRevName = r.nombre.replace(/'/g, "\\'");
                     return `<span class="conexion-item revista" 
-                        onclick="zoomToConnection(${poetaCoords}, ${revistaCoords}, '${p.nombre}', '${r.nombre}')"
+                        onclick="zoomToConnection(${poetaCoords}, ${revistaCoords}, '${safePoetName}', '${safeRevName}')"
                         title="Click para ver conexión en el mapa">${r.nombre}</span>`;
                 }).join('') + '</div>';
         }
@@ -7085,7 +7143,7 @@ function updatePoetsList(poetasList) {
     }
     
     container.innerHTML = poetasList.map(p => `
-        <div class="poet-list-item" onclick="focusOnPoet('${p.nombre}')">
+        <div class="poet-list-item" onclick="focusOnPoet(\`${p.nombre.replace(/'/g, "\\'")}\`)">
             <h4>${p.nombre}</h4>
             <p>${p.zona} · ${p.años}</p>
         </div>
