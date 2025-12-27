@@ -221,7 +221,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     border: 2px solid white;
     box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, opacity 0.3s, box-shadow 0.3s;
 }
 .custom-marker:hover { transform: scale(1.15); }
 .marker-taller { background: #c75b39; }
@@ -232,6 +232,162 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     height: 28px;
     border: 3px solid white;
     box-shadow: 0 3px 10px rgba(139, 92, 246, 0.6);
+}
+
+/* Estilos para resaltado de conexiones */
+.custom-marker.dimmed {
+    opacity: 0.25 !important;
+    transform: scale(0.8);
+}
+.custom-marker.highlighted-taller {
+    animation: pulse-taller 1s ease-in-out infinite;
+    box-shadow: 0 0 20px 8px rgba(199, 91, 57, 0.8) !important;
+    transform: scale(1.3);
+    z-index: 1000 !important;
+}
+.custom-marker.highlighted-revista {
+    animation: pulse-revista 1s ease-in-out infinite;
+    box-shadow: 0 0 20px 8px rgba(201, 162, 39, 0.8) !important;
+    transform: scale(1.3);
+    z-index: 1000 !important;
+}
+.custom-marker.highlighted-poeta {
+    animation: pulse-poeta 1.2s ease-in-out infinite;
+    box-shadow: 0 0 25px 10px rgba(139, 92, 246, 0.9) !important;
+    transform: scale(1.4);
+    z-index: 1001 !important;
+}
+
+@keyframes pulse-taller {
+    0%, 100% { box-shadow: 0 0 15px 5px rgba(199, 91, 57, 0.6); }
+    50% { box-shadow: 0 0 25px 12px rgba(199, 91, 57, 0.9); }
+}
+@keyframes pulse-revista {
+    0%, 100% { box-shadow: 0 0 15px 5px rgba(201, 162, 39, 0.6); }
+    50% { box-shadow: 0 0 25px 12px rgba(201, 162, 39, 0.9); }
+}
+@keyframes pulse-poeta {
+    0%, 100% { box-shadow: 0 0 20px 8px rgba(139, 92, 246, 0.7); }
+    50% { box-shadow: 0 0 35px 15px rgba(139, 92, 246, 1); }
+}
+
+/* Botón para ver conexiones */
+.ver-conexiones-btn {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s;
+    width: 100%;
+    justify-content: center;
+}
+.ver-conexiones-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+}
+.ver-conexiones-btn.active {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Leyenda de conexiones */
+.conexiones-legend {
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+    background: rgba(255,255,255,0.95);
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-size: 12px;
+    max-width: 250px;
+    display: none;
+}
+.conexiones-legend.visible {
+    display: block;
+}
+.conexiones-legend h5 {
+    margin: 0 0 8px 0;
+    font-family: 'Crimson Text', Georgia, serif;
+    color: #2c2416;
+    font-size: 14px;
+}
+.conexiones-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+}
+.conexiones-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.conexiones-legend-dot.taller { background: #c75b39; }
+.conexiones-legend-dot.revista { background: #c9a227; }
+.conexiones-legend-dot.poeta { background: #8b5cf6; }
+.conexiones-legend-close {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #888;
+}
+.conexiones-legend-close:hover {
+    color: #333;
+}
+.conexiones-legend a {
+    transition: all 0.2s;
+}
+.conexiones-legend a:hover {
+    text-decoration: underline !important;
+    font-weight: 600;
+}
+
+/* Líneas de conexión animadas */
+.connection-line-animated {
+    animation: dash-animation 1s linear infinite;
+}
+@keyframes dash-animation {
+    to {
+        stroke-dashoffset: -15;
+    }
+}
+
+/* Etiquetas de conexión mejoradas */
+.connection-label-container {
+    overflow: visible !important;
+    width: auto !important;
+    height: auto !important;
+}
+.connection-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border: 2px solid white;
+    font-family: 'Source Sans Pro', sans-serif;
+    position: relative;
+    left: 15px;
+    top: -10px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Custom cluster styling */
@@ -7083,6 +7239,11 @@ function createPoetaPopup(p) {
                     <div class="tipo-badge">Poeta</div>
                 </div>
             </div>
+            ${(p.conexiones && (p.conexiones.talleres?.length > 0 || p.conexiones.revistas?.length > 0)) ? `
+            <button class="ver-conexiones-btn" onclick="highlightConexiones('${p.nombre.replace(/'/g, "\\'")}')">
+                🔗 Ver conexiones en mapa
+            </button>
+            ` : ''}
         </div>
         <div class="popup-body">
             <div class="accordion-section">
@@ -7152,6 +7313,21 @@ function updatePoetsList(poetasList) {
 
 // Función para hacer zoom a una poeta específica
 window.focusOnPoet = function(nombre) {
+    // PRIMERO: Limpiar cualquier conexión activa
+    if (conexionesActivas) {
+        clearHighlights();
+        // Esperar a que se restauren los marcadores antes de continuar
+        setTimeout(() => {
+            navigateToPoet(nombre);
+        }, 400);
+    } else {
+        map.closePopup();
+        navigateToPoet(nombre);
+    }
+};
+
+// Función auxiliar para navegar a una poeta
+function navigateToPoet(nombre) {
     const marker = poetMarkers[nombre];
     if (marker) {
         // Cerrar el panel de poetas en móvil
@@ -7164,12 +7340,305 @@ window.focusOnPoet = function(nombre) {
         map.setView(marker.getLatLng(), 12);
         // Abrir el popup después de un pequeño delay
         setTimeout(() => {
-            markerClusterGroup.zoomToShowLayer(marker, () => {
-                marker.openPopup();
-            });
+            marker.openPopup();
         }, 300);
     }
+}
+
+// Variable para rastrear estado de conexiones activas
+let conexionesActivas = false;
+let poetaConexionesActiva = null;
+let connectionLines = []; // Array para almacenar las líneas de conexión
+let connectionLabels = []; // Array para almacenar las etiquetas
+let tempMarkers = []; // Marcadores temporales para mostrar solo conexiones
+
+// Función para resaltar conexiones de una poeta
+window.highlightConexiones = function(poetaNombre) {
+    // Si ya está activa para esta poeta, desactivar
+    if (conexionesActivas && poetaConexionesActiva === poetaNombre) {
+        clearHighlights();
+        return;
+    }
+    
+    // Limpiar highlights anteriores
+    clearHighlights();
+    
+    // Buscar la poeta
+    const poeta = poetas.find(p => p.nombre === poetaNombre);
+    if (!poeta || !poeta.conexiones) {
+        console.log('No se encontraron conexiones para:', poetaNombre);
+        return;
+    }
+    
+    conexionesActivas = true;
+    poetaConexionesActiva = poetaNombre;
+    
+    // Cerrar el popup actual
+    map.closePopup();
+    
+    // Obtener nombres de talleres y revistas conectadas
+    const talleresConectados = poeta.conexiones.talleres ? poeta.conexiones.talleres.map(t => t.nombre) : [];
+    const revistasConectadas = poeta.conexiones.revistas ? poeta.conexiones.revistas.map(r => r.nombre) : [];
+    
+    // Encontrar los talleres/revistas correspondientes en los datos
+    const talleresData = [];
+    const revistasData = [];
+    
+    talleresConectados.forEach(nombre => {
+        const found = talleres.find(t => 
+            t.nombre.toLowerCase().includes(nombre.toLowerCase().split(' ')[0]) ||
+            nombre.toLowerCase().includes(t.nombre.toLowerCase().split(' ')[0])
+        );
+        if (found) talleresData.push(found);
+    });
+    
+    revistasConectadas.forEach(nombre => {
+        const found = talleres.find(t => 
+            t.nombre.toLowerCase().includes(nombre.toLowerCase().split(' ')[0]) ||
+            nombre.toLowerCase().includes(t.nombre.toLowerCase().split(' ')[0])
+        );
+        if (found) revistasData.push(found);
+    });
+    
+    // Crear leyenda con links
+    showConexionesLegend(poetaNombre, poeta.conexiones, talleresData, revistasData);
+    
+    // OCULTAR COMPLETAMENTE el cluster group y los marcadores de poetas
+    map.removeLayer(markerClusterGroup);
+    Object.keys(poetMarkers).forEach(nombre => {
+        map.removeLayer(poetMarkers[nombre]);
+    });
+    
+    // Calcular bounds para incluir poeta y todas sus conexiones
+    const allCoords = [poeta.coords];
+    talleresData.forEach(t => allCoords.push(t.coords));
+    revistasData.forEach(r => allCoords.push(r.coords));
+    
+    if (allCoords.length > 1) {
+        const bounds = L.latLngBounds(allCoords.map(c => [c[0], c[1]]));
+        map.fitBounds(bounds, { padding: [100, 100], maxZoom: 13 });
+    } else {
+        map.setView([poeta.coords[0], poeta.coords[1]], 10);
+    }
+    
+    // Crear marcadores temporales SOLO para los elementos conectados
+    setTimeout(() => {
+        // Marcador de la poeta (con halo)
+        const poetaIcon = L.divIcon({
+            className: 'custom-marker marker-poeta highlighted-poeta',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16]
+        });
+        const poetaMarkerTemp = L.marker([poeta.coords[0], poeta.coords[1]], { icon: poetaIcon }).addTo(map);
+        tempMarkers.push(poetaMarkerTemp);
+        
+        // Etiqueta de la poeta
+        addConnectionLabel(poeta.coords, poetaNombre, 'poeta');
+        
+        // Marcadores y líneas para talleres
+        talleresData.forEach(taller => {
+            // Marcador del taller (con halo)
+            const tallerIcon = L.divIcon({
+                className: 'custom-marker marker-taller highlighted-taller',
+                iconSize: [26, 26],
+                iconAnchor: [13, 13]
+            });
+            const tallerMarkerTemp = L.marker([taller.coords[0], taller.coords[1]], { icon: tallerIcon }).addTo(map);
+            tempMarkers.push(tallerMarkerTemp);
+            
+            // Línea de conexión
+            drawConnectionLine(poeta.coords, taller.coords, '#c75b39');
+            
+            // Etiqueta
+            addConnectionLabel(taller.coords, taller.nombre, 'taller');
+        });
+        
+        // Marcadores y líneas para revistas
+        revistasData.forEach(revista => {
+            // Marcador de la revista (con halo)
+            const revistaIcon = L.divIcon({
+                className: 'custom-marker marker-revista highlighted-revista',
+                iconSize: [26, 26],
+                iconAnchor: [13, 13]
+            });
+            const revistaMarkerTemp = L.marker([revista.coords[0], revista.coords[1]], { icon: revistaIcon }).addTo(map);
+            tempMarkers.push(revistaMarkerTemp);
+            
+            // Línea de conexión
+            drawConnectionLine(poeta.coords, revista.coords, '#c9a227');
+            
+            // Etiqueta
+            addConnectionLabel(revista.coords, revista.nombre, 'revista');
+        });
+        
+    }, 100);
 };
+
+// Función para dibujar línea de conexión (sin flecha)
+function drawConnectionLine(fromCoords, toCoords, color) {
+    // Crear línea con estilo
+    const line = L.polyline(
+        [[fromCoords[0], fromCoords[1]], [toCoords[0], toCoords[1]]],
+        {
+            color: color,
+            weight: 4,
+            opacity: 0.9,
+            dashArray: '12, 6',
+            className: 'connection-line-animated'
+        }
+    ).addTo(map);
+    
+    connectionLines.push(line);
+}
+
+// Función para agregar etiqueta en el mapa
+function addConnectionLabel(coords, text, type) {
+    let bgColor;
+    
+    switch(type) {
+        case 'poeta':
+            bgColor = '#8b5cf6';
+            break;
+        case 'taller':
+            bgColor = '#c75b39';
+            break;
+        case 'revista':
+            bgColor = '#c9a227';
+            break;
+        default:
+            bgColor = '#333';
+    }
+    
+    const label = L.marker([coords[0], coords[1]], {
+        icon: L.divIcon({
+            className: 'connection-label-container',
+            html: `<div class="connection-label" style="background:${bgColor};">${text}</div>`,
+            iconSize: [0, 0],
+            iconAnchor: [-15, 25]
+        })
+    }).addTo(map);
+    
+    connectionLabels.push(label);
+}
+
+// Función para limpiar highlights y restaurar marcadores
+window.clearHighlights = function() {
+    conexionesActivas = false;
+    poetaConexionesActiva = null;
+    
+    // Eliminar líneas de conexión
+    connectionLines.forEach(line => {
+        map.removeLayer(line);
+    });
+    connectionLines = [];
+    
+    // Eliminar etiquetas
+    connectionLabels.forEach(label => {
+        map.removeLayer(label);
+    });
+    connectionLabels = [];
+    
+    // Eliminar marcadores temporales
+    tempMarkers.forEach(marker => {
+        map.removeLayer(marker);
+    });
+    tempMarkers = [];
+    
+    // RESTAURAR el cluster group y los marcadores de poetas
+    map.addLayer(markerClusterGroup);
+    Object.keys(poetMarkers).forEach(nombre => {
+        map.addLayer(poetMarkers[nombre]);
+    });
+    
+    // Ocultar leyenda
+    const legend = document.getElementById('conexionesLegend');
+    if (legend) {
+        legend.classList.remove('visible');
+    }
+};
+
+// Función para ir a un taller/revista desde la leyenda
+window.goToTaller = function(tallerNombre) {
+    // Primero limpiar las conexiones actuales
+    clearHighlights();
+    
+    const taller = talleres.find(t => t.nombre === tallerNombre);
+    if (taller) {
+        map.setView([taller.coords[0], taller.coords[1]], 13);
+        
+        // Buscar y abrir popup del marcador
+        setTimeout(() => {
+            markerClusterGroup.eachLayer(function(layer) {
+                if (!layer.getLatLng) return;
+                const layerCoords = layer.getLatLng();
+                if (Math.abs(taller.coords[0] - layerCoords.lat) < 0.01 && 
+                    Math.abs(taller.coords[1] - layerCoords.lng) < 0.01) {
+                    layer.openPopup();
+                }
+            });
+        }, 500);
+    }
+};
+
+// Función para mostrar leyenda de conexiones con links
+function showConexionesLegend(poetaNombre, conexiones, talleresData, revistasData) {
+    let legend = document.getElementById('conexionesLegend');
+    
+    if (!legend) {
+        legend = document.createElement('div');
+        legend.id = 'conexionesLegend';
+        legend.className = 'conexiones-legend';
+        document.body.appendChild(legend);
+    }
+    
+    let talleresHtml = '';
+    if (talleresData && talleresData.length > 0) {
+        talleresHtml = talleresData.map(t => 
+            `<div class="conexiones-legend-item">
+                <span class="conexiones-legend-dot taller"></span>
+                <a href="#" onclick="goToTaller('${t.nombre.replace(/'/g, "\\'")}'); return false;" style="color: #c75b39; text-decoration: none; cursor: pointer;">
+                    ${t.nombre}
+                </a>
+            </div>`
+        ).join('');
+    }
+    
+    let revistasHtml = '';
+    if (revistasData && revistasData.length > 0) {
+        revistasHtml = revistasData.map(r => 
+            `<div class="conexiones-legend-item">
+                <span class="conexiones-legend-dot revista"></span>
+                <a href="#" onclick="goToTaller('${r.nombre.replace(/'/g, "\\'")}'); return false;" style="color: #b8860b; text-decoration: none; cursor: pointer;">
+                    ${r.nombre}
+                </a>
+            </div>`
+        ).join('');
+    }
+    
+    legend.innerHTML = `
+        <button class="conexiones-legend-close" onclick="clearHighlights()">✕</button>
+        <h5>🔗 Conexiones de ${poetaNombre}</h5>
+        <div class="conexiones-legend-item">
+            <span class="conexiones-legend-dot poeta"></span>
+            <span><strong>${poetaNombre}</strong></span>
+        </div>
+        ${talleresHtml ? '<div style="margin-top:10px;font-size:11px;color:#c75b39;font-weight:600;">📍 Talleres:</div>' + talleresHtml : ''}
+        ${revistasHtml ? '<div style="margin-top:10px;font-size:11px;color:#b8860b;font-weight:600;">📰 Revistas:</div>' + revistasHtml : ''}
+        <div style="margin-top:12px; padding-top:10px; border-top:1px solid #ddd;">
+            <button onclick="clearHighlights()" style="background:#dc2626; color:white; border:none; padding:6px 12px; border-radius:15px; cursor:pointer; font-size:11px; width:100%;">
+                ✕ Ocultar conexiones
+            </button>
+        </div>
+        <p style="font-size:9px;color:#888;margin-top:8px;text-align:center;">Click en nombre para ir al taller/revista</p>
+    `;
+    
+    legend.classList.add('visible');
+}
+
+// Cerrar leyenda cuando se cierra un popup (solo si no hay conexiones activas)
+map.on('popupclose', function() {
+    // No cerrar automáticamente - dejar que el usuario cierre manualmente
+});
 
 // Función helper para obtener los valores actuales de los filtros
 function getFilters() {
@@ -7182,7 +7651,10 @@ function getFilters() {
 createMarkers();
 
 // Limpiar conexiones al hacer click en el mapa
-map.on('click', removeConnectionLineWithLabels);
+map.on('click', function() {
+    removeConnectionLineWithLabels();
+    clearHighlights();
+});
 
 // Event listener para filtro de región
 document.getElementById('regionFilter').addEventListener('change', function() {
