@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mapa Literario de Chile v11 – Talleres, Revistas, Publicaciones en Dictadura y las Poetas de este Periodo</title>
+<title>Mapa Literario de Chile v6 – Talleres, Revistas, Publicaciones en Dictadura y las Poetas de este Periodo</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"/>
@@ -578,340 +578,142 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     align-items: center;
     gap: 6px;
 }
-.toggle-poets-btn:hover {
-    background: #7c3aed;
-}
 
-/* Botón mapear vacíos */
-.map-gaps-btn {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-    color: #00ff00;
-    border: 1px solid #00ff00;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    font-family: 'Courier New', monospace;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.map-gaps-btn:hover {
-    background: #00ff00;
-    color: #000;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-}
-.map-gaps-btn.active {
-    background: #00ff00;
-    color: #000;
-    animation: pulse-classified 1.5s ease-in-out infinite;
-}
-@keyframes pulse-classified {
-    0%, 100% { box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); }
-    50% { box-shadow: 0 0 25px rgba(0, 255, 0, 0.9); }
-}
-
-/* ========== MODO ARCHIVO DESCLASIFICADO ========== */
-body.classified-mode {
-    background: #0a0a0a;
-}
-body.classified-mode .header {
-    background: linear-gradient(135deg, #0f0f0f 0%, #000000 100%);
-    border-bottom: 1px solid #00ff00;
-}
-body.classified-mode .header-left h1 {
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-body.classified-mode .header-left .subtitle {
-    color: #ff3333;
-    font-family: 'Courier New', monospace;
-    text-transform: uppercase;
-    animation: blink-warning 1s ease-in-out infinite;
-}
-@keyframes blink-warning {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-body.classified-mode .header-left p {
-    color: #666;
-}
-body.classified-mode .stats-bar {
-    background: #0a0a0a;
-    border-bottom: 1px solid #333;
-    font-family: 'Courier New', monospace;
-}
-body.classified-mode .stats-bar span {
-    color: #00ff00;
-}
-
-/* Marcadores en modo clasificado */
-body.classified-mode .custom-marker.has-gaps {
-    animation: pulse-gap-marker 1.5s ease-in-out infinite;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8) !important;
-}
-@keyframes pulse-gap-marker {
-    0%, 100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); transform: scale(1); }
-    50% { box-shadow: 0 0 30px rgba(255, 0, 0, 1); transform: scale(1.2); }
-}
-
-/* Overlay de escaneo */
-.scan-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 999;
-    display: none;
-}
-body.classified-mode .scan-overlay {
-    display: block;
-    background: 
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 255, 0, 0.03) 2px,
-            rgba(0, 255, 0, 0.03) 4px
-        );
-    animation: scan-lines 8s linear infinite;
-}
-@keyframes scan-lines {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100px; }
-}
-
-/* Panel de vacíos - Estilo archivo secreto */
-.gaps-panel {
+/* Panel Mapear Silencios - estilo archivo clasificado */
+.silencios-panel {
     position: absolute;
     top: 70px;
     left: 10px;
-    width: 360px;
+    width: 320px;
     max-height: calc(100vh - 150px);
-    background: #0a0a0a;
-    border: 2px solid #00ff00;
-    border-radius: 0;
-    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.5);
-    z-index: 1001;
+    background: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+    z-index: 1000;
     overflow: hidden;
     display: none;
-    font-family: 'Courier New', monospace;
-}
-.gaps-panel.open {
-    display: block;
-    animation: panel-glitch 0.3s ease-out;
-}
-@keyframes panel-glitch {
-    0% { transform: translateX(-10px); opacity: 0; }
-    50% { transform: translateX(5px); }
-    100% { transform: translateX(0); opacity: 1; }
-}
-
-.gaps-panel-header {
-    background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
-    border-bottom: 1px solid #ff3333;
-    color: #ff3333;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.gaps-panel-header .title-area {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-.gaps-panel-header .classified-stamp {
-    font-size: 10px;
-    color: #ff3333;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    opacity: 0.7;
-}
-.gaps-panel-header .main-title {
-    font-size: 14px;
-    color: #00ff00;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.gaps-panel-header .close-btn {
-    background: transparent;
-    border: 1px solid #ff3333;
-    color: #ff3333;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Courier New', monospace;
-    transition: all 0.2s;
-}
-.gaps-panel-header .close-btn:hover {
-    background: #ff3333;
-    color: #000;
-}
-
-.gaps-panel-body {
-    padding: 0;
-    max-height: 450px;
-    overflow-y: auto;
-    background: 
-        linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='50' font-family='Courier' font-size='8' fill='%23003300' opacity='0.1'%3ECLASSIFIED%3C/text%3E%3C/svg%3E");
-}
-.gaps-panel-body::-webkit-scrollbar {
-    width: 8px;
-}
-.gaps-panel-body::-webkit-scrollbar-track {
-    background: #0a0a0a;
-}
-.gaps-panel-body::-webkit-scrollbar-thumb {
-    background: #00ff00;
-    border-radius: 0;
-}
-
-/* Entidad en el panel */
-.gap-entity {
-    border-bottom: 1px solid #1a1a1a;
-    transition: all 0.2s;
-}
-.gap-entity:hover {
-    background: rgba(0, 255, 0, 0.05);
-}
-.gap-entity-header {
-    padding: 12px 15px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.gap-entity-header:hover {
-    background: rgba(0, 255, 0, 0.1);
-}
-.gap-entity-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-}
-.gap-entity-icon {
-    width: 8px;
-    height: 8px;
-    background: #ff3333;
-    border-radius: 50%;
-    animation: blink-dot 1s ease-in-out infinite;
-}
-@keyframes blink-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
-.gap-entity-name {
-    color: #00ff00;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.gap-entity-type {
-    font-size: 10px;
-    color: #666;
-    text-transform: uppercase;
-    padding: 2px 6px;
     border: 1px solid #333;
-    margin-left: 8px;
 }
-.gap-entity-arrow {
-    color: #00ff00;
-    font-size: 10px;
-    transition: transform 0.2s;
-}
-.gap-entity.expanded .gap-entity-arrow {
-    transform: rotate(90deg);
-}
-
-/* Detalles de la entidad */
-.gap-entity-details {
-    display: none;
-    padding: 0 15px 15px 33px;
-    border-top: 1px dashed #1a1a1a;
-}
-.gap-entity.expanded .gap-entity-details {
+.silencios-panel.open {
     display: block;
-    animation: fade-in 0.3s ease-out;
 }
-@keyframes fade-in {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.gap-detail-item {
-    padding: 8px 0;
-    border-bottom: 1px dotted #1a1a1a;
-    font-size: 11px;
-    color: #888;
-    line-height: 1.5;
-}
-.gap-detail-item:last-child {
-    border-bottom: none;
-}
-.gap-detail-label {
-    color: #ff6666;
-    text-transform: uppercase;
-    font-size: 9px;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 4px;
-}
-.gap-detail-value {
-    color: #aaa;
-}
-
-/* Botón para ir a la entidad */
-.gap-goto-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: transparent;
-    border: 1px solid #00ff00;
-    color: #00ff00;
-    padding: 6px 12px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.2s;
-}
-.gap-goto-btn:hover {
-    background: #00ff00;
-    color: #000;
-}
-
-.gaps-panel-footer {
-    background: #0a0a0a;
-    border-top: 1px solid #00ff00;
+.silencios-panel-header {
+    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+    color: #fecaca;
     padding: 12px 15px;
-    font-size: 10px;
-    color: #00ff00;
-    text-align: center;
-    font-family: 'Courier New', monospace;
-    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
-.gaps-panel-footer .protocol-text {
+.silencios-panel-header .close-btn {
+    background: none;
+    border: none;
+    color: #fecaca;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+.silencios-panel-header .close-btn:hover {
+    color: white;
+}
+.silencios-panel-body {
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    padding: 15px;
+    background: #111;
+}
+.silencio-region {
+    margin-bottom: 20px;
+}
+.silencio-region-header {
+    color: #dc2626;
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
 }
-.gaps-panel-footer .protocol-icon {
-    animation: blink-warning 1s ease-in-out infinite;
+.silencio-item {
+    background: #1f1f1f;
+    border-left: 3px solid #dc2626;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.silencio-item:hover {
+    background: #2a2a2a;
+    border-left-color: #ef4444;
+    transform: translateX(3px);
+}
+.silencio-item h5 {
+    color: #fca5a5;
+    font-size: 13px;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+}
+.silencio-item h5:hover {
+    text-decoration: underline;
+}
+.silencio-item p {
+    color: #888;
+    font-size: 12px;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+}
+.silencio-item .vacio-tipo {
+    display: inline-block;
+    background: #991b1b;
+    color: #fecaca;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+}
+.silencios-panel-footer {
+    background: #1a1a1a;
+    padding: 10px 15px;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+.silencios-panel-footer a {
+    color: #dc2626;
+}
+/* Botón Mapear Silencios */
+.toggle-silencios-btn {
+    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+    color: #fecaca;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.toggle-silencios-btn:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+}
+.toggle-poets-btn:hover {
+    background: #7c3aed;
 }
 
 /* Etiquetas de conexión en el mapa */
@@ -1199,8 +1001,8 @@ body.classified-mode .scan-overlay {
         <button class="toggle-poets-btn" onclick="togglePoetsPanel()">
             📋 Poetas
         </button>
-        <button class="map-gaps-btn" onclick="toggleGapsPanel()">
-            🔍 Mapear vacíos
+        <button class="toggle-silencios-btn" onclick="toggleSilenciosPanel()">
+            🔍 Mapear Silencios
         </button>
     </div>
 </div>
@@ -1229,27 +1031,164 @@ body.classified-mode .scan-overlay {
     </div>
 </div>
 
-<!-- Panel de vacíos del archivo - Modo Archivos Desclasificados -->
-<div id="gapsPanel" class="gaps-panel">
-    <div class="gaps-panel-header">
-        <div class="title-area">
-            <span class="main-title">Vacíos en el Archivo</span>
-        </div>
-        <button class="close-btn" onclick="exitClassifiedMode()">×</button>
+<!-- Panel Mapear Silencios -->
+<div id="silenciosPanel" class="silencios-panel">
+    <div class="silencios-panel-header">
+        <span>🔍 Vacíos del Archivo</span>
+        <button class="close-btn" onclick="toggleSilenciosPanel()">×</button>
     </div>
-    <div class="gaps-panel-body" id="gapsPanelBody">
-        <!-- Se llena dinámicamente con JavaScript -->
-    </div>
-    <div class="gaps-panel-footer">
-        <div class="protocol-text">
-            <span class="protocol-icon">⚠</span>
-            <span>Solo datos con fuentes verificables</span>
+    <div class="silencios-panel-body">
+        <!-- NORTE GRANDE -->
+        <div class="silencio-region">
+            <div class="silencio-region-header">📍 Norte Grande</div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Taller/Grupo Extramuros')">
+                <h5>Revista Extramuros (Arica)</h5>
+                <p>Nº 1 (1983): no localizado en BND ni MC</p>
+                <p>Nº 3, 5, 6 (1983-1984): no localizados</p>
+                <p>Nº 8, 9, 10 (1985): no localizados</p>
+                <span class="vacio-tipo">6 números sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Revista Pobresía')">
+                <h5>Revista Pobresía (Iquique)</h5>
+                <p>Nº 1, 3, 5, 6, 7 (primera época): no localizados en MC</p>
+                <p>Nº 12 (primera época): no localizado</p>
+                <p>II época Nº 1-4, 6+: sin registros</p>
+                <span class="vacio-tipo">~10 números sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Grupo Salar de la Poesía')">
+                <h5>Grupo Salar de la Poesía (Antofagasta)</h5>
+                <p>Nº 2, 3 de la serie: no localizados en MC</p>
+                <p>"Poetas jóvenes del Norte" (1980): sin existencia verificada</p>
+                <span class="vacio-tipo">3 publicaciones sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Revista Imágenes de Océanos')">
+                <h5>Revista Imágenes de Océanos (Antofagasta)</h5>
+                <p>Año 2 completo (1985): sin registros en catálogos</p>
+                <p>Año 6 completo (1989): sin registros en catálogos</p>
+                <p>Números entre Año 3 Nº3 y Año 4 Nº2: sin localizar</p>
+                <span class="vacio-tipo">~8 números sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Taller Recital')">
+                <h5>Taller Recital (Antofagasta)</h5>
+                <p>"La Iglesia y la Revolución de 1891..." (1980): sin existencia en BND/MC</p>
+                <p>Trípticos y plaquettes mencionados: ninguno localizado</p>
+                <span class="vacio-tipo">Publicaciones sin existencia física</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Soledad Traverso')">
+                <h5>Soledad Traverso (poeta)</h5>
+                <p>"Y al centro, fuego" (1982): no localizado en BND/MC</p>
+                <span class="vacio-tipo">1 libro sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Alejandra Zarhi')">
+                <h5>Alejandra Zarhi (poeta)</h5>
+                <p>"Cinco Caminos" (1975): no verificado en catálogos</p>
+                <span class="vacio-tipo">1 libro sin existencia</span>
+            </div>
         </div>
+        
+        <!-- NORTE CHICO -->
+        <div class="silencio-region">
+            <div class="silencio-region-header">📍 Norte Chico</div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Taller Lapislázuli')">
+                <h5>Revista Lapislázuli (La Serena)</h5>
+                <p>Todos los números: sin existencia en BND/MC</p>
+                <p>Solo referencias testimoniales (Volantines, 2020)</p>
+                <span class="vacio-tipo">Revista completa sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Colectivo de Escritores de Guayacán')">
+                <h5>La Servilleta de la Poesía (Coquimbo)</h5>
+                <p>Todos los números: sin existencia en archivos públicos</p>
+                <p>Publicación artesanal efímera, distribución mano a mano</p>
+                <span class="vacio-tipo">Publicación completa sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Revista Añañuca')">
+                <h5>Revista Añañuca (La Serena)</h5>
+                <p>Nº 1-19, 21-42, 44-69, 71+: sin digitalizar en MC</p>
+                <p>Solo Nº 20 (1986), 43 (1989), 70 (1993) en catálogos</p>
+                <span class="vacio-tipo">~200 números sin existencia digital</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Viviana Benz')">
+                <h5>Viviana Benz (poeta)</h5>
+                <p>"Plano poético urbano de La Serena": solo reseña, sin ejemplar</p>
+                <p>"Tierra sin herencia": no localizado</p>
+                <span class="vacio-tipo">2 libros sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Elba Elena Jiménez')">
+                <h5>Elba Elena Jiménez (poeta)</h5>
+                <p>"Ojo Facetado": no localizado en BND/MC</p>
+                <span class="vacio-tipo">1 libro sin existencia</span>
+            </div>
+        </div>
+        
+        <!-- REGIÓN METROPOLITANA -->
+        <div class="silencio-region">
+            <div class="silencio-region-header">📍 Región Metropolitana</div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Talleres Andamio')">
+                <h5>Taller Andamio - Revista Postdata</h5>
+                <p>Nº 2-7 (1985-1987): sin existencia en MC</p>
+                <p>Solo Nº 1 (1985) y Nº 8 (1988) digitalizados</p>
+                <span class="vacio-tipo">6 números sin existencia</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Envés')">
+                <h5>Envés (Concepción/Santiago)</h5>
+                <p>Nº 1 (1983): sin existencia verificada</p>
+                <p>Nº 3-5 (1984-1985): sin localizar en MC</p>
+                <span class="vacio-tipo">4 números sin existencia</span>
+            </div>
+        </div>
+        
+        <!-- ZONA SUR -->
+        <div class="silencio-region">
+            <div class="silencio-region-header">📍 Zona Sur</div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Posdata')">
+                <h5>Revista Posdata (Concepción)</h5>
+                <p>Verificación de números pendiente</p>
+                <span class="vacio-tipo">Por documentar</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Matra')">
+                <h5>Matra (Concepción)</h5>
+                <p>Publicaciones: sin verificar existencias en MC</p>
+                <span class="vacio-tipo">Por documentar</span>
+            </div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Pájaro de Cuenta')">
+                <h5>Pájaro de Cuenta (Valdivia)</h5>
+                <p>Publicaciones: sin verificar existencias en MC</p>
+                <span class="vacio-tipo">Por documentar</span>
+            </div>
+        </div>
+        
+        <!-- ZONA AUSTRAL -->
+        <div class="silencio-region">
+            <div class="silencio-region-header">📍 Zona Austral</div>
+            
+            <div class="silencio-item" onclick="focusSilencio('Aumen')">
+                <h5>Aumen (Chiloé)</h5>
+                <p>Existencias físicas: verificación pendiente</p>
+                <span class="vacio-tipo">Por documentar</span>
+            </div>
+        </div>
+    </div>
+    <div class="silencios-panel-footer">
+        Click en un nombre para ver en el mapa · Actualizado: 31 diciembre 2025
     </div>
 </div>
-
-<!-- Overlay de escaneo para modo clasificado -->
-<div class="scan-overlay"></div>
 
 <script>
 // Complete workshop data with expanded profiles
@@ -1260,14 +1199,13 @@ const talleres = [
         coords: [-33.4489, -70.6693],
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
-        años: "1978–presente",
+        años: "1978–actualidad",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "Surgieron a fines de 1978, congregando aproximadamente 50 jóvenes escritores en plena dictadura (Hevia, 2018). Memoria Chilena los menciona como uno de los talleres representativos del período junto a Tralca, Tragaluz, Taller Urbano, Aumen, UEJ, Ergo Sum, CEJ y ACU (Memoria Chilena, s.f., MC97515).",
-            contexto: "Resistencia cultural con sub-talleres distribuidos por Santiago, vinculados a sindicatos y entidades culturales. Según Eloy (2014), el Taller Andamio se dividió en 7 grupos: Taller Umbral, Cordillera, entre otros (citado en Redalyc, 2019).",
-            desarrollos: "Espacio radial en 'Nuestro Canto' (Radio Chilena, conducido por Miguel Davagnino). Publicaron Revista Andamio desde diciembre 1978.",
-            continuidad: "Sigue activo. Celebró 40 años en 2018 en la Casa del Escritor de la SECH (Hevia, 2018)."
+            origen: "Fines de 1978, congregando ~50 jóvenes escritores en plena dictadura.",
+            contexto: "Resistencia cultural. 5 sub-talleres distribuidos por Santiago, vinculados a sindicatos y entidades culturales.",
+            desarrollos: "Espacio radial en 'Nuestro Canto' (Radio Chilena, conducido por Davagnino).",
+            continuidad: "Sigue activo. Celebró 40 años en 2018 (Casa del Escritor/SECH)."
         },
         fundadores: [
             { nombre: "Eduardo Yáñez", rol: "Cantautor, impulsor" },
@@ -1278,7 +1216,7 @@ const talleres = [
         publicaciones: [
             {
                 titulo: "Revista Andamio",
-                años: "1978–1980s",
+                años: "1978–~1980s",
                 numeros: "~2-5 números estimados",
                 detalles: [
                     "Nº1: diciembre 1978 (portada en serigrafía)",
@@ -1288,14 +1226,13 @@ const talleres = [
                 personas: [],
                 existencias: [
                     { lugar: "Biblioteca Nacional de Chile (Hemeroteca)", tiene: true, link: null, nota: "Ejemplares físicos 1978–1980s" },
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "MC97515 (referencias, sin digitalización completa)" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Referencias (sin digitalización completa)" }
                 ]
             }
         ],
         fuentes: [
             { autor: "Hevia, D.", año: "2018", titulo: "Celebran 40 años de vida de Talleres Andamio", medio: "La Tercera", link: "https://www.latercera.com/cultura/noticia/celebran-40-anos-vida-talleres-andamio/175333/" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Revistas de talleres, colectivos, asociaciones y grupos", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" },
-            { autor: "Redalyc", año: "2019", titulo: "Escribir en dictadura, poetas feministas chilenas", medio: "Cuadernos Inter.c.a.mbio sobre Centroamérica y el Caribe, 16(1)", link: "https://www.redalyc.org/journal/4559/455962140004/html/" }
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Revistas de talleres, colectivos, asociaciones y grupos", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
         ]
     },
     {
@@ -1305,16 +1242,15 @@ const talleres = [
         region: "metropolitana",
         años: "1977–1978",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "Fundado por Miguel Arteche (Premio Nacional de Literatura 1996) al alero de la Biblioteca Nacional de Chile, en plena dictadura militar. Fue 'el primer taller de poesía permitido por el gobierno de la época' según Alejandra Basualto (EcuRed, s.f.).",
-            contexto: "Espacio de poesía y creación literaria que brindó un inusual segmento de libertad para el intercambio de ideas. Arteche describió que Altazor y el Taller Nueve fueron 'tal vez los primeros espacios de libre circulación en el Chile de esa época' (Memoria Chilena, MC751).",
+            origen: "Fundado por Miguel Arteche (Premio Nacional de Literatura 1996) al alero de la Biblioteca Nacional de Chile, en plena dictadura militar.",
+            contexto: "Espacio de poesía y creación literaria que brindó un inusual segmento de libertad para el intercambio de ideas. Arteche señaló que Altazor y luego el Taller Nueve fueron posiblemente 'los primeros espacios de libre circulación' para escritores en esa época.",
             continuidad: "Precursor directo del Taller Nueve (fundado en 1979). Experiencia seminal en la formación de poetas de la 'Generación de los 80'."
         },
-        fundadores: [{ nombre: "Miguel Arteche", rol: "Fundador y director (Memoria Chilena, MC751)" }],
+        fundadores: [{ nombre: "Miguel Arteche", rol: "Fundador y director" }],
         integrantes: [
-            { nombre: "Armando Rubio Huidobro", rol: "Integrante (MC3304)" },
-            { nombre: "Alejandra Basualto", rol: "Integrante (EcuRed)" },
+            { nombre: "Armando Rubio Huidobro", rol: "Integrante" },
+            { nombre: "Alejandra Basualto", rol: "Integrante" },
             { nombre: "Ivonne Grimal", rol: "Integrante" },
             { nombre: "Violeta Camerati", rol: "Integrante" },
             { nombre: "Andrés Morales", rol: "Integrante" }
@@ -1322,10 +1258,10 @@ const talleres = [
         publicaciones: [],
         nota: "No tuvo publicación propia. Su grupo heredero, Taller Nueve, produjo varias antologías colectivas.",
         fuentes: [
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Miguel Arteche (1926-2012)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-751.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Armando Rubio Huidobro (1955-1980)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3304.html" },
-            { autor: "EcuRed", año: "s.f.", titulo: "Alejandra Basualto", medio: "EcuRed", link: "https://www.ecured.cu/Alejandra_Basualto" },
-            { autor: "Poeticous", año: "s.f.", titulo: "Miguel Arteche Salinas", medio: "Poeticous", link: "https://www.poeticous.com/miguel-arteche-salinas" }
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Miguel Arteche (1926-2012)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-751.html" },
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Armando Rubio Huidobro (1955-1980)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-3304.html" },
+            { autor: "Cooperativa.cl", año: "2012", titulo: "Miguel Arteche: El poeta 'care palo' que no santificaba cualquier expresión", medio: "Cooperativa Cultura", link: "https://cooperativa.cl/noticias/cultura/literatura/miguel-arteche-el-poeta-care-palo-que-no-santificaba-cualquier/2012-07-23/021011.html" },
+            { autor: "Rodajo, J.", año: "2024", titulo: "Texto de presentación de 'Cielo entelado' de Marión Canales Jofré", medio: "Lo que Leímos", link: "https://loqueleimos.com/2024/03/texto-de-presentacion-de-cielo-entelado-de-marion-canales-jofre-por-julio-rodajo/" }
         ]
     },
     {
@@ -1335,17 +1271,16 @@ const talleres = [
         region: "metropolitana",
         años: "1982–2019",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "Fundado en 1982 por el poeta Carlos Mellado Molina, con el objetivo de democratizar la creación literaria durante la dictadura (Zapata, 2017).",
-            contexto: "Funcionó durante 20 años (aprox. 1982–2002) en el Instituto Chileno-Alemán de Cultura (Goethe-Institut), luego continuó sesionando en la Casa del Escritor de la SECH (Zapata, 2017).",
-            desarrollos: "Publicó la revista literaria Carmina (1983–1985), dirigida por Victoria Valdés (Memoria Chilena, MC121731), además de dos antologías colectivas (1986 y 1990).",
+            origen: "Fundado en 1982 por el poeta Carlos Mellado Molina, con el objetivo de democratizar la creación literaria durante la dictadura.",
+            contexto: "Funcionó durante 20 años (aprox. 1982–2002) en el Instituto Chileno-Alemán de Cultura (Goethe-Institut), luego continuó sesionando en la Casa del Escritor de la Sociedad de Escritores de Chile (SECH).",
+            desarrollos: "El taller publicó la revista literaria Carmina (1983–1985), dirigida por Victoria Valdés, además de dos antologías colectivas (1986 y 1990).",
             continuidad: "Mellado coordinó el taller hasta su fallecimiento en 2019. En 2017 aún se reportaba activo todos los martes por la tarde en la Casa del Escritor (Almirante Simpson 7, Providencia)."
         },
-        fundadores: [{ nombre: "Carlos Mellado Molina", rol: "Fundador y coordinador (Zapata, 2017)" }],
+        fundadores: [{ nombre: "Carlos Mellado Molina", rol: "Fundador y coordinador" }],
         integrantes: [
-            { nombre: "Victoria Valdés", rol: "Directora de Revista Carmina (MC121731, MC121660)" },
-            { nombre: "Edmundo Herrera", rol: "Prologuista antología 1990" }
+            { nombre: "Victoria Valdés", rol: "Directora de Revista Carmina" },
+            { nombre: "Edmundo Herrera", rol: "Colaborador / Prologuista" }
         ],
         publicaciones: [
             {
@@ -1354,14 +1289,14 @@ const talleres = [
                 numeros: "Revista (al menos 3 números)",
                 detalles: [
                     "Año 1 (1983): primer número",
-                    "Nº 2, año 2 (abril 1984) — MC121731",
-                    "Nº 3, año 3 (octubre 1985) — MC121660",
+                    "Nº 2, año 2 (abril 1984)",
+                    "Nº 3, año 3 (octubre 1985)",
                     "Directora: Victoria Valdés"
                 ],
                 personas: [{ nombre: "Victoria Valdés", rol: "Directora" }],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "MC121731: Nº 2, abril 1984 (PDF)" },
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "MC121660: Nº 3, octubre 1985 (PDF)" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "Nº 2, abril 1984 (digitalizado)" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "Nº 3, octubre 1985 (digitalizado)" }
                 ]
             },
             {
@@ -1374,7 +1309,7 @@ const talleres = [
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "MC121737 / MC0005681 (PDF)" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "Digitalizado en Memoria Chilena (MC0005681)" }
                 ]
             },
             {
@@ -1383,9 +1318,9 @@ const talleres = [
                 numeros: "Antología (74 páginas)",
                 detalles: [
                     "Publicada por el Taller de Poesía Gredazul",
-                    "Colaboración de Edmundo Herrera (prólogo)"
+                    "Colaboración de Edmundo Herrera (prólogo o co-edición)"
                 ],
-                personas: [{ nombre: "Edmundo Herrera", rol: "Prologuista" }],
+                personas: [{ nombre: "Edmundo Herrera", rol: "Prologuista/Co-editor" }],
                 existencias: [
                     { lugar: "Universidad de California (USA)", tiene: true, link: "https://books.google.co.jp/books/about/Antolog%C3%ADa_po%C3%A9tica_Gredazul.html?id=N4cbAAAAIAAJ", nota: "Ejemplar en colección" },
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: null, nota: "Probable (depósito legal)" }
@@ -1394,9 +1329,9 @@ const talleres = [
         ],
         fuentes: [
             { autor: "Zapata, C. A.", año: "2017", titulo: "Tribuna Abierta: Taller literario Gredazul", medio: "La Izquierda Diario", link: "https://www.laizquierdadiario.com/Taller-literario-GREDAZUL" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Carmina: poesía, año 2, nº 2, abril 1984", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Carmina: poesía, año 3, nº 3, octubre 1985", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Taller Gredazul: poemas", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html" }
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Carmina: poesía, año 3, nº 3, octubre 1985", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html" },
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Taller Gredazul: poemas", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html" },
+            { autor: "Silva, P.", año: "2021", titulo: "Pasiones del desencanto: La crisis del campo literario chileno en revistas literarias de la dictadura", medio: "Tesis, Universidad de Chile", link: "https://es.scribd.com/document/656856228/TESIS-Pasiones-Del-Desencanto-La-Crisis-Del-Campo-Literario-Chileno-en-Rev-Lit" }
         ]
     },
     {
@@ -1406,27 +1341,22 @@ const talleres = [
         region: "metropolitana",
         años: "1979–1989",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "Continuación del Taller Altazor. Fundado en 1979 por Miguel Arteche (Premio Nacional de Literatura 1996), funcionó durante una década completa (1979-1989) (Poetaspoemas.com; El Insular, 2022).",
-            contexto: "Alejandra Basualto 'funda y administra el Taller Nueve, que conducirá nuevamente Miguel Arteche' en 1979 (EcuRed, s.f.). Uno de 'los primeros espacios de libre circulación' para escritores durante la dictadura (Memoria Chilena, MC751).",
-            desarrollos: "Produjo al menos tres antologías colectivas: Ejercicio en sol (1980, MC0031027), La mano encandilada (1983) y Tercera Antología (1984). Arteche dirigió el taller 'por alrededor de tres décadas' (El Insular, 2022).",
+            origen: "Continuación del Taller Altazor. Fundado en 1979 por Miguel Arteche (Premio Nacional de Literatura 1996), activo durante una década completa.",
+            contexto: "Uno de 'los primeros espacios de libre circulación' para escritores durante la dictadura. El taller funcionó como espacio formativo y sello editorial (Ediciones Taller Nueve de Poesía).",
+            desarrollos: "Produjo al menos tres antologías colectivas: Ejercicio en sol (1980), La mano encandilada (1983) y Tercera Antología (1984). También publicó libros individuales de integrantes.",
             continuidad: "En 2008 se publicó la Cuarta Antología del Taller Nueve: Homenaje a Miguel Arteche (Editorial La Trastienda), reuniendo a ex-integrantes como tributo al maestro."
         },
-        fundadores: [
-            { nombre: "Miguel Arteche", rol: "Fundador y director (MC751)" },
-            { nombre: "Alejandra Basualto", rol: "Cofundadora, administradora (EcuRed)" }
-        ],
+        fundadores: [{ nombre: "Miguel Arteche", rol: "Fundador y director" }],
         integrantes: [
-            { nombre: "Andrés Morales", rol: "Integrante destacado (MC751; El Insular)" },
-            { nombre: "Astrid Fugellie", rol: "Integrante (El Insular)" },
+            { nombre: "Alejandra Basualto", rol: "Integrante" },
             { nombre: "Luisa Eguiluz", rol: "Integrante" },
             { nombre: "Eliana Vásquez", rol: "Integrante" },
             { nombre: "Gémina Ahumada", rol: "Integrante" },
             { nombre: "Vilma Orrego", rol: "Integrante" },
             { nombre: "Alicia Puig", rol: "Integrante" },
             { nombre: "Violeta Camerati", rol: "Integrante" },
-            { nombre: "Dixiana Rivera", rol: "Integrante" }
+            { nombre: "Andrés Morales", rol: "Integrante" }
         ],
         publicaciones: [
             {
@@ -1446,8 +1376,9 @@ const talleres = [
                     { nombre: "Gémina Ahumada", rol: "Autora" }
                 ],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/mc0031027.pdf", nota: "MC0031027 (PDF)" },
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: null, nota: "Catálogo Sección Chilena" },
+                    { lugar: "Universidad de Wisconsin (EE.UU.)", tiene: true, link: "https://books.google.com/books/about/Ejercicio_en_sol.html?id=6vkQAQAAMAAJ", nota: "Registro en Google Books" },
+                    { lugar: "Iberlibro", tiene: true, link: "https://www.iberlibro.com/primera-edicion-firmada/Ejercicio-sol-Eguiluz-Luisa-otros-Taller/6223941051/bd", nota: "Ejemplares en venta (anticuario)" },
                     { lugar: "Revista Chilena de Literatura", tiene: true, link: "https://revistaliteratura.uchile.cl/index.php/RCL/article/view/41432", nota: "Reseña por A.M. Cuneo, 1981" }
                 ]
             },
@@ -1474,11 +1405,26 @@ const talleres = [
                 detalles: [
                     "Prólogo de Miguel Arteche",
                     "Publicada con apoyo de SECH y Editorial Universitaria",
-                    "Mencionada en biografía de Arteche (MC751)"
+                    "Incluye textos de L. Eguiluz, V. Orrego, E. Vásquez, G. Ahumada"
                 ],
-                personas: [],
+                personas: [
+                    { nombre: "Luisa Eguiluz", rol: "Autora" },
+                    { nombre: "Vilma Orrego", rol: "Autora" },
+                    { nombre: "Eliana Vásquez", rol: "Autora" },
+                    { nombre: "Gémina Ahumada", rol: "Autora" }
+                ],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-751.html", nota: "Referencia en ficha bibliográfica" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-751.html", nota: "Catálogo (ficha bibliográfica)" }
+                ]
+            },
+            {
+                titulo: "El agua que me cerca",
+                años: "1983",
+                numeros: "Poemario individual (Ediciones Taller Nueve)",
+                detalles: ["Primer libro de Alejandra Basualto, publicado bajo el sello del taller"],
+                personas: [{ nombre: "Alejandra Basualto", rol: "Autora" }],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3658.html", nota: "Biblioteca Nacional Digital" }
                 ]
             },
             {
@@ -1491,18 +1437,31 @@ const talleres = [
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Editorial La Trastienda", tiene: true, link: null, nota: "Distribución comercial" }
+                    { lugar: "Librerías comerciales", tiene: true, link: null, nota: "Distribución comercial" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Miguel Arteche (1926-2012)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-751.html" },
-            { autor: "EcuRed", año: "s.f.", titulo: "Alejandra Basualto", medio: "EcuRed", link: "https://www.ecured.cu/Alejandra_Basualto" },
-            { autor: "El Insular", año: "2022", titulo: "Taller literario en Dalcahue: Una nueva experiencia", medio: "Periódico El Insular", link: "https://elinsular.cl/fogon-cultural/2022/07/26/taller-literario-en-dalcahue-una-nueva-experiencia/" },
-            { autor: "Cuneo, A. M.", año: "1981", titulo: "Reseña: Ejercicio en sol", medio: "Revista Chilena de Literatura, Nº16-17", link: "https://revistaliteratura.uchile.cl/index.php/RCL/article/view/41432" }
+            { autor: "Morales, A.", año: "2008", titulo: "Antología poética del Taller 9 — Homenaje a Miguel Arteche", medio: "Blog La Página de Andrés Morales", link: "http://paginadeandresmorales.blogspot.com/2008/07/antologa-potica-del-taller-9-en.html" },
+            { autor: "Cuneo, A. M.", año: "1981", titulo: "Reseña: Ejercicio en sol", medio: "Revista Chilena de Literatura, Nº16-17", link: "https://revistaliteratura.uchile.cl/index.php/RCL/article/view/41432" },
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Miguel Arteche (1926-2012)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-751.html" },
+            { autor: "Museo Histórico de Carabineros", año: "n.d.", titulo: "Miguel Arteche Salinas (biografía)", medio: "Museo Carabineros", link: "https://www.museocarabineros.cl/web/sitio/cultural-barracks/cultural/miguel-arteche-salinas-1996/61" }
         ]
     },
-    fundadores: [
+    {
+        nombre: "Taller Urbano",
+        coords: [-33.4380, -70.6480],
+        zona: "Región Metropolitana (Santiago centro, Barrio Yungay)",
+        region: "metropolitana",
+        años: "Fines 1970s–1988",
+        tipo: "taller",
+        historia: {
+            origen: "Colectivo de creación literaria fundado por Pedro Araucano, junto a Eledino Parraguez, Javier Vives y Horacio Eloy. Nombre formal: 'Centro Urbanístico de Artes y Letras'.",
+            contexto: "Activo en Santiago centro, especialmente en el sector de Barrio Yungay. Reunía a poetas y artistas que creaban en la clandestinidad o semiclandestinidad bajo la dictadura militar.",
+            desarrollos: "Editó la revista Contramuro (1983–1988), subtitulada 'Revista Latinoamericana de Artes y Letras', uno de los órganos de difusión más activos de la época.",
+            continuidad: "El taller celebró su aniversario en 1984. La revista Contramuro se publicó hasta 1988 (17 números documentados)."
+        },
+        fundadores: [
             { nombre: "Pedro Araucano", rol: "Fundador" },
             { nombre: "Eledino Parraguez", rol: "Co-fundador" },
             { nombre: "Javier Vives", rol: "Co-fundador" },
@@ -1538,7 +1497,15 @@ const talleres = [
             { autor: "Museo de la Solidaridad Salvador Allende", año: "n.d.", titulo: "Contramuro. Taller Urbano – Poesía – Gráfica. Nº 12", medio: "Archivo MSSA", link: "https://archivo.mssa.cl/Detail/object/13201" }
         ]
     },
-    fundadores: [{ nombre: "Adolfo Pardo Armanet", rol: "Por determinar" }],
+    {
+        nombre: "Talleres del Mar",
+        coords: [-33.4550, -70.6700],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "ca. 1977–1983",
+        tipo: "taller",
+        historia: { origen: null, contexto: null, continuidad: null },
+        fundadores: [{ nombre: "Adolfo Pardo Armanet", rol: "Por determinar" }],
         publicaciones: [
             { titulo: "Cuadernos Marginales", años: null, numeros: "Sello/colección", detalles: [], personas: [], existencias: [] },
             { titulo: "La Parrilla", años: "1981", numeros: "Publicación", detalles: [], personas: [], existencias: [] }
@@ -1552,49 +1519,75 @@ const talleres = [
         region: "metropolitana",
         años: "1985–1986",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "Colectivo literario fundado en 1985 en la comuna de Maipú. Memoria Chilena registra la existencia de las revistas Servum pecus (1985) y Galera (1986) publicadas por el Taller Literario Berghof (Memoria Chilena, MC97515; MC121725).",
-            contexto: "Espacio de creación y difusión literaria independiente bajo la dictadura. El título Servum pecus (latín: 'rebaño servil', frase de Horacio) reflejaba un tono crítico hacia el conformismo.",
-            desarrollos: "Publicó la revista Servum pecus (1985, al menos 2 números) y su continuación Galera (1986). Galera fue catalogada como 'revista literaria' por la Biblioteca Nacional.",
-            continuidad: "Galera Año 1 Nº 3 (1986) indica continuidad numérica desde Servum pecus. No se documentan números posteriores."
+            origen: "Colectivo literario fundado en 1985 en la comuna de Maipú, conocido por la edición de la revista Servum pecus ese mismo año.",
+            contexto: "Espacio de creación y difusión literaria independiente bajo la dictadura. Sede editorial: calle Alberto Llona N° 9988, Maipú.",
+            desarrollos: "Publicó la revista Servum pecus (1985, 2 números) y su continuación Galera (1986, 1 número). El título Servum pecus (latín: 'rebaño servil') reflejaba un tono crítico.",
+            continuidad: "La revista tuvo una vida breve: 3 ejemplares en total. No se documentan números posteriores a marzo de 1986."
         },
-        fundadores: [],
-        integrantes: [],
+        fundadores: [
+            { nombre: "Jorge Héctor Alvarado", rol: "Director del taller y revista" }
+        ],
+        integrantes: [
+            { nombre: "Salvador Pastore", rol: "Relaciones públicas" },
+            { nombre: "Alberto Parry", rol: "Archivo" },
+            { nombre: "Demian Moreno", rol: "Colaborador (del Taller Urbano)" },
+            { nombre: "Patricia Sauvat", rol: "Colaboradora (separata desde México)" },
+            { nombre: "Manuel Guerrero Ceballos", rol: "Colaborador (periodista y escritor)" },
+            { nombre: "S. Rodríguez Saavedra", rol: "Corresponsal (La Serena)" }
+        ],
         publicaciones: [
             {
                 titulo: "Servum pecus",
                 años: "1985",
-                numeros: "Revista (al menos 2 números)",
+                numeros: "Revista (2 números, ~20 páginas c/u)",
                 detalles: [
-                    "Año 1, N° 2 (octubre 1985) — catalogado en Memoria Chilena"
+                    "Año 1, N° 1 (1985)",
+                    "Año 1, N° 2 (octubre 1985)",
+                    "El editorial del N° 2 anunciaba cambio de nombre para el siguiente número"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Mencionada en catálogo de revistas de talleres" }
+                    { lugar: "Biblioteca Nacional de Chile (Hemeroteca)", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99334.html", nota: "Nº 2, octubre 1985 (digitalizado, código MC0005689)" },
+                    { lugar: "AbeBooks (Librería Monte Sarmiento)", tiene: true, link: null, nota: "Ejemplar en venta (anticuario)" }
                 ]
             },
             {
                 titulo: "Galera",
                 años: "1986",
-                numeros: "Revista literaria (1 número documentado)",
+                numeros: "Revista literaria (1 número conocido)",
                 detalles: [
-                    "Año 1, N° 3 (1986)",
-                    "Publicada por Taller Literario Berghof, Santiago",
-                    "Código BN: MC0005667"
+                    "Segunda época (ex-Servum pecus)",
+                    "Año 1, N° 3 (marzo 1986) — tercer número consecutivo desde Servum pecus",
+                    "Continuación directa de Servum pecus"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121725.html", nota: "Digitalizado, código MC0005667" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99365.html", nota: "Nº 3, marzo 1986 (digitalizado, código MC0005961)" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "n.d.", titulo: "Revistas de talleres, colectivos, asociaciones y grupos", medio: "Memoria Chilena (MC97515)", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" },
-            { autor: "Memoria Chilena", año: "n.d.", titulo: "Galera : revista literaria : año 1, no. 3 (1986)", medio: "Memoria Chilena (MC121725)", link: "https://www.memoriachilena.gob.cl/602/w3-article-121725.html" }
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Servum pecus: año 1, n° 2, octubre 1985", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-99334.html" },
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Galera: revista literaria – Año 1, n° 3, marzo 1986", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-99365.html" },
+            { autor: "Eloy, H.", año: "2000", titulo: "Revistas y publicaciones literarias durante la dictadura (1973–1990)", medio: "Simpson 7, Vol. XVII (Memoria Chilena)", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" },
+            { autor: "Santa Cruz, E.", año: "2003", titulo: "Revistas y publicaciones literarias (1973–2000)", medio: "Letras de Chile", link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0063468.pdf" }
         ]
     },
-    fundadores: [
+    {
+        nombre: "Taller de Literatura 'La Jaula'",
+        coords: [-33.4890, -70.6000],
+        zona: "Región Metropolitana (Macul)",
+        region: "metropolitana",
+        años: "1985–1988",
+        tipo: "taller",
+        historia: {
+            origen: "Funcionó a mediados de los años 1980 en la comuna de Macul, al alero de la Agrupación Cultural Macul. Dirigido por la escritora Olivia Saavedra desde 1985.",
+            contexto: "Espacio que reunía a jóvenes autores locales durante los últimos años de la dictadura, en respuesta al llamado 'apagón cultural' de la época. Fomentó la creación literaria independiente en Macul y Ñuñoa.",
+            desarrollos: "En 1986 surgió la revista literaria La Grieta, como publicación autogestionada. Circuló de forma artesanal entre 1986 y 1988, con un total de 8 números.",
+            continuidad: "La revista dejó de operar al finalizar los años ochenta, coincidiendo con la disolución o transformación del taller en el retorno a la democracia."
+        },
+        fundadores: [
             { nombre: "Olivia Saavedra", rol: "Coordinadora del taller" }
         ],
         integrantes: [
@@ -1632,7 +1625,20 @@ const talleres = [
             { autor: "SECH", año: "n.d.", titulo: "Diccionario de Autores (Eduardo Robledo)", medio: "Escritores.cl", link: "https://www.escritores.cl/varios/Diccionario_de_Autores.pdf" }
         ]
     },
-    fundadores: [
+    {
+        nombre: "Taller de Letras Ariel",
+        coords: [-33.4600, -70.6400],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "1975–1983",
+        tipo: "taller",
+        historia: {
+            origen: "Fundado en 1975 por el poeta Luis Alejandro Iglesias. Organizó el Primer Certamen Nacional de Poetas Inéditos hacia fines de ese año, uno de los primeros concursos literarios tras el golpe militar.",
+            contexto: "En medio del 'apagón cultural' de la dictadura, el Taller Ariel proporcionó un espacio de encuentro para escritores jóvenes y adultos. Integrado principalmente por escritores adultos con empleo, lo que dio estabilidad organizativa. Vinculado a la SECH, que acogió la premiación de concursos en enero de 1978.",
+            desarrollos: "Publicó la revista Voces (1980–1983, al menos 12 números), la revista Ariel (homónima del taller), y hojas literarias, trípticos y plaquettes artesanales. Editó la primera versión mimeografiada de 'Canto de una oveja del rebaño' de Rosabetty Muñoz.",
+            continuidad: "Los certámenes del taller premiaron a autores que luego se consolidaron: Gustavo Adolfo Becerra, Mario Contreras Vega, Eduardo Llanos, José María Memet, Jorge Montealegre, Rosabetty Muñoz, Jorge Torres y Carlos Alberto Trujillo."
+        },
+        fundadores: [
             { nombre: "Luis Alejandro Iglesias", rol: "Fundador y director (1975–1983)" }
         ],
         integrantes: [
@@ -1705,12 +1711,11 @@ const talleres = [
         region: "metropolitana",
         años: "1982–1984",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "Tres talleres literarios mencionados en MC97515 como representativos del período junto a UEJ, Ergo Sum, Talleres Andamio, CEJ y ACU. Surgieron alrededor de 1982 en Santiago.",
-            contexto: "Formaron una red colaborativa inter-talleres para superar el aislamiento impuesto por la censura. Integrados en el Colectivo de Escritores Jóvenes (CEJ) hacia 1983.",
-            desarrollos: "En 1983 lanzaron Hoja X Ojo como publicación 'inter-talleres'. La revista está digitalizada en Memoria Chilena (MC121691, MC121692).",
-            continuidad: "Tras 1984, con el fin de Hoja X Ojo, estas agrupaciones dejaron de operar independientemente. Sus miembros se articularon en el CEJ."
+            origen: "Tres talleres literarios que surgieron alrededor de 1982 en Santiago, reuniendo a jóvenes escritores que buscaban espacios alternativos para crear y difundir su obra bajo dictadura.",
+            contexto: "Formaron una red colaborativa inter-talleres para superar el aislamiento impuesto por la censura. Integrados en el Colectivo de Escritores Jóvenes (CEJ) hacia 1983. Período de mayor actividad: 1983–1984.",
+            desarrollos: "En 1983 lanzaron Hoja X Ojo como publicación 'inter-talleres' para aglutinar las voces dispersas de los jóvenes escritores de Santiago. La revista buscaba 'combatir la dispersión y el aislamiento en que se encuentran los creadores'.",
+            continuidad: "Tras 1984, con el fin de Hoja X Ojo, estas agrupaciones dejaron de operar independientemente. Sus miembros se articularon en el CEJ y en proyectos posteriores como la revista Obsidiana (1984) para cuento."
         },
         fundadores: [],
         integrantes: [
@@ -1759,27 +1764,24 @@ const talleres = [
         coords: [-33.4700, -70.6300],
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
-        años: "1982–1985/1987",
-        tipo: "colectivo",
-        verificado: true,
+        años: "1982–1987",
+        tipo: "taller",
         historia: {
-            origen: "Fundado en junio de 1982 como continuación de la UEJ (Paredes, 2013). José Paredes testimonia: 'Nosotros, los que fundamos el CEJ como continuación de la UEJ, tomamos el bastón y seguimos con la lucha' (Letras de Chile, 2013).",
-            contexto: "Memoria Chilena lo incluye entre los grupos representativos del período junto a Tralca, Tragaluz, UEJ, Ergo Sum, Talleres Andamio y ACU (Memoria Chilena, MC97515). Tiene portadilla de autor dedicada (MC149951).",
-            desarrollos: "Según la tesis doctoral citada en 1Library: 'La historia del CEJ sugiere que, bajo la dictadura, la realidad de la represión facilitó el trabajo creativo en conjunto'. Publicó Hoja X Ojo (1983–1984) y antología Contando el Cuento (1986, Ed. Sinfronteras).",
-            continuidad: "Aristóteles España asumió la presidencia en 1985. El CEJ perduró hasta 1987, coincidiendo con la gradual apertura cultural previa al fin de la dictadura (Letras de Chile, 2008)."
+            origen: "Agrupación literaria formada a comienzos de los '80 en Santiago, bajo el alero de la Sociedad de Escritores de Chile (SECH). Surgió como espacio de organización y resistencia cultural para jóvenes escritores durante la dictadura.",
+            contexto: "En mayo de 1984 organizó el Primer Encuentro de Escritores Jóvenes de Chile en la sede de la SECH, donde se discutió el rol del escritor joven en el contexto represivo. Los integrantes se identificaban como la 'generación NN' o 'generación sin maestros'.",
+            desarrollos: "Publicó la revista Hoja X Ojo (1983–1984, 3 números) y el periódico literario Al Margen (1986–1987, 2 números). También existió un Boletín Unión Literaria de circulación interna.",
+            continuidad: "Aristóteles España asumió la presidencia en 1985. El CEJ perduró hasta 1987, coincidiendo con la gradual apertura cultural previa al fin de la dictadura."
         },
         fundadores: [
-            { nombre: "Carmen Berenguer", rol: "Fundadora (MC31407)" },
-            { nombre: "Diego Muñoz Valenzuela", rol: "Cofundador (1Library; Letras de Chile)" },
-            { nombre: "Jorge Montealegre", rol: "Cofundador (Paredes, 2013)" },
-            { nombre: "Eduardo Briceño", rol: "Cofundador (Paredes, 2013)" }
+            { nombre: "Carmen Berenguer", rol: "Fundadora y coordinadora" }
         ],
         integrantes: [
-            { nombre: "Ramón Díaz Eterovic", rol: "Líder (1Library; Letras de Chile)" },
-            { nombre: "Aristóteles España", rol: "Presidente (1985) (Paredes, 2013)" },
-            { nombre: "Pía Barros", rol: "Integrante (El Mostrador)" },
-            { nombre: "José Paredes", rol: "Integrante (Letras de Chile)" },
+            { nombre: "Diego Muñoz Valenzuela", rol: "Cofundador, animador (1981–1984)" },
+            { nombre: "Ramón Díaz Eterovic", rol: "Líder, equipo dirigente" },
+            { nombre: "Aristóteles España", rol: "Presidente (1985)" },
+            { nombre: "Jorge Montealegre", rol: "Dirigente, periodista cultural" },
             { nombre: "Jaime Lizama", rol: "Comité editorial de Al Margen" },
+            { nombre: "José Paredes", rol: "Coeditor de Obsidiana" },
             { nombre: "Manuel Pertier", rol: "Arte visual, Al Margen" }
         ],
         publicaciones: [
@@ -1788,32 +1790,14 @@ const talleres = [
                 años: "1983–1984",
                 numeros: "Revista inter-talleres (3 números)",
                 detalles: [
-                    "N° 1: octubre 1983 — MC121691",
-                    "N° 3: mayo 1984 — MC121692",
+                    "N° 1: octubre 1983",
+                    "N° 3: mayo 1984",
                     "Sello 'El Colectivo', Santiago",
                     "Contenía poesía, cuento, crítica de jóvenes autores"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121691.html", nota: "MC121691: Nº 1 (PDF)" },
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121692.html", nota: "MC121692: Nº 3 (PDF)" }
-                ]
-            },
-            {
-                titulo: "Contando el Cuento (antología)",
-                años: "1986",
-                numeros: "Antología de narrativa",
-                detalles: [
-                    "Editores: Ramón Díaz Eterovic y Diego Muñoz Valenzuela",
-                    "Editorial Sinfronteras",
-                    "34 cuentos de 17 autores nacidos entre 1948 y 1960"
-                ],
-                personas: [
-                    { nombre: "Ramón Díaz Eterovic", rol: "Editor" },
-                    { nombre: "Diego Muñoz Valenzuela", rol: "Editor" }
-                ],
-                existencias: [
-                    { lugar: "Bibliotecas universitarias", tiene: true, link: null, nota: "Distribución comercial" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121691.html", nota: "Nº 1 (MC0005493) y Nº 3 (MC0005494) digitalizados" }
                 ]
             },
             {
@@ -1821,27 +1805,54 @@ const talleres = [
                 años: "1986–1987",
                 numeros: "Periódico literario (2 números)",
                 detalles: [
-                    "N° 1: diciembre 1986",
+                    "N° 1: diciembre 1986 (publicación trimestral)",
                     "N° 2: 1987 (último número)",
-                    "Directora: Carmen Berenguer"
+                    "Directora: Carmen Berenguer",
+                    "Comité editorial: Jaime Lizama, Manuel Pertier",
+                    "Tiraje: 1.000 ejemplares (N°1), 2.000 ejemplares (N°2)",
+                    "Presentado en Instituto Chileno-Canadiense, enero 1987",
+                    "Incluía traducciones (Diane di Prima), arte conceptual, cómic, rock"
                 ],
                 personas: [
-                    { nombre: "Carmen Berenguer", rol: "Directora" }
+                    { nombre: "Carmen Berenguer", rol: "Directora" },
+                    { nombre: "Jaime Lizama", rol: "Colaborador editorial" },
+                    { nombre: "Manuel Pertier", rol: "Arte visual" }
                 ],
                 existencias: [
-                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: null, nota: "Ejemplares físicos" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: null, nota: "Ejemplares físicos (referencia en biografía de Berenguer)" }
                 ]
+            },
+            {
+                titulo: "Boletín Unión Literaria",
+                años: "ca. 1983–1984",
+                numeros: "Boletín informativo interno",
+                detalles: ["Vinculado a la SECH, difundía noticias, convocatorias y textos breves"],
+                personas: [],
+                existencias: []
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Hoja x ojo: n° 1, octubre 1983", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121691.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Colectivo de Escritores Jóvenes (Chile)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-149951.html" },
-            { autor: "1Library", año: "s.f.", titulo: "El Colectivo de Escritores Jóvenes: Resistencia cultural a la dictadura chilena", medio: "Tesis doctoral", link: "https://1library.co/article/cultura-autoritaria-contracultura-colectivo-escritores-jóvenes-resistencia-cultu.zwvld7dl" },
-            { autor: "Letras de Chile", año: "2013", titulo: "Afuera, la nieve: la leyenda de la UEJ", medio: "Letras de Chile", link: "https://letrasdechile.cl/2013/12/27/afuera-la-nieve-la-leyenda-de-la-uej/" },
-            { autor: "Letras de Chile", año: "2008", titulo: "La práctica del cuento en Chile", medio: "Letras de Chile", link: "https://letrasdechile.cl/2008/10/31/la-practica-del-cuento-en-chile/" }
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Hoja x ojo: n° 1, octubre 1983", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-121691.html" },
+            { autor: "Biblioteca Nacional de Chile", año: "2024", titulo: "Carmen Berenguer (1946-2024)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-31407.html" },
+            { autor: "Carajo", año: "2021", titulo: "Al Margen: Un periódico que iluminó el apagón cultural", medio: "Periódico Carajo", link: "https://carajo.cl/al-margen-un-periodico-que-ilumino-el-apagon-cultural/" },
+            { autor: "Paredes, J. O.", año: "2014", titulo: "¿Cuándo se murió Aristóteles España?", medio: "Frente Amplio de Escritores SECH (blog)", link: "http://sociedaddeescritoresdechile.blogspot.com/2014/01/cuando-se-murio-aristoteles-espana.html" },
+            { autor: "González Valenzuela, P. F.", año: "2017", titulo: "Publicaciones culturales de resistencia durante la dictadura", medio: "RChD: creación y pensamiento, 2(2)", link: "https://revistas.uchile.cl/index.php/RChDCP/article/view/46372" }
         ]
     },
-    fundadores: [
+    {
+        nombre: "Taller Contemporáneo",
+        coords: [-33.4750, -70.6250],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "1978–ca. 1990",
+        tipo: "taller",
+        historia: {
+            origen: "Surgió a fines de los '70 en plena dictadura militar. Instaló su sede en San Martín #57 (Santiago centro). Espacio independiente para la expresión artística, formación y difusión cultural al margen de estructuras oficiales.",
+            contexto: "Miembro activo de la UNAC (Unión Nacional por la Cultura) desde 1978. Trabajó en red con Taller 666, ACU, SECH, teatro Ictus, sello Alerce, Codeju, APJ, entre otros. El 27 de abril de 1979 emitió una 'Declaración' pública cuestionando las políticas culturales del régimen.",
+            desarrollos: "Organizó el ciclo de recitales 'El sentido y el canto' (1979). Fue sede de conciertos de Canto Nuevo (Ortiga, Roberto Parra, 1978). Contó con un Área Teatro donde Carlos Genovese fue profesor de actuación (1979–1980). Tuvo una 'rama literaria' para poesía y narrativa.",
+            continuidad: "No se hallan evidencias de continuidad después de 1990. Su legado se diluyó en la normalización cultural de los '90. Varios integrantes pasaron al CEJ en 1983."
+        },
+        fundadores: [
             { nombre: "Manuel Santis", rol: "Director/Coordinador" }
         ],
         integrantes: [
@@ -1860,93 +1871,79 @@ const talleres = [
     {
         nombre: "Taller 666",
         coords: [-33.4350, -70.6450],
-        zona: "Región Metropolitana (Santiago, Barrio Bellavista)",
+        zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
-        años: "1976–1983",
+        años: "Mediados de 1970s–principios de 1980s",
         tipo: "taller",
-        verificado: true,
-        historia: {
-            origen: "'El Taller 666 fue un espacio de creación y resistencia surgido en Santiago en 1976 en dictadura que dio cobijo a diferentes disciplinas artísticas' (Museo de la Memoria, 2023). Ubicado en calle Siglo XX (actual Ernesto Pinto Lagarrigue) en pleno Barrio Bellavista.",
-            contexto: "'Quena Arrieta, María Cánepa y Carlos Matamala, aunaron fuerzas para dar vida a esta Academia de Arte y Cultura que sorteó en más de un sentido la realidad imperante' (El Mostrador, 2023). María Eugenia 'Kena' Arrieta fue coordinadora durante todo el período de existencia.",
-            desarrollos: "Entre 1976 y 1984 funcionó como academia de enseñanza y difusión de las artes (Archivo MMDH). Cecilia Cordero 'integró el directorio, coordinó el área de música y enseñó guitarra' (Archivo MMDH). Participó en el 2° Festival del Teatro Universitario ACU en 1979 (Memoria Chilena, MC72644).",
-            continuidad: "Funcionó hasta 1983. Organizó al menos 6 ediciones del 'Encuentro Teatro y Juventud' (Proyecto ARDE). Varios integrantes continuaron en el teatro profesional."
-        },
-        fundadores: [
-            { nombre: "María Eugenia 'Kena' Arrieta", rol: "Fundadora y coordinadora (Archivo MMDH; El Mostrador)" },
-            { nombre: "María Cánepa", rol: "Cofundadora (El Mostrador; MMDH)" },
-            { nombre: "Carlos Matamala", rol: "Cofundador (El Mostrador; MMDH)" }
-        ],
-        integrantes: [
-            { nombre: "Nelson Brodt", rol: "Director Compañía de Teatro (Archivo MMDH)" },
-            { nombre: "Andrés Pérez", rol: "Colaborador (El Mostrador)" },
-            { nombre: "Raúl Osorio", rol: "Colaborador (El Mostrador)" },
-            { nombre: "Juan Radrigán", rol: "Dramaturgo (El Mostrador)" },
-            { nombre: "Rodolfo Bravo", rol: "Profesor (U. Chile, Seminario teatro 80s)" },
-            { nombre: "José Sosa", rol: "Profesor de teatro (Archivo MMDH)" },
-            { nombre: "Cecilia Cordero", rol: "Coordinadora área música 1976-1984 (Archivo MMDH)" },
-            { nombre: "Gregory Cohen", rol: "Colaborador (El Mostrador)" },
-            { nombre: "Mateo Iribarren", rol: "Actor, dramaturgo (Archivo MMDH)" }
-        ],
+        historia: { origen: "Sin revista propia; espacio de distribución de otras", contexto: null, continuidad: null },
+        fundadores: [],
         publicaciones: [],
-        nota: "Principalmente taller de teatro, música y artes visuales. No tuvo publicación literaria propia pero sirvió como espacio de extensión cultural.",
-        fuentes: [
-            { autor: "Museo de la Memoria y los Derechos Humanos", año: "2023", titulo: "Proyectora de 16 mm del Taller 666", medio: "Pieza del mes", link: "https://mmdh.cl/colecciones/pieza-del-mes/2023-08" },
-            { autor: "El Mostrador", año: "2023", titulo: "Taller 666: Una luz en pleno apagón", medio: "El Mostrador Cultura", link: "https://www.elmostrador.cl/cultura/critica-opinion/2023/08/13/taller-666-una-luz-en-pleno-apagon/" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "El Grupo Taller 666, alumnos de la Universidad Católica, en el 2° Festival del Teatro Universitario en 1979", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-72644.html" },
-            { autor: "Archivo MMDH", año: "s.f.", titulo: "Testimonios Taller 666", medio: "Museo de la Memoria y los Derechos Humanos", link: "https://archivommdh.cl/" }
-        ]
+        fuentes: []
     },
     {
-        nombre: "Centro Cultural Tallersol",
+        nombre: "Taller Literario Sol",
         coords: [-33.4420, -70.6720],
         zona: "Región Metropolitana (Santiago, Barrio Brasil)",
         region: "metropolitana",
-        años: "1977–presente",
+        años: "1977–s.f. (ca. 1980s)",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "'El centro cultural Tallersol nace en 1977 uniéndose a la lucha frontal contra la dictadura. Su lugar de nacimiento es en San Martín 57 en Santiago' (tallersol.org, 2022).",
-            contexto: "Antonio Kadima, artista gráfico y director del espacio, 'desde 1977 mantiene vivo el centro cultural Tallersol, último reducto contracultural de los años de dictadura en Chile' (Radio Festival, 2023). Memoria Chilena conserva Poetas de Taller Sol (MC121796).",
-            desarrollos: "El libro Resistencia gráfica: dictadura en Chile APJ-Tallersol (Cristi & Manzi, 2016) documenta la historia del colectivo y su producción gráfica de resistencia.",
-            continuidad: "Sigue activo. Conserva el mayor archivo de resistencia gráfica de Chile (1973–1990). Celebró 44 años en 2021 (Radio UChile, 2021)."
+            origen: "Vinculado al Centro Cultural Taller Sol (Tallersol), espacio fundado en 1977 en Santiago (San Martín 57), asociado a prácticas de autonomía y autogestión durante la dictadura.",
+            contexto: "Tallersol fue fundado por Antonio Kadima junto a un colectivo de autogestión y disidencia política, como 'espacio de resistencias culturales'. Kadima sufrió persecución durante la dictadura, incluyendo prisión política y relegación.",
+            desarrollos: "El Taller Literario Sol produjo al menos una publicación: 'Poetas de Taller Sol', revista/cuadernillo con poemas de integrantes del taller.",
+            continuidad: "Tallersol sigue activo hoy en Compañía de Jesús 2085, frente a Plaza Brasil. Conserva un 'Archivo de Memorias de la Resistencia' especializado en expresiones gráficas y culturales anti-dictatoriales (1973–1990)."
         },
         fundadores: [
-            { nombre: "Antonio Kadima", rol: "Fundador y director (tallersol.org; Radio UChile)" }
+            { nombre: "Antonio Kadima (Toño Cadima)", rol: "Fundador de Tallersol, diagramación y dibujos" }
         ],
         integrantes: [
-            { nombre: "Julio Naranjo", rol: "Poeta (MC121796)" },
-            { nombre: "Jorge Misa", rol: "Poeta (MC121796)" },
-            { nombre: "José Martínez Fernández", rol: "Poeta (MC121796)" }
+            { nombre: "Julio Naranjo", rol: "Poeta" },
+            { nombre: "Jorge Misa", rol: "Poeta" },
+            { nombre: "José Martínez Fernández", rol: "Poeta" }
         ],
         publicaciones: [
             {
                 titulo: "Poetas de Taller Sol",
                 años: "[198-?]",
-                numeros: "Revista/Cuadernillo",
+                numeros: "Revista/Cuadernillo ([5] páginas)",
                 detalles: [
                     "Editor: El Taller",
-                    "Diagramación y dibujos: Toño Cadima (Antonio Kadima)",
-                    "Poetas incluidos: Julio Naranjo, Jorge Misa, José Martínez Fernández"
+                    "Diagramación y dibujos: Toño Cadima",
+                    "Poetas incluidos: Julio Naranjo, Jorge Misa, José Martínez Fernández, Toño Cadima",
+                    "Portada muestra 'Nº' sin numeral visible (sugiere numeración seriada)"
                 ],
                 personas: [
-                    { nombre: "Antonio Kadima", rol: "Diagramación y dibujos" },
+                    { nombre: "Toño Cadima", rol: "Diagramación y dibujos" },
                     { nombre: "Julio Naranjo", rol: "Poeta" },
                     { nombre: "Jorge Misa", rol: "Poeta" },
                     { nombre: "José Martínez Fernández", rol: "Poeta" }
                 ],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121796.html", nota: "MC121796 / MC0005963 (PDF)" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121796.html", nota: "Digitalizado en Memoria Chilena (código MC0005963)" },
+                    { lugar: "PDF descargable", tiene: true, link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0005963.pdf", nota: "Obra protegida, uso sujeto a autorización" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Poetas de Taller Sol", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121796.html" },
-            { autor: "tallersol.org", año: "2022", titulo: "Centro Cultural Tallersol", medio: "Sitio oficial", link: "https://tallersol.org/" },
-            { autor: "Cristi, N. & Manzi, J.", año: "2016", titulo: "Resistencia gráfica: dictadura en Chile, APJ-Tallersol", medio: "LOM Ediciones", link: "https://www.academia.edu/36012347/Resistencia_Gr%C3%A1fica_Dictadura_en_Chile_APJ_y_Tallersol_Dossier_" },
-            { autor: "Radio Universidad de Chile", año: "2021", titulo: "'Resistir desde la vida': el concierto que celebra los 44 años del mítico Tallersol", medio: "Radio UChile", link: "https://radio.uchile.cl/2021/08/28/resistir-desde-la-vida-el-concierto-que-celebra-los-44-anos-del-mitico-tallersol/" }
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Poetas de Taller Sol (MC0005963)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-121796.html" },
+            { autor: "Museo de la Memoria y los Derechos Humanos", año: "2018", titulo: "Entrevista Antonio Kadima", medio: "Testimonios Audiovisuales MMDH", link: "https://testimonios.museodelamemoria.cl/entrevista-antonio-kadima/" },
+            { autor: "Tallersol", año: "n.d.", titulo: "Somos (Centro Cultural Tallersol)", medio: "Página institucional", link: "https://tallersol.cl/somos/" }
         ]
     },
-    fundadores: [],
+    {
+        nombre: "Taller Literario Escuela de Medicina (U. de Chile)",
+        coords: [-33.4430, -70.6530],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "ca. 1970s",
+        tipo: "taller",
+        historia: {
+            origen: "Colectivo de escritura formado por estudiantes de la Escuela de Medicina de la Universidad de Chile. Marco Antonio de la Parra ha testimoniado que 'en la Escuela de Medicina teníamos un círculo literario' activo en los años '70.",
+            contexto: "En medio de un clima político adverso bajo dictadura, los alumnos de Medicina buscaron espacios para la creación artística además de su formación científica. Funcionó paralelamente a un grupo de teatro estudiantil.",
+            desarrollos: "Se le atribuye una publicación interna artesanal denominada 'Cuadernos de la Poesía', revista o cuadernillo donde los estudiantes escritores difundían sus poemas.",
+            continuidad: "No se dispone de fecha exacta de fundación ni de disolución. Permitió a futuros escritores como De la Parra compatibilizar vocación médica con las letras."
+        },
+        fundadores: [],
         integrantes: [
             { nombre: "Marco Antonio de la Parra", rol: "Integrante (testimonio)" }
         ],
@@ -1975,18 +1972,17 @@ const talleres = [
         coords: [-33.4580, -70.6380],
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
-        años: "1976–1979",
-        tipo: "colectivo",
-        verificado: true,
+        años: "1976–1980",
+        tipo: "taller",
         historia: {
-            origen: "La UEJ existió entre 1976-1979 (Letras de Chile, 2008). Memoria Chilena la menciona junto a los demás talleres y colectivos representativos del período (MC97515). Fue precursora directa del CEJ.",
+            origen: "Agrupación literaria fundada en 1976 bajo el alero de la SECH (Casa del Escritor, Simpson 7). Primer presidente: Ricardo Wilson. Armando Rubio Huidobro fue uno de los impulsores desde 1974.",
             contexto: "Según Soledad Bianchi, fue posiblemente 'la agrupación de escritores jóvenes que alcanzó más realce y mayor extensión en el país' durante esos años. Congregó a numerosos poetas emergentes y estableció filiales en provincias.",
-            desarrollos: "José Paredes testimonia que las primeras conversaciones sobre la fundación del CEJ 'debieron ser con Diego Muñoz V., con Jorge Montealegre, con Eduardo Briceño' en la taberna López Velarde, dando paso a 'otra leyenda: el Colectivo de Escritores Jóvenes' (Letras de Chile, 2013).",
-            continuidad: "Se disolvió hacia 1979-1980. Su legado fue retomado por el Colectivo de Escritores Jóvenes (CEJ) en junio de 1982 (Paredes, 2013)."
+            desarrollos: "Rol protagónico en las 'Semanas por la Cultura y la Paz' (1977-1978). Articuló talleres como Talleres Gráficos y Literarios del Mar, La Botica y Agrupación Santa Marta. Organizó el Concurso Nacional de Poesía Joven 'Residencia en la Tierra' (1978).",
+            continuidad: "Se disolvió en 1980. Su legado fue retomado por el Colectivo de Escritores Jóvenes (CEJ) en 1982."
         },
         fundadores: [
             { nombre: "Ricardo Wilson", rol: "Primer presidente (1976)" },
-            { nombre: "Armando Rubio Huidobro", rol: "Impulsor inicial" }
+            { nombre: "Armando Rubio Huidobro", rol: "Impulsor inicial (desde 1974)" }
         ],
         integrantes: [
             { nombre: "Gregory Cohen", rol: "Integrante" },
@@ -2001,23 +1997,57 @@ const talleres = [
                 años: "1977",
                 numeros: "Antología (107 páginas)",
                 detalles: [
-                    "Publicada por Ediciones Nueva Universidad",
-                    "Vinculada a la Vicerrectoría de Comunicaciones de la Universidad Católica"
+                    "Publicada por Ediciones Nueva Universidad (imprenta Talleres Alfabeta)",
+                    "Vinculada a la Vicerrectoría de Comunicaciones de la Universidad Católica",
+                    "Reúne poemas de numerosos autores jóvenes de la época"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-9421.html", nota: "MC0031016 (PDF)" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-9421.html", nota: "Digitalizado en Memoria Chilena (código MC0031016)" }
+                ]
+            },
+            {
+                titulo: "Concurso Nacional de Poesía Joven 'Residencia en la Tierra'",
+                años: "1980",
+                numeros: "Antología del concurso (45 páginas)",
+                detalles: [
+                    "Homenaje a Pablo Neruda, organizado en 1978",
+                    "Tres categorías: laboral, estudiantil, profesional",
+                    "Ganadores: Raúl Fernando Reyes, Esteban Navarro, José María Memet",
+                    "Sello: La Unión (autoedición UEJ)"
+                ],
+                personas: [
+                    { nombre: "Raúl Fernando Reyes", rol: "Ganador categoría laboral" },
+                    { nombre: "Esteban Navarro", rol: "Ganador categoría estudiantil" },
+                    { nombre: "José María Memet", rol: "Ganador categoría profesional" }
+                ],
+                existencias: [
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3658.html", nota: "Registrado en catálogo (no digitalizado)" },
+                    { lugar: "Biblioteca del Congreso Nacional", tiene: true, link: null, nota: "Ejemplar físico" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Revistas de talleres, colectivos, asociaciones y grupos", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Poesía para el camino: antología", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-9421.html" },
-            { autor: "Letras de Chile", año: "2008", titulo: "La práctica del cuento en Chile", medio: "Letras de Chile", link: "https://letrasdechile.cl/2008/10/31/la-practica-del-cuento-en-chile/" },
-            { autor: "Letras de Chile", año: "2013", titulo: "Afuera, la nieve: la leyenda de la UEJ", medio: "Letras de Chile", link: "https://letrasdechile.cl/2013/12/27/afuera-la-nieve-la-leyenda-de-la-uej/" }
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "Unión de Escritores Jóvenes (Chile)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-92293.html" },
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "Poesía para el camino: antología", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-9421.html" },
+            { autor: "Trujillo, C.", año: "2007", titulo: "Poesía en los tiempos malos", medio: "Blog Notas sobre poesía chilena", link: "http://trujilloampuero.blogspot.com/2007/03/poesa-en-los-tiempos-malos.html" },
+            { autor: "Muñoz Valenzuela, D.", año: "2006", titulo: "Escritores en dictadura", medio: "Blog personal", link: "http://diegomunozvalenzuela.blogspot.com/2006/10/escritores-en-dictadura.html" }
         ]
     },
-    fundadores: [
+    {
+        nombre: "Agrupación Cultural Santa Marta",
+        coords: [-33.4620, -70.6420],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "1977–1982",
+        tipo: "taller",
+        historia: {
+            origen: "Fundada en mayo de 1977 como espacio de resistencia cultural para la juventud. Bautizada en honor a la Parroquia Santa Marta de Santiago, donde fundadores participaban en un coro dirigido por Vicente Bianchi antes del golpe.",
+            contexto: "Se articuló en torno a talleres de teatro, música, literatura y folclore. Director: Raúl Fernández. Integrantes destacados: Mauricio Electorat, Cristián Warnken, Dióscoro Rojas. Formó parte del Frente Cultural opositor y el Coordinador Cultural.",
+            desarrollos: "Organizó peñas folclóricas, recitales de Canto Nuevo (Eduardo Peralta, Osvaldo Rodríguez, Schwenke & Nilo). Vinculada al grupo de teatro La Falacia. En 1979 produjo un disco EP con Roberto Parra y Catalina Rojas (sello EMI).",
+            continuidad: "CENECA realizó un 'Diagnóstico evaluativo' en 1982 (Paula Edwards). En 1990 se registró la Corporación Cultural Santa Marta, que organizó 'El canto de Chile en Santa Marta'. Para mediados de los '90 dejó de funcionar."
+        },
+        fundadores: [
             { nombre: "Raúl Fernández", rol: "Director" }
         ],
         integrantes: [
@@ -2039,46 +2069,59 @@ const talleres = [
         coords: [-33.4415, -70.6405],
         zona: "Región Metropolitana (Santiago, Universidad de Chile)",
         region: "metropolitana",
-        años: "1977–1982",
-        tipo: "movimiento",
-        verificado: true,
+        años: "1977–1983",
+        tipo: "taller",
         historia: {
-            origen: "Entre fines de la década de 1970 e inicios de 1980 surgió la ACU, a partir de la Agrupación Folclórica Universitaria (AFU) (Memoria Chilena, MC3497). Funcionó entre 1977 y 1982 (Archivo Nacional, 2016).",
-            contexto: "Según Memoria Chilena: 'En la Agrupación Cultural Universitaria nacieron no sólo expresiones culturales propias del mundo universitario, sino que [...] se iniciaron en sus concursos y ramas literarias numerosos nombres que, más tarde, entregarían su aporte particular a la prosa y la poesía nacional, como Rodrigo Lira, Armando Rubio, Gregory Cohen y Ramón Díaz-Etérovic' (MC3497).",
-            desarrollos: "La ACU publicó La Ciruela, 'una de las publicaciones estudiantiles más importantes de la época' (MC3497). La rama literaria organizó concursos y talleres en diversos campus de la U. de Chile.",
-            continuidad: "La Ley General de Universidades de 1981 marcó el inicio de su declive. El archivo de la ACU fue donado a la FECH en 2015 (Radio Universidad de Chile, 2015)."
+            origen: "Rama literaria dentro de la Agrupación Cultural Universitaria (ACU), surgida a fines de los '70 como respuesta a la represión cultural en las universidades. La ACU evolucionó desde la Agrupación Folclórica Universitaria (AFU).",
+            contexto: "La ACU reactivó la vida cultural en los campus bajo dictadura. En 1978 contaba con más de 70 talleres artístico-culturales. Se organizaba en cuatro ramas: Literaria, Música, Plástica y Teatro.",
+            desarrollos: "La rama literaria llegó a reunir más de 40 talleres universitarios (según Díaz-Eterovic). En 1978 organizó el Concurso 'Palabras para el Hombre'. Talleres con nombres como 'Oruga' y 'Oreja' en Filosofía. Publicó las revistas La Ciruela (1979-1982) y El Pasquín (1979-1983).",
+            continuidad: "La Ley de Universidades de 1981 y el auge de protestas provocaron el declive de la ACU. Hacia 1983 dejó de funcionar. En 1985, Roberto Brodsky escribió 'La ACU ha muerto, ¡que viva la ACU!'."
         },
         fundadores: [],
         integrantes: [
-            { nombre: "Rodrigo Lira", rol: "Poeta (MC3497)" },
-            { nombre: "Armando Rubio", rol: "Poeta (MC3497)" },
-            { nombre: "Gregory Cohen", rol: "Poeta (MC3497)" },
-            { nombre: "Ramón Díaz Eterovic", rol: "Narrador (MC3497; El Mostrador)" },
-            { nombre: "Diego Muñoz Valenzuela", rol: "Narrador (El Mostrador)" },
-            { nombre: "Pía Barros", rol: "Narradora (El Mostrador)" }
+            { nombre: "Rodrigo Lira", rol: "Poeta" },
+            { nombre: "Armando Rubio", rol: "Poeta" },
+            { nombre: "Gregory Cohen", rol: "Poeta" },
+            { nombre: "Ramón Díaz-Eterovic", rol: "Escritor" },
+            { nombre: "Roberto Brodsky", rol: "Escritor" }
         ],
         publicaciones: [
             {
                 titulo: "La Ciruela",
-                años: "1978–1982",
-                numeros: "Revista oficial de la ACU",
+                años: "1979–1982",
+                numeros: "Revista oficial de la ACU (varios números)",
                 detalles: [
-                    "Lema: 'La ciruela florece siempre antes de la primavera'",
+                    "Primer número: agosto 1979",
+                    "Lema: 'La ciruela florece siempre antes que la primavera'",
                     "Formato periodístico-cultural con humor y sátira",
-                    "Órgano oficial de la Agrupación Cultural Universitaria"
+                    "Ejemplares conservados: Nº 1, 5, 7½, 9, 10"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Archivo FECH", tiene: true, link: null, nota: "Donación 2015" },
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3497.html", nota: "Referencias en minisitio ACU" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-92002.html", nota: "Varios números digitalizados en Memoria Chilena" }
+                ]
+            },
+            {
+                titulo: "El Pasquín",
+                años: "1979–1983",
+                numeros: "Periódico estudiantil satírico",
+                detalles: [
+                    "Surgió de estudiantes de Economía (U. de Chile)",
+                    "Distribución clandestina y anónima",
+                    "Ejemplares conservados: Año 2 Nº 6, 8; Año 3 Nº 9, 10, 'entre 10 y 12'; Año 4 Nº 12, 13"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-92002.html", nota: "Ejemplares 1981-1983 digitalizados" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Agrupación Cultural Universitaria (ACU)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3497.html" },
-            { autor: "Archivo Nacional", año: "2016", titulo: "Documental: Agrupación Cultural Universitaria (ACU)", medio: "Archivo Nacional de Chile", link: "https://www.archivonacional.gob.cl/616/w3-article-72338.html" },
-            { autor: "Radio Universidad de Chile", año: "2015", titulo: "Estudiar y vivir en dictadura: la historia de la Agrupación Cultural Universitaria", medio: "Radio UChile", link: "https://radio.uchile.cl/2015/06/01/estudiar-y-vivir-en-dictadura-la-historia-de-la-agrupacion-cultural-universitaria/" },
-            { autor: "El Mostrador", año: "2006", titulo: "ACU: El arte de resistir en dictadura con música, poesía y obras de teatro", medio: "El Mostrador", link: "https://www.elmostrador.cl/cultura/2006/08/28/acu-el-arte-de-resistir-en-dictadura-con-musica-poesia-y-obras-de-teatro/" }
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Agrupación Cultural Universitaria (ACU)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-3497.html" },
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Publicaciones estudiantiles (minisitio ACU)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-92002.html" },
+            { autor: "CEDOC MMDH", año: "2017", titulo: "Usted preguntará por qué cantamos", medio: "Museo de la Memoria", link: "https://cedocmuseodelamemoria.cl/wp-content/uploads/2017/08/Usted-preguntara%CC%81-por-que%CC%81-cantamos1.pdf" },
+            { autor: "Trujillo, C.", año: "2007", titulo: "Poesía en los tiempos malos", medio: "Blog Notas sobre poesía chilena", link: "http://trujilloampuero.blogspot.com/2007/03/poesa-en-los-tiempos-malos.html" },
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "LibrACU (1997)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-72613.html" }
         ]
     },
     {
@@ -2086,54 +2129,63 @@ const talleres = [
         coords: [-33.4530, -70.6470],
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
-        años: "1976/1977–presente",
+        años: "1977–1990",
         tipo: "taller",
-        verificado: true,
         historia: {
-            origen: "'El Colectivo Ergo Sum, fundado en 1977 por la escritora y activista chilena Pía Barros, evolucionó desde un taller de escritura creativa clandestina para las aspirantes a escritoras, a un experimento político-literario polifacético' (Editorial Asterión, s.f.). Letras de Chile indica 1976 como año de inicio.",
-            contexto: "Taller feminista y contestatario. Según The Free Library: 'The assemblage of writers and graphic artists who produced these subversive publications in workshops—known as the Ergo Sum group—generated Chile's first feminist political and literary collective'. En 1985 se abrió Ediciones Ergo Sum.",
-            desarrollos: "Publicaciones artesanales llamadas 'Libro-objeto', diseñadas para sortear censura. Memoria Chilena registra Los círculos (1988) publicado por Ergo Sum (MC7684). Publicó antologías como Miedos transitorios (1985), Ensacados (1987), Machismo se escribe con M de Mamá (1989).",
-            continuidad: "Pía Barros 'dirige los talleres literarios Ergo Sum desde 1976' y es 'directora de Ediciones Asterión' (Letras de Chile). El colectivo sigue activo."
+            origen: "Fundado en 1977 por la escritora Pía Barros como colectivo literario clandestino, integrado mayoritariamente por mujeres. En 1985 se creó la editorial Ediciones Ergo Sum (ilegal y autogestionada) para publicar trabajos de los participantes.",
+            contexto: "Taller feminista y contestatario, espacio de creación y resistencia cultural durante la dictadura. Publicaciones caracterizadas por confección artesanal y formato de 'libros-objeto' (caja de cuentos, hojas sueltas, postales) para sortear la censura.",
+            desarrollos: "Tirajes reducidos (~500 ejemplares), distribuidos en protestas callejeras y círculos alternativos. Produjo antologías colectivas: Ergo Sum: Cuentos (1985), Ensacados (1987), 25 cuentos (1988), Microcuentos por un zapato roto (1989), Machismo se escribe con 'M' de Mamá (1989).",
+            continuidad: "En 1991 se fundó Editorial Asterión, legalizando el proyecto. Barros sigue dirigiendo talleres Ergo Sum hasta hoy."
         },
         fundadores: [
-            { nombre: "Pía Barros", rol: "Fundadora y directora (Editorial Asterión; Letras de Chile)" }
+            { nombre: "Pía Barros", rol: "Fundadora y directora" }
         ],
         integrantes: [
-            { nombre: "Jorge Montealegre", rol: "Poeta, esposo de Pía Barros" },
-            { nombre: "Pedro Lemebel", rol: "Autor de 'Los incontables' (1986)" },
+            { nombre: "Pedro Lemebel (Pedro Mardones)", rol: "Autor de 'Los incontables' (1986)" },
             { nombre: "Ana María del Río", rol: "Cuentista" },
             { nombre: "Teresa Calderón", rol: "Poeta" },
+            { nombre: "Jorge Montealegre", rol: "Poeta" },
             { nombre: "Alejandra Basualto", rol: "Cuentista" },
-            { nombre: "Sonia González", rol: "Cuentista" }
+            { nombre: "Sonia González", rol: "Cuentista" },
+            { nombre: "Carmen Basañez", rol: "Cuentista" }
         ],
         publicaciones: [
             {
-                titulo: "Miedos transitorios (de a uno, de a dos, de a todos)",
+                titulo: "Ergo Sum: Cuentos",
                 años: "1985",
-                numeros: "Cuentos (Ediciones Ergo Sum)",
-                detalles: ["Primera publicación de Pía Barros bajo el sello Ergo Sum", "Edición bilingüe inglés-español en 1993"],
-                personas: [{ nombre: "Pía Barros", rol: "Autora" }],
+                numeros: "Primera antología (13 cuadernillos en caja)",
+                detalles: [
+                    "13 folletos sueltos, cada uno con un cuento ilustrado",
+                    "13 autores: Barros, del Río, Mardones Lemebel, Calderón, Montealegre, etc."
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "WorldCat", tiene: true, link: "https://search.worldcat.org/title/Ergo-sum-:-cuentos/oclc/38670549", nota: "OCLC 38670549" }
+                ]
+            },
+            {
+                titulo: "Los incontables (Pedro Lemebel)",
+                años: "1986",
+                numeros: "Libro-objeto (7 relatos)",
+                detalles: ["Primera obra de Lemebel (firmada como Mardones)", "Último libro antes de adoptar apellido materno"],
+                personas: [{ nombre: "Pedro Lemebel", rol: "Autor" }],
                 existencias: []
             },
             {
-                titulo: "Cuentos: Taller Soffia '84",
-                años: "1984",
-                numeros: "Antología (Ed. Arcilla)",
-                detalles: ["Incluye 'Puertas' de Pía Barros", "Taller Soffia fue precursor de Ergo Sum"],
+                titulo: "Ensacados",
+                años: "1987",
+                numeros: "Antología (26 cuentos ilustrados)",
+                detalles: ["Cuentos en hojas sueltas 'ensacados' dentro de bolsa/sobre"],
                 personas: [],
-                existencias: [
-                    { lugar: "Letras de Chile", tiene: true, link: "https://letrasdechile.cl/2008/08/19/pia-barros/", nota: "Referencia bibliográfica" }
-                ]
+                existencias: []
             },
             {
-                titulo: "Los círculos",
+                titulo: "25 cuentos / Cuentos a la bolsa",
                 años: "1988",
-                numeros: "Poemario (123 p.)",
-                detalles: ["Publicado por Ergo Sum"],
+                numeros: "Antología (25 cuentos)",
+                detalles: ["Distribuida dentro de bolsa de papel"],
                 personas: [],
-                existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-7684.html", nota: "MC7684: Poesía escrita por mujeres en los 80" }
-                ]
+                existencias: []
             },
             {
                 titulo: "Machismo se escribe con 'M' de Mamá",
@@ -2141,20 +2193,42 @@ const talleres = [
                 numeros: "Antología feminista (29 cuentos ilustrados)",
                 detalles: [
                     "Temática abiertamente feminista",
+                    "Autoras: Luz María Soto, Carolina Catalán, Luisa Díaz, etc.",
+                    "Ilustradores: Hernán Venegas, Waldo Gómez, Luis Albornoz",
                     "Reseñada en El Mercurio, 5 dic. 1989"
                 ],
                 personas: [],
                 existencias: [
+                    { lugar: "Editorial Asterión", tiene: true, link: null, nota: "Ejemplar conservado" },
                     { lugar: "Biblioteca Nacional Digital", tiene: true, link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-182281.html", nota: "Artículo de prensa" }
+                ]
+            },
+            {
+                titulo: "Microcuentos por un zapato roto",
+                años: "1989",
+                numeros: "Antología de microrrelatos",
+                detalles: ["Caja portátil con microcuentos impresos", "Participantes de sub-talleres Kafka, Cronopios, Arcanos, La Maga"],
+                personas: [],
+                existencias: [
+                    { lugar: "Colección Pedro Montes", tiene: true, link: null, nota: "Ejemplar conservado" }
+                ]
+            },
+            {
+                titulo: "Microcuentos (bus TranSantiago)",
+                años: "1990",
+                numeros: "Antología (32 participantes)",
+                detalles: ["Libro-objeto diseñado como autobús de transporte público", "Editado por Mosquito Comunicaciones"],
+                personas: [],
+                existencias: [
+                    { lugar: "Colección Pedro Montes", tiene: true, link: null, nota: "Ejemplar conservado" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Editorial Asterión", año: "s.f.", titulo: "Colectivo Ergo-Sum", medio: "Página institucional", link: "https://editorialasterion.wixsite.com/chile/ergo-sum" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Poesía escrita por mujeres en la década de 1980", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-7684.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Revistas de talleres, colectivos, asociaciones y grupos", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" },
-            { autor: "Letras de Chile", año: "2008", titulo: "Pía Barros", medio: "Letras de Chile", link: "https://letrasdechile.cl/2008/08/19/pia-barros/" },
-            { autor: "The Free Library", año: "2014", titulo: "Refashioning the book in Pinochet's Chile: the feminist literary project, Ergo Sum", medio: "The Free Library", link: "https://www.thefreelibrary.com/Refashioning+the+book+in+Pinochet's+Chile:+the+feminist+literary...-a0354659085" }
+            { autor: "Editorial Asterión", año: "2017", titulo: "Colectivo Ergo-Sum", medio: "Página institucional", link: "https://editorialasterion.wixsite.com/chile/ergo-sum" },
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "Pía Barros", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-96697.html" },
+            { autor: "Misivas en Colectivo", año: "2025", titulo: "Entre letras y resistencia: El caso de Ediciones Ergo Sum", medio: "MisivasEnColectivo.cl", link: "https://www.misivasencolectivo.cl/2025/01/13/entre-lineas-y-resistencia-el-caso-de-ediciones-ergo-sum/" },
+            { autor: "Roche Rodríguez, M.", año: "2023", titulo: "El ejercicio de la libertad a través de los talleres literarios", medio: "Literal Magazine", link: "https://literalmagazine.com/el-ejercicio-de-la-libertad-a-traves-de-los-talleres-literarios/" }
         ]
     },
     {
@@ -2266,14 +2340,14 @@ const talleres = [
         coords: [-18.4783, -70.3126],
         zona: "Arica y Parinacota (Arica)",
         region: "norte-grande",
-        años: "1982–1985",
+        años: "1983–1985",
         tipo: "taller",
         verificado: true,
         historia: {
-            origen: "Colectivo literario independiente fundado en 1982 por el poeta Carlos Amador Marchant (Iquique, 1955). Marchant inició actividades literarias en Arica en 1972 al alero de la revista Tebaida (dirigida por Alicia Galaz) y en 1974 fundó el grupo Disinencia en la Universidad Técnica del Estado. Objetivo de Extramuros: abrir espacio de difusión para voces emergentes del norte chileno.",
-            contexto: "La revista se autodenominó 'Revista internacional de Poesía – Puerta Norte de Chile'. Estableció vínculos con movimientos literarios de América Latina, Europa y EE.UU. En 1982, Marchant se crucificó en la playa El Chinchorro de Arica para protestar por la persecución a escritores durante la dictadura, hecho que llamó la atención de la prensa mundial. Conducía además el programa radial 'Rincón' de difusión cultural.",
-            desarrollos: "Publicó 10 números entre 1982-1985. Primera entrega evolucionó a 'verdadera revista literaria' con más páginas, mejor presentación y narrativa breve. Financiamiento autogestionado con auspiciadores locales.",
-            continuidad: "Concluyó en 1985 con la partida de Marchant hacia el sur. En 1989 fundó la revista El Ojo en Arica. Desde 1995 reside en Valparaíso, donde fue presidente de la SECH (2003-2007). Revivió Extramuros en formato digital en la década de 2000."
+            origen: "Colectivo literario independiente fundado en 1983 por el poeta Carlos Amador Marchant (de Iquique, radicado en Arica). Objetivo: abrir espacio de difusión para voces emergentes del norte chileno.",
+            contexto: "La revista se autodenominó 'Revista internacional de Poesía – Puerta Norte de Chile'. Estableció vínculos con movimientos literarios de América Latina, Europa y EE.UU. Llenó un 'vacío muy importante' en la actividad cultural-literaria regional.",
+            desarrollos: "Publicó 10 números entre 1983-1985. Primera entrega (1983) evolucionó a 'verdadera revista literaria' con más páginas, mejor presentación y narrativa breve. Financiamiento autogestionado con auspiciadores locales.",
+            continuidad: "Concluyó en 1985 con la partida de Marchant hacia el sur. Marchant impulsó revista El Ojo (1989) y revivió Extramuros en formato digital en la década de 2000."
         },
         fundadores: [
             { nombre: "Carlos Amador Marchant", rol: "Fundador y director" }
@@ -2284,37 +2358,33 @@ const talleres = [
             { nombre: "Florencio Faúndez Saavedra", rol: "Coordinador" },
             { nombre: "Mayo Muñoz", rol: "Diseño gráfico" },
             { nombre: "José Martínez Fernández", rol: "Colaborador" },
-            { nombre: "Guillermo Ross-Murray", rol: "Colaborador (Iquique, 1944). Poeta, dramaturgo e historiador; Andrés Sabella lo consideraba 'el de más armas líricas' entre los poetas del norte" },
+            { nombre: "Guillermo Ross-Murray", rol: "Colaborador (Iquique)" },
             { nombre: "Marta Milesi", rol: "Colaboradora (Argentina)" }
         ],
         publicaciones: [
             {
                 titulo: "Extramuros: revista internacional de poesía",
-                años: "1982–1985",
+                años: "1983–1985",
                 numeros: "Revista (10 números)",
                 detalles: [
-                    "Nº 1 (1982) – No localizado en catálogos públicos",
+                    "Nº 1 (1983) – No localizado en catálogos públicos",
                     "Nº 2 (marzo 1983) – Conservado BNC",
                     "Nº 4 (noviembre 1983) – Conservado BNC",
-                    "Nº 5 (abril 1984) – Conservado BNC",
                     "Nº 7 (marzo-abril 1985) – Conservado BNC",
                     "Nº 8, 9, 10 (1985) – No localizados en catálogos"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena - Nº 2, marzo 1983", tiene: true, link: "http://www.memoriachilena.gob.cl/602/w3-article-121655.html", nota: "Digitalizado" },
-                    { lugar: "Memoria Chilena - Nº 4, noviembre 1983", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121659.html", nota: "Digitalizado" },
-                    { lugar: "Memoria Chilena - Nº 5, abril 1984", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121657.html", nota: "Digitalizado" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-147129.html", nota: "Nº 2-7 digitalizados en Memoria Chilena" },
+                    { lugar: "Memoria Chilena PDF", tiene: true, link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0005339.pdf", nota: "Ejemplar digitalizado" }
                 ]
             }
         ],
         fuentes: [
             { autor: "Eloy, H.", año: "2000", titulo: "Revistas y publicaciones literarias durante la dictadura (1973-1990)", medio: "Revista Simpson 7", link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0063468.pdf" },
             { autor: "La Estrella de Arica", año: "1983", titulo: "Apareció revista de poesía Extramuros", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-287740.html" },
-            { autor: "El Mercurio de Valparaíso", año: "2001", titulo: "El poeta que vino del silencio", medio: "Biblioteca Nacional Digital", link: "http://www.bibliotecanacionaldigital.cl/bnd/628/w3-article-272899.html" },
-            { autor: "Marchant, C. A.", año: "2015", titulo: "Archivos de crucifixión del año 1982", medio: "Blog personal", link: "http://carlosamadormarchant2.blogspot.cl/2015/02/archivos-de-crucifixion-del-ano-1982_15.html" },
-            { autor: "Graña Sarmiento, C.", año: "2022", titulo: "Guillermo Ross-Murray Lay-Kim", medio: "Edición Cero", link: "https://edicioncero.cl/2022/12/guillermo-ross-murray-lay-kim/" },
-            { autor: "Salgado Roa, C.", año: "2016", titulo: "Guillermo Ross-Murray y la poesía de la memoria del Norte de Chile", medio: "Academia.edu", link: "http://www.academia.edu/24414235/Guillermo_Ross-Murray_y_la_poesía_de_la_memoria_del_Norte_de_Chile" }
+            { autor: "La Estrella de Arica", año: "1984", titulo: "Extramuros se convirtió en una gran revista literaria", medio: "Biblioteca Nacional Digital", link: null },
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "Extramuros: revista internacional de poesía", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-147129.html" }
         ]
     },
     {
@@ -2472,17 +2542,17 @@ const talleres = [
         coords: [-23.6480, -70.3950],
         zona: "Antofagasta",
         region: "norte-grande",
-        años: "1983–1990",
+        años: "1983–1990 (+ posteriores)",
         tipo: "revista",
         verificado: true,
         historia: {
-            origen: "Revista internacional de poesía fundada en Antofagasta en 1983. Impresa en la Universidad del Norte. Vinculada a la poeta Alejandra Zarhi, identificada en prensa como 'poetisa del desierto antofagastino' (Mardones Barrientos, 1990).",
-            contexto: "Publicación de poesía chilena e hispanoamericana. Numeración por 'Años' desde 'Año 0' en 1983. Varios números digitalizados en Memoria Chilena.",
-            desarrollos: "Publicó al menos: Año 0 Nº 1 (1983), Año 1 Nº 7 (agosto 1984), Año 4 Nº 2 (agosto 1987), y un número especial en diciembre 1990.",
-            continuidad: "Parte del movimiento de revistas literarias independientes durante la dictadura, junto a Pobresía, Lapislázuli, Contramuro y otras (Memoria Chilena)."
+            origen: "Revista literaria internacional de poesía fundada en Antofagasta en 1983 por la poeta y periodista Alejandra Zarhi García. Publicación sin fines de lucro, sostenida con colaboración de poetas locales e internacionales.",
+            contexto: "Carácter internacional y plural, difundiendo poesía chilena e hispanoamericana. Apoyo logístico de la Universidad del Norte para impresión. Suscripción: $2.500 anuales en Chile, US$10 extranjero.",
+            desarrollos: "Numeración por 'Años' (desde 'Año 0' en 1983). Periodicidad irregular. En 1988 publicó edición homenaje póstumo a Braulio Arenas (Premio Nacional 1984). Número especial antológico en diciembre 1990.",
+            continuidad: "Zarhi continuó con concursos literarios en los '90 y en 2001 inició Colección Imágenes de Océanos para publicar libros. En 2011 celebró 30º aniversario en SECH Santiago."
         },
         fundadores: [
-            { nombre: "Alejandra Zarhi", rol: "Directora (referencia en prensa, 1990)" }
+            { nombre: "Alejandra Zarhi García", rol: "Fundadora, editora y directora" }
         ],
         integrantes: [],
         publicaciones: [
@@ -2491,24 +2561,27 @@ const talleres = [
                 años: "1983–1990",
                 numeros: "Revista internacional de poesía",
                 detalles: [
-                    "Año 0, Nº 1 (1983) - MC0005344",
-                    "Año 1, Nº 7 (agosto 1984) - MC0005346",
+                    "Año 0, Nº 1 (1983) - Primer número",
+                    "Año 1, Nº 7 (agosto 1984)",
+                    "Año 3, Nº 3 (noviembre 1986)",
                     "Año 4, Nº 2 (agosto 1987)",
-                    "Nº especial (diciembre 1990) - MC0005350"
+                    "Año 5, Nº 2 (1988) - Homenaje a Braulio Arenas",
+                    "Año VII (1990) + Nº Especial diciembre 1990",
+                    "Años 1985 y 1989 sin registros en catálogos"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena - Año 0 Nº 1, 1983", tiene: true, link: "http://www.memoriachilena.gob.cl/602/w3-article-99257.html", nota: "Digitalizado (MC0005344)" },
-                    { lugar: "Memoria Chilena - Año 1 Nº 7, agosto 1984", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99258.html", nota: "Digitalizado (MC0005346)" },
-                    { lugar: "Memoria Chilena - Año 4 Nº 2, agosto 1987", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99260.html", nota: "Digitalizado" },
-                    { lugar: "Memoria Chilena - Nº especial, dic 1990", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99261.html", nota: "Digitalizado (MC0005350)" }
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99257.html", nota: "Año 0 Nº 1, 1983 (MC0005344)" },
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99258.html", nota: "Año 1 Nº 7, agosto 1984" },
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99265.html", nota: "Año 5 Nº 2, 1988 (homenaje Arenas)" },
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99264.html", nota: "Año VII, 1990" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Biblioteca Nacional de Chile", año: "s.f.", titulo: "Imágenes de océanos: año 0, n° 1, Antofagasta 1983", medio: "Memoria Chilena", link: "http://www.memoriachilena.gob.cl/602/w3-article-99257.html" },
-            { autor: "Biblioteca Nacional de Chile", año: "s.f.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" },
-            { autor: "Mardones Barrientos, P.", año: "1990", titulo: "Alejandra Zarhi, poetisa del desierto antofagastino", medio: "Prensa (Biblioteca Nacional Digital)", link: "https://www.chilepatrimonios.gob.cl/ficha?doi=03BND-RC0044990" }
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "Imágenes de océanos (varios números)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-147129.html" },
+            { autor: "EcuRed", año: "n.d.", titulo: "Alejandra Zarhi García", medio: "Enciclopedia Colaborativa Cubana", link: "https://www.ecured.cu/Alejandra_Zarhi_Garcia" },
+            { autor: "Biblioteca Nacional Digital", año: "1984", titulo: "Imágenes de océanos (artículo)", medio: "Prensa de Santiago", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-597906.html" }
         ]
     },
 
@@ -2518,31 +2591,18 @@ const talleres = [
         coords: [-29.9045, -71.2489],
         zona: "Coquimbo (La Serena)",
         region: "norte-chico",
-        años: "Fundado 1983–presente",
+        años: "Fundado 1983–s.f.",
         tipo: "taller",
-        verificado: true,
-        historia: {
-            origen: "Fundado en 1983 en La Serena. La sede funcionó en la casa de Maruja Foster, calle Manuel Rodríguez, barrio Santa Lucía. Foster, artista plástica y académica de la UTE, abrió su hogar como espacio de resistencia cultural (Volantines, 2020).",
-            contexto: "En contexto de dictadura, el taller reunió a poetas y artistas que buscaban espacios de expresión alternativos. Foster, cuyos hijos estaban exiliados en Venezuela, 'fue faro en un momento de peligro, de diáspora, de falta de diálogo' (Volantines, 2020).",
-            desarrollos: "Volantines describe: 'Era cultísima. Su casa olía a trementina. En su caballete siempre había una idea. Su preferencia estaba en el muralismo y en el arte abstracto'. Foster realizó murales en calle Infante de La Serena.",
-            continuidad: "El taller dio origen a un movimiento literario regional. Varios integrantes participaron posteriormente en el Colectivo de Guayacán y en la fundación de la SECH Coquimbo (1986)."
-        },
+        historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [
-            { nombre: "Arturo Volantines", rol: "Cofundador, poeta" },
-            { nombre: "Maruja Foster", rol: "Cofundadora, artista plástica, sede en su casa" },
-            { nombre: "Ricardo Rozas", rol: "Cofundador" },
-            { nombre: "Patricio Rodríguez", rol: "Cofundador" }
-        ],
-        integrantes: [
-            { nombre: "Viviana Benz", rol: "Integrante, poeta" }
+            { nombre: "Arturo Volantines", rol: "Fundador" },
+            { nombre: "Manuel Cabrera", rol: "Fundador" }
         ],
         publicaciones: [
-            { titulo: "Lapislázuli", años: "desde 1983", numeros: "Revista del taller", detalles: ["Publicación artesanal del grupo"], personas: [], existencias: [] },
+            { titulo: "Lapislázuli", años: "desde 1983", numeros: "Revista", detalles: [], personas: [], existencias: [] },
             { titulo: "La Pilar", años: "1983", numeros: "Publicación", detalles: [], personas: [], existencias: [] }
         ],
-        fuentes: [
-            { autor: "Volantines, A.", año: "2020", titulo: "Maruja Foster y la fundación del Taller Lapislázuli", medio: "Proyecto Patrimonio", link: "http://letras.mysite.com/avol120620.html" }
-        ]
+        fuentes: []
     },
     {
         nombre: "La Servilleta de la Poesía",
@@ -2565,7 +2625,6 @@ const talleres = [
         region: "norte-chico",
         años: "1983–1986",
         tipo: "taller",
-        verificado: true,
         historia: {
             origen: "Grupo literario formado hacia 1983-1984 en Coquimbo. Surgió en reuniones informales en el café Tito's de La Serena y la librería El Arco de los Libros. Vocación democrática y de compromiso social.",
             contexto: "Participaban en actos culturales universitarios, peñas y encuentros solidarios donde se reflexionaba sobre la recuperación democrática. Parte de la red de talleres literarios de resistencia de la época.",
@@ -2574,14 +2633,14 @@ const talleres = [
         },
         fundadores: [
             { nombre: "Arturo Volantines", rol: "Cofundador" },
-            { nombre: "Luis Aguilera", rol: "Cofundador" },
-            { nombre: "Elba Elena Jiménez Saldaña", rol: "Cofundadora, poeta y profesora de literatura" }
+            { nombre: "Luis Aguilera", rol: "Cofundador" }
         ],
         integrantes: [
             { nombre: "Yair Carvajal", rol: "Integrante" },
             { nombre: "Eugenia Henríquez", rol: "Integrante" },
+            { nombre: "Elba Jiménez", rol: "Integrante" },
             { nombre: "Samuel Núñez", rol: "Integrante (director revista Añañuca)" },
-            { nombre: "Viviana Benz", rol: "Integrante, poeta" }
+            { nombre: "Viviana Benz", rol: "Integrante" }
         ],
         nota: "La Servilleta de la Poesía no aparece en catálogos públicos. Solo referencias testimoniales. Publicación efímera de rescate complicado.",
         publicaciones: [
@@ -2601,8 +2660,7 @@ const talleres = [
         fuentes: [
             { autor: "Eloy, H.", año: "2006", titulo: "Revistas y publicaciones literarias durante la dictadura (1973-1990)", medio: "Carajo Nº 8 / Memoria Chilena", link: null },
             { autor: "Volantines, A.", año: "2002", titulo: "Antología de la poesía del Valle de Elqui, Tomo I", medio: "Ediciones Universitarias UCN", link: null },
-            { autor: "Letralia", año: "n.d.", titulo: "Arturo Volantines - semblanza biográfica", medio: "Letralia, Tierra de Letras", link: "https://letralia.com/firmas/volantinesarturo.htm" },
-            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" }
+            { autor: "Letralia", año: "n.d.", titulo: "Arturo Volantines - semblanza biográfica", medio: "Letralia, Tierra de Letras", link: "https://letralia.com/firmas/volantinesarturo.htm" }
         ]
     },
     {
@@ -2649,30 +2707,6 @@ const talleres = [
             { autor: "El Día (La Serena)", año: "1998", titulo: "Hace trece años, nació la revista Añañuca", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0030445.pdf" },
             { autor: "El Día (La Serena)", año: "1993", titulo: "Poeta Samuel Núñez presenta su primer libro", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0039025.pdf" },
             { autor: "Rojas Pachas, D.", año: "2008", titulo: "El burro del diablo. Arqueo de la poesía contemporánea de la IV Región", medio: "Revista Cinosargo Nº 5", link: "http://letras.mysite.com/av200908.html" }
-        ]
-    },
-    {
-        nombre: "Movimiento Estudiantil G-80 Coquimbo",
-        coords: [-29.9650, -71.3400],
-        zona: "Coquimbo (La Serena / Universidad de La Serena)",
-        region: "norte-chico",
-        años: "ca. 1980–1990",
-        tipo: "movimiento",
-        verificado: true,
-        historia: {
-            origen: "Movimiento estudiantil de la Universidad de La Serena surgido en los años 80. Combinó organización política con resistencia cultural durante la dictadura (Ossa Aravena, 2019).",
-            contexto: "Integrantes de distintas juventudes políticas que conformaron las primeras federaciones estudiantiles y lucharon por el retorno de la democracia.",
-            desarrollos: "Realizaron acciones culturales, manifestaciones y organización estudiantil. Participaron en la red de resistencia cultural universitaria de la época.",
-            continuidad: "Actualmente existe la agrupación G-80, que 'congrega a los ex estudiantes de la Universidad de La Serena, quienes en su calidad de dirigentes estudiantiles realizaron distintas acciones para el retorno de la democracia' (Diario El Día, 2019). En 2019 participaron en la creación de la Biblioteca de la Memoria en la Casa de la Memoria de La Serena."
-        },
-        fundadores: [],
-        integrantes: [
-            { nombre: "Erika Rojas", rol: "Dirigenta estudiantil, activista cultural" }
-        ],
-        publicaciones: [],
-        fuentes: [
-            { autor: "Ossa Aravena, P.", año: "2019", titulo: "Resistencia cultural en la dictadura militar chilena (1973-1990)", medio: "Museo de la Memoria y los Derechos Humanos", link: "https://cedocmuseodelamemoria.cl/wp-content/uploads/2020/09/Resistencia-cultural.-versi%C3%B3n-final.pdf" },
-            { autor: "Diario El Día", año: "2019", titulo: "Biblioteca de Memoria reúne libros testimoniales de los años de dictadura", medio: "Diario El Día (La Serena)", link: "http://www.diarioeldia.cl/region/biblioteca-memoria-reune-libros-testimoniales-anos-dictadura" }
         ]
     },
     {
@@ -3966,8 +4000,7 @@ const poetas = [
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "El primer libro (MC98207)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98207.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Poetas chilenos de la década de 1980 (MC3658)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3658.html" },
-            { autor: "John Simon Guggenheim Memorial Foundation", año: "2006", titulo: "Fellows: Soledad Fariña", medio: "Guggenheim Foundation", link: "https://www.gf.org/fellows" }
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Poetas chilenos de la década de 1980 (MC3658)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3658.html" }
         ],
         verificado: true
     },
@@ -4294,8 +4327,8 @@ const poetas = [
         },
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Poesía escrita por mujeres en la década de 1980 (MC7684)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-7684.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "El hueso de la memoria (MC98212)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98212.html" }
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "El hueso de la memoria (MC98212)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98212.html" },
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" }
         ],
         verificado: true
     },
@@ -6422,54 +6455,79 @@ const poetas = [
         ]
     },
     {
-        nombre: "Alejandra Zarhi",
+        nombre: "Alejandra Zarhi García",
         nombreReal: null,
         coords: [-23.6509, -70.3975],
         zona: "Antofagasta (II Región)",
         region: "norte-grande",
-        años: "1983–1990 (actividad verificada)",
+        años: "1960–",
         foto: null,
-        verificado: true,
         biografia: {
-            nacimiento: "Poeta antofagastina. Datos biográficos básicos (lugar/fecha de nacimiento) no verificados en fuentes consultadas.",
-            formacion: "Identificada en prensa como 'poetisa del desierto antofagastino' (Mardones Barrientos, 1990).",
-            contexto: "Fundadora y directora de la revista internacional de poesía 'Imágenes de Océanos', publicada en Antofagasta desde 1983 e impresa en la Universidad del Norte (Biblioteca Nacional de Chile, s.f.).",
-            trayectoria: "También ha publicado narrativa, incluyendo el cuento 'La Marijane' (Zarhi, s.f., en escritores.cl). Otros poemarios mencionados en perfiles anteriores no han sido verificados en catálogos de bibliotecas."
+            nacimiento: "Santiago, 1960 (dato indicado por la autora). Desde joven se radicó en Antofagasta.",
+            formacion: "Publicó primer poemario 'Cinco Caminos' a los 15 años (1975), prologado por Mafud Massís. Lo vendió íntegramente en Plaza de la Constitución de Santiago.",
+            contexto: "En 1983 fundó en Antofagasta la revista internacional de poesía 'Imágenes de Océanos', que dirigió hasta aproximadamente 1990. Figura clave para la literatura del norte chileno durante la dictadura. Dio vitrina a más de 600 autores emergentes y consagrados.",
+            trayectoria: "Una de las fundadoras de la filial regional SECH en Antofagasta (ca. 1988). Organizó maratones poéticas (1984, 1989 - récord 74 horas continuas). Presidenta en Chile de ASOLAPO. En 2006 presentó su libro número 27 en la FILSA."
         },
         publicaciones: [
+            {
+                titulo: "Cinco Caminos",
+                años: "1975",
+                tipo: "Poemario",
+                detalles: ["Primer libro, publicado a los 15 años", "Prólogo de Mafud Massís"],
+                existencias: []
+            },
+            {
+                titulo: "Mi elefante negro",
+                años: "1984",
+                tipo: "Poemario",
+                detalles: ["Ed. Universidad del Norte", "Posteriormente traducido al italiano"],
+                existencias: [
+                    { lugar: "Bibliotecas patrimoniales", tiene: true, link: null, nota: "Resguardado en colecciones especializadas" }
+                ]
+            },
+            {
+                titulo: "Ausencia del ángel",
+                años: "1986",
+                tipo: "Poemario",
+                detalles: ["Prólogo del poeta nortino Andrés Sabella"],
+                existencias: []
+            },
+            {
+                titulo: "Alondra solitaria",
+                años: "1986",
+                tipo: "Poemario",
+                detalles: ["Octavo poemario de la autora según crítico Pedro Mardones"],
+                existencias: []
+            },
+            {
+                titulo: "Las torres de marfil",
+                años: "1989",
+                tipo: "Poemario",
+                detalles: ["Prologado por ensayista argentina Carmen Hebe Tanco", "Críticos destacaron 'su poesía torrentosa' y 'angustia amatoria'"],
+                existencias: []
+            },
             {
                 titulo: "Revista Imágenes de Océanos (directora)",
                 años: "1983-1990",
                 tipo: "Revista",
-                detalles: ["Revista internacional de poesía", "Fundada y dirigida por Zarhi", "Impresa en Universidad del Norte"],
+                detalles: ["Revista internacional de poesía", "Fundada y dirigida por Zarhi", "Aproximadamente 8 volúmenes anuales"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "http://www.memoriachilena.gob.cl/602/w3-article-99257.html", nota: "Año 0, Nº 1 (1983) - MC0005344" },
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99258.html", nota: "Año 1, Nº 7 (agosto 1984) - MC0005346" },
-                    { lugar: "Memoria Chilena", tiene: true, link: null, nota: "Año 4, Nº 2 (agosto 1987) - MC0005349" },
-                    { lugar: "Memoria Chilena", tiene: true, link: null, nota: "Nº especial (diciembre 1990) - MC0005350" }
-                ]
-            },
-            {
-                titulo: "La Marijane",
-                años: "s.f.",
-                tipo: "Cuento",
-                detalles: ["Narrativa publicada en escritores.cl"],
-                existencias: [
-                    { lugar: "Escritores.cl", tiene: true, link: "https://www.escritores.cl/base.php?f1=varios/cuento_zarhi.htm", nota: "Texto completo disponible" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99257.html", nota: "Ejemplar año 0, Nº1 (1983) digitalizado" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99265.html", nota: "Ejemplar año 5, Nº2 (1988) - Homenaje a Braulio Arenas" }
                 ]
             }
         ],
         conexiones: {
             talleres: [],
             revistas: [
-                { nombre: "Imágenes de Océanos", id: "imagenes-oceanos" }
+                { nombre: "Imágenes de Océanos", id: "imagenes-oceanos" },
+                { nombre: "Carmina", id: "carmina" }
             ]
         },
         fuentes: [
-            { autor: "Mardones Barrientos, P.", año: "1990", titulo: "Alejandra Zarhi, poetisa del desierto antofagastino", medio: "Biblioteca Nacional Digital", link: "https://www.chilepatrimonios.gob.cl/ficha?doi=03BND-RC0044990" },
-            { autor: "Biblioteca Nacional de Chile", año: "s.f.", titulo: "Imágenes de océanos: año 0, n° 1, Antofagasta 1983", medio: "Memoria Chilena", link: "http://www.memoriachilena.gob.cl/602/w3-article-99257.html" },
-            { autor: "Biblioteca Nacional de Chile", año: "s.f.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" },
-            { autor: "Zarhi, A.", año: "s.f.", titulo: "La Marijane [Cuento]", medio: "Escritores.cl", link: "https://www.escritores.cl/base.php?f1=varios/cuento_zarhi.htm" }
+            { autor: "Mardones Barrientos, P.", año: "1990", titulo: "Alejandra Zarhi, poetisa del desierto antofagastino", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0044990.pdf" },
+            { autor: "Memoria Chilena", año: "2018", titulo: "Imágenes de océanos: año 0, n° 1, Antofagasta 1983", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-99257.html" },
+            { autor: "Cristi Pereira, O.", año: "2016", titulo: "Reseña literaria - Alejandra Zarhi García", medio: "Revista Literaria Pluma y Tintero", link: "http://revistaliterariaplumaytintero.blogspot.com/2016/06/alejandra-zhari-santiago-chile.html" }
         ]
     },
     {
@@ -6520,34 +6578,53 @@ const poetas = [
         coords: [-18.4783, -70.3126],
         zona: "Arica (XV Región de Arica y Parinacota)",
         region: "norte-grande",
-        años: "1987 (actividad verificada)",
+        años: "Activa 1984-1987",
         foto: null,
-        verificado: true,
         biografia: {
-            nacimiento: "Arica. Datos biográficos básicos no verificados en fuentes consultadas.",
-            formacion: "Directora de la revista Trayectoria poética Nº 1 (1987), publicación literaria de Arica digitalizada en Memoria Chilena (Biblioteca Nacional de Chile, s.f.).",
-            contexto: "Parte del movimiento de revistas literarias independientes durante la dictadura (1973-1990).",
-            trayectoria: "Verificación completa requiere acceso al PDF de Trayectoria poética Nº 1 (1987) para confirmar rol de directora y contenido publicado."
+            nacimiento: "Arica (datos biográficos básicos no verificados en fuentes consultadas)",
+            formacion: "Directora de revista Trayectoria poética (Nº 1, 1987). Mención en colofón de Extramuros: Poesía internacional (Nº 5, abril 1984).",
+            contexto: "Publicó textos en prensa regional La Estrella de Arica durante los años 1980. Nota periodística 'Priscilla se abre camino en la poesía' (9 mayo 1985).",
+            trayectoria: "Poema '¿Qué busca la humanidad ciega?' en Trayectoria poética Nº1 (1987). Artículos: 'La sombra del maestro' (18 mayo 1985), 'El locutor poeta' (15 noviembre 1986)."
         },
         publicaciones: [
             {
-                titulo: "Revista Trayectoria poética Nº 1 (directora)",
+                titulo: "Revista Trayectoria poética (directora)",
                 años: "1987",
                 tipo: "Revista",
-                detalles: ["Publicación de Arica", "Listada en colección de Memoria Chilena"],
+                detalles: ["Nº 1 (Arica)", "Directora editorial", "Poema '¿Qué busca la humanidad ciega?'"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: null, nota: "Listada en colección 'Revistas y publicaciones literarias (1960-1990)'" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100921.html", nota: "PDF descargable" }
+                ]
+            },
+            {
+                titulo: "Mención en Extramuros: Poesía internacional",
+                años: "1984",
+                tipo: "Revista",
+                detalles: ["Nº 5 (abril 1984)", "Mención en colofón (colaboración)"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100001.html", nota: "PDF descargable" }
+                ]
+            },
+            {
+                titulo: "Artículos en La Estrella de Arica",
+                años: "1985-1986",
+                tipo: "Prensa",
+                detalles: ["'La sombra del maestro' (18 mayo 1985, p. 5)", "'El locutor poeta' (15 noviembre 1986, p. 8)"],
+                existencias: [
+                    { lugar: "Biblioteca Nacional Digital", tiene: true, link: "https://www.bibliotecanacionaldigital.gob.cl/visor/BND:325971", nota: "Visor BND" }
                 ]
             }
         ],
         conexiones: {
             talleres: [],
             revistas: [
-                { nombre: "Trayectoria poética", id: "trayectoria-poetica" }
+                { nombre: "Trayectoria poética", id: "trayectoria-poetica" },
+                { nombre: "Extramuros", id: "extramuros" }
             ]
         },
         fuentes: [
-            { autor: "Biblioteca Nacional de Chile", año: "s.f.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" }
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Trayectoria poética: n° 1, 1987", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-100921.html" },
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Extramuros: Poesía internacional: n° 5, abril 1984", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-100001.html" }
         ]
     },
     {
@@ -6587,43 +6664,50 @@ const poetas = [
         ]
     },
     {
-        nombre: "Soledad Traverso",
-        nombreReal: "Soledad Traverso (también Traverso-Rueda en catálogos)",
-        coords: [-23.6550, -70.4000],
-        zona: "Antofagasta / EE.UU.",
+        nombre: "Soledad Traverso R.",
+        nombreReal: "Verónica Soledad Traverso Raby",
+        coords: [-18.4783, -70.3126],
+        zona: "Arica / Antofagasta (Norte Grande)",
         region: "norte-grande",
-        años: "1981–presente",
+        años: "1953–",
         foto: null,
-        verificado: true,
         biografia: {
-            nacimiento: "Nativa de Chile. Año de nacimiento no verificado en fuentes consultadas.",
-            formacion: "Licenciada en Literatura y Lingüística Hispánicas por la Universidad de Antofagasta (1981). Ph.D. en Literatura Latinoamericana por la University of Maryland, College Park (1996) (Penn State Behrend, s.f.).",
-            contexto: "Inició su carrera docente en su alma mater, la Universidad de Antofagasta (Penn State Behrend, 2016). Profesora de español en Penn State Behrend (Erie, Pensilvania) desde 1996 hasta su jubilación en 2020.",
-            trayectoria: "Especialista en la obra del escritor chileno Juan Emar (1893-1964), sobre quien publicó dos libros (Penn State Behrend, s.f.). Sus intereses de investigación incluyen literatura latinoamericana y escritoras latinoamericanas como Cristina Peri-Rossi, Luisa Valenzuela y Elizabeth Subercaseaux."
+            nacimiento: "1953. Licenciatura en Literatura y Lingüística Hispánicas, Universidad de Antofagasta (1981).",
+            formacion: "En 1982 lideró en Antofagasta publicación de 'Y al centro, fuego' (Taller de Literatura 'Recital'). Ph.D. Literatura Latinoamericana (Universidad de Maryland, 1996).",
+            contexto: "Poética experimental y vanguardista. A fines de los 80 emigró a EE.UU. para estudios de posgrado. Profesora de literatura en Penn State University (campus Erie, Pensilvania).",
+            trayectoria: "No publicó libros individuales de poesía en los 80. Publicó estudio monográfico 'Juan Emar: la angustia de vivir con el dedo de Dios en la nuca' (RIL Editores, 1999). Artículos en Acta Literaria y Revista Aleph."
         },
         publicaciones: [
             {
-                titulo: "Dos libros sobre Juan Emar",
-                años: "s.f.",
-                tipo: "Monografía",
-                detalles: ["Confirmado en perfil académico Penn State"],
-                existencias: []
+                titulo: "Y al centro, fuego",
+                años: "1982",
+                tipo: "Folleto/Plaquette",
+                detalles: ["Taller de Literatura 'Recital'", "Antofagasta"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121739.html", nota: "Digitalizado (MC0005683)" }
+                ]
             },
             {
-                titulo: "Medical Spanish for Nurses: A Self-Teaching Guide",
-                años: "2016",
-                tipo: "Manual",
-                detalles: ["Co-autora"],
-                existencias: []
+                titulo: "Poemas en Trayectoria poética",
+                años: "1987",
+                tipo: "Revista",
+                detalles: ["Nº 1 (Arica)", "5 poemas: 'Y al centro, fuego', 'Amniosis', 'Contrafigura', '¿Dónde está la niña? ¿Dónde?', '¡Oh, los cantos!'", "Tríada 'Estatuaria I, II, III'"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121738.html", nota: "PDF descargable (MC0005682)" }
+                ]
             }
         ],
         conexiones: {
-            talleres: [],
-            revistas: []
+            talleres: [
+                { nombre: "Taller de Literatura Recital", id: "recital" }
+            ],
+            revistas: [
+                { nombre: "Trayectoria poética", id: "trayectoria-poetica" }
+            ]
         },
         fuentes: [
-            { autor: "Penn State Behrend", año: "s.f.", titulo: "Soledad Traverso, Ph.D.", medio: "Penn State University", link: "https://behrend.psu.edu/person/soledad-traverso-phd" },
-            { autor: "Penn State Behrend", año: "2016", titulo: "Read Dr. Soledad Traverso's Commencement Faculty Address", medio: "Penn State University", link: "https://behrend.psu.edu/story/18621/2016/12/22/read-dr-soledad-traversos-commencement-faculty-address-surrealism-everyday" }
+            { autor: "Memoria Chilena", año: "1982", titulo: "Y al centro, fuego", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121739.html" },
+            { autor: "Penn State Behrend", año: "2020", titulo: "Soledad Traverso, Ph.D. - Biography", medio: "Penn State University", link: "https://behrend.psu.edu/person/soledad-traverso-phd" }
         ]
     },
     {
@@ -7177,119 +7261,6 @@ const poetas = [
         ]
     },
     {
-        nombre: "Viviana Benz",
-        nombreReal: null,
-        coords: [-29.9100, -71.2530],
-        zona: "La Serena (IV Región de Coquimbo)",
-        region: "norte-chico",
-        años: "1956–",
-        foto: null,
-        verificado: true,
-        biografia: {
-            nacimiento: "Temuco, 1956",
-            formacion: "Estudió Obstetricia y Puericultura en la Universidad de Chile, Sede Temuco (Miranda, s.f.).",
-            contexto: "Integrante del Taller Lapislázuli en La Serena. Publicó en 'La Servilleta de Papel', órgano del Colectivo de Guayacán, junto a Gregorio Moreno y traducciones de Constantino Cavafis (Volantines, 2020; La Serena Online, 2021).",
-            trayectoria: "En 1997 obtuvo la Beca de Escritores del Fondo Nacional del Libro y la Lectura. Fue nombrada Miembro de Honor de la Cátedra Gabriela Mistral de la Universidad de La Habana. Ex-Presidenta de la SECH, IV Región. Ex-Directora de Cultura de la Municipalidad de La Serena. Varias de sus obras han sido declaradas Material Didáctico de Consulta por el Ministerio de Educación de Chile (Miranda, s.f.)."
-        },
-        publicaciones: [
-            {
-                titulo: "Plano poético urbano de La Serena",
-                años: "ca. 2001",
-                tipo: "Poemario",
-                detalles: ["Reseñado por Walter Hoefler en El Día"],
-                existencias: [
-                    { lugar: "Biblioteca Nacional Digital", tiene: true, link: "http://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html", nota: "Reseña de Hoefler (2001) - RC0054358" }
-                ]
-            },
-            {
-                titulo: "Tierra sin herencia",
-                años: "s.f.",
-                tipo: "Poemario",
-                detalles: ["Poemas disponibles en Portal Antonio Miranda"],
-                existencias: [
-                    { lugar: "Portal Antonio Miranda", tiene: true, link: "http://www.antoniomiranda.com.br/iberoamerica/chile/viviana_benz.html", nota: "Biografía y poemas" }
-                ]
-            },
-            {
-                titulo: "La Servilleta de Papel (antología)",
-                años: "ca. 1984",
-                tipo: "Revista artesanal",
-                detalles: ["Colectivo de Guayacán", "No localizada en archivos públicos"],
-                existencias: []
-            }
-        ],
-        conexiones: {
-            talleres: [
-                { nombre: "Taller Lapislázuli", id: "lapislazuli" },
-                { nombre: "Colectivo de Escritores de Guayacán", id: "guayacan" }
-            ],
-            revistas: [
-                { nombre: "La Servilleta de Papel", id: "servilleta" }
-            ]
-        },
-        fuentes: [
-            { autor: "Hoefler, W.", año: "2001", titulo: "Poetas de la cuarta región, Elena Jiménez y Viviana Benz", medio: "El Día (La Serena)", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html" },
-            { autor: "Miranda, A.", año: "s.f.", titulo: "Viviana Benz – Poesía Iberoamericana – Chile", medio: "Portal Antonio Miranda", link: "http://www.antoniomiranda.com.br/iberoamerica/chile/viviana_benz.html" },
-            { autor: "Volantines, A.", año: "2020", titulo: "Maruja Foster y la fundación del Taller Lapislázuli", medio: "Proyecto Patrimonio", link: "http://letras.mysite.com/avol120620.html" },
-            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" }
-        ]
-    },
-    {
-        nombre: "Elba Elena Jiménez Saldaña",
-        nombreReal: null,
-        coords: [-29.9550, -71.3450],
-        zona: "La Serena / Coquimbo (IV Región)",
-        region: "norte-chico",
-        años: "1958–",
-        foto: null,
-        verificado: true,
-        biografia: {
-            nacimiento: "Noviembre 1958. Llegó a La Serena antes de 1980 con su familia, también vinculada al mundo cultural y social.",
-            formacion: "Profesora de Castellano, especialista en Gabriela Mistral. Su memoria profesional versa sobre la Premio Nobel (Sitio Batalla de los Loros, 2022).",
-            contexto: "Cofundadora del Colectivo de los Poetas de la Bahía de Guayacán. Participó casi desde su fundación en las actividades de la SECH regional. Raúl Zurita dice de su obra: 'De una gran libertad creativa, fuerza y originalidad. Elena Jiménez se ha ganado un lugar de singular relevancia en la poesía contemporánea de nuestro país. Sus poemas son verdaderas descargas, en sus grandes momentos son como truenos, piedras que estallan haciéndose luz' (Sitio Batalla de los Loros, 2022).",
-            trayectoria: "Becaria del Fondo del Libro. Pertenece al movimiento del Desierto Florido. Ha realizado recitales individuales, con el poeta Tristán Altagracia, y en la Biblioteca Nacional junto a Altagracia y Arturo Volantines. Actualmente encargada de asuntos mistralianos en la Municipalidad de La Serena."
-        },
-        publicaciones: [
-            {
-                titulo: "Ojo Facetado",
-                años: "s.f.",
-                tipo: "Libro objeto",
-                detalles: ["Mencionado en fuentes, no localizado en archivos"],
-                existencias: []
-            },
-            {
-                titulo: "Piedras de Trueno",
-                años: "ca. 2001",
-                tipo: "Poemario",
-                detalles: ["Reseñado por Walter Hoefler en El Día"],
-                existencias: [
-                    { lugar: "Biblioteca Nacional Digital", tiene: true, link: "http://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html", nota: "Reseña de Hoefler (2001) - RC0054358" }
-                ]
-            },
-            {
-                titulo: "Noticias de Mujeres Poetas (antología)",
-                años: "1996+",
-                tipo: "Antología",
-                detalles: ["Revista Nomadías Nº 3", "Universidad de Chile / Cuarto Propio"],
-                existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "http://www.memoriachilena.gob.cl/602/w3-article-77680.html", nota: "MC0028774 - PDF descargable" }
-                ]
-            }
-        ],
-        conexiones: {
-            talleres: [
-                { nombre: "Colectivo de Escritores de Guayacán", id: "guayacan" }
-            ],
-            revistas: []
-        },
-        fuentes: [
-            { autor: "Hoefler, W.", año: "2001", titulo: "Poetas de la cuarta región, Elena Jiménez y Viviana Benz", medio: "El Día (La Serena)", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html" },
-            { autor: "Hernández, E.", año: "1996+", titulo: "Noticias de mujeres poetas", medio: "Nomadías Nº 3 / Memoria Chilena", link: "http://www.memoriachilena.gob.cl/602/w3-article-77680.html" },
-            { autor: "Sitio Batalla de los Loros", año: "2022", titulo: "Elba Elena Jiménez [Antología de la poesía del valle de Elqui]", medio: "Sitio Batalla de los Loros", link: "https://sitiobatalladelosloros.cl/2022/07/elba-elena-jimenez-antologia-de-la-poesia-del-valle-de-elqui/" },
-            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" }
-        ]
-    },
-    {
         nombre: "Victoria Valdés",
         nombreReal: null,
         coords: [-33.44, -70.65],
@@ -7336,30 +7307,10 @@ const map = L.map('map', {
     zoomControl: true
 });
 
-// Tile layers - normal y clasificado
-const normalTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OpenStreetMap &copy; CARTO',
     maxZoom: 18
-});
-
-const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
-    maxZoom: 18
-});
-
-// Iniciar con tiles normales
-normalTiles.addTo(map);
-
-// Función para cambiar tiles
-function switchToClassifiedTiles() {
-    map.removeLayer(normalTiles);
-    darkTiles.addTo(map);
-}
-
-function switchToNormalTiles() {
-    map.removeLayer(darkTiles);
-    normalTiles.addTo(map);
-}
+}).addTo(map);
 
 let markerClusterGroup;
 let connectionLine = null; // Para las líneas de conexión
@@ -7530,6 +7481,7 @@ function removeConnectionLineWithLabels() {
 
 // Variables globales para los marcadores de poetas (para poder hacer zoom a ellos)
 let poetMarkers = {};
+let tallerMarkers = {};
 
 function createMarkers(regionFilter = 'all', typeFilter = 'all') {
     // Remove existing cluster group
@@ -7537,8 +7489,9 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
         map.removeLayer(markerClusterGroup);
     }
     
-    // Limpiar marcadores de poetas
+    // Limpiar marcadores de poetas y talleres
     poetMarkers = {};
+    tallerMarkers = {};
     
     // Create new cluster group with custom styling
     markerClusterGroup = L.markerClusterGroup({
@@ -7600,6 +7553,9 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
                 }
             });
             markerClusterGroup.addLayer(marker);
+            
+            // Guardar referencia para panel Silencios
+            tallerMarkers[t.nombre] = marker;
         });
     }
     
@@ -7655,23 +7611,6 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
 function createExpandedPopup(t) {
     const headerClass = t.tipo === 'revista' ? 'popup-header revista-header' : 'popup-header';
     const tipoBadge = t.tipo === 'revista' ? 'Solo Revista' : 'Taller';
-    
-    // Si no está verificado, mostrar mensaje simple
-    if (!t.verificado) {
-        return `
-            <div class="${headerClass}">
-                <h3>${t.nombre}</h3>
-                <div class="region">${t.zona}</div>
-                <div class="tipo-badge">${tipoBadge} · ${t.años}</div>
-            </div>
-            <div class="popup-body" style="text-align:center;padding:30px 20px;">
-                <div style="font-size:40px;margin-bottom:15px;">🔄</div>
-                <h4 style="color:#5c4a2a;margin-bottom:10px;">Perfil en actualización</h4>
-                <p style="color:#7a6a52;font-size:13px;">Estamos verificando las fuentes de este perfil para asegurar la precisión de la información.</p>
-                <p style="color:#a89880;font-size:12px;margin-top:15px;">Vuelva a intentar en un día.</p>
-            </div>
-        `;
-    }
     
     // Historia section
     let historiaContent = '';
@@ -7845,22 +7784,6 @@ function createExpandedPopup(t) {
 
 // Función para crear popup de poeta
 function createPoetaPopup(p) {
-    // Si no está verificado, mostrar mensaje simple
-    if (!p.verificado) {
-        return `
-            <div class="popup-header poeta-header">
-                <h3>${p.nombre}</h3>
-                <div class="region">${p.ciudad || ''}</div>
-            </div>
-            <div class="popup-body" style="text-align:center;padding:30px 20px;">
-                <div style="font-size:40px;margin-bottom:15px;">🔄</div>
-                <h4 style="color:#5c4a2a;margin-bottom:10px;">Perfil en actualización</h4>
-                <p style="color:#7a6a52;font-size:13px;">Estamos verificando las fuentes de este perfil para asegurar la precisión de la información.</p>
-                <p style="color:#a89880;font-size:12px;margin-top:15px;">Vuelva a intentar en un día.</p>
-            </div>
-        `;
-    }
-    
     // Foto - solo mostrar si hay URL real
     let fotoHtml = '';
     if (p.foto && typeof p.foto === 'object' && p.foto.url) {
@@ -8050,249 +7973,139 @@ window.toggleAccordion = function(header) {
 window.togglePoetsPanel = function() {
     const panel = document.getElementById('poetsPanel');
     panel.classList.toggle('open');
-    // Cerrar panel de vacíos si está abierto
-    exitClassifiedMode();
 };
 
-// ========== SISTEMA DE ARCHIVOS DESCLASIFICADOS ==========
-
-// Datos de vacíos en el archivo (entidades con información faltante)
-const archiveGaps = {
-    talleres: [
-        {
-            nombre: "Taller Recital",
-            tipo: "taller",
-            coords: [-23.6550, -70.4000],
-            vacios: [
-                { tipo: "existencias", detalle: "Sin ejemplares verificados en bibliotecas públicas" },
-                { tipo: "publicaciones", detalle: "'La Iglesia y la Revolución de 1891' - solo testimonio del autor (González, 2019)" }
-            ]
-        },
-        {
-            nombre: "Grupo Salar de la Poesía",
-            tipo: "taller",
-            coords: [-23.6509, -70.3975],
-            vacios: [
-                { tipo: "existencias", detalle: "Nº 2 y Nº 3 de la serie no localizados en archivos" },
-                { tipo: "publicaciones", detalle: "'Poetas jóvenes del Norte' (1980) - sin existencias verificadas" }
-            ]
-        }
-    ],
-    revistas: [
-        {
-            nombre: "Revista Imágenes de Océanos",
-            tipo: "revista",
-            coords: [-23.6509, -70.3975],
-            vacios: [
-                { tipo: "existencias", detalle: "Números intermedios 1985-1986 sin digitalizar" },
-                { tipo: "existencias", detalle: "Solo 4 de ~40 números en Memoria Chilena" }
-            ]
-        },
-        {
-            nombre: "Revista Trayectoria poética",
-            tipo: "revista",
-            coords: [-18.4783, -70.3126],
-            vacios: [
-                { tipo: "verificacion", detalle: "PDF no accedido - requiere verificación de contenido" }
-            ]
-        }
-    ],
-    poetas: [
-        {
-            nombre: "Alejandra Zarhi",
-            tipo: "poeta",
-            coords: [-23.6509, -70.3975],
-            vacios: [
-                { tipo: "biografico", detalle: "Lugar y año de nacimiento no verificados" },
-                { tipo: "publicaciones", detalle: "'Cinco Caminos' (1975) - no encontrado en catálogos" },
-                { tipo: "publicaciones", detalle: "'Mi elefante negro', 'Ausencia del ángel', 'Alondra solitaria', 'Las torres de marfil' - sin existencias" },
-                { tipo: "institucional", detalle: "Fundadora SECH Antofagasta - no confirmado" }
-            ]
-        },
-        {
-            nombre: "Priscilla Marinkovic",
-            tipo: "poeta",
-            coords: [-18.4783, -70.3126],
-            vacios: [
-                { tipo: "biografico", detalle: "Datos biográficos básicos no verificados" },
-                { tipo: "publicaciones", detalle: "Artículos en La Estrella de Arica (1985-1986) - no accedidos" },
-                { tipo: "verificacion", detalle: "Rol de directora en Trayectoria poética - requiere PDF" }
-            ]
-        },
-        {
-            nombre: "Soledad Traverso",
-            tipo: "poeta",
-            coords: [-23.6550, -70.4000],
-            vacios: [
-                { tipo: "biografico", detalle: "Año de nacimiento '1953' no verificado" },
-                { tipo: "publicaciones", detalle: "'Y al centro, fuego' (1982) - código MC0005683 no encontrado" },
-                { tipo: "publicaciones", detalle: "Poemas en Trayectoria poética Nº1 - requiere verificación PDF" }
-            ]
-        }
-    ]
+// Función para toggle panel de silencios
+window.toggleSilenciosPanel = function() {
+    const panel = document.getElementById('silenciosPanel');
+    panel.classList.toggle('open');
 };
 
-let classifiedModeActive = false;
-let gapMarkers = {};
-
-// Función para activar el modo clasificado
-window.toggleGapsPanel = function() {
-    if (classifiedModeActive) {
-        exitClassifiedMode();
+// Función para enfocar entidad desde panel Silencios (oculta todo menos la seleccionada)
+window.focusSilencio = function(nombre) {
+    // Limpiar conexiones activas
+    if (typeof conexionesActivas !== 'undefined' && conexionesActivas) {
+        clearHighlights();
+    }
+    
+    // Buscar en talleres
+    let marker = tallerMarkers[nombre];
+    let found = false;
+    let isPoeta = false;
+    
+    if (marker) {
+        found = true;
     } else {
-        enterClassifiedMode();
+        // Buscar en poetas
+        marker = poetMarkers[nombre];
+        if (marker) {
+            found = true;
+            isPoeta = true;
+        }
+    }
+    
+    if (found && marker) {
+        // Primero hacer zoom para sacar del cluster
+        const latlng = marker.getLatLng();
+        map.setView(latlng, 12);
+        
+        // Esperar a que el mapa se actualice y los marcadores se desagrupen
+        setTimeout(() => {
+            // Ahora aplicar el dimming
+            Object.values(tallerMarkers).forEach(m => {
+                const elem = m.getElement();
+                if (elem && m !== marker) {
+                    elem.classList.add('dimmed');
+                }
+            });
+            Object.values(poetMarkers).forEach(m => {
+                const elem = m.getElement();
+                if (elem && m !== marker) {
+                    elem.classList.add('dimmed');
+                }
+            });
+            
+            // Resaltar el marcador seleccionado
+            const elem = marker.getElement();
+            if (elem) {
+                elem.classList.remove('dimmed');
+                if (isPoeta) {
+                    elem.classList.add('highlighted-poeta');
+                } else {
+                    // Verificar si es revista o taller
+                    const innerDiv = elem.querySelector('.custom-marker');
+                    if (innerDiv && innerDiv.classList.contains('marker-revista')) {
+                        elem.classList.add('highlighted-revista');
+                    } else {
+                        elem.classList.add('highlighted-taller');
+                    }
+                }
+            }
+            
+            // Abrir popup
+            marker.openPopup();
+            
+            // Mostrar botón para restaurar vista
+            showRestoreButton();
+        }, 500);
+    } else {
+        alert('Entidad "' + nombre + '" no encontrada en el mapa. Verifica que el nombre coincida exactamente.');
     }
 };
 
-function enterClassifiedMode() {
-    classifiedModeActive = true;
+// Función para mostrar botón de restaurar vista
+function showRestoreButton() {
+    // Remover botón existente si hay
+    const existingBtn = document.getElementById('restoreSilencioBtn');
+    if (existingBtn) existingBtn.remove();
     
-    // Activar estilos del body
-    document.body.classList.add('classified-mode');
-    
-    // Cambiar tiles del mapa a modo oscuro
-    switchToClassifiedTiles();
-    
-    // Activar botón
-    document.querySelector('.map-gaps-btn').classList.add('active');
-    
-    // Abrir panel
-    document.getElementById('gapsPanel').classList.add('open');
-    document.getElementById('poetsPanel').classList.remove('open');
-    
-    // Generar contenido del panel
-    renderGapsPanel();
-    
-    // Hacer zoom al Norte Grande (región verificada)
-    map.flyTo([-21, -70], 6, { duration: 1.5 });
-    
-    // Marcar entidades con vacíos
-    highlightGapEntities();
+    const btn = document.createElement('button');
+    btn.id = 'restoreSilencioBtn';
+    btn.innerHTML = '✕ Mostrar todo';
+    btn.style.cssText = `
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        z-index: 1001;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    `;
+    btn.onclick = function() {
+        restoreSilencioView();
+        this.remove();
+    };
+    document.body.appendChild(btn);
 }
 
-window.exitClassifiedMode = function() {
-    classifiedModeActive = false;
-    
-    // Desactivar estilos
-    document.body.classList.remove('classified-mode');
-    document.querySelector('.map-gaps-btn').classList.remove('active');
-    document.getElementById('gapsPanel').classList.remove('open');
-    
-    // Restaurar tiles normales
-    switchToNormalTiles();
-    
-    // Limpiar marcadores de gaps
-    clearGapHighlights();
-};
-
-function renderGapsPanel() {
-    const container = document.getElementById('gapsPanelBody');
-    
-    const allGaps = [
-        ...archiveGaps.talleres,
-        ...archiveGaps.revistas,
-        ...archiveGaps.poetas
-    ];
-    
-    container.innerHTML = allGaps.map((entity, index) => {
-        const typeLabel = entity.tipo === 'taller' ? 'TALLER' : 
-                         entity.tipo === 'revista' ? 'REVISTA' : 'POETA';
-        const vaciosHtml = entity.vacios.map(v => `
-            <div class="gap-detail-item">
-                <span class="gap-detail-label">${v.tipo}</span>
-                <span class="gap-detail-value">${v.detalle}</span>
-            </div>
-        `).join('');
-        
-        return `
-            <div class="gap-entity" id="gap-entity-${index}">
-                <div class="gap-entity-header" onclick="toggleGapEntity(${index})">
-                    <div class="gap-entity-info">
-                        <span class="gap-entity-icon"></span>
-                        <span class="gap-entity-name">${entity.nombre}</span>
-                        <span class="gap-entity-type">${typeLabel}</span>
-                    </div>
-                    <span class="gap-entity-arrow">▶</span>
-                </div>
-                <div class="gap-entity-details">
-                    ${vaciosHtml}
-                    <button class="gap-goto-btn" onclick="goToGapEntity('${entity.nombre}', ${entity.coords[0]}, ${entity.coords[1]}, '${entity.tipo}')">
-                        📍 Ver en mapa
-                    </button>
-                </div>
-            </div>
-        `;
-    }).join('');
-}
-
-window.toggleGapEntity = function(index) {
-    const entity = document.getElementById(`gap-entity-${index}`);
-    entity.classList.toggle('expanded');
-};
-
-window.goToGapEntity = function(nombre, lat, lng, tipo) {
-    // Hacer zoom a la ubicación
-    map.flyTo([lat, lng], 12, { duration: 1 });
-    
-    // Buscar y abrir el popup correspondiente
-    setTimeout(() => {
-        if (tipo === 'poeta') {
-            const marker = poetMarkers[nombre];
-            if (marker) {
-                marker.openPopup();
-            }
-        } else {
-            // Buscar en talleres
-            markerClusterGroup.eachLayer(function(layer) {
-                if (!layer.getLatLng) return;
-                const layerCoords = layer.getLatLng();
-                if (Math.abs(lat - layerCoords.lat) < 0.01 && 
-                    Math.abs(lng - layerCoords.lng) < 0.01) {
-                    layer.openPopup();
-                }
-            });
-        }
-    }, 1200);
-};
-
-function highlightGapEntities() {
-    // Añadir clase has-gaps a marcadores relevantes
-    const allGaps = [
-        ...archiveGaps.talleres,
-        ...archiveGaps.revistas,
-        ...archiveGaps.poetas
-    ];
-    
-    allGaps.forEach(entity => {
-        // Buscar marcador de poeta
-        if (entity.tipo === 'poeta' && poetMarkers[entity.nombre]) {
-            const markerEl = poetMarkers[entity.nombre].getElement();
-            if (markerEl) {
-                markerEl.classList.add('has-gaps');
-            }
-        }
-        
-        // Para talleres/revistas, buscar en el cluster
-        if (entity.tipo !== 'poeta') {
-            markerClusterGroup.eachLayer(function(layer) {
-                if (!layer.getLatLng) return;
-                const layerCoords = layer.getLatLng();
-                if (Math.abs(entity.coords[0] - layerCoords.lat) < 0.01 && 
-                    Math.abs(entity.coords[1] - layerCoords.lng) < 0.01) {
-                    const el = layer.getElement();
-                    if (el) {
-                        el.classList.add('has-gaps');
-                    }
-                }
-            });
+// Función para restaurar vista completa
+function restoreSilencioView() {
+    // Quitar dimmed de todos
+    Object.values(tallerMarkers).forEach(m => {
+        const elem = m.getElement();
+        if (elem) {
+            elem.classList.remove('dimmed', 'highlighted-taller', 'highlighted-revista', 'highlighted-poeta');
         }
     });
-}
-
-function clearGapHighlights() {
-    document.querySelectorAll('.has-gaps').forEach(el => {
-        el.classList.remove('has-gaps');
+    Object.values(poetMarkers).forEach(m => {
+        const elem = m.getElement();
+        if (elem) {
+            elem.classList.remove('dimmed', 'highlighted-taller', 'highlighted-revista', 'highlighted-poeta');
+        }
     });
+    
+    // Cerrar popups abiertos
+    map.closePopup();
+    
+    // Zoom out a vista general
+    map.setView([-33.45, -70.65], 5);
 }
 
 // Función para actualizar la lista de poetas en el panel
