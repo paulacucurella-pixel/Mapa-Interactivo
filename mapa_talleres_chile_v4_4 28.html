@@ -1080,13 +1080,13 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
                 <span class="vacio-tipo">Publicaciones sin existencia física</span>
             </div>
             
-            <div class="silencio-item" onclick="focusSilencio('Soledad Traverso')">
+            <div class="silencio-item" onclick="focusSilencio('Soledad Traverso R.')">
                 <h5>Soledad Traverso (poeta)</h5>
                 <p>"Y al centro, fuego" (1982): no localizado en BND/MC</p>
                 <span class="vacio-tipo">1 libro sin existencia</span>
             </div>
             
-            <div class="silencio-item" onclick="focusSilencio('Alejandra Zarhi')">
+            <div class="silencio-item" onclick="focusSilencio('Alejandra Zarhi García')">
                 <h5>Alejandra Zarhi (poeta)</h5>
                 <p>"Cinco Caminos" (1975): no verificado en catálogos</p>
                 <span class="vacio-tipo">1 libro sin existencia</span>
@@ -2591,214 +2591,128 @@ const talleres = [
         coords: [-29.9045, -71.2489],
         zona: "Coquimbo (La Serena)",
         region: "norte-chico",
-        años: "Fundado 1983–s.f.",
+        años: "1983–presente",
         tipo: "taller",
-        historia: { origen: null, contexto: null, continuidad: null },
+        verificado: true,
+        historia: {
+            origen: "Taller literario fundado en La Serena en 1983 por los poetas Arturo Volantines, Ricardo Rozas, Patricio Rodríguez y la artista plástica Maruja Foster (Volantines, 2020).",
+            contexto: "El grupo surgió del Taller Preludio del SERVIU, tras el éxito de un recital de Roque Esteban Scarpa que motivó a crear un espacio independiente. La sede inicial fue la casa de Maruja Foster en calle Manuel Rodríguez, barrio Santa Lucía.",
+            desarrollos: "Foster, académica de la UTE y muralista, tenía a sus hijos exiliados en Venezuela durante la dictadura. El taller publicó la revista Lapislázuli, cuyo diseño continuaba la estética de 'Poetas del Norte' que Volantines había traído desde Antofagasta.",
+            continuidad: "Del Taller Lapislázuli nacieron otras agrupaciones: el Instituto Fernando Binvignat, la SECH regional Coquimbo, el Colectivo de Poetas de Guayacán y la SALC. Manuel Cabrera se incorporó posteriormente y actualmente mantiene el taller activo."
+        },
         fundadores: [
-            { nombre: "Arturo Volantines", rol: "Fundador" },
-            { nombre: "Manuel Cabrera", rol: "Fundador" }
+            { nombre: "Arturo Volantines", rol: "Cofundador, poeta" },
+            { nombre: "Ricardo Rozas", rol: "Cofundador, poeta" },
+            { nombre: "Patricio Rodríguez", rol: "Cofundador, poeta" },
+            { nombre: "Maruja Foster", rol: "Cofundadora, artista plástica, sede en su casa" }
+        ],
+        integrantes: [
+            { nombre: "Manuel Cabrera", rol: "Integrante (posterior), actual secretario" },
+            { nombre: "Viviana Benz", rol: "Integrante, poeta" }
         ],
         publicaciones: [
-            { titulo: "Lapislázuli", años: "desde 1983", numeros: "Revista", detalles: [], personas: [], existencias: [] },
-            { titulo: "La Pilar", años: "1983", numeros: "Publicación", detalles: [], personas: [], existencias: [] }
+            {
+                titulo: "Revista Lapislázuli",
+                años: "1983–presente",
+                numeros: "Revista literaria",
+                detalles: ["Diseño inspirado en 'Poetas del Norte' de Antofagasta"],
+                personas: [],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99270.html", nota: "Nº 7 digitalizado" }
+                ]
+            }
         ],
-        fuentes: []
-    },
-    {
-        nombre: "La Servilleta de la Poesía",
-        coords: [-29.9100, -71.2550],
-        zona: "Coquimbo (La Serena)",
-        region: "norte-chico",
-        años: "Década de 1980",
-        tipo: "revista",
-        historia: { origen: "Publicación asociada al grupo Lapislázuli", contexto: null, continuidad: null },
-        fundadores: [{ nombre: "Arturo Volantines", rol: "Por determinar" }],
-        publicaciones: [
-            { titulo: "La Servilleta de la Poesía", años: "ej.: 1985", numeros: "Publicación", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
+        fuentes: [
+            { autor: "Volantines, A.", año: "2020", titulo: "Maruja Foster y la fundación del Taller Lapislázuli", medio: "Proyecto Patrimonio", link: "http://letras.mysite.com/avol120620.html" },
+            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" }
+        ]
     },
     {
         nombre: "Colectivo de Escritores de Guayacán",
         coords: [-29.9500, -71.3500],
         zona: "Coquimbo (Coquimbo)",
         region: "norte-chico",
-        años: "1983–1986",
-        tipo: "taller",
+        años: "ca. 1983–1986",
+        tipo: "colectivo",
+        verificado: true,
         historia: {
-            origen: "Grupo literario formado hacia 1983-1984 en Coquimbo. Surgió en reuniones informales en el café Tito's de La Serena y la librería El Arco de los Libros. Vocación democrática y de compromiso social.",
-            contexto: "Participaban en actos culturales universitarios, peñas y encuentros solidarios donde se reflexionaba sobre la recuperación democrática. Parte de la red de talleres literarios de resistencia de la época.",
-            desarrollos: "Crearon la ingeniosa revista 'La Servilleta de la Poesía': poemas impresos en hojas recortadas con borde dentado imitando servilletas. Primer número ca. 1984. Distribución mano a mano.",
-            continuidad: "En mayo 1986 fundaron la SECH filial Región de Coquimbo. Arturo Volantines fue elegido primer presidente. El colectivo se institucionalizó a través de la SECH regional."
+            origen: "Colectivo literario fundado en La Serena por Arturo Volantines y Luis Aguilera, quien llegó desde Valparaíso como 'enorme motor de trabajo' cultural (La Serena Online, 2021).",
+            contexto: "El grupo se reunía en el Café Tito's, ubicado en la esquina de Cordovez con O'Higgins. Participaban en actos culturales universitarios, peñas y encuentros solidarios.",
+            desarrollos: "El colectivo publicó 'La Servilleta de Papel', donde aparecieron textos de Viviana Benz, Gregorio Moreno y traducciones de Constantino Cavafis. Poemas impresos en hojas con borde dentado imitando servilletas.",
+            continuidad: "En mayo 1986 fundaron la SECH filial Región de Coquimbo. Arturo Volantines fue elegido primer presidente."
         },
         fundadores: [
             { nombre: "Arturo Volantines", rol: "Cofundador" },
-            { nombre: "Luis Aguilera", rol: "Cofundador" }
+            { nombre: "Luis Aguilera", rol: "Cofundador (llegó desde Valparaíso)" },
+            { nombre: "Elba Elena Jiménez", rol: "Cofundadora" }
         ],
         integrantes: [
-            { nombre: "Yair Carvajal", rol: "Integrante" },
+            { nombre: "Yair Carvajal", rol: "Integrante, cofundador SECH regional, periodista y dramaturgo" },
             { nombre: "Eugenia Henríquez", rol: "Integrante" },
-            { nombre: "Elba Jiménez", rol: "Integrante" },
             { nombre: "Samuel Núñez", rol: "Integrante (director revista Añañuca)" },
-            { nombre: "Viviana Benz", rol: "Integrante" }
+            { nombre: "Viviana Benz", rol: "Integrante, poeta" }
         ],
-        nota: "La Servilleta de la Poesía no aparece en catálogos públicos. Solo referencias testimoniales. Publicación efímera de rescate complicado.",
         publicaciones: [
             {
-                titulo: "La Servilleta de la Poesía",
+                titulo: "La Servilleta de Papel",
                 años: "ca. 1984–1988",
-                numeros: "Revista artesanal (varios números)",
+                numeros: "Publicación artesanal (varios números)",
                 detalles: [
-                    "Poemas impresos en hojas con borde zigzag (tijera encargada a Santiago)",
+                    "Poemas impresos en hojas con borde zigzag",
                     "Primer número incluyó: Mario García, Gregorio Moreno, Viviana Benz, C. Cavafis",
-                    "Distribución en tertulias y eventos culturales"
+                    "Distribución mano a mano en tertulias y eventos culturales"
                 ],
                 personas: [],
-                existencias: []
+                existencias: [
+                    { lugar: "Sin existencia en archivos públicos", tiene: false, link: null, nota: "Publicación efímera, solo referencias testimoniales" }
+                ]
             }
         ],
         fuentes: [
-            { autor: "Eloy, H.", año: "2006", titulo: "Revistas y publicaciones literarias durante la dictadura (1973-1990)", medio: "Carajo Nº 8 / Memoria Chilena", link: null },
-            { autor: "Volantines, A.", año: "2002", titulo: "Antología de la poesía del Valle de Elqui, Tomo I", medio: "Ediciones Universitarias UCN", link: null },
-            { autor: "Letralia", año: "n.d.", titulo: "Arturo Volantines - semblanza biográfica", medio: "Letralia, Tierra de Letras", link: "https://letralia.com/firmas/volantinesarturo.htm" }
+            { autor: "Volantines, A.", año: "2020", titulo: "Maruja Foster y la fundación del Taller Lapislázuli", medio: "Proyecto Patrimonio", link: "http://letras.mysite.com/avol120620.html" },
+            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" }
         ]
     },
     {
-        nombre: "Taller/Grupo Añañuca",
+        nombre: "Revista Añañuca",
         coords: [-29.9200, -71.2700],
         zona: "Coquimbo (La Serena)",
         region: "norte-chico",
         años: "1984–2002",
-        tipo: "taller",
+        tipo: "revista",
+        verificado: true,
         historia: {
-            origen: "Revista literaria fundada el 15 de abril de 1984 en La Serena por Samuel Núñez, Caupolicán Peña, Eduardo Gómez y Luis Macaya. Nombre inspirado en la flor silvestre añañuca, endémica del norte chico.",
-            contexto: "Edición artesanal y autogestionada, tirajes ~500 ejemplares. Circulaba de mano en mano en peñas, recitales y centros culturales. Órgano fundamental de la movida literaria regional en los '80.",
-            desarrollos: "En 1986 (año 3) alcanzó el Nº 20. En 1989 llegó al Nº 43. En febrero 1993 publicó Nº 70. Ediciones especiales dedicadas a Violeta Parra, Víctor Jara, Rodrigo Lira. Suplemento 'La Maquinita' (1985-1987) con plaquettes de poetas locales e internacionales.",
-            continuidad: "Publicó hasta 2002 (18 volúmenes según BN). En mayo 2014, Biblioteca Pública de La Serena conmemoró 30 años. Testimonios indican más de 220 números publicados hacia 2008."
+            origen: "Revista de poesía, narrativa y gráfica publicada en La Serena entre 1984 y 2002, dirigida por el poeta Samuel Núñez (La Serena Online, 2021). Alcanzó más de 140 números publicados a lo largo de 18 años.",
+            contexto: "Samuel Núñez, descrito como 'el último beat' por sus pares, combinó múltiples oficios —tramoyista, disc-jockey, guardia nocturno, rockero— mientras editaba y difundía la revista. Edición artesanal y autogestionada, tirajes ~500 ejemplares.",
+            desarrollos: "En 1986 alcanzó el Nº 20. En 1989 llegó al Nº 43. En febrero 1993 publicó Nº 70. Ediciones especiales dedicadas a Violeta Parra, Víctor Jara, Rodrigo Lira. Suplemento 'La Maquinita' (1985-1987).",
+            continuidad: "Publicó hasta 2002. Memoria Chilena cataloga 18 volúmenes de la revista, con varios números digitalizados."
         },
         fundadores: [
-            { nombre: "Samuel Núñez", rol: "Director fundador" },
-            { nombre: "Caupolicán Peña", rol: "Cofundador" },
-            { nombre: "Eduardo Gómez", rol: "Cofundador" },
-            { nombre: "Luis Macaya", rol: "Cofundador" }
+            { nombre: "Samuel Núñez", rol: "Director y editor" }
         ],
         integrantes: [],
         publicaciones: [
             {
                 titulo: "Añañuca",
                 años: "1984–2002",
-                numeros: "Revista literaria (18 volúmenes, 120+ números)",
+                numeros: "140+ números en 18 años",
                 detalles: [
                     "Nº 20 (abril 1986), Nº 21 (mayo-junio 1986)",
-                    "Nº 23 (sept. 1986), Nº 27-29, 31 (1987)",
-                    "Nº 43 (julio-oct. 1989), Nº 48 (junio-julio 1990)",
-                    "Nº 70 (febrero 1993, incluía poemas de Kavafis)",
-                    "Suplemento 'La Maquinita' (1985-1987): plaquettes de poetas alemanes, canadienses, cubanos"
+                    "Nº 31 (sept. 1987), Nº 43 (julio-oct. 1989)",
+                    "Suplemento 'La Maquinita' (1985-1987)"
                 ],
                 personas: [],
                 existencias: [
-                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html", nota: "Año 4 Nº 29, julio 1987 (MC0005418)" },
-                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html", nota: "Varios números digitalizados en Memoria Chilena" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99275.html", nota: "Nº 43, julio-oct 1989 (MC0005414)" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99273.html", nota: "Nº 31, sept 1987 (MC0005412)" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html", nota: "Nº 20, abril 1986" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "n.d.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" },
-            { autor: "El Día (La Serena)", año: "1998", titulo: "Hace trece años, nació la revista Añañuca", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0030445.pdf" },
-            { autor: "El Día (La Serena)", año: "1993", titulo: "Poeta Samuel Núñez presenta su primer libro", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0039025.pdf" },
-            { autor: "Rojas Pachas, D.", año: "2008", titulo: "El burro del diablo. Arqueo de la poesía contemporánea de la IV Región", medio: "Revista Cinosargo Nº 5", link: "http://letras.mysite.com/av200908.html" }
+            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" },
+            { autor: "Diario La Quinta", año: "2021", titulo: "Quintaesencia: En el aniversario de la segunda ciudad más antigua de Chile", medio: "Diario La Quinta", link: "https://diariolaquinta.cl/2021/08/28/quinatesencia-en-el-aniversario-de-la-segunda-ciudad-mas-antigua-de-chile-por-arturo-volantines/" }
         ]
-    },
-    {
-        nombre: "Revista Correo de la Poesía",
-        coords: [-33.0458, -71.6197],
-        zona: "Valparaíso",
-        region: "norte-chico",
-        años: "1982–1986",
-        tipo: "revista",
-        historia: { origen: null, contexto: null, continuidad: null },
-        fundadores: [{ nombre: "Alfredo Larrahona", rol: "Por determinar" }],
-        publicaciones: [
-            { titulo: "Correo de la Poesía", años: "1982–1986", numeros: "Revista", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
-    },
-    {
-        nombre: "Revista VER(S.O.S)",
-        coords: [-33.0500, -71.6250],
-        zona: "Valparaíso",
-        region: "norte-chico",
-        años: "1983–1984",
-        tipo: "revista",
-        historia: { origen: null, contexto: null, continuidad: null },
-        fundadores: [
-            { nombre: "Alejandro Pérez", rol: "Por determinar" },
-            { nombre: "Juan Cameron", rol: "Por determinar" },
-            { nombre: "Enrique Moro", rol: "Por determinar" }
-        ],
-        publicaciones: [
-            { titulo: "VER(S.O.S) (Versos)", años: "1983–1984", numeros: "Revista", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
-    },
-    {
-        nombre: "Grupo Eurídice",
-        coords: [-33.0550, -71.6150],
-        zona: "Valparaíso",
-        region: "norte-chico",
-        años: "1987–1988",
-        tipo: "taller",
-        historia: { origen: null, contexto: null, continuidad: null },
-        fundadores: [{ nombre: "Gonzalo Contreras", rol: "Por determinar" }],
-        publicaciones: [
-            { titulo: "Eurídice", años: "1987–1988", numeros: "Revista (2 números)", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
-    },
-    {
-        nombre: "Taller Fragua",
-        coords: [-34.5889, -70.9903],
-        zona: "O'Higgins (San Fernando)",
-        region: "norte-chico",
-        años: "Inicios de 1980s / 1983",
-        tipo: "taller",
-        historia: { origen: null, contexto: null, continuidad: null },
-        fundadores: [{ nombre: "Lorenzo González", rol: "Por determinar" }],
-        publicaciones: [
-            { titulo: "Fragua", años: "1983", numeros: "Revista", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
-    },
-    {
-        nombre: "Los Inútiles",
-        coords: [-34.1708, -70.7406],
-        zona: "O'Higgins (Rancagua)",
-        region: "norte-chico",
-        años: "1986–1988",
-        tipo: "taller",
-        historia: { origen: null, contexto: null, continuidad: null },
-        fundadores: [],
-        publicaciones: [
-            { titulo: "Actitud", años: "1986–1988", numeros: "Revista (3 números)", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
-    },
-    {
-        nombre: "Agrupación editorial Tentativa",
-        coords: [-36.6066, -72.1034],
-        zona: "Ñuble (Chillán)",
-        region: "norte-chico",
-        años: "Desde 1982–(más allá de 1990)",
-        tipo: "taller",
-        historia: { origen: "Agrupación editorial local", contexto: null, continuidad: null },
-        fundadores: [
-            { nombre: "Antonio Ferrada", rol: "Por determinar" },
-            { nombre: "Ricardo Ferrada", rol: "Por determinar" }
-        ],
-        publicaciones: [
-            { titulo: "Tentativa", años: "desde 1982", numeros: "Revista", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
     },
 
     // ==================== ZONA SUR ====================
@@ -3871,6 +3785,100 @@ const talleres = [
 
 // ==================== POETAS MUJERES ====================
 const poetas = [
+    // --- NORTE CHICO ---
+    {
+        nombre: "Viviana Benz",
+        nombreReal: null,
+        coords: [-29.9100, -71.2530],
+        zona: "Coquimbo (La Serena)",
+        region: "norte-chico",
+        años: "Activa desde 1980s",
+        verificado: true,
+        foto: null,
+        biografia: {
+            nacimiento: "Temuco, 1956",
+            formacion: "Estudió Obstetricia y Puericultura en la Universidad de Chile, Sede Temuco.",
+            contexto: "Integrante del Taller Lapislázuli en La Serena. Publicó en 'La Servilleta de Papel', órgano del Colectivo de Guayacán, junto a Gregorio Moreno y traducciones de Constantino Cavafis.",
+            trayectoria: "En 1997 obtuvo la Beca de Escritores del Fondo Nacional del Libro. Nombrada Miembro de Honor de la Cátedra Gabriela Mistral de la Universidad de La Habana. Ex-Presidenta de la SECH, IV Región. Ex-Directora de Cultura de la Municipalidad de La Serena."
+        },
+        publicaciones: [
+            {
+                titulo: "Plano poético urbano de La Serena",
+                años: "ca. 2001",
+                tipo: "Poemario",
+                detalles: ["Reseñado por Walter Hoefler en El Día (2001)"],
+                existencias: [
+                    { lugar: "Biblioteca Nacional Digital", tiene: true, link: "http://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html", nota: "Reseña RC0054358" }
+                ]
+            },
+            {
+                titulo: "Tierra sin herencia",
+                años: "Sin datos",
+                tipo: "Poemario",
+                detalles: ["Poemas disponibles en Portal Antonio Miranda"],
+                existencias: [
+                    { lugar: "Portal Antonio Miranda", tiene: true, link: "http://www.antoniomiranda.com.br/iberoamerica/chile/viviana_benz.html", nota: "Biografía y poemas" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Taller Lapislázuli", id: "taller-lapislazuli" },
+                { nombre: "Colectivo de Escritores de Guayacán", id: "colectivo-guayacan" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Hoefler, W.", año: "2001", titulo: "Poetas de la cuarta región, Elena Jiménez y Viviana Benz", medio: "El Día (La Serena)", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html" },
+            { autor: "Volantines, A.", año: "2020", titulo: "Maruja Foster y la fundación del Taller Lapislázuli", medio: "Proyecto Patrimonio", link: "http://letras.mysite.com/avol120620.html" }
+        ]
+    },
+    {
+        nombre: "Elba Elena Jiménez",
+        nombreReal: "Elba Elena Jiménez Saldaña",
+        coords: [-29.9550, -71.3450],
+        zona: "Coquimbo (La Serena)",
+        region: "norte-chico",
+        años: "Activa desde 1980s",
+        verificado: true,
+        foto: null,
+        biografia: {
+            nacimiento: "Noviembre 1958",
+            formacion: "Profesora de Castellano, especialista en Gabriela Mistral. Su memoria profesional versa sobre la Premio Nobel.",
+            contexto: "Cofundadora del Colectivo de los Poetas de la Bahía de Guayacán. Participó casi desde su fundación en las actividades de la SECH regional.",
+            trayectoria: "Raúl Zurita dice de su obra: 'De una gran libertad creativa, fuerza y originalidad. Elena Jiménez se ha ganado un lugar de singular relevancia en la poesía contemporánea de nuestro país.' Becaria del Fondo del Libro. Actualmente encargada de asuntos mistralianos en la Municipalidad de La Serena."
+        },
+        publicaciones: [
+            {
+                titulo: "Piedras de Trueno",
+                años: "ca. 2001",
+                tipo: "Poemario",
+                detalles: ["Reseñado por Walter Hoefler en El Día (2001)"],
+                existencias: [
+                    { lugar: "Biblioteca Nacional Digital", tiene: true, link: "http://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html", nota: "Reseña RC0054358" }
+                ]
+            },
+            {
+                titulo: "Ojo Facetado",
+                años: "Sin datos",
+                tipo: "Poemario",
+                detalles: ["Mencionado en fuentes, no localizado"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Colectivo de Escritores de Guayacán", id: "colectivo-guayacan" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Hoefler, W.", año: "2001", titulo: "Poetas de la cuarta región, Elena Jiménez y Viviana Benz", medio: "El Día (La Serena)", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/635/w3-article-271417.html" },
+            { autor: "Sitio Batalla de los Loros", año: "2022", titulo: "Elba Elena Jiménez - Antología de la poesía del valle de Elqui", medio: "Sitio Batalla de los Loros", link: "https://sitiobatalladelosloros.cl/2022/07/elba-elena-jimenez-antologia-de-la-poesia-del-valle-de-elqui/" },
+            { autor: "Hernández, E.", año: "1996+", titulo: "Noticias de mujeres poetas", medio: "Nomadías Nº 3, U. Chile / Memoria Chilena", link: "http://www.memoriachilena.gob.cl/602/w3-article-77680.html" }
+        ]
+    },
+    // --- REGIÓN METROPOLITANA ---
     {
         nombre: "Alicia Puig",
         nombreReal: null,
@@ -6461,6 +6469,7 @@ const poetas = [
         zona: "Antofagasta (II Región)",
         region: "norte-grande",
         años: "1960–",
+        verificado: true,
         foto: null,
         biografia: {
             nacimiento: "Santiago, 1960 (dato indicado por la autora). Desde joven se radicó en Antofagasta.",
@@ -6670,6 +6679,7 @@ const poetas = [
         zona: "Arica / Antofagasta (Norte Grande)",
         region: "norte-grande",
         años: "1953–",
+        verificado: true,
         foto: null,
         biografia: {
             nacimiento: "1953. Licenciatura en Literatura y Lingüística Hispánicas, Universidad de Antofagasta (1981).",
@@ -8004,54 +8014,46 @@ window.focusSilencio = function(nombre) {
         }
     }
     
-    if (found && marker) {
-        // Primero hacer zoom para sacar del cluster
-        const latlng = marker.getLatLng();
-        map.setView(latlng, 12);
+    if (!found) {
+        // Si no se encuentra, puede ser que los filtros oculten la entidad
+        // Resetear filtros y volver a buscar
+        document.getElementById('regionFilter').value = 'all';
+        document.getElementById('typeFilter').value = 'all';
+        createMarkers('all', 'all');
         
-        // Esperar a que el mapa se actualice y los marcadores se desagrupen
+        // Esperar a que se recreen los marcadores y buscar de nuevo
         setTimeout(() => {
-            // Ahora aplicar el dimming
-            Object.values(tallerMarkers).forEach(m => {
-                const elem = m.getElement();
-                if (elem && m !== marker) {
-                    elem.classList.add('dimmed');
-                }
-            });
-            Object.values(poetMarkers).forEach(m => {
-                const elem = m.getElement();
-                if (elem && m !== marker) {
-                    elem.classList.add('dimmed');
-                }
-            });
-            
-            // Resaltar el marcador seleccionado
-            const elem = marker.getElement();
-            if (elem) {
-                elem.classList.remove('dimmed');
-                if (isPoeta) {
-                    elem.classList.add('highlighted-poeta');
-                } else {
-                    // Verificar si es revista o taller
-                    const innerDiv = elem.querySelector('.custom-marker');
-                    if (innerDiv && innerDiv.classList.contains('marker-revista')) {
-                        elem.classList.add('highlighted-revista');
-                    } else {
-                        elem.classList.add('highlighted-taller');
-                    }
-                }
+            marker = tallerMarkers[nombre] || poetMarkers[nombre];
+            if (marker) {
+                isPoeta = !!poetMarkers[nombre];
+                ejecutarFoco(marker, isPoeta, nombre);
+            } else {
+                alert('Entidad "' + nombre + '" no encontrada en el mapa.');
             }
-            
-            // Abrir popup
+        }, 300);
+        return;
+    }
+    
+    ejecutarFoco(marker, isPoeta, nombre);
+};
+
+function ejecutarFoco(marker, isPoeta, nombre) {
+    // Usar zoomToShowLayer del cluster para asegurar que el marcador sea visible
+    markerClusterGroup.zoomToShowLayer(marker, function() {
+        // Una vez visible, centrar en el marcador
+        const latlng = marker.getLatLng();
+        map.setView(latlng, 14); // Zoom alto para aislar el punto
+        
+        // Pequeño delay para asegurar que el mapa terminó de moverse
+        setTimeout(() => {
+            // Abrir el popup
             marker.openPopup();
             
             // Mostrar botón para restaurar vista
             showRestoreButton();
-        }, 500);
-    } else {
-        alert('Entidad "' + nombre + '" no encontrada en el mapa. Verifica que el nombre coincida exactamente.');
-    }
-};
+        }, 300);
+    });
+}
 
 // Función para mostrar botón de restaurar vista
 function showRestoreButton() {
