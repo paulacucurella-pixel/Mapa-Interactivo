@@ -3829,6 +3829,382 @@ const talleres = [
         integrantes: [],
         publicaciones: [],
         fuentes: []
+    },
+    // ==================== NUEVAS REVISTAS SESIÓN 12 ====================
+    {
+        nombre: "Revista Fuego Negro",
+        coords: [-36.8270, -73.0503],
+        zona: "Concepción (VIII Región del Biobío)",
+        region: "sur",
+        años: "1973",
+        tipo: "revista",
+        verificado: true,
+        historia: {
+            origen: "Tríptico de poesía joven universitaria publicado en junio de 1973, tres meses antes del golpe de Estado. Editado por Carlos Cociña y Mario Milanca desde el Departamento de Español, Instituto Central de Lenguas, Universidad de Concepción.",
+            contexto: "El nombre rinde homenaje a 'Fuego Negro' (1953) de Pablo de Rokha, libro dedicado a su esposa Winétt. La portada llevaba ilustración de Picasso que evocaba a Altazor de Huidobro.",
+            desarrollos: "Publicación única (N° 1). Incluía sección 'Antología de la Poesía Chilena Joven' con fichas bio-bibliográficas. Referentes: De Rokha, Vallejo (Trilce), Huidobro.",
+            continuidad: "Tras el golpe de septiembre 1973, la escuela de literatura de la Universidad de Concepción fue cerrada. Los editores continuaron con la revista Envés (1974)."
+        },
+        fundadores: [
+            { nombre: "Carlos Cociña", rol: "Director/Editor" },
+            { nombre: "Mario Milanca Guzmán", rol: "Director/Editor" }
+        ],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Fuego Negro N° 1",
+                años: "junio 1973",
+                tipo: "Revista/Tríptico",
+                detalles: ["Universidad de Concepción", "Poesía joven universitaria", "Único número publicado"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121719.html", nota: "PDF descargable (MC0005660)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Lilianet Brintrup", rol: "Crítica literaria mencionada (monografía sobre Sergio Hernández en Atenea)", enRevista: false }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1973", titulo: "Fuego negro: n° 1, junio 1973", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121719.html" },
+            { autor: "Wikipedia", año: "2024", titulo: "Carlos Cociña", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Carlos_Coci%C3%B1a" },
+            { autor: "Fundación Pablo Neruda", año: "2020", titulo: "Entrevista a Carlos Cociña", medio: "Portal Cultura", link: "https://cultura.fundacionneruda.org/2020/07/siempre-se-escribe-en-la-situacion-social-es-imposible-estar-ajeno-a-ella-y-esta-marca-aun-en-caso-que-se-la-pretenda-evadir-entrevista-a-carlos-cocina/" }
+        ]
+    },
+    {
+        nombre: "Revista Envés",
+        coords: [-36.8300, -73.0550],
+        zona: "Concepción (VIII Región del Biobío)",
+        region: "sur",
+        años: "1974",
+        tipo: "revista",
+        verificado: true,
+        historia: {
+            origen: "Continuación de Fuego Negro, fundada en 1974 por el mismo equipo más Nicolás Miquea. Editada desde el Instituto Central de Lenguas, Universidad de Concepción.",
+            contexto: "El nombre cambió de connotación 'rokhiana' (Fuego Negro) a 'estructuralista' (Envés). Roberto Hozven se sumó al equipo con influencia de Lévi-Strauss y semiótica.",
+            desarrollos: "En el N° 3 (diciembre 1974) se documentó recital de presentación con Nicolás Miquea, Carlos Cociña, Javier Campos, Mario Milanca y Sergio Hernández.",
+            continuidad: "Precedió a las revistas Punto Próximo y Posdata en Concepción."
+        },
+        fundadores: [
+            { nombre: "Carlos Cociña", rol: "Editor" },
+            { nombre: "Mario Milanca", rol: "Editor" },
+            { nombre: "Nicolás Miquea", rol: "Editor" },
+            { nombre: "Floridor Pérez", rol: "Colaborador" },
+            { nombre: "Roberto Hozven", rol: "Colaborador" },
+            { nombre: "Edgardo Jiménez", rol: "Colaborador" }
+        ],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Envés Año II, N° 3",
+                años: "diciembre 1974",
+                tipo: "Revista",
+                detalles: ["Universidad de Concepción", "Instituto Central de Lenguas"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121785.html", nota: "PDF descargable (MC0005935)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1974", titulo: "Envés: año 2, n° 3, diciembre 1974", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121785.html" },
+            { autor: "Scielo Chile", año: "2012", titulo: "Dos poetas penquistas: Carlos Cociña y Tomás Harris", medio: "Acta Literaria", link: "https://scielo.conicyt.cl/scielo.php?pid=S0718-04622012000200012&script=sci_arttext" }
+        ]
+    },
+    {
+        nombre: "Revista El Organillo",
+        coords: [-33.4400, -70.6500],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1985–1989",
+        tipo: "revista",
+        verificado: true,
+        historia: {
+            origen: "Revista de poesía y cuento fundada por Erwin Díaz M. en Santiago. Funcionó entre 1985 y 1989 con al menos 12 números regulares más separatas.",
+            contexto: "El editorial (fragmento de Jorge Teillier) reivindicaba al poeta como ser marginal que transforma la poesía en praxis. Defensa de la poesía como experiencia vital frente a sociedad que la margina.",
+            desarrollos: "Colaboradoras regulares: Elvira Hernández, Marina Pinilla, Adriana Espinoza, Pía Barros. Sin embargo, los números revisados muestran mayoría de autores masculinos publicados.",
+            continuidad: "Erwin Díaz continuó después con el diario de poesía Ocio y fundó el Club de Jazz Thelonious (2003)."
+        },
+        fundadores: [
+            { nombre: "Erwin Díaz M.", rol: "Director/Editor Literario" }
+        ],
+        integrantes: [
+            { nombre: "Viviana Ramírez", rol: "Editora Gráfica" },
+            { nombre: "Guillermo Grebe", rol: "Editor Gráfico (algunos números)" },
+            { nombre: "Elvira Hernández", rol: "Colaboradora" },
+            { nombre: "Marina Pinilla", rol: "Colaboradora" },
+            { nombre: "Adriana Espinoza", rol: "Colaboradora" },
+            { nombre: "Pía Barros", rol: "Colaboradora" },
+            { nombre: "Jorge Montealegre", rol: "Colaborador" }
+        ],
+        publicaciones: [
+            {
+                titulo: "El Organillo N° 7",
+                años: "marzo-abril 1987",
+                tipo: "Revista",
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html", nota: "Digitalizado" }
+                ]
+            },
+            {
+                titulo: "El Organillo N° 9",
+                años: "noviembre-diciembre 1987",
+                tipo: "Revista",
+                detalles: ["Incluye textos de Raúl Zurita, Gonzalo Rojas, Jorge Teillier", "Cuento de Pedro Mardones", "Crítica de Federico Schopf sobre Diego Maquieira"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Digitalizado" }
+                ]
+            },
+            {
+                titulo: "El Organillo N° 12",
+                años: "invierno 1989",
+                tipo: "Revista",
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Digitalizado" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Elvira Hernández", rol: "Colaboradora", enRevista: true },
+            { nombre: "Marina Pinilla", rol: "Colaboradora", enRevista: true },
+            { nombre: "Adriana Espinoza", rol: "Colaboradora", enRevista: true },
+            { nombre: "Pía Barros", rol: "Colaboradora (narrativa)", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" },
+            { autor: "Scielo Chile", año: "2010", titulo: "Nieve en el fondo de Erwin Díaz", medio: "Revista Chilena de Literatura", link: "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-68482010000100012" },
+            { autor: "Fundación Pablo Neruda", año: "2022", titulo: "20 años del periódico literario chileno Carajo", medio: "Portal Cultura", link: "https://cultura.fundacionneruda.org/2022/12/20-anos-del-periodico-literario-chileno-carajo/" }
+        ]
+    },
+    {
+        nombre: "Grupo Ancoa / Colecciones Ancoa",
+        coords: [-35.8500, -71.5900],
+        zona: "Linares (VII Región del Maule)",
+        region: "centro",
+        años: "1970s–1988",
+        tipo: "taller",
+        verificado: true,
+        historia: {
+            origen: "Grupo literario mítico de Linares formado por Samuel Maldonado Silva (1916-1988), Pedro Olmos (pintor) y Manuel Francisco Mesa Seco (poeta, abogado, académico de la lengua).",
+            contexto: "Maldonado Silva llegó a Linares en 1939 como cronista del diario El Heraldo, del cual llegó a ser director. Publicó la revista Colecciones Ancoa como órgano del grupo.",
+            desarrollos: "Colecciones Ancoa N° 2 (noviembre 1981): publicación mensual de poesía linarense. Aceptaba poetas no nacidos en Linares si desarrollaron su obra en la ciudad. Imprenta Minerva, Linares.",
+            continuidad: "Mesa Seco alcanzó fama nacional y fue el primer escritor de provincias en la Academia Chilena de la Lengua. El grupo se disolvió con la muerte de Maldonado Silva (1988)."
+        },
+        fundadores: [
+            { nombre: "Samuel Maldonado Silva", rol: "Fundador, Director de Colecciones Ancoa" },
+            { nombre: "Pedro Olmos", rol: "Cofundador, pintor" },
+            { nombre: "Manuel Francisco Mesa Seco", rol: "Cofundador, poeta" }
+        ],
+        integrantes: [
+            { nombre: "Jaime Maldonado de la Fuente", rol: "Viñetista" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Colecciones Ancoa N° 2",
+                años: "noviembre 1981",
+                tipo: "Revista",
+                detalles: ["Director: Samuel Maldonado Silva", "Casilla 71, Linares", "Imprenta Minerva"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Referencia en catálogo (Ancoa: nº 2, noviembre 1981)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Sylvia Soto Tapia", rol: "Poeta publicada", poema: "Cosas sin importancia", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Wikipedia", año: "2025", titulo: "Linares (Chile)", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Linares_(Chile)" },
+            { autor: "El Escribano", año: "2016", titulo: "Pedro Olmos - Grupo Ancoa", medio: "El Escribano", link: "https://wwwescribanocl.wordpress.com/tag/pedro-olmos/" },
+            { autor: "Chile Patrimonios", año: "s.f.", titulo: "Samuel Maldonado Silva, el poeta olvidado", medio: "Biblioteca Nacional Digital", link: "https://www.chilepatrimonios.gob.cl/index.php/ficha?doi=03BND-RC0079763" }
+        ]
+    },
+    {
+        nombre: "Revista Carta",
+        coords: [-33.4100, -70.5800],
+        zona: "Santiago (Las Condes)",
+        region: "metropolitana",
+        años: "1982–1984",
+        tipo: "revista",
+        verificado: false,
+        historia: {
+            origen: "Revista fundada en octubre de 1982 por Marina Latorre U. Publicada por Ediciones Bolt (vocero de revista Portal), Londres 92, Santiago. Distribución gratuita.",
+            contexto: "Nació inspirada en pedido de 'un poeta de Isla Negra' (Neruda). Difundía cartas de grupos literarios, instituciones culturales, alcaldías, universidades y reseñas de libros.",
+            desarrollos: "Vinculada al Encuentro Cultural en Cosmocentro Apumanque (oct. 1982). Coordinadoras escritoras: Adriana Marín, María Bargetto, Helga Villagrán, Natasha Valdés, Teresa Calderón.",
+            continuidad: "Publicó 3 volúmenes entre 1982 y 1984."
+        },
+        fundadores: [
+            { nombre: "Marina Latorre U.", rol: "Directora" },
+            { nombre: "Eduardo Bolt", rol: "Representante Legal" },
+            { nombre: "Miguel Ángel Godoy", rol: "Asesor Literario" }
+        ],
+        integrantes: [
+            { nombre: "Adriana Marín", rol: "Coordinadora Escritora" },
+            { nombre: "María Bargetto", rol: "Coordinadora Escritora" },
+            { nombre: "Helga Villagrán", rol: "Coordinadora Escritora" },
+            { nombre: "Natasha Valdés", rol: "Coordinadora Escritora" },
+            { nombre: "Teresa Calderón", rol: "Coordinadora Escritora" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Carta N° 1",
+                años: "octubre 1982",
+                tipo: "Revista",
+                detalles: ["Ediciones Bolt", "Distribución gratuita", "⚠️ Datos extraídos de ejemplar en Memoria Chilena"],
+                existencias: [
+                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html", nota: "Carta. Santiago: Eds. Bolt, 1982-1984. 3 v." }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Marina Latorre U.", rol: "Directora, dramaturga", obra: "De la misma secta", enRevista: true },
+            { nombre: "Teresa Calderón", rol: "Coordinadora escritora", enRevista: true },
+            { nombre: "Paz Molina Venegas", rol: "Reseñada", libro: "Memorias de un pájaro asustado", enRevista: false },
+            { nombre: "Magdalena Vale", rol: "Reseñada", libro: "Arena Viva", enRevista: false },
+            { nombre: "Marcela Paz", rol: "Homenajeada (Premio Nacional 1982)", enRevista: false }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1982", titulo: "Carta N° 1 (octubre 1982)", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" }
+        ]
+    },
+    {
+        nombre: "Revista Contramuro / Taller Urbano",
+        coords: [-33.4550, -70.6650],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1983–1987",
+        tipo: "taller",
+        verificado: false,
+        historia: {
+            origen: "Revista Latinoamericana de Artes y Letras publicada por el Centro Hurbanístico de Artes y Letras / Taller Urbano. Casilla 4532 - Correo 2, Santiago.",
+            contexto: "Enfoque cultural latinoamericano; se posicionó explícitamente contra el aislamiento cultural del régimen de Pinochet (14 años). Enfoque humanista, independiente, democrático.",
+            desarrollos: "El N° 16 (nov-dic 1987) incluía sección de libros recibidos con menciones de poetas latinoamericanas. Circulación restringida.",
+            continuidad: "La revista Galera (Taller Berghof) organizó concursos de poesía vinculados a Contramuro (5to Festival de Expresión Popular)."
+        },
+        fundadores: [
+            { nombre: "Felipe Banderas", rol: "Director" },
+            { nombre: "Pedro Araucario", rol: "Subdirector" },
+            { nombre: "Demián Moreno", rol: "Editor" }
+        ],
+        integrantes: [
+            { nombre: "Horacio Eloy", rol: "Sección Poesía" },
+            { nombre: "Pancho Lobo", rol: "Sección Poesía" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Contramuro N° 5",
+                años: "1983",
+                tipo: "Revista",
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Digitalizado" }
+                ]
+            },
+            {
+                titulo: "Contramuro N° 6",
+                años: "agosto-septiembre 1983",
+                tipo: "Revista",
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Digitalizado" }
+                ]
+            },
+            {
+                titulo: "Contramuro N° 16",
+                años: "noviembre-diciembre 1987",
+                tipo: "Revista",
+                detalles: ["⚠️ Datos extraídos de ejemplar en Memoria Chilena"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121824.html", nota: "PDF descargable (MC0006540)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Marilia Rodriguez", rol: "Artista gráfica (Brasil)", obra: "Grabados pp. 28, 56", enRevista: true },
+            { nombre: "Mirtha Defilpo", rol: "Mencionada en Libros Recibidos", libro: "Después de Darwin (1983)", enRevista: false },
+            { nombre: "María Cristina Santiago", rol: "Mencionada en Libros Recibidos", libro: "Soy el lugar de las apariciones (1984)", enRevista: false },
+            { nombre: "Viviana Benz", rol: "Mencionada en Libros Recibidos", libro: "Viento gentil de primavera (1985)", enRevista: false }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1987", titulo: "Contramuro: n° 16, noviembre-diciembre 1987", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-121824.html" },
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Revistas de talleres, colectivos, asociaciones y grupos", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+        ]
+    },
+    {
+        nombre: "Revista Galera / Taller Berghof",
+        coords: [-33.5100, -70.7600],
+        zona: "Santiago (Maipú)",
+        region: "metropolitana",
+        años: "1985–1986",
+        tipo: "taller",
+        verificado: false,
+        historia: {
+            origen: "Órgano del Taller Literario Berghof, que cumplió su primer año en marzo 1986. Segunda época (ex-Servum Pecus). Dirección: Alberto Llona N° 988, Maipú, Santiago.",
+            contexto: "Declaran influencias de Rilke, Valéry, Maiakovski, T. Mann, Huidobro, Teillier, Quezada, Zurita. Se posicionan como respuesta a 'este momento histórico' y en solidaridad con organizaciones populares.",
+            desarrollos: "El N° 3 (marzo 1986) incluye poemas de Cristina Jara y Cristina Palacios. Palacios ganó 1er lugar en concurso de Poesía organizado por revista Contramuro en 5to Festival de Expresión Popular.",
+            continuidad: "Vinculados al Colectivo de Escritores Jóvenes."
+        },
+        fundadores: [
+            { nombre: "Jorge Héctor Alvarado", rol: "Director" }
+        ],
+        integrantes: [
+            { nombre: "Salvador Pastore", rol: "Relaciones Públicas" },
+            { nombre: "Alberto Parry", rol: "Archivo" },
+            { nombre: "Demian Moreno", rol: "Colaborador (Taller Urbano)" },
+            { nombre: "Patricia Sauvat", rol: "Colaboradora (separata México)" },
+            { nombre: "Manuel Guerrero", rol: "Colaborador" },
+            { nombre: "Manuela L. Guerrero M.", rol: "Sección editorial" },
+            { nombre: "S. Rodríguez Saavedra", rol: "Corresponsal (La Serena)" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Galera Año 1, N° 3",
+                años: "marzo 1986",
+                tipo: "Revista",
+                detalles: ["Circulación restringida", "⚠️ Datos extraídos de ejemplar en Memoria Chilena"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Galera: revista literaria: año 1, no. 3 (1986)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Cristina Jara", rol: "Poeta publicada", poemas: "Agonizando (p.13), Agonía (p.14)", bio: "3er lugar concurso Fuga Poética, Mención Cuento. Colectivo de Escritores Jóvenes", enRevista: true },
+            { nombre: "Cristina Palacios", rol: "Poeta publicada", poemas: "Muerte del invierno, Kilos, Signos, Lista de pensamientos, Imagínate (pp. 15-19)", bio: "1er lugar concurso Poesía en Santiago (Contramuro, 5to Festival de Expresión Popular)", enRevista: true },
+            { nombre: "Patricia Sauvat", rol: "Colaboradora", enRevista: false }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1986", titulo: "Galera: revista literaria: año 1, no. 3 (1986)", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+        ]
+    },
+    {
+        nombre: "Golpes del día (Marianela Gaytán)",
+        coords: [-23.6509, -70.3975],
+        zona: "Antofagasta (II Región)",
+        region: "norte-grande",
+        años: "1980",
+        tipo: "revista",
+        verificado: false,
+        historia: {
+            origen: "Cuadernillo de poesía publicado en septiembre de 1980 por el Taller de Literatura Recital de Antofagasta. Autora única: Marianela Gaytán.",
+            contexto: "Dedicado a Julia Laffertte. Epígrafe de Pablo Neruda. Temática elegíaca sobre duelo, muerte y soledad.",
+            desarrollos: "Poema extenso en seis secciones (I-VI). Documenta actividad del circuito poético nortino en 1980, mismo año y ciudad que 'Alambradas Rotas' de Mayo Muñoz.",
+            continuidad: "Vinculado al Taller Recital de Antofagasta."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Golpes del día",
+                años: "septiembre 1980",
+                tipo: "Cuadernillo/Plaquette",
+                detalles: ["Taller de Literatura Recital", "Antofagasta", "⚠️ Datos extraídos de ejemplar en Memoria Chilena"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Golpes del día (referencia en catálogo)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Marianela Gaytán", rol: "Autora única", poema: "Golpes del día (I-VI)", dedicatoria: "A Julia Laffertte", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1980", titulo: "Golpes del día", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+        ]
     }
 ];
 
@@ -7356,6 +7732,504 @@ const poetas = [
         fuentes: [
             { autor: "Taller Literario Gredazul", año: "1984", titulo: "Carmina: año 2, nº 2", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" },
             { autor: "Silva, A.", año: "2008", titulo: "Pasiones del desencanto. La crisis del campo literario chileno en revistas literarias durante la dictadura", medio: "Tesis doctoral PUC", link: "https://es.scribd.com/document/656856228/TESIS-Pasiones-Del-Desencanto" }
+        ]
+    },
+    // ==================== NUEVAS POETAS SESIÓN 13 ====================
+    {
+        nombre: "Marina Latorre Uribe",
+        nombreReal: null,
+        coords: [-33.4420, -70.6520],
+        zona: "Santiago (Barrio París-Londres)",
+        region: "metropolitana",
+        años: "1925–",
+        foto: null,
+        verificado: true,
+        biografia: {
+            nacimiento: "Punta Arenas, 14 de agosto de 1925. Hija de sindicalista obrero con afición a la literatura. Cumplió 100 años en agosto de 2025.",
+            formacion: "Estudió Pedagogía en Castellano y Periodismo en Universidad de Chile. Licenciada en Comunicación en Universidad de Santiago.",
+            contexto: "Figura clave de la escena cultural chilena de los '60. Junto a su esposo Eduardo Bolt fundó Galería de Arte Bolt (Londres 90, Barrio París-Londres) donde expusieron Roberto Matta, Camilo Mori, José Venturelli, Inés Puyo. En el mismo lugar funcionó DICAP (Discoteca del Cantar Popular) donde grabaron Víctor Jara, Quilapayún, Inti-Illimani.",
+            trayectoria: "En 1964 publicó 'Galería clausurada' (cuentos). En 1965 cofundó revista Portal con Luis Alberto Mansilla y Eduardo Bolt (colaboraron Borges, Neruda, Jorge Teillier, Francisco Coloane). En 1973 ganó Primer Premio Ensayo Quimantú por 'El incendio de la Federación Obrera de Magallanes' (no entregado por golpe, obra inédita hasta 2012). Esposo detenido tras golpe, casa allanada. Durante dictadura publicó 'Fauna Austral', 'Ventisquero' (poesía). Neruda la bautizó 'La Torre de la Poesía'. En 2021 UAH reeditó 'Galería clausurada'. Premio Municipal Santiago Construye Historias (2023). Persona Mayor Destacada 2025 (Sociedad de Geriatría Chile)."
+        },
+        publicaciones: [
+            {
+                titulo: "Galería clausurada",
+                años: "1964",
+                tipo: "Cuentos",
+                detalles: ["Reeditado por Editorial Universidad Alberto Hurtado (2021)"],
+                existencias: [
+                    { lugar: "Ediciones UAH", tiene: true, link: "https://ediciones.uahurtado.cl/autor/marina-latorre/", nota: "Colección Biblioteca Recobrada-Narradoras chilenas" }
+                ]
+            },
+            {
+                titulo: "Revista Portal (cofundadora)",
+                años: "1965–1973",
+                tipo: "Revista literaria",
+                detalles: ["Colaboradores: Borges, Neruda, Teillier, Coloane"],
+                existencias: []
+            },
+            {
+                titulo: "Revista Carta (directora)",
+                años: "1982–1984",
+                tipo: "Revista literaria",
+                detalles: ["Ediciones Bolt, Santiago", "3 volúmenes publicados"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html", nota: "Carta. Santiago: Eds. Bolt, 1982-1984" }
+                ]
+            },
+            {
+                titulo: "Fauna Austral",
+                años: "1977",
+                tipo: "Poesía",
+                detalles: ["Publicado durante dictadura con escasa circulación"],
+                existencias: []
+            },
+            {
+                titulo: "¿Cuál es el dios que pasa?",
+                años: "1978",
+                tipo: "Novela corta",
+                detalles: ["Editorial Nascimento", "Mayor recepción crítica de la época"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Revista Portal", id: "portal" },
+                { nombre: "Revista Carta", id: "carta" }
+            ]
+        },
+        fuentes: [
+            { autor: "Santiago Cultura", año: "2025", titulo: "Centenario de Marina Latorre", medio: "Municipalidad de Santiago", link: "https://www.santiagocultura.cl/centenario-de-marina-latorre-escritora-periodista-gestora-cultural-y-vecina-de-santiago/" },
+            { autor: "Wikipedia", año: "2025", titulo: "Marina Latorre", medio: "Wikipedia (en)", link: "https://en.wikipedia.org/wiki/Marina_Latorre" },
+            { autor: "Mujeres Bacanas", año: "2023", titulo: "Marina Latorre (1925)", medio: "Mujeres Bacanas", link: "http://mujeresbacanas.com/marina-latorre-1925/" },
+            { autor: "Palabra Pública", año: "2021", titulo: "Marina Latorre", medio: "Universidad de Chile", link: "https://palabrapublica.uchile.cl/tag/marina-latorre/" },
+            { autor: "Autoras Chilenas", año: "2022", titulo: "Marina Latorre", medio: "Autoras Chilenas", link: "https://autoraschilenas.cl/marina-latorre/" }
+        ]
+    },
+    {
+        nombre: "Lilianet Brintrup Hertling",
+        nombreReal: null,
+        coords: [-41.4700, -72.9400],
+        zona: "Provincia de Llanquihue (X Región de Los Lagos)",
+        region: "sur",
+        años: "Activa 1970s–actualidad",
+        foto: null,
+        verificado: true,
+        biografia: {
+            nacimiento: "Chile, provincia de Llanquihue. Reside en Estados Unidos desde 1981.",
+            formacion: "Doctorado en University of Michigan, Ann Arbor. Profesora de Literatura Hispanoamericana en Humboldt State University, California.",
+            contexto: "En los años 1970s fue crítica literaria activa en Concepción. Mencionada en revista Fuego Negro N° 1 (junio 1973) como autora de monografía sobre Sergio Hernández en revista Atenea. Publicó crítica en diario El Sur de Concepción (1980).",
+            trayectoria: "Especialista en literatura de viajes y viajeros (Benjamín Vicuña Mackenna, María Graham, Ignacio Domeyko). Autora de 5 poemarios: 'En tierra firme' (1993), 'Amor y Caos', 'El Libro Natural', 'Quiebres en California' (2021), 'Chile, en particular'. Organizadora de Congresos Internacionales de Poesía (España, Chile, Hungría, Canadá, México) y sobre Alexander von Humboldt. Investigadora de inmigración alemana en Chile siglo XIX."
+        },
+        publicaciones: [
+            {
+                titulo: "Crítica en El Sur (Concepción)",
+                años: "1980",
+                tipo: "Crítica literaria",
+                detalles: ["Artículo 'La Poesía de Myriam Díaz'", "El Sur, 9 marzo 1980, p. 2"],
+                existencias: [
+                    { lugar: "Biblioteca Nacional Digital", tiene: true, link: "http://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-281177.html", nota: "Archivo de Referencias Críticas" }
+                ]
+            },
+            {
+                titulo: "Mención en Fuego Negro",
+                años: "1973",
+                tipo: "Mención académica",
+                detalles: ["Mencionada como autora de monografía crítica sobre Sergio Hernández", "Próxima a publicarse en revista Atenea"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121719.html", nota: "Fuego Negro N° 1 (MC0005660)" }
+                ]
+            },
+            {
+                titulo: "Viaje y escritura: Viajeros románticos chilenos",
+                años: "1993",
+                tipo: "Ensayo/Investigación",
+                detalles: ["American University Studies", "Peter Lang Publishing"],
+                existencias: []
+            },
+            {
+                titulo: "En tierra firme",
+                años: "1993",
+                tipo: "Poesía",
+                detalles: ["Ediciones del Azafrán", "108 páginas"],
+                existencias: []
+            },
+            {
+                titulo: "Quiebres en California",
+                años: "2021",
+                tipo: "Poesía",
+                detalles: ["Humboldt State University Press", "Viaje ida y vuelta California-sur de Chile"],
+                existencias: [
+                    { lugar: "Humboldt Digital Commons", tiene: true, link: "https://digitalcommons.humboldt.edu/fiction/8/", nota: "Acceso digital" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Fuego Negro", id: "fuego-negro" },
+                { nombre: "Atenea", id: "atenea" }
+            ]
+        },
+        fuentes: [
+            { autor: "Ecozon@", año: "2017", titulo: "Dos poemas / Two Poems - Lilianet Brintrup", medio: "European Journal of Literature, Culture and Environment", link: "https://ecozona.eu/article/view/1372" },
+            { autor: "Biblioteca Nacional Digital", año: "1980", titulo: "La Poesía de Myriam Díaz [artículo]", medio: "Archivo de Referencias Críticas", link: "http://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-281177.html" },
+            { autor: "Revista Chilena de Literatura", año: "2016", titulo: "Viaje y escritura: viajeros románticos chilenos (reseña)", medio: "Universidad de Chile", link: "https://revistaliteratura.uchile.cl/index.php/RCL/article/view/39765" }
+        ]
+    },
+    {
+        nombre: "Paz Molina Venegas",
+        nombreReal: "Amada de la Paz Molina Venegas",
+        coords: [-33.4500, -70.6600],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1945–",
+        foto: null,
+        verificado: true,
+        biografia: {
+            nacimiento: "Santiago, 7 de abril de 1945.",
+            formacion: "Estudió Bellas Artes (pintura, teatro, literatura) en Universidad de Chile, sin completar estudios. Talleres con Miguel Arteche, Jaime Quezada, Pía Barros.",
+            contexto: "Parte del movimiento narrativo de la década de los '80 que se impuso a la mordaza y censura cultural de la dictadura. Voz feminista que rompió con esquemas del verso delicado-rosado-romántico. Colaboró en revistas Huelén, Rayentrú, Pluma y Pincel, El Siglo, Punto Final.",
+            trayectoria: "En 1980 ganó Premio Pedro de Oña con novela 'Paradero 28' (inédita). En 1982 publicó primer poemario 'Memorias de un Pájaro Asustado' (reseñado en revista Carta). Primer lugar Juegos Literarios Gabriela Mistral 1982 con novela 'Apuntes para una Sombra'. Incluida en antología '25 Años de Poesía Chilena' (Calderón/Harris, 1995). Dirige talleres de escritura y colabora con Fundación Neruda."
+        },
+        publicaciones: [
+            {
+                titulo: "Memorias de un Pájaro Asustado",
+                años: "1982",
+                tipo: "Poesía",
+                detalles: ["Primer poemario", "Reseñado por Aristóteles España"],
+                existencias: [
+                    { lugar: "Biblioteca Nacional Digital", tiene: true, link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/625/w3-article-320400.html", nota: "Grabación lectura autora (1995)" }
+                ]
+            },
+            {
+                titulo: "Noche Valleja",
+                años: "1990",
+                tipo: "Poesía",
+                existencias: []
+            },
+            {
+                titulo: "Cantos de Ciega",
+                años: "1994",
+                tipo: "Poesía",
+                existencias: []
+            },
+            {
+                titulo: "La Boca del Miedo",
+                años: "2002",
+                tipo: "Poesía",
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Huelén", id: "huelen" },
+                { nombre: "Pluma y Pincel", id: "pluma-pincel" },
+                { nombre: "Carta", id: "carta" }
+            ]
+        },
+        fuentes: [
+            { autor: "Wikipedia", año: "2024", titulo: "Paz Molina", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Paz_Molina" },
+            { autor: "Fundación Pablo Neruda", año: "2020", titulo: "4 poemas de Paz Molina", medio: "Portal Cultura", link: "https://cultura.fundacionneruda.org/2020/11/4-poemas-de-paz-molina/" },
+            { autor: "Circulo de Poesía", año: "2010", titulo: "Foja de poesía No. 156: Paz Molina", medio: "Circulo de Poesía", link: "https://circulodepoesia.com/2010/03/foja-de-poesia-no-156-paz-molina/" },
+            { autor: "Universidad de Chile", año: "2016", titulo: "Fragmentos: vida y obra de la poeta Paz Molina", medio: "Repositorio UChile (Tesis)", link: "https://repositorio.uchile.cl/handle/2250/135183" }
+        ]
+    },
+    {
+        nombre: "Cristina Jara",
+        nombreReal: null,
+        coords: [-33.5150, -70.7650],
+        zona: "Santiago (Maipú)",
+        region: "metropolitana",
+        años: "Activa 1985–1986",
+        foto: null,
+        verificado: false,
+        biografia: {
+            nacimiento: "por determinar",
+            formacion: "Miembro del Colectivo de Escritores Jóvenes.",
+            contexto: "Publicó en revista Galera (Taller Berghof, Maipú) N° 3 (marzo 1986). Obtuvo 3er lugar en concurso 'Fuga Poética' y Mención en Cuento.",
+            trayectoria: "⚠️ DATOS NO VERIFICADOS CON PROTOCOLO ANTI-ALUCINACIÓN. Requiere consulta presencial en archivos. Información extraída de ejemplar en repositorio digital de Memoria Chilena."
+        },
+        publicaciones: [
+            {
+                titulo: "Poemas en Galera N° 3",
+                años: "marzo 1986",
+                tipo: "Poesía en revista",
+                detalles: ["'Agonizando' (p. 13)", "'Agonía' (p. 14)", "Taller Berghof, Maipú"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Galera: revista literaria: año 1, no. 3 (1986). ⚠️ Datos extraídos de ejemplar en repositorio digital" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Taller Berghof", id: "berghof" },
+                { nombre: "Colectivo de Escritores Jóvenes", id: "cej" }
+            ],
+            revistas: [
+                { nombre: "Galera", id: "galera" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1986", titulo: "Galera: revista literaria: año 1, no. 3", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+        ]
+    },
+    {
+        nombre: "Cristina Palacios",
+        nombreReal: null,
+        coords: [-33.4550, -70.6700],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1985–1986",
+        foto: null,
+        verificado: false,
+        biografia: {
+            nacimiento: "por determinar",
+            formacion: "Participó en circuitos literarios de Santiago durante dictadura.",
+            contexto: "Ganó 1er lugar en concurso de Poesía en Santiago organizado por revista Contramuro en 5to Festival de Expresión Popular. Publicó 5 poemas en Galera N° 3 (marzo 1986).",
+            trayectoria: "⚠️ DATOS NO VERIFICADOS CON PROTOCOLO ANTI-ALUCINACIÓN. Requiere consulta presencial en archivos. Información extraída de ejemplar en repositorio digital de Memoria Chilena."
+        },
+        publicaciones: [
+            {
+                titulo: "Poemas en Galera N° 3",
+                años: "marzo 1986",
+                tipo: "Poesía en revista",
+                detalles: ["'Muerte del invierno' (p. 15)", "'Kilos' (p. 16)", "'Signos' (p. 17)", "'Lista de pensamientos' (p. 18)", "'Imagínate' (p. 19)", "Taller Berghof, Maipú"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Galera: revista literaria: año 1, no. 3 (1986). ⚠️ Datos extraídos de ejemplar en repositorio digital" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Galera", id: "galera" },
+                { nombre: "Contramuro", id: "contramuro" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1986", titulo: "Galera: revista literaria: año 1, no. 3", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+        ]
+    },
+    {
+        nombre: "Marianela Gaytán",
+        nombreReal: null,
+        coords: [-23.6520, -70.3990],
+        zona: "Antofagasta (II Región)",
+        region: "norte-grande",
+        años: "Activa 1980",
+        foto: null,
+        verificado: false,
+        biografia: {
+            nacimiento: "por determinar",
+            formacion: "Vinculada al Taller de Literatura Recital de Antofagasta.",
+            contexto: "Publicó cuadernillo de poesía 'Golpes del día' (septiembre 1980) bajo sello del Taller de Literatura Recital. Dedicado a Julia Laffertte, epígrafe de Pablo Neruda.",
+            trayectoria: "⚠️ DATOS NO VERIFICADOS CON PROTOCOLO ANTI-ALUCINACIÓN. Requiere consulta presencial en archivos. Información extraída de ejemplar en repositorio digital de Memoria Chilena."
+        },
+        publicaciones: [
+            {
+                titulo: "Golpes del día",
+                años: "septiembre 1980",
+                tipo: "Cuadernillo de poesía",
+                detalles: ["Taller de Literatura Recital, Antofagasta", "Poema extenso en 6 secciones (I-VI)", "Temática elegíaca: duelo, muerte, soledad", "Dedicado a Julia Laffertte"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Golpes del día (referencia en catálogo). ⚠️ Datos extraídos de ejemplar en repositorio digital" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Taller de Literatura Recital", id: "recital" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1980", titulo: "Golpes del día", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+        ]
+    },
+    {
+        nombre: "Sylvia Soto Tapia",
+        nombreReal: null,
+        coords: [-35.8520, -71.5920],
+        zona: "Linares (VII Región del Maule)",
+        region: "centro",
+        años: "Activa 1981",
+        foto: null,
+        verificado: false,
+        biografia: {
+            nacimiento: "por determinar",
+            formacion: "Poeta linarense vinculada a circuito literario local.",
+            contexto: "Publicó poema 'Cosas sin importancia' en Colecciones Ancoa N° 2 (noviembre 1981), revista dirigida por Samuel Maldonado Silva.",
+            trayectoria: "⚠️ DATOS NO VERIFICADOS CON PROTOCOLO ANTI-ALUCINACIÓN. Requiere consulta presencial en archivos. Información extraída de ejemplar en repositorio digital de Memoria Chilena."
+        },
+        publicaciones: [
+            {
+                titulo: "Poema en Colecciones Ancoa N° 2",
+                años: "noviembre 1981",
+                tipo: "Poesía en revista",
+                detalles: ["'Cosas sin importancia'", "Director: Samuel Maldonado Silva", "Imprenta Minerva, Linares"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Ancoa: nº 2, noviembre 1981. ⚠️ Datos extraídos de ejemplar en repositorio digital" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Grupo Ancoa", id: "ancoa" }
+            ],
+            revistas: [
+                { nombre: "Colecciones Ancoa", id: "ancoa" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1981", titulo: "Ancoa: nº 2, noviembre 1981", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+        ]
+    },
+    {
+        nombre: "Pía Barros Bravo",
+        nombreReal: null,
+        coords: [-33.4960, -70.6350],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1956–",
+        foto: null,
+        verificado: true,
+        biografia: {
+            nacimiento: "Melipilla, 20 de enero de 1956.",
+            formacion: "Licenciatura en Castellano, Universidad de Santiago. Asistió a taller de Carlos Ruiz-Tagle quien le recomendó dedicarse a la narrativa.",
+            contexto: "Exponente destacada de la Generación de los '80. Feminista declarada. Su obra surgió durante la dictadura, cultivando el cuento como medio para eludir la censura. Casada con el poeta Jorge Montealegre desde inicios de los '80.",
+            trayectoria: "Desde 1976 dirige Talleres Literarios Ergo Sum. Directora de Editorial Asterión. Dirige Proyecto Internacional ¡Basta! contra la violencia de género. En 1989 profesora visitante Universidad de Oregón. Premio Altazor 2011 por 'El lugar del otro'. Primera novela digital chilena: 'Lo que ya nos encontró' (2001). Cofundadora de Autoras Chilenas (AUCH). Colaboradora de revistas El Organillo, Pluma y Pincel. Cuentos en antología 'Contando el cuento' (Muñoz Valenzuela/Díaz Eterovic, 1986)."
+        },
+        publicaciones: [
+            {
+                titulo: "Miedos transitorios",
+                años: "1985",
+                tipo: "Cuentos",
+                detalles: ["Ediciones Ergo Sum", "Primer libro publicado"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-96697.html", nota: "Ficha autora" }
+                ]
+            },
+            {
+                titulo: "A horcajadas",
+                años: "1990",
+                tipo: "Cuentos",
+                detalles: ["Mosquito Editores", "Edición bilingüe inglés-español 1992"],
+                existencias: []
+            },
+            {
+                titulo: "El tono menor del deseo",
+                años: "1991",
+                tipo: "Cuentos",
+                detalles: ["Editorial Cuarto Propio"],
+                existencias: []
+            },
+            {
+                titulo: "Signos bajo la piel",
+                años: "1994",
+                tipo: "Cuentos",
+                detalles: ["Editorial Grijalbo"],
+                existencias: []
+            },
+            {
+                titulo: "Lo que ya nos encontró",
+                años: "2001",
+                tipo: "Novela digital",
+                detalles: ["Primera novela chilena publicada en formato digital", "Chilelibro.com"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Talleres Ergo Sum", id: "ergo-sum" },
+                { nombre: "Editorial Asterión", id: "asterion" }
+            ],
+            revistas: [
+                { nombre: "El Organillo", id: "organillo" },
+                { nombre: "Pluma y Pincel", id: "pluma-pincel" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Pía Barros (1956-)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-96697.html" },
+            { autor: "Wikipedia", año: "2024", titulo: "Pía Barros", medio: "Wikipedia (en)", link: "https://en.wikipedia.org/wiki/P%C3%ADa_Barros" },
+            { autor: "Hablemos Escritoras", año: "s.f.", titulo: "Perfil de Escritora: Pía Barros Bravo", medio: "Hablemos Escritoras", link: "https://www.hablemosescritoras.com/writers/2830" },
+            { autor: "Autoras Chilenas", año: "2024", titulo: "Pía Barros", medio: "Autoras Chilenas", link: "https://autoraschilenas.cl/pia-barros/" },
+            { autor: "Coolt", año: "2024", titulo: "Pía Barros: escritura, compromiso y vehemencia", medio: "Coolt", link: "https://www.coolt.com/libros/pia-barros-escritura-compromiso-vehemencia_1648_102.html" }
+        ]
+    },
+    {
+        nombre: "Elvira Hernández",
+        nombreReal: "Rosa María Teresa Adriasola Olave",
+        coords: [-37.6087, -73.6536],
+        zona: "Lebu (VIII Región del Biobío)",
+        region: "sur",
+        años: "1951–",
+        foto: null,
+        verificado: true,
+        biografia: {
+            nacimiento: "Lebu, 2 de julio de 1951.",
+            formacion: "Estudió Filosofía en Instituto Pedagógico Universidad de Chile (1969-1973). Tras golpe, estudió Literatura en Departamento de Estudios Humanísticos (Facultad de Ciencias Físicas y Matemáticas, U. de Chile) con Enrique Lihn, Nicanor Parra, Ronald Kay, Jorge Guzmán.",
+            contexto: "En 1979 fue detenida por la CNI y retenida 5 días en Cuartel Borgoño (la confundieron con otra persona). Esta experiencia marcó su escritura. Su libro 'La bandera de Chile' (1981) circuló clandestinamente en copias mimeografiadas, convirtiéndose en ícono de la resistencia. Colaboradora de revista El Organillo.",
+            trayectoria: "Clasificada en la neo-vanguardia junto a Raúl Zurita, Soledad Fariña, Verónica Zondek, Juan Luis Martínez. Premio Altazor de Poesía 2012. Premio Nacional Jorge Teillier 2018. Premio Iberoamericano de Poesía Pablo Neruda 2018. PREMIO NACIONAL DE LITERATURA 2024 (segunda poeta después de Gabriela Mistral en recibirlo)."
+        },
+        publicaciones: [
+            {
+                titulo: "La bandera de Chile",
+                años: "1981 (publicado 1991)",
+                tipo: "Poesía",
+                detalles: ["Escrito 1981, circuló clandestinamente mimeografiado", "Publicado oficialmente: Libros de Tierra Firme, Buenos Aires, 1991", "Ícono de la resistencia a la dictadura"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3405.html", nota: "Ficha autora con análisis de obra" }
+                ]
+            },
+            {
+                titulo: "¡Arre! Halley ¡Arre!",
+                años: "1986",
+                tipo: "Poesía",
+                detalles: ["Poemario alusivo al cometa Halley"],
+                existencias: []
+            },
+            {
+                titulo: "Meditaciones físicas por un hombre que se fue",
+                años: "1987",
+                tipo: "Poesía",
+                detalles: ["Sobre postal con poesía para la diáspora"],
+                existencias: []
+            },
+            {
+                titulo: "Carta de viaje",
+                años: "1989",
+                tipo: "Poesía",
+                existencias: []
+            },
+            {
+                titulo: "Santiago Waria",
+                años: "1992",
+                tipo: "Poesía",
+                detalles: ["Juego lingüístico: Santiago (español) + Waria (mapudungun = ciudad)"],
+                existencias: []
+            },
+            {
+                titulo: "Merodeos en torno a la obra poética de Juan Luis Martínez",
+                años: "2001",
+                tipo: "Ensayo",
+                detalles: ["Con Soledad Fariña", "Editorial Intemperie"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "El Organillo", id: "organillo" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Elvira Hernández (1951-)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3405.html" },
+            { autor: "Ministerio de las Culturas", año: "2024", titulo: "Elvira Hernández es la segunda poeta chilena en recibir el Premio Nacional de Literatura 2024", medio: "Gobierno de Chile", link: "https://www.cultura.gob.cl/actualidad/elvira-hernandez-es-la-segunda-poeta-chilena-en-recibir-el-premio-nacional-de-literatura-2024/" },
+            { autor: "Universidad de Chile", año: "2024", titulo: "La poeta Elvira Hernández es galardonada con el Premio Nacional de Literatura 2024", medio: "UChile", link: "https://uchile.cl/noticias/220101/elvira-hernandez-es-galardonada-con-el-premio-nacional-de-literatura" },
+            { autor: "Wikipedia", año: "2023", titulo: "Elvira Hernández", medio: "Wikipedia (en)", link: "https://en.wikipedia.org/wiki/Elvira_Hern%C3%A1ndez" },
+            { autor: "SWI swissinfo.ch", año: "2024", titulo: "Elvira Hernández, poeta chilena: 'El golpe de Estado nos cambió completamente'", medio: "SWI", link: "https://www.swissinfo.ch/spa/elvira-hernandez-poeta-chilena-el-golpe-de-estado-nos-cambio-completamente/48991050" }
         ]
     }
 ];
