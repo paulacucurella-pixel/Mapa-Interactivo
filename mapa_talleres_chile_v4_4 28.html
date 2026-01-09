@@ -179,6 +179,13 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     border: 3px solid white;
     box-shadow: 0 3px 10px rgba(139, 92, 246, 0.6);
 }
+.marker-gestora { 
+    background: #10b981; 
+    width: 32px;
+    height: 32px;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.7);
+}
 
 /* Estilos para resaltado de conexiones */
 .custom-marker.dimmed {
@@ -314,6 +321,8 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
 .conexiones-legend-dot.taller { background: #c75b39; }
 .conexiones-legend-dot.revista { background: #c9a227; }
 .conexiones-legend-dot.poeta { background: #8b5cf6; }
+.conexiones-legend-dot.gestora { background: #10b981; }
+.conexiones-legend-dot.gestora { background: #10b981; }
 .conexiones-legend-close {
     position: absolute;
     top: 5px;
@@ -418,6 +427,22 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
 }
 .popup-header.poeta-header {
     background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%);
+}
+.popup-header.gestora-header {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+.gestora-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 .poeta-profile {
     display: flex;
@@ -972,6 +997,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
 .stats-bar .legend-dot.taller { background: #c75b39; }
 .stats-bar .legend-dot.revista { background: #c9a227; }
 .stats-bar .legend-dot.poeta { background: #8b5cf6; }
+.stats-bar .legend-dot.gestora { background: #10b981; }
 .stats-bar span { color: #c75b39; font-weight: 600; }
 </style>
 </head>
@@ -981,7 +1007,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa Literario de Chile</h1>
         <p class="subtitle">Talleres, Revistas, Publicaciones en Dictadura y las Poetas de este Periodo</p>
-        <p>Chile, 1973–1990 · <span style="font-size: 11px; color: #8a7a60;">Última actualización: 8 enero 2026</span></p>
+        <p>Chile, 1973–1990 · <span style="font-size: 11px; color: #8a7a60;">Última actualización: 9 enero 2026</span></p>
     </div>
     <div class="header-right">
         <select id="typeFilter">
@@ -989,6 +1015,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
             <option value="talleres">Solo Talleres</option>
             <option value="revistas">Solo Revistas</option>
             <option value="poetas">Solo Poetas</option>
+            <option value="gestoras">Solo Gestoras Culturales</option>
         </select>
         <select id="regionFilter">
             <option value="all">Todas las regiones</option>
@@ -1015,6 +1042,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="legend-item"><div class="legend-dot taller"></div> Taller / Taller + Revista</div>
     <div class="legend-item"><div class="legend-dot revista"></div> Solo Revista</div>
     <div class="legend-item"><div class="legend-dot poeta"></div> Poetas</div>
+    <div class="legend-item"><div class="legend-dot gestora"></div> Gestoras Culturales</div>
 </div>
 
 <div id="map"></div>
@@ -1203,6 +1231,8 @@ const talleres = [
         region: "metropolitana",
         años: "1978–actualidad",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fines de 1978, congregando ~50 jóvenes escritores en plena dictadura.",
             contexto: "Resistencia cultural. 5 sub-talleres distribuidos por Santiago, vinculados a sindicatos y entidades culturales.",
@@ -1244,6 +1274,8 @@ const talleres = [
         region: "metropolitana",
         años: "1977–1978",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundado por Miguel Arteche (Premio Nacional de Literatura 1996) al alero de la Biblioteca Nacional de Chile, en plena dictadura militar.",
             contexto: "Espacio de poesía y creación literaria que brindó un inusual segmento de libertad para el intercambio de ideas. Arteche señaló que Altazor y luego el Taller Nueve fueron posiblemente 'los primeros espacios de libre circulación' para escritores en esa época.",
@@ -1272,7 +1304,11 @@ const talleres = [
         zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
         años: "1982–2019",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundado en 1982 por el poeta Carlos Mellado Molina, con el objetivo de democratizar la creación literaria durante la dictadura.",
             contexto: "Funcionó durante 20 años (aprox. 1982–2002) en el Instituto Chileno-Alemán de Cultura (Goethe-Institut), luego continuó sesionando en la Casa del Escritor de la Sociedad de Escritores de Chile (SECH).",
@@ -1283,6 +1319,13 @@ const talleres = [
         integrantes: [
             { nombre: "Victoria Valdés", rol: "Directora de Revista Carmina" },
             { nombre: "Edmundo Herrera", rol: "Colaborador / Prologuista" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Victoria Valdés", rol: "Directora Revista Carmina, Poeta", poema: "Juego de pájaros (1986)", enRevista: true },
+            { nombre: "Ximena Pokluda", rol: "Poeta", poema: "Lo tanto de tan poco (1986)", enRevista: true },
+            { nombre: "Jeannette Silva", rol: "Poeta", poema: "Certeza (1986)", enRevista: true },
+            { nombre: "Graciela de Olivari", rol: "Poeta", poema: "Pueda ser (1986)", enRevista: true },
+            { nombre: "Irene García", rol: "Poeta", poema: "Espacios (1986)", enRevista: true }
         ],
         publicaciones: [
             {
@@ -1307,9 +1350,18 @@ const talleres = [
                 numeros: "Antología (5 páginas)",
                 detalles: [
                     "Editada en Santiago bajo el sello 'El Taller'",
-                    "Reúne poemas de los integrantes del taller"
+                    "Reúne poemas de los integrantes del taller",
+                    "De 12 poetas incluidos, 5 son mujeres (42%)",
+                    "Varios poemas en disposición diagonal/visual",
+                    "Contexto de dictadura: referencias a carros lanzagases, estado de sitio, exilio"
                 ],
-                personas: [],
+                personas: [
+                    { nombre: "Ximena Pokluda", rol: "Poeta", poema: "Lo tanto de tan poco (p. 2)" },
+                    { nombre: "Jeannette Silva", rol: "Poeta", poema: "Certeza (p. 3)" },
+                    { nombre: "Graciela de Olivari", rol: "Poeta", poema: "Pueda ser (p. 5)" },
+                    { nombre: "Victoria Valdés", rol: "Poeta", poema: "Juego de pájaros (p. 6)" },
+                    { nombre: "Irene García", rol: "Poeta", poema: "Espacios (p. 6)" }
+                ],
                 existencias: [
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "Digitalizado en Memoria Chilena (MC0005681)" }
                 ]
@@ -1343,6 +1395,8 @@ const talleres = [
         region: "metropolitana",
         años: "1979–1989",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Continuación del Taller Altazor. Fundado en 1979 por Miguel Arteche (Premio Nacional de Literatura 1996), activo durante una década completa.",
             contexto: "Uno de 'los primeros espacios de libre circulación' para escritores durante la dictadura. El taller funcionó como espacio formativo y sello editorial (Ediciones Taller Nueve de Poesía).",
@@ -1457,14 +1511,16 @@ const talleres = [
         region: "metropolitana",
         años: "Fines 1970s–1988",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
-            origen: "Colectivo de creación literaria fundado por Pedro Araucano, junto a Eledino Parraguez, Javier Vives y Horacio Eloy. Nombre formal: 'Centro Urbanístico de Artes y Letras'.",
+            origen: "Colectivo de creación literaria fundado por Pedro Araucario, junto a Eledino Parraguez, Javier Vives y Horacio Eloy. Nombre formal: 'Centro Urbanístico de Artes y Letras'.",
             contexto: "Activo en Santiago centro, especialmente en el sector de Barrio Yungay. Reunía a poetas y artistas que creaban en la clandestinidad o semiclandestinidad bajo la dictadura militar.",
             desarrollos: "Editó la revista Contramuro (1983–1988), subtitulada 'Revista Latinoamericana de Artes y Letras', uno de los órganos de difusión más activos de la época.",
             continuidad: "El taller celebró su aniversario en 1984. La revista Contramuro se publicó hasta 1988 (17 números documentados)."
         },
         fundadores: [
-            { nombre: "Pedro Araucano", rol: "Fundador" },
+            { nombre: "Pedro Araucario", rol: "Fundador" },
             { nombre: "Eledino Parraguez", rol: "Co-fundador" },
             { nombre: "Javier Vives", rol: "Co-fundador" },
             { nombre: "Horacio Eloy", rol: "Co-fundador" }
@@ -1504,8 +1560,10 @@ const talleres = [
         coords: [-33.4550, -70.6700],
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
-        años: "ca. 1977–1983",
-        tipo: "taller",
+        años: "1978–1983",
+        tipo: "colectivo/editorial",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [{ nombre: "Adolfo Pardo Armanet", rol: "Por determinar" }],
         publicaciones: [
@@ -1521,6 +1579,8 @@ const talleres = [
         region: "metropolitana",
         años: "1985–1986",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Colectivo literario fundado en 1985 en la comuna de Maipú, conocido por la edición de la revista Servum pecus ese mismo año.",
             contexto: "Espacio de creación y difusión literaria independiente bajo la dictadura. Sede editorial: calle Alberto Llona N° 9988, Maipú.",
@@ -1583,6 +1643,8 @@ const talleres = [
         region: "metropolitana",
         años: "1985–1988",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Funcionó a mediados de los años 1980 en la comuna de Macul, al alero de la Agrupación Cultural Macul. Dirigido por la escritora Olivia Saavedra desde 1985.",
             contexto: "Espacio que reunía a jóvenes autores locales durante los últimos años de la dictadura, en respuesta al llamado 'apagón cultural' de la época. Fomentó la creación literaria independiente en Macul y Ñuñoa.",
@@ -1634,6 +1696,8 @@ const talleres = [
         region: "metropolitana",
         años: "1975–1983",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundado en 1975 por el poeta Luis Alejandro Iglesias. Organizó el Primer Certamen Nacional de Poetas Inéditos hacia fines de ese año, uno de los primeros concursos literarios tras el golpe militar.",
             contexto: "En medio del 'apagón cultural' de la dictadura, el Taller Ariel proporcionó un espacio de encuentro para escritores jóvenes y adultos. Integrado principalmente por escritores adultos con empleo, lo que dio estabilidad organizativa. Vinculado a la SECH, que acogió la premiación de concursos en enero de 1978.",
@@ -1712,7 +1776,11 @@ const talleres = [
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
         años: "1982–1984",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Tres talleres literarios que surgieron alrededor de 1982 en Santiago, reuniendo a jóvenes escritores que buscaban espacios alternativos para crear y difundir su obra bajo dictadura.",
             contexto: "Formaron una red colaborativa inter-talleres para superar el aislamiento impuesto por la censura. Integrados en el Colectivo de Escritores Jóvenes (CEJ) hacia 1983. Período de mayor actividad: 1983–1984.",
@@ -1735,6 +1803,8 @@ const talleres = [
             {
                 titulo: "Hoja X Ojo",
                 años: "1983–1984",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 numeros: "Revista inter-talleres (3 números)",
                 detalles: [
                     "N° 1: octubre 1983",
@@ -1768,6 +1838,8 @@ const talleres = [
         region: "metropolitana",
         años: "1982–1987",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Agrupación literaria formada a comienzos de los '80 en Santiago, bajo el alero de la Sociedad de Escritores de Chile (SECH). Surgió como espacio de organización y resistencia cultural para jóvenes escritores durante la dictadura.",
             contexto: "En mayo de 1984 organizó el Primer Encuentro de Escritores Jóvenes de Chile en la sede de la SECH, donde se discutió el rol del escritor joven en el contexto represivo. Los integrantes se identificaban como la 'generación NN' o 'generación sin maestros'.",
@@ -1848,6 +1920,8 @@ const talleres = [
         region: "metropolitana",
         años: "1978–ca. 1990",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Surgió a fines de los '70 en plena dictadura militar. Instaló su sede en San Martín #57 (Santiago centro). Espacio independiente para la expresión artística, formación y difusión cultural al margen de estructuras oficiales.",
             contexto: "Miembro activo de la UNAC (Unión Nacional por la Cultura) desde 1978. Trabajó en red con Taller 666, ACU, SECH, teatro Ictus, sello Alerce, Codeju, APJ, entre otros. El 27 de abril de 1979 emitió una 'Declaración' pública cuestionando las políticas culturales del régimen.",
@@ -1877,6 +1951,8 @@ const talleres = [
         region: "metropolitana",
         años: "Mediados de 1970s–principios de 1980s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: "Sin revista propia; espacio de distribución de otras", contexto: null, continuidad: null },
         fundadores: [],
         publicaciones: [],
@@ -1889,6 +1965,8 @@ const talleres = [
         region: "metropolitana",
         años: "1977–s.f. (ca. 1980s)",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Vinculado al Centro Cultural Taller Sol (Tallersol), espacio fundado en 1977 en Santiago (San Martín 57), asociado a prácticas de autonomía y autogestión durante la dictadura.",
             contexto: "Tallersol fue fundado por Antonio Kadima junto a un colectivo de autogestión y disidencia política, como 'espacio de resistencias culturales'. Kadima sufrió persecución durante la dictadura, incluyendo prisión política y relegación.",
@@ -1976,6 +2054,8 @@ const talleres = [
         region: "metropolitana",
         años: "1976–1980",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Agrupación literaria fundada en 1976 bajo el alero de la SECH (Casa del Escritor, Simpson 7). Primer presidente: Ricardo Wilson. Armando Rubio Huidobro fue uno de los impulsores desde 1974.",
             contexto: "Según Soledad Bianchi, fue posiblemente 'la agrupación de escritores jóvenes que alcanzó más realce y mayor extensión en el país' durante esos años. Congregó a numerosos poetas emergentes y estableció filiales en provincias.",
@@ -1997,6 +2077,8 @@ const talleres = [
             {
                 titulo: "Poesía para el camino",
                 años: "1977",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 numeros: "Antología (107 páginas)",
                 detalles: [
                     "Publicada por Ediciones Nueva Universidad (imprenta Talleres Alfabeta)",
@@ -2042,7 +2124,11 @@ const talleres = [
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
         años: "1977–1982",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundada en mayo de 1977 como espacio de resistencia cultural para la juventud. Bautizada en honor a la Parroquia Santa Marta de Santiago, donde fundadores participaban en un coro dirigido por Vicente Bianchi antes del golpe.",
             contexto: "Se articuló en torno a talleres de teatro, música, literatura y folclore. Director: Raúl Fernández. Integrantes destacados: Mauricio Electorat, Cristián Warnken, Dióscoro Rojas. Formó parte del Frente Cultural opositor y el Coordinador Cultural.",
@@ -2073,6 +2159,8 @@ const talleres = [
         region: "metropolitana",
         años: "1977–1983",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Rama literaria dentro de la Agrupación Cultural Universitaria (ACU), surgida a fines de los '70 como respuesta a la represión cultural en las universidades. La ACU evolucionó desde la Agrupación Folclórica Universitaria (AFU).",
             contexto: "La ACU reactivó la vida cultural en los campus bajo dictadura. En 1978 contaba con más de 70 talleres artístico-culturales. Se organizaba en cuatro ramas: Literaria, Música, Plástica y Teatro.",
@@ -2155,6 +2243,8 @@ const talleres = [
             {
                 titulo: "Ergo Sum: Cuentos",
                 años: "1985",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 numeros: "Primera antología (13 cuadernillos en caja)",
                 detalles: [
                     "13 folletos sueltos, cada uno con un cuento ilustrado",
@@ -2286,6 +2376,8 @@ const talleres = [
         region: "metropolitana",
         años: "1981–1984 / 1995",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista literaria de poesía fundada en 1981 por Ramón Díaz Eterovic, Leonora Vicuña y Aristóteles España. Nombre tomado del bar 'La Unión Chica' (apodado La Gota Pura) donde se reunían poetas.",
             contexto: "Medio de publicación alternativo para voces jóvenes marginadas por canales oficiales durante la dictadura. Primer tiraje: 500 ejemplares (7 nov. 1981), llegó hasta 1000 ejemplares. En 1983 organizó Concurso Nacional de Poesía (ganador: Óscar Galindo).",
@@ -2336,6 +2428,8 @@ const talleres = [
         region: "metropolitana",
         años: "1985–1990",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista literaria independiente (poesía y cuento) fundada en septiembre de 1985 por el poeta Erwin Díaz. Parte de la 'escena underground' cultural de los '80.",
             contexto: "Distribución artesanal y semi-clandestina en Barrio Bellavista. Usaba papel kraft y diseño de vanguardia. Junto a La Castaña, sirvió para romper el bloqueo estético impuesto por el régimen.",
@@ -2662,6 +2756,8 @@ const talleres = [
             {
                 titulo: "Revista Lapislázuli",
                 años: "1983–presente",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 numeros: "Revista literaria",
                 detalles: ["Diseño inspirado en 'Poetas del Norte' de Antofagasta"],
                 personas: [],
@@ -2681,6 +2777,8 @@ const talleres = [
         zona: "Coquimbo (Coquimbo)",
         region: "norte-chico",
         años: "ca. 1983–1986",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         tipo: "colectivo",
         verificado: true,
         historia: {
@@ -2704,6 +2802,8 @@ const talleres = [
             {
                 titulo: "La Servilleta de Papel",
                 años: "ca. 1984–1988",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 numeros: "Publicación artesanal (varios números)",
                 detalles: [
                     "Poemas impresos en hojas con borde zigzag",
@@ -2771,6 +2871,8 @@ const talleres = [
         region: "sur",
         años: "1973–1976",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Primera publicación literaria forjada en dictadura en Concepción. Nº 1 en diciembre de 1973, con apoyo del Departamento de Español de la U. de Concepción. Título alude al 'revés de la realidad' bajo el régimen.",
             contexto: "Formato artesanal y clandestino: hoja de papel plegada en tres partes (tríptico poético) colocada dentro de un sobre. Permitía sortear la censura circulando como correspondencia personal.",
@@ -2821,6 +2923,8 @@ const talleres = [
         region: "sur",
         años: "1975–1979",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista literaria fundada en 1975 bajo el alero de la Academia de Estudiantes del Instituto Central de Filosofía de la U. de Concepción. Título en honor al poeta alemán Friedrich Hölderlin.",
             contexto: "Taller literario universitario que buscaba difundir poesía y pensamiento crítico al margen de los circuitos oficiales durante el 'apagón cultural'.",
@@ -2863,6 +2967,8 @@ const talleres = [
         region: "sur",
         años: "1979",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Grupo literario independiente formado en Concepción alrededor de 1979, integrado por jóvenes poetas Tomás Harris, Nicolás Miquea, Osvaldo Caro y Carlos Decap. También mencionan a Roberto Henríquez y Alexis Figueroa.",
             contexto: "Espacio de creación y resistencia cultural para una nueva generación de poetas penquistas bajo la dictadura. Organizó al menos 4 recitales públicos de poesía en 1979.",
@@ -2884,6 +2990,8 @@ const talleres = [
             {
                 titulo: "Punto Próximo (revista)",
                 años: "1979",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 numeros: "Revista mimeografiada",
                 detalles: ["Tiraje muy limitado", "Prácticamente no ha perdurado"],
                 personas: [],
@@ -2903,6 +3011,8 @@ const talleres = [
         region: "sur",
         años: "1981–1985",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista literaria de poesía fundada hacia 1981 por Tomás Harris, Carlos Decap, Alexis Figueroa, Jeremy Jacobson y Roberto Henríquez, estudiantes de Letras de la U. de Concepción.",
             contexto: "Parte de la 'generación del roneo' o 'generación NN' — actividad silenciada, anónima, con seudónimos. Retomó tradición de revistas independientes (Arúspice, Fuego Negro, Envés).",
@@ -2956,6 +3066,8 @@ const talleres = [
         region: "sur",
         años: "1983",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista literaria independiente fundada en Concepción en noviembre de 1983 por el poeta Tulio Mendoza Belio. Concebida principalmente como revista de poesía con espíritu contracultural y regional.",
             contexto: "Mendoza (radicado en Concepción desde 1976) creó Etcétera para difundir escritores locales del Biobío mediante ediciones artesanales de bajo costo y cuidada presentación.",
@@ -2989,6 +3101,8 @@ const talleres = [
         region: "sur",
         años: "1974–1980",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Primer taller literario fundado tras el golpe de 1973, iniciando actividades en 1974 bajo dirección del poeta Víctor Molina Neira. Logró amparo en la Biblioteca Municipal de Temuco.",
             contexto: "Contexto de represión cultural post-1973 sin apoyo institucional. Funcionaba casi clandestinamente: reuniones discretas, difusión en mimeógrafo, solidaridad entre escritores jóvenes.",
@@ -3036,6 +3150,8 @@ const talleres = [
         region: "sur",
         años: "Inicio 1982 o 1984",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [],
         publicaciones: [
@@ -3050,6 +3166,8 @@ const talleres = [
         region: "sur",
         años: "1982",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [],
         publicaciones: [
@@ -3064,6 +3182,8 @@ const talleres = [
         region: "sur",
         años: "1982–1987",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [{ nombre: "Pedro Guillermo Jara", rol: "Por determinar" }],
         publicaciones: [
@@ -3078,6 +3198,8 @@ const talleres = [
         region: "sur",
         años: "Mediados de 1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [{ nombre: "Manuel Muñoz Astudillo", rol: "Por determinar" }],
         publicaciones: [
@@ -3094,6 +3216,8 @@ const talleres = [
         region: "austral",
         años: "Fundado 1975–ca. 1985",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [
             { nombre: "Carlos Alberto Trujillo", rol: "Fundador" },
@@ -3111,6 +3235,8 @@ const talleres = [
         region: "austral",
         años: "1982",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: "Vinculada al desarrollo cultural local", contexto: null, continuidad: null },
         fundadores: [{ nombre: "Mario Contreras Vega", rol: "Por determinar" }],
         publicaciones: [
@@ -3125,6 +3251,8 @@ const talleres = [
         region: "austral",
         años: "ca. 1975–1985",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [{ nombre: "Aristóteles España", rol: "Por determinar" }],
         publicaciones: [
@@ -3139,6 +3267,8 @@ const talleres = [
         region: "austral",
         años: "1983–ca. 1987",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: "No 'taller joven'", contexto: null, continuidad: null },
         fundadores: [],
         publicaciones: [
@@ -3153,6 +3283,8 @@ const talleres = [
         region: "austral",
         años: "Enero 1987",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [{ nombre: "Aristóteles España", rol: "Por determinar" }],
         publicaciones: [
@@ -3167,6 +3299,8 @@ const talleres = [
         region: "austral",
         años: "1988",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [{ nombre: "Juan Carlos Alegría", rol: "Por determinar" }],
         publicaciones: [
@@ -3181,6 +3315,8 @@ const talleres = [
         region: "austral",
         años: "1989",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: { origen: null, contexto: null, continuidad: null },
         fundadores: [
             { nombre: "Carlos Vega Delgado", rol: "Por determinar" },
@@ -3198,6 +3334,8 @@ const talleres = [
         region: "sur",
         años: "1980-1983",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Colectivo universitario de poesía joven activo en Valdivia. Cofundado en 1980 por Rosabetty Muñoz junto a otros jóvenes escritores vinculados a la Universidad Austral de Chile.",
             contexto: "Muchos integrantes provenían del Taller Aumen (Castro, Chiloé). Surgió en contexto de efervescencia cultural regional, continuando impulso cultural del sur chileno tras los años difíciles posteriores al golpe de 1973.",
@@ -3247,6 +3385,8 @@ const talleres = [
         region: "sur",
         años: "1983-1986",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Boletín/revista literaria de poesía publicada en Yumbel, Región del Biobío.",
             contexto: "Dirigido por Manuel Muñoz Astudillo. Alcanzó 'inusitada resonancia' en organismos literarios nacionales según prensa de la época. Circulación por canje/intercambio con otras revistas (documentado en Extramuros).",
@@ -3280,6 +3420,8 @@ const talleres = [
         region: "sur",
         años: "1981-2013",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundada en Valdivia en 1981 por Pedro Guillermo Jara y el artista gráfico Ricardo Mendoza. Publicación literaria independiente surgida en pleno régimen militar como espacio alternativo de expresión cultural.",
             contexto: "Primera etapa (1981-1984): 4 números dedicados a poesía. Nº1 poetas mexicanos, Nº2 poetas del sur de Chile, Nº3 haikú, Nº4 poesía de David Miralles. Formato 14,5x25cm, tirajes ~300 ejemplares, distribución casi clandestina. Pausa 1985-1990 (Mendoza exonerado de U. Austral). Durante pausa, Jara publicó boletín '¡Oh, Valdivia!' (1988-1990).",
@@ -3316,6 +3458,8 @@ const talleres = [
         region: "sur",
         años: "1975–presente",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundado en 1975 en Castro por Carlos Trujillo y Renato Cárdenas. Uno de los movimientos culturales más importantes de Chiloé.",
             contexto: "Considerado 'el de más larga vida en el Chile del régimen autoritario' (Corvalán, 1987). Publicaciones circularon 'por mano y por correo' en formato de 'modestas revistas, hojas volantes, libros artesanales'.",
@@ -3379,6 +3523,8 @@ const talleres = [
         region: "austral",
         años: "1978–1986",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundado en Punta Arenas a mediados de 1978 en el contexto de un Congreso de Escritores Jóvenes. Nueva generación de poetas, narradores y dramaturgos magallánicos.",
             contexto: "Influenciado por propuestas estéticas del colectivo Aumen (Chiloé). Marcó nuevos rumbos para la poesía local en zona austral. Respuesta a necesidad de espacios independientes de creación bajo dictadura.",
@@ -3413,6 +3559,8 @@ const talleres = [
         region: "metropolitana",
         años: "1986",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista independiente de poesía fundada por Aristóteles España en 1986. Primera y única edición conocida: Año 1, Nº 1 (septiembre 1986), publicada en Santiago.",
             contexto: "Surgió 'desde los propios bolsillos' de su director. Esfuerzo autogestionado para difundir creación literaria en contexto adverso. Circuló en peñas, sindicatos, universidades.",
@@ -3444,6 +3592,8 @@ const talleres = [
         region: "sur",
         años: "1983-1990",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Fundada en Temuco en julio de 1983 por los poetas Elicura Chihuailaf y Guido Eytel.",
             contexto: "Buscaban incluir 'la poesía popular' y 'la poesía para niños', reuniendo 'la poesía de antes y la de ahora, los de aquí y los de allá'. Respondió a escasez de espacios de difusión para poesía durante años ochenta.",
@@ -3457,6 +3607,8 @@ const talleres = [
             {
                 titulo: "Poesía Diaria",
                 años: "1983-1990",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 numeros: "Nº 1 (julio 1983) - Nº 11 (mayo-agosto 1990)",
                 detalles: ["Incluía poesía mapuche", "Número doble 4-5 (agosto 1984)", "Nº 11 último número, órgano oficial SECH Temuco"],
                 personas: [],
@@ -3479,6 +3631,8 @@ const talleres = [
         region: "austral",
         años: "1987-1997",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista independiente/contracultural vinculada a historieta y producción gráfica. Fundada en abril de 1987, dirigida por Juan Carlos Muñoz Alegría (también citado como Juan Carlos Alegría).",
             contexto: "Primer número fechado 6 de abril de 1987 (tiraje 250 ejemplares), segundo número hacia fines de 1987. Temáticas de tono crítico y provocador. Mencionada en panorámica de revistas literarias durante dictadura (1988).",
@@ -3512,6 +3666,8 @@ const talleres = [
         region: "sur",
         años: "1975–1990s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Taller literario fundado en Castro, Chiloé. Importante centro de formación de poetas del sur de Chile.",
         contexto: "Surgió en el contexto de resistencia cultural durante la dictadura, vinculado a la identidad chilota.",
         integrantes: [],
@@ -3525,6 +3681,8 @@ const talleres = [
         region: "metropolitana",
         años: "1982–1990s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Taller literario activo en Santiago durante los años 80.",
         contexto: "Espacio de formación poética en dictadura.",
         integrantes: [],
@@ -3538,6 +3696,8 @@ const talleres = [
         region: "norte-chico",
         años: "1980s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Taller literario de San Felipe, nombrado en honor al escritor Ernesto Montenegro.",
         contexto: "Centro cultural importante en la región de Valparaíso.",
         integrantes: [],
@@ -3551,6 +3711,8 @@ const talleres = [
         region: "metropolitana",
         años: "1980s–1990s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Café literario y espacio de encuentro para poetas en Santiago.",
         contexto: "Lugar emblemático de la escena poética santiaguina.",
         integrantes: [],
@@ -3564,6 +3726,8 @@ const talleres = [
         region: "metropolitana",
         años: "1988–1993",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Colectivo artístico de performance formado por Pedro Lemebel y Francisco Casas.",
         contexto: "Arte disidente y de resistencia política durante la transición.",
         integrantes: [],
@@ -3577,6 +3741,8 @@ const talleres = [
         region: "metropolitana",
         años: "1984–actualidad",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Editorial feminista fundada en 1984, especializada en literatura de mujeres.",
         contexto: "Importante plataforma para la publicación de escritoras chilenas.",
         integrantes: [],
@@ -3586,15 +3752,40 @@ const talleres = [
     {
         nombre: "Revista La Bicicleta",
         coords: [-33.445, -70.655],
-        zona: "Región Metropolitana (Santiago)",
+        zona: "Región Metropolitana (Santiago, Angamos 347)",
         region: "metropolitana",
         años: "1978–1990",
         tipo: "revista",
-        descripcion: "Revista cultural chilena de amplia circulación durante la dictadura.",
-        contexto: "Medio de difusión cultural alternativo.",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Revista chilena de la actividad artística fundada en 1978. Editorial Editora Granizo Ltda.",
+            contexto: "Línea editorial: Crítica cultural desde posiciones humanistas y democráticas; oposición al autoritarismo y la mercantilización de la cultura.",
+            desarrollos: "75 números publicados. Corresponsales internacionales: Soledad Bianchi (Francia), Joan Turner (Inglaterra).",
+            continuidad: "Censurada en noviembre 1984 durante estado de sitio. Continuó hasta 1990."
+        },
+        fundadores: [
+            { nombre: "Eduardo Yentzen P.", rol: "Director" },
+            { nombre: "Álvaro Godoy H.", rol: "Subdirector" },
+            { nombre: "Antonio de la Fuente", rol: "Jefe de Redacción" },
+            { nombre: "Anny Rivera", rol: "Consejo de Redacción" },
+            { nombre: "Paulina Elissetche Hurtado", rol: "Gerente" },
+            { nombre: "Paula Edwards Risopatrón", rol: "Representante Legal" }
+        ],
         integrantes: [],
+        mujeresColaboradoras: [
+            { nombre: "Roser Bru", rol: "Obra plástica", enRevista: true },
+            { nombre: "Diamela Eltit", rol: "Acciones de arte/CADA", enRevista: true },
+            { nombre: "Lotty Rosenfeld", rol: "Acciones de arte/CADA", enRevista: true },
+            { nombre: "Anny Rivera", rol: "Ensayista", enRevista: true },
+            { nombre: "Carmen Foxley", rol: "Crítica literaria", enRevista: true },
+            { nombre: "Soledad Bianchi", rol: "Corresponsal Francia", enRevista: true },
+            { nombre: "Joan Turner", rol: "Corresponsal Inglaterra", enRevista: true }
+        ],
         publicaciones: [],
-        fuentes: []
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1980", titulo: "La Bicicleta N° 8, noviembre-diciembre 1980", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-100795.html" }
+        ]
     },
     {
         nombre: "Revista Solidaridad",
@@ -3603,6 +3794,8 @@ const talleres = [
         region: "metropolitana",
         años: "1976–1990",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Publicación de la Vicaría de la Solidaridad.",
         contexto: "Medio de denuncia y resistencia durante la dictadura.",
         integrantes: [],
@@ -3616,11 +3809,251 @@ const talleres = [
         region: "metropolitana",
         años: "1980s",
         tipo: "revista",
-        descripcion: "Publicación literaria vinculada al Taller Huelén.",
-        contexto: "Difusión de poesía joven en dictadura.",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Publicación literaria vinculada al Taller Huelén.",
+            contexto: "Difusión de poesía joven en dictadura.",
+            desarrollos: "N° 14 mencionado en Palabra Escrita N°16 (dic. 1984) como publicación recibida.",
+            continuidad: "Parte del circuito de revistas literarias de Santiago."
+        },
+        fundadores: [
+            { nombre: "Hernán Ortega Parada", rol: "Director (documentado en Palabra Escrita N°16, 1984)" }
+        ],
         integrantes: [],
         publicaciones: [],
-        fuentes: []
+        fuentes: [
+            { autor: "Palabra Escrita N°16", año: "1984", titulo: "Sección 'Publicaciones recibidas': Huelen Nº 14, dir. Hernán Ortega Parada", medio: "Ejemplar digitalizado Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Revista La Castaña",
+        coords: [-33.4420, -70.6540],
+        zona: "Región Metropolitana (Santiago, Almirante Simpson 7 - SECH)",
+        region: "metropolitana",
+        años: "1986",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Revista de poesía, gráfica y humor. Ediciones Tragaluz. Correspondencia: Almirante Simpson 7 (Sociedad de Escritores de Chile).",
+            contexto: "Vinculada a Ediciones Tragaluz y al Taller Ergo Sum. Incluye sección 'Poetas Jóvenes Chilenos en Europa' dedicada a poetas del exilio.",
+            desarrollos: "El N°6 (Invierno 1986) incluye cuento de Ana María del Río y ensayo de Enrique Lihn sobre el ilustrador Coré.",
+            continuidad: "Publicación periódica de resistencia cultural."
+        },
+        fundadores: [
+            { nombre: "Luis Albornoz", rol: "Editor" },
+            { nombre: "Pía Barros", rol: "Editora" },
+            { nombre: "Jorge Montealegre", rol: "Editor" },
+            { nombre: "Hernán Venegas", rol: "Editor/Producción" }
+        ],
+        integrantes: [
+            { nombre: "Mario Carrasco O.", rol: "Composición" },
+            { nombre: "Erwin Díaz", rol: "Distribución" }
+        ],
+        mujeresPublicadas: [
+            { nombre: "Ana María del Río", rol: "Narradora", obra: "Cuento 'Altar' (pp. 11-12)", bio: "Autora de 'Entreparéntesis', integrante del Taller Soffia. Premio María Luisa Bombal 1986.", enRevista: true },
+            { nombre: "Heddy Navarro", rol: "Poeta", obra: "Poemario 'Óvulos' (anunciado)", enRevista: false },
+            { nombre: "Pía Barros", rol: "Narradora/Editora", obra: "'Miedos transitorios' (anunciado)", enRevista: true },
+            { nombre: "Sonia González", rol: "Narradora", obra: "'Tejer historias' (anunciado)", enRevista: false }
+        ],
+        publicaciones: [],
+        conexiones: {
+            talleres: [
+                { nombre: "Taller Ergo Sum", id: "ergosum" },
+                { nombre: "Taller Soffia", id: "soffia" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1986", titulo: "La Castaña N° 6, Invierno 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Revista La Invasión de los Mínimos",
+        coords: [-29.9070, -71.2520],
+        zona: "Coquimbo (La Serena, Ayacucho 3411, Cía. Alta)",
+        region: "norte-chico",
+        años: "1987",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Publicación dedicada a difundir poesía variada en su contexto, incluyendo poetas chilenos y extranjeros.",
+            contexto: "El N°2 (agosto 1987) integra nombres nuevos. Incluye poetas desde distintas localidades de Chile y del exilio (Canadá).",
+            desarrollos: "Textos con marcado carácter testimonial relacionado con el contexto político de la dictadura.",
+            continuidad: "Parte del circuito de revistas literarias del Norte Chico."
+        },
+        fundadores: [
+            { nombre: "Samuel Núñez", rol: "Director" }
+        ],
+        integrantes: [
+            { nombre: "Jorge Collao (Nieto)", rol: "Diseño/Diagramación - Letras y líneas" },
+            { nombre: "Eduardo Barrios M.", rol: "Xilografía de portada ('Héroe Popular')" }
+        ],
+        mujeresPublicadas: [],
+        publicaciones: [],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Revista Añañuca", id: "ananuca" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1987", titulo: "La invasión de los mínimos N° 2, agosto 1987", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Revista Mallku",
+        coords: [-20.2208, -70.1431],
+        zona: "Tarapacá (Iquique, Casilla 166)",
+        region: "norte-grande",
+        años: "1984",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Publicación del Colectivo de Auto-Ediciones de Iquique. Poesía de denuncia y resistencia durante la dictadura.",
+            contexto: "Incluye poesía testimonial vinculada a experiencias laborales bajo programas de empleo de emergencia (PRIMO - SERVIU I Región).",
+            desarrollos: "El número de 1984 rinde homenaje al actor chileno Héctor Duvauchelle, fallecido en el exilio en Venezuela. Portada reproducida de revista Pluma y Pincel Nº 13.",
+            continuidad: "Referencias cruzadas a Pluma y Pincel Nº 13 (marzo 1984) y 'Callejuela' de Víctor Hugo Castro."
+        },
+        fundadores: [
+            { nombre: "Edgardo Barría B.", rol: "Comité Editor" },
+            { nombre: "Alfredo Oñate C.", rol: "Comité Editor" },
+            { nombre: "Juan Gabilán C.", rol: "Comité Editor" }
+        ],
+        integrantes: [
+            { nombre: "Jorge Díaz", rol: "Poeta publicado" },
+            { nombre: "Víctor Hugo Castro", rol: "Poeta publicado (La Legua, Santiago)" },
+            { nombre: "Luis Castro C.", rol: "Poeta publicado" }
+        ],
+        mujeresPublicadas: [],
+        publicaciones: [],
+        conexiones: {
+            talleres: [
+                { nombre: "Colectivo de Auto-Ediciones", id: "autoediciones-iquique" }
+            ],
+            revistas: [
+                { nombre: "Pluma y Pincel", id: "plumapincel" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1984", titulo: "Mallku, Año II, 1984", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Revista Palabra Escrita",
+        coords: [-33.4450, -70.6520],
+        zona: "Santiago (Arturo Prat 236, local 111)",
+        region: "metropolitana",
+        años: "1984–1987",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Revista de poesía con red de corresponsales nacionales e internacionales. Tiraje: 1.000 ejemplares.",
+            contexto: "Declaradamente opositora a la dictadura. El editorial 'Por un amplio espectro opositor' (N°19, 1987) llama a consolidar un frente único contra el régimen.",
+            desarrollos: "N°16 (dic. 1984) incluye carta manuscrita de Gonzalo Rojas apoyando su candidatura al Premio Nobel. Sección 'Publicaciones recibidas' documenta otras revistas del período.",
+            continuidad: "Red de corresponsales desde Arica hasta Punta Arenas, además de Colombia, Guatemala, México, Estados Unidos, España, Holanda."
+        },
+        fundadores: [
+            { nombre: "José G. Martínez Fernández", rol: "Director" }
+        ],
+        integrantes: [
+            { nombre: "Cecilia Golborne de Naranjo", rol: "Diagramación" },
+            { nombre: "Florencio Faúndez", rol: "Corresponsal" },
+            { nombre: "Arturo Volantines", rol: "Corresponsal" },
+            { nombre: "Gonzalo Rojas", rol: "Corresponsal/Colaborador" },
+            { nombre: "Marino Muñoz Lagos", rol: "Corresponsal Punta Arenas" },
+            { nombre: "Samuel Núñez", rol: "Corresponsal La Serena" },
+            { nombre: "Carlos Alberto Trujillo", rol: "Corresponsal Castro" }
+        ],
+        mujeresColaboradoras: [
+            { nombre: "Cecilia Golborne de Naranjo", rol: "Diagramación", enRevista: true },
+            { nombre: "Mónica Bunster", rol: "Directora Suplemento Literario El Magallanes, Punta Arenas (mencionada N°19)", enRevista: false },
+            { nombre: "Marta Milesi", rol: "Corresponsal extranjero", enRevista: true },
+            { nombre: "Teresinka Pereira", rol: "Corresponsal Estados Unidos", enRevista: true },
+            { nombre: "Hortensia Bussi de Allende", rol: "Presidenta ceremonia concurso 'Basta de Apartheid' París (mencionada N°19)", enRevista: false }
+        ],
+        publicaciones: [
+            {
+                titulo: "Palabra Escrita N° 16",
+                años: "diciembre 1984",
+                tipo: "Revista",
+                detalles: ["Carta manuscrita de Gonzalo Rojas (18.XI.84)", "Errata sobre poema de Paz Molina 'Reflexiones'"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Ejemplar digitalizado" }
+                ]
+            },
+            {
+                titulo: "Palabra Escrita N° 19",
+                años: "julio 1987",
+                tipo: "Revista",
+                detalles: ["Editorial 'Por un amplio espectro opositor'", "Red de corresponsales nacionales e internacionales"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Ejemplar digitalizado" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Revista Huelén", id: "huelen" },
+                { nombre: "Revista La Castaña", id: "castana" },
+                { nombre: "Revista Contramuro", id: "contramuro" }
+            ]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1984", titulo: "Palabra Escrita N° 16, diciembre 1984", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" },
+            { autor: "Memoria Chilena", año: "1987", titulo: "Palabra Escrita N° 19, julio 1987", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Revista Ariete",
+        coords: [-33.4580, -70.5950],
+        zona: "Santiago (Ñuñoa, Lo Plaza 1946, dep. 23)",
+        region: "metropolitana",
+        años: "1986",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Revista de Poesía y Gráfica. Nació en Temuco, en el hogar universitario de calle San Martín.",
+            contexto: "Declarado objetivo: ofrecer muestra de poesía y gráfica y constituir espacio de publicación abierto al trabajo creador de los jóvenes chilenos. 'Un impulso vital contra la inercia que nos consumía'.",
+            desarrollos: "N°2 (julio 1986) incluye poemas de Pedro Araucario (Taller Urbano), Gonzalo Millán (del libro inédito 'Virus'), Jorge Montealegre ('Exilios').",
+            continuidad: "Vinculada al circuito de revistas jóvenes de Santiago."
+        },
+        fundadores: [
+            { nombre: "Víctor Hugo Díaz", rol: "Editor literario" },
+            { nombre: "Luis Riffo", rol: "Editor literario" },
+            { nombre: "Cristian López", rol: "Editor gráfico" },
+            { nombre: "Patricio Jil", rol: "Editor gráfico" }
+        ],
+        integrantes: [
+            { nombre: "Jaime Lizama", rol: "Poeta (Ciudad en ruinas)" },
+            { nombre: "Pedro Araucario", rol: "Poeta (Taller Urbano)" },
+            { nombre: "Jorge Montealegre", rol: "Poeta (Exilios)" },
+            { nombre: "Gonzalo Millán", rol: "Poeta (Virus)" },
+            { nombre: "Eugenio Dávalos", rol: "Poeta" },
+            { nombre: "Claudio Mercado", rol: "Poeta" },
+            { nombre: "José León", rol: "Artista gráfico (Portada)" },
+            { nombre: "Pablo Chiuminatto", rol: "Artista gráfico" },
+            { nombre: "Pablo Domínguez", rol: "Artista gráfico" }
+        ],
+        mujeresColaboradoras: [
+            { nombre: "Graciela Guzmán", rol: "Artista gráfica (dibujo con tinta, p. 3)", enRevista: true }
+        ],
+        publicaciones: [],
+        conexiones: {
+            talleres: [
+                { nombre: "Taller Urbano", id: "urbano" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1986", titulo: "Ariete: Revista de Poesía y Gráfica N° 2, julio 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
     },
     {
         nombre: "Grupo Literario Ñuble",
@@ -3629,6 +4062,8 @@ const talleres = [
         region: "sur",
         años: "1980s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Grupo literario de la región de Ñuble.",
         contexto: "Centro de actividad literaria en el sur de Chile.",
         integrantes: [],
@@ -3642,6 +4077,8 @@ const talleres = [
         region: "sur",
         años: "1980s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Grupo literario de Curicó.",
         contexto: "Espacio de formación poética regional.",
         integrantes: [],
@@ -3655,6 +4092,8 @@ const talleres = [
         region: "metropolitana",
         años: "1980s–1990s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Taller literario del litoral central.",
         contexto: "Espacio de creación en la costa.",
         integrantes: [],
@@ -3668,6 +4107,8 @@ const talleres = [
         region: "metropolitana",
         años: "1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Publicación literaria del litoral central.",
         contexto: "Difusión de poesía costera.",
         integrantes: [],
@@ -3681,6 +4122,8 @@ const talleres = [
         region: "metropolitana",
         años: "1970s–1980s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Agrupación de escritores chilenos exiliados en París.",
         contexto: "Centro de la diáspora literaria chilena en Europa.",
         integrantes: [],
@@ -3694,6 +4137,8 @@ const talleres = [
         region: "metropolitana",
         años: "1977–1989",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista fundada por Fernando Alegría para difundir literatura chilena del exilio.",
         contexto: "Principal órgano de difusión de escritores chilenos en el exterior.",
         integrantes: [],
@@ -3707,6 +4152,8 @@ const talleres = [
         region: "norte-chico",
         años: "1970s–actualidad",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Círculo literario tradicional de Quillota.",
         contexto: "Espacio de creación y difusión literaria regional.",
         integrantes: [],
@@ -3720,6 +4167,8 @@ const talleres = [
         region: "metropolitana",
         años: "1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista de poesía femenina.",
         contexto: "Publicación dedicada a voces de mujeres.",
         integrantes: [],
@@ -3733,6 +4182,8 @@ const talleres = [
         region: "norte-chico",
         años: "1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista cultural de Valparaíso.",
         contexto: "Difusión artística y literaria porteña.",
         integrantes: [],
@@ -3746,6 +4197,8 @@ const talleres = [
         region: "metropolitana",
         años: "1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista de poesía experimental.",
         contexto: "Publicación de vanguardia.",
         integrantes: [],
@@ -3759,6 +4212,8 @@ const talleres = [
         region: "metropolitana",
         años: "1980s–1990s",
         tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Taller literario dirigido por Isabel Edwards en su casa.",
         contexto: "Espacio privado de formación poética.",
         integrantes: [],
@@ -3772,6 +4227,8 @@ const talleres = [
         region: "norte-grande",
         años: "1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista literaria regional del norte de Chile.",
         contexto: "Publicación de poesía del desierto.",
         integrantes: [],
@@ -3785,6 +4242,8 @@ const talleres = [
         region: "norte-grande",
         años: "1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista de poesía del norte extremo de Chile.",
         contexto: "Difusión de voces poéticas ariqueñas.",
         integrantes: [],
@@ -3798,6 +4257,8 @@ const talleres = [
         region: "metropolitana",
         años: "1960s–1990s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista oficial de la Sociedad de Escritores de Chile (SECH).",
         contexto: "Principal órgano de difusión de la SECH.",
         integrantes: [],
@@ -3811,6 +4272,8 @@ const talleres = [
         region: "norte-chico",
         años: "1980s",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista literaria de La Serena.",
         contexto: "Difusión de poesía nortina.",
         integrantes: [],
@@ -3824,6 +4287,8 @@ const talleres = [
         region: "metropolitana",
         años: "1967–actualidad",
         tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         descripcion: "Revista femenina chilena con sección literaria.",
         contexto: "Medio de difusión masiva con contenido cultural.",
         integrantes: [],
@@ -3855,6 +4320,8 @@ const talleres = [
                 titulo: "Fuego Negro N° 1",
                 años: "junio 1973",
                 tipo: "Revista/Tríptico",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Universidad de Concepción", "Poesía joven universitaria", "Único número publicado"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121719.html", nota: "PDF descargable (MC0005660)" }
@@ -3898,6 +4365,8 @@ const talleres = [
                 titulo: "Envés Año II, N° 3",
                 años: "diciembre 1974",
                 tipo: "Revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Universidad de Concepción", "Instituto Central de Lenguas"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121785.html", nota: "PDF descargable (MC0005935)" }
@@ -3940,7 +4409,11 @@ const talleres = [
             {
                 titulo: "El Organillo N° 7",
                 años: "marzo-abril 1987",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 tipo: "Revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html", nota: "Digitalizado" }
                 ]
@@ -3949,6 +4422,8 @@ const talleres = [
                 titulo: "El Organillo N° 9",
                 años: "noviembre-diciembre 1987",
                 tipo: "Revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Incluye textos de Raúl Zurita, Gonzalo Rojas, Jorge Teillier", "Cuento de Pedro Mardones", "Crítica de Federico Schopf sobre Diego Maquieira"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Digitalizado" }
@@ -4024,7 +4499,8 @@ const talleres = [
         region: "metropolitana",
         años: "1982–1984",
         tipo: "revista",
-        verificado: false,
+        verificado: "fuente única: MC ejemplar",
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista fundada en octubre de 1982 por Marina Latorre U. Publicada por Ediciones Bolt (vocero de revista Portal), Londres 92, Santiago. Distribución gratuita.",
             contexto: "Nació inspirada en pedido de 'un poeta de Isla Negra' (Neruda). Difundía cartas de grupos literarios, instituciones culturales, alcaldías, universidades y reseñas de libros.",
@@ -4048,6 +4524,8 @@ const talleres = [
                 titulo: "Carta N° 1",
                 años: "octubre 1982",
                 tipo: "Revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Ediciones Bolt", "Distribución gratuita", "⚠️ Datos extraídos de ejemplar en Memoria Chilena"],
                 existencias: [
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html", nota: "Carta. Santiago: Eds. Bolt, 1982-1984. 3 v." }
@@ -4072,7 +4550,8 @@ const talleres = [
         region: "metropolitana",
         años: "1983–1987",
         tipo: "taller",
-        verificado: false,
+        verificado: "fuente única: MC99283, MC99308",
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Revista Latinoamericana de Artes y Letras publicada por el Centro Hurbanístico de Artes y Letras / Taller Urbano. Casilla 4532 - Correo 2, Santiago.",
             contexto: "Enfoque cultural latinoamericano; se posicionó explícitamente contra el aislamiento cultural del régimen de Pinochet (14 años). Enfoque humanista, independiente, democrático.",
@@ -4133,7 +4612,8 @@ const talleres = [
         region: "metropolitana",
         años: "1985–1986",
         tipo: "taller",
-        verificado: false,
+        verificado: "fuente única: MC121725",
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Órgano del Taller Literario Berghof, que cumplió su primer año en marzo 1986. Segunda época (ex-Servum Pecus). Dirección: Alberto Llona N° 988, Maipú, Santiago.",
             contexto: "Declaran influencias de Rilke, Valéry, Maiakovski, T. Mann, Huidobro, Teillier, Quezada, Zurita. Se posicionan como respuesta a 'este momento histórico' y en solidaridad con organizaciones populares.",
@@ -4179,7 +4659,8 @@ const talleres = [
         region: "norte-grande",
         años: "1980",
         tipo: "revista",
-        verificado: false,
+        verificado: "fuente única: MC ejemplar Taller Recital",
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Cuadernillo de poesía publicado en septiembre de 1980 por el Taller de Literatura Recital de Antofagasta. Autora única: Marianela Gaytán.",
             contexto: "Dedicado a Julia Laffertte. Epígrafe de Pablo Neruda. Temática elegíaca sobre duelo, muerte y soledad.",
@@ -4380,6 +4861,8 @@ const poetas = [
         zona: "Antofagasta (nacimiento) / Santiago (actividad)",
         region: "metropolitana",
         años: "1943–",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Fari%C3%B1a%2C_Soledad_-FILSA_20181108_fRF01.jpg/220px-Fari%C3%B1a%2C_Soledad_-FILSA_20181108_fRF01.jpg", credito: "Wikimedia Commons / FILSA", año: "2018", nota: "Uso libre" },
         biografia: {
             nacimiento: "Antofagasta, 1943",
@@ -4444,6 +4927,8 @@ const poetas = [
         zona: "Magallanes (Punta Arenas)",
         region: "austral",
         años: "Activa desde 1960s",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: null,
         biografia: {
             nacimiento: "Punta Arenas, 1948/1949",
@@ -4676,6 +5161,8 @@ const poetas = [
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
         años: "1953–",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Ver%C3%B3nica_Zondek.jpg/220px-Ver%C3%B3nica_Zondek.jpg", credito: "Wikimedia Commons", año: null, nota: "Uso libre" },
         biografia: {
             nacimiento: "Santiago, 1953. Familia de inmigrantes judío-europeos.",
@@ -5052,6 +5539,8 @@ const poetas = [
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
         años: "1950–",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: { url: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Eugenia_Brito_en_la_FILSA_2017_%28cropped%29.jpg", credito: "Wikimedia Commons / FILSA", año: "2017", nota: "Uso libre" },
         biografia: {
             nacimiento: "Santiago de Chile, 1950",
@@ -6002,6 +6491,8 @@ const poetas = [
         zona: "Chiloé (Curaco de Vélez, isla Quinchao)",
         region: "sur",
         años: "Activa desde 1970s",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: null,
         biografia: {
             nacimiento: "Curaco de Vélez, isla Quinchao, Chiloé. Origen mestizo huilliche.",
@@ -6216,6 +6707,8 @@ const poetas = [
         zona: "Puerto Montt (nacimiento) / Niebla, Valdivia (residencia actual)",
         region: "sur",
         años: "1944–",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: null,
         biografia: {
             nacimiento: "Puerto Montt, 1944",
@@ -6228,6 +6721,8 @@ const poetas = [
                 titulo: "Palabra de mujer: poemas",
                 años: "1984",
                 tipo: "Poemario",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Editorial Tragaluz"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0028768.pdf", nota: "PDF digitalizado" }
@@ -7490,6 +7985,8 @@ const poetas = [
         zona: "Porvenir / Punta Arenas (XII Región de Magallanes)",
         region: "austral",
         años: "1933–",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: null,
         biografia: {
             nacimiento: "Porvenir, Región de Magallanes, 1933",
@@ -7742,8 +8239,10 @@ const poetas = [
         zona: "Santiago (Barrio París-Londres)",
         region: "metropolitana",
         años: "1925–",
-        foto: null,
+        rol: "gestora",
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        foto: null,
         biografia: {
             nacimiento: "Punta Arenas, 14 de agosto de 1925. Hija de sindicalista obrero con afición a la literatura. Cumplió 100 años en agosto de 2025.",
             formacion: "Estudió Pedagogía en Castellano y Periodismo en Universidad de Chile. Licenciada en Comunicación en Universidad de Santiago.",
@@ -7813,8 +8312,10 @@ const poetas = [
         zona: "Provincia de Llanquihue (X Región de Los Lagos)",
         region: "sur",
         años: "Activa 1970s–actualidad",
-        foto: null,
+        rol: "gestora",
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        foto: null,
         biografia: {
             nacimiento: "Chile, provincia de Llanquihue. Reside en Estados Unidos desde 1981.",
             formacion: "Doctorado en University of Michigan, Ann Arbor. Profesora de Literatura Hispanoamericana en Humboldt State University, California.",
@@ -7884,8 +8385,10 @@ const poetas = [
         zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
         años: "1945–",
+        rol: "gestora",
         foto: null,
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
         biografia: {
             nacimiento: "Santiago, 7 de abril de 1945.",
             formacion: "Estudió Bellas Artes (pintura, teatro, literatura) en Universidad de Chile, sin completar estudios. Talleres con Miguel Arteche, Jaime Quezada, Pía Barros.",
@@ -7897,6 +8400,8 @@ const poetas = [
                 titulo: "Memorias de un Pájaro Asustado",
                 años: "1982",
                 tipo: "Poesía",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Primer poemario", "Reseñado por Aristóteles España"],
                 existencias: [
                     { lugar: "Biblioteca Nacional Digital", tiene: true, link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/625/w3-article-320400.html", nota: "Grabación lectura autora (1995)" }
@@ -7926,7 +8431,8 @@ const poetas = [
             revistas: [
                 { nombre: "Huelén", id: "huelen" },
                 { nombre: "Pluma y Pincel", id: "pluma-pincel" },
-                { nombre: "Carta", id: "carta" }
+                { nombre: "Carta", id: "carta" },
+                { nombre: "Palabra Escrita", id: "palabra-escrita", nota: "Poema 'Reflexiones' publicado (errata corregida en N°16, dic. 1984)" }
             ]
         },
         fuentes: [
@@ -7944,7 +8450,8 @@ const poetas = [
         region: "metropolitana",
         años: "Activa 1985–1986",
         foto: null,
-        verificado: false,
+        verificado: "fuente única: MC Galera N°3 (1986)",
+        ultimaActualizacion: "2026-01-09",
         biografia: {
             nacimiento: "por determinar",
             formacion: "Miembro del Colectivo de Escritores Jóvenes.",
@@ -7983,7 +8490,8 @@ const poetas = [
         region: "metropolitana",
         años: "Activa 1985–1986",
         foto: null,
-        verificado: false,
+        verificado: "fuente única: MC Galera N°3 (1986)",
+        ultimaActualizacion: "2026-01-09",
         biografia: {
             nacimiento: "por determinar",
             formacion: "Participó en circuitos literarios de Santiago durante dictadura.",
@@ -8020,7 +8528,8 @@ const poetas = [
         region: "norte-grande",
         años: "Activa 1980",
         foto: null,
-        verificado: false,
+        verificado: "fuente única: MC Golpes del día (1980)",
+        ultimaActualizacion: "2026-01-09",
         biografia: {
             nacimiento: "por determinar",
             formacion: "Vinculada al Taller de Literatura Recital de Antofagasta.",
@@ -8056,7 +8565,8 @@ const poetas = [
         region: "centro",
         años: "Activa 1981",
         foto: null,
-        verificado: false,
+        verificado: "fuente única: MC Colecciones Ancoa N°2 (1981)",
+        ultimaActualizacion: "2026-01-09",
         biografia: {
             nacimiento: "por determinar",
             formacion: "Poeta linarense vinculada a circuito literario local.",
@@ -8068,6 +8578,8 @@ const poetas = [
                 titulo: "Poema en Colecciones Ancoa N° 2",
                 años: "noviembre 1981",
                 tipo: "Poesía en revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["'Cosas sin importancia'", "Director: Samuel Maldonado Silva", "Imprenta Minerva, Linares"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html", nota: "Ancoa: nº 2, noviembre 1981. ⚠️ Datos extraídos de ejemplar en repositorio digital" }
@@ -8093,8 +8605,10 @@ const poetas = [
         zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
         años: "1956–",
-        foto: null,
+        rol: "gestora",
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
+        foto: null,
         biografia: {
             nacimiento: "Melipilla, 20 de enero de 1956.",
             formacion: "Licenciatura en Castellano, Universidad de Santiago. Asistió a taller de Carlos Ruiz-Tagle quien le recomendó dedicarse a la narrativa.",
@@ -8106,6 +8620,8 @@ const poetas = [
                 titulo: "Miedos transitorios",
                 años: "1985",
                 tipo: "Cuentos",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Ediciones Ergo Sum", "Primer libro publicado"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-96697.html", nota: "Ficha autora" }
@@ -8165,8 +8681,10 @@ const poetas = [
         zona: "Lebu (VIII Región del Biobío)",
         region: "sur",
         años: "1951–",
+        rol: "gestora",
         foto: null,
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
         biografia: {
             nacimiento: "Lebu, 2 de julio de 1951.",
             formacion: "Estudió Filosofía en Instituto Pedagógico Universidad de Chile (1969-1973). Tras golpe, estudió Literatura en Departamento de Estudios Humanísticos (Facultad de Ciencias Físicas y Matemáticas, U. de Chile) con Enrique Lihn, Nicanor Parra, Ronald Kay, Jorge Guzmán.",
@@ -8178,6 +8696,8 @@ const poetas = [
                 titulo: "La bandera de Chile",
                 años: "1981 (publicado 1991)",
                 tipo: "Poesía",
+        verificado: true,
+        ultimaActualizacion: "2026-01-09",
                 detalles: ["Escrito 1981, circuló clandestinamente mimeografiado", "Publicado oficialmente: Libros de Tierra Firme, Buenos Aires, 1991", "Ícono de la resistencia a la dictadura"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3405.html", nota: "Ficha autora con análisis de obra" }
@@ -8494,7 +9014,7 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
     }
     
     // Filtrar y mostrar poetas (si el filtro de tipo lo permite)
-    if (typeFilter === 'all' || typeFilter === 'poetas') {
+    if (typeFilter === 'all' || typeFilter === 'poetas' || typeFilter === 'gestoras') {
         let filteredPoetas = poetas;
         
         // Filtrar por región
@@ -8502,18 +9022,27 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
             filteredPoetas = filteredPoetas.filter(p => p.region === regionFilter);
         }
         
+        // Filtrar gestoras si se selecciona ese filtro
+        if (typeFilter === 'gestoras') {
+            filteredPoetas = filteredPoetas.filter(p => p.rol === 'gestora');
+        }
+        
         filteredPoetasCount = filteredPoetas.length;
         
         filteredPoetas.forEach(p => {
+            const isGestora = p.rol === 'gestora';
+            const markerClass = isGestora ? 'marker-gestora' : 'marker-poeta';
+            const markerSize = isGestora ? 32 : 28;
             const icon = L.divIcon({
                 className: '',
-                html: `<div class="custom-marker marker-poeta"></div>`,
-                iconSize: [28, 28],
-                iconAnchor: [14, 14]
+                html: `<div class="custom-marker ${markerClass}"></div>`,
+                iconSize: [markerSize, markerSize],
+                iconAnchor: [markerSize/2, markerSize/2]
             });
             
             const marker = L.marker(p.coords, { icon: icon });
-            marker.bindTooltip(p.nombre, { direction: 'top', offset: [0, -12], className: 'tooltip-elegant' });
+            const tooltipLabel = isGestora ? `★ ${p.nombre}` : p.nombre;
+            marker.bindTooltip(tooltipLabel, { direction: 'top', offset: [0, -12], className: 'tooltip-elegant' });
             marker.bindPopup(createPoetaPopup(p), { maxWidth: 450 });
             marker.on('popupclose', removeConnectionLineWithLabels);
             // Limpiar conexiones activas cuando se abre un nuevo popup
@@ -8841,8 +9370,13 @@ function createPoetaPopup(p) {
         fuentesContent = '<p class="por-determinar">Por determinar</p>';
     }
     
+    // Determinar si es gestora
+    const isGestora = p.rol === 'gestora';
+    const headerClass = isGestora ? 'popup-header gestora-header' : 'popup-header poeta-header';
+    const tipoBadge = isGestora ? '<div class="gestora-badge">★ Gestora Cultural</div>' : '<div class="tipo-badge">Poeta</div>';
+    
     return `
-        <div class="popup-header poeta-header">
+        <div class="${headerClass}">
             <div class="poeta-profile">
                 ${fotoHtml}
                 <div class="poeta-info">
@@ -8850,7 +9384,7 @@ function createPoetaPopup(p) {
                     ${p.nombreReal && p.nombreReal !== p.nombre ? `<div class="region" style="font-size: 11px;">(${p.nombreReal})</div>` : ''}
                     <div class="poeta-dates">${p.años}</div>
                     <div class="region">${p.zona}</div>
-                    <div class="tipo-badge">Poeta</div>
+                    ${tipoBadge}
                 </div>
             </div>
             ${(p.conexiones && (p.conexiones.talleres?.length > 0 || p.conexiones.revistas?.length > 0)) ? `
