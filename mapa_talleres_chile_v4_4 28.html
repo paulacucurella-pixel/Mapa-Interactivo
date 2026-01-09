@@ -981,7 +981,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa Literario de Chile</h1>
         <p class="subtitle">Talleres, Revistas, Publicaciones en Dictadura y las Poetas de este Periodo</p>
-        <p>Chile, 1973–1990 · <span style="font-size: 11px; color: #8a7a60;">Última actualización: 7 enero 2026</span></p>
+        <p>Chile, 1973–1990 · <span style="font-size: 11px; color: #8a7a60;">Última actualización: 8 enero 2026</span></p>
     </div>
     <div class="header-right">
         <select id="typeFilter">
@@ -1001,9 +1001,11 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         <button class="toggle-poets-btn" onclick="togglePoetsPanel()">
             📋 Poetas
         </button>
+        <!-- INHABILITADO TEMPORALMENTE
         <button class="toggle-silencios-btn" onclick="toggleSilenciosPanel()">
             🔍 Mapear Silencios
         </button>
+        -->
     </div>
 </div>
 
@@ -2229,6 +2231,52 @@ const talleres = [
             { autor: "Memoria Chilena", año: "n.d.", titulo: "Pía Barros", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-96697.html" },
             { autor: "Misivas en Colectivo", año: "2025", titulo: "Entre letras y resistencia: El caso de Ediciones Ergo Sum", medio: "MisivasEnColectivo.cl", link: "https://www.misivasencolectivo.cl/2025/01/13/entre-lineas-y-resistencia-el-caso-de-ediciones-ergo-sum/" },
             { autor: "Roche Rodríguez, M.", año: "2023", titulo: "El ejercicio de la libertad a través de los talleres literarios", medio: "Literal Magazine", link: "https://literalmagazine.com/el-ejercicio-de-la-libertad-a-traves-de-los-talleres-literarios/" }
+        ]
+    },
+    {
+        nombre: "Nos=otras (folleto literario feminista)",
+        coords: [-33.4395, -70.6440],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1985",
+        tipo: "revista",
+        historia: {
+            origen: "Folleto literario feminista publicado en 1985, editado por Pía Barros, Carmen Berenguer, Teresa Calderón y Liliana Sagaris.",
+            contexto: "Reflexión crítica sobre el lugar de las mujeres en la literatura chilena. Critica los círculos predominantemente masculinos en torno a la escritura y la subordinación del protagonismo femenino en el campo literario.",
+            desarrollos: "Publicado en un año de alta movilización feminista (1985, año del manifiesto 'Todavía Escribimos'). Las editoras estaban vinculadas al Taller Ergo Sum, colectivo CADA/Hoja X Ojo y al movimiento de 'nueva poesía femenina chilena'.",
+            continuidad: "Documento testimonial del feminismo literario en dictadura. Conservado en el Archivo Mujeres y Géneros del Archivo Nacional."
+        },
+        fundadores: [
+            { nombre: "Pía Barros", rol: "Editora (Taller Ergo Sum, Taller Soffia)" },
+            { nombre: "Carmen Berenguer", rol: "Editora (CADA, Hoja X Ojo)" },
+            { nombre: "Teresa Calderón", rol: "Editora (poeta)" },
+            { nombre: "Liliana Sagaris", rol: "Editora (escritora, periodista)" }
+        ],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Nos=otras",
+                años: "1985",
+                numeros: "Número único (folleto)",
+                detalles: [
+                    "Crítica a círculos masculinos en la literatura",
+                    "Reivindicación del espacio de las escritoras",
+                    "Vinculado al movimiento 'nueva poesía femenina chilena'"
+                ],
+                personas: [
+                    { nombre: "Pía Barros", rol: "Editora" },
+                    { nombre: "Carmen Berenguer", rol: "Editora" },
+                    { nombre: "Teresa Calderón", rol: "Editora" },
+                    { nombre: "Liliana Sagaris", rol: "Editora" }
+                ],
+                existencias: [
+                    { lugar: "Archivo Mujeres y Géneros", tiene: true, link: null, nota: "Archivo Nacional Histórico — CONSULTA PRESENCIAL (maria.mena@archivonacional.gob.cl)" }
+                ]
+            }
+        ],
+        fuentes: [
+            { autor: "Archivo Nacional", año: "s.f.", titulo: "Revistas y boletines en el Archivo Mujeres y Géneros", medio: "Archivo Nacional de Chile", link: "https://www.archivonacional.gob.cl/revistas-y-boletines-en-el-archivo-mujeres-y-generos" },
+            { autor: "Redalyc", año: "2017", titulo: "Escribir en dictadura, poetas feministas chilenas. Hacia una genealogía", medio: "Revista de Estudios de Género La Ventana", link: "https://www.redalyc.org/jatsRepo/4559/455962140004/html/index.html" }
         ]
     },
     {
@@ -4022,7 +4070,7 @@ const poetas = [
         años: "Activa desde 1960s",
         foto: null,
         biografia: {
-            nacimiento: "Punta Arenas (fecha por determinar)",
+            nacimiento: "Punta Arenas, 1948/1949",
             formacion: "Vocación poética temprana. A los 12 años ganó primer premio del concurso nacional 'Rostros de Chile' con el poema 'A esas Manos'. Padeció dislalia y disgrafía de niña, lo que influyó en su estilo ligado a la sonoridad e invención de palabras.",
             contexto: "Cofundó la Casa de la Cultura de Magallanes en los años 70. Cercana a Stella Díaz Varín y Pablo Neruda. Durante la dictadura luchó en la clandestinidad bajo amparo de sectores de la Iglesia. Usó el exterminio de pueblos originarios como metáfora de la represión política.",
             trayectoria: "Premio de la Academia Chilena de la Lengua (1989) por 'Los círculos'. En la inauguración de la sede magallánica de SECH conoció a Pablo Neruda."
@@ -5615,8 +5663,9 @@ const poetas = [
             revistas: []
         },
         fuentes: [
-            { autor: "Trujillo, C.", año: "2021", titulo: "Olga Cárdenas - Poeta", medio: "El Insular", link: "https://elinsular.cl/2021/02/15/olga-cardenas-poeta/" },
-            { autor: "Isla de Letras", año: "2014", titulo: "Olga Cárdenas: Poesía valiente de Huenao", medio: "Isla de Letras", link: "https://isladeletras.wordpress.com/2014/08/01/esta-semana-entrevista-de-olga-cardenas/" }
+            { autor: "Trujillo, C.", año: "2021", titulo: "Olga Cárdenas - Poeta", medio: "El Insular", link: "https://elinsular.cl/fogon-cultural/2021/02/15/olga-cardenas-poeta/" },
+            { autor: "Wikipedia", año: "2025", titulo: "Taller Aumen", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Taller_Aumen" },
+            { autor: "Mapuexpress", año: "2018", titulo: "Navegando por el Chiloé profundo con la escritora Olga Cárdenas", medio: "Mapuexpress", link: "https://www.mapuexpress.org/2018/04/27/navegando-por-el-chiloe-profundo-con-la-escritora-olga-cardenas/" }
         ]
     },
     {
@@ -5628,10 +5677,10 @@ const poetas = [
         años: "1967–",
         foto: null,
         biografia: {
-            nacimiento: "Castro, Chiloé, 1967. Origen mapuche-huilliche.",
-            formacion: "Poeta. No publicó libros individuales. Primera generación de poetisas mapuche contemporáneas.",
-            contexto: "Formada en Taller Literario Aumen. Escribió primer poema conocido a los 11 años (1978). Publicó en revista Aumen y posiblemente en El 100 Pies y La Gota Pura. Escritura bilingüe mapuzugun-español.",
-            trayectoria: "En 1989 (22 años) leyó en Segundo Encuentro de Escritores de Chiloé junto a Miriam Torres Millán: primera visibilización de mujeres mapuche en foro literario nacional. Tras 1990 dejó de publicar activamente."
+            nacimiento: "Castro, Chiloé, 1967 (por determinar). Origen mapuche-huilliche (por determinar).",
+            formacion: "Poeta (por determinar). Primera generación de poetisas mapuche contemporáneas (por determinar).",
+            contexto: "Formada en Taller Literario Aumen (por determinar). Publicó en revista Aumen (por determinar).",
+            trayectoria: "⚠️ DATOS NO VERIFICADOS CON PROTOCOLO ANTI-ALUCINACIÓN. Requiere consulta presencial en archivos."
         },
         publicaciones: [
             {
@@ -5788,14 +5837,14 @@ const poetas = [
         nombre: "Heddy Navarro",
         nombreReal: "Heddy Navarro Harris",
         coords: [-41.4693, -72.9424],
-        zona: "Puerto Montt (nacimiento) / Santiago (actividad)",
+        zona: "Puerto Montt (nacimiento) / Niebla, Valdivia (residencia actual)",
         region: "sur",
-        años: "1944–2007",
+        años: "1944–",
         foto: null,
         biografia: {
             nacimiento: "Puerto Montt, 1944",
-            formacion: "Estudió Literatura en Universidad Austral y Universidad de Chile. Bibliotecaria en Instituto Cultural de Las Condes (1970-1973). Profesora de enseñanza media desde 1971. Cesante por motivos políticos 1973-1980.",
-            contexto: "Publicó poemarios en editoriales independientes durante dictadura. Directora de revista 'Palabra de Mujer' (al menos desde 1997).",
+            formacion: "Profesora de Estado en Artes Plásticas, Universidad de Chile (1967). Exonerada política de la Facultad de Bellas Artes. En agosto de 1974 detenida por la DINA. Cesante por motivos políticos 1973-1980.",
+            contexto: "Publicó poemarios en editoriales independientes durante dictadura. Creadora y editora de la Revista 'Palabra de Mujer' (1988-1997), dedicada a promover la poesía femenina latinoamericana.",
             trayectoria: "Artículo 'Las faldas ya están echadas' en Cauce (1988). Reseña 'Tres bravas poetas' por Ignacio Valente, El Mercurio (1989)."
         },
         publicaciones: [
@@ -6549,10 +6598,10 @@ const poetas = [
         años: "1962–",
         foto: null,
         biografia: {
-            nacimiento: "Concepción, 1962",
-            formacion: "Descrita como 'promisoria exponente de la nueva poesía en Chile' en revista Trayectoria poética (1987).",
-            contexto: "Sobre la misión del arte: 'ir barriendo... todas aquellas basuritas que el mundo deposita en el banco de la desesperanza'.",
-            trayectoria: "Publicó 'Recreo' (Poesía. Cuadernos de movilización literaria, Concepción, 1986). Poemas en Trayectoria poética Nº1 (1987): registro conciso e irónico."
+            nacimiento: "Concepción, 1962 (por determinar)",
+            formacion: "Poeta (por determinar).",
+            contexto: "Publicó en revista Trayectoria poética (1987) (por determinar).",
+            trayectoria: "⚠️ DATOS NO VERIFICADOS CON PROTOCOLO ANTI-ALUCINACIÓN. Requiere consulta presencial en archivos."
         },
         publicaciones: [
             {
@@ -6646,10 +6695,10 @@ const poetas = [
         años: "1958–",
         foto: null,
         biografia: {
-            nacimiento: "Curicó, 1958",
-            formacion: "Enseñanza media: Liceo de Niñas de Curicó. En 1986: profesora de educación general básica en comuna de Teno. Estudios de Orientación Educacional en PUC Sede Curicó.",
-            contexto: "Desde niña participaba en concursos escolares de poesía y cuento. Integró el Grupo Literario 'Orlando González' (Curicó) durante 1979-1980.",
-            trayectoria: "Tercera Mención Honrosa en Concurso Regional de Literatura 1986 (PUC Curicó). Poemas 'Tres poemas' y 'Madre' en 'Páginas poéticas: 1986'."
+            nacimiento: "Curicó, 1958 (por determinar)",
+            formacion: "Profesora de educación general básica (por determinar). Grupo Literario 'Orlando González' (por determinar).",
+            contexto: "Tercera Mención Honrosa en Concurso Regional de Literatura 1986 (PUC Curicó) - verificado en Memoria Chilena.",
+            trayectoria: "⚠️ DATOS BIOGRÁFICOS NO VERIFICADOS CON PROTOCOLO ANTI-ALUCINACIÓN. Publicación en 'Páginas poéticas: 1986' sí verificada."
         },
         publicaciones: [
             {
@@ -8607,4 +8656,4 @@ document.getElementById('typeFilter').addEventListener('change', function() {
     <strong>© Paula Cucurella 2025</strong> · Investigación y desarrollo del Mapa Literario de Talleres de Poesía en Chile (1973-1990)
     <br>
     <span style="font-size: 11px;">
-        Contacto: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" da
+        Contacto: <a href="/cdn-cgi/l/email-protection#730312061f121006100601161f1f1233141e121a1f5d101c1e" style="color: #8B4513;"><span class="__cf_
