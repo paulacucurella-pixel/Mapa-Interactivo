@@ -2480,19 +2480,20 @@ const talleres = [
     {
         nombre: "Taller/Grupo Extramuros",
         coords: [-18.4783, -70.3126],
-        zona: "Arica y Parinacota (Arica)",
+        zona: "Arica y Parinacota (Arica, 'Puerta Norte de Chile')",
         region: "norte-grande",
         años: "1983–1985",
         tipo: "taller",
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
-            origen: "Colectivo literario independiente fundado en 1983 por el poeta Carlos Amador Marchant (de Iquique, radicado en Arica). Objetivo: abrir espacio de difusión para voces emergentes del norte chileno.",
-            contexto: "La revista se autodenominó 'Revista internacional de Poesía – Puerta Norte de Chile'. Estableció vínculos con movimientos literarios de América Latina, Europa y EE.UU. Llenó un 'vacío muy importante' en la actividad cultural-literaria regional.",
-            desarrollos: "Publicó 10 números entre 1983-1985. Primera entrega (1983) evolucionó a 'verdadera revista literaria' con más páginas, mejor presentación y narrativa breve. Financiamiento autogestionado con auspiciadores locales.",
+            origen: "Colectivo literario independiente fundado en enero 1983 por el poeta Carlos Amador Marchant (de Iquique, radicado en Arica). Objetivo: abrir espacio de difusión para voces emergentes del norte chileno.",
+            contexto: "La revista se autodenominó 'Revista internacional de Poesía – Puerta Norte de Chile'. Estableció vínculos con movimientos literarios de América Latina, Europa y EE.UU. Llenó un 'vacío muy importante' en la actividad cultural-literaria regional. Declara haber dado 'cobija a una cantidad provechosa de poetas jóvenes que se desarrollan en casi toda la zona norte de Chile'.",
+            desarrollos: "Publicó 10 números entre 1983-1985. Primera entrega (1983) evolucionó a 'verdadera revista literaria' con más páginas, mejor presentación y narrativa breve. Financiamiento autogestionado con auspiciadores locales. N°7 (marzo-abril 1985) incluye concurso de poesía estudiantil U. de Tarapacá (julio 1984) con visita del poeta Andrés Sabella.",
             continuidad: "Concluyó en 1985 con la partida de Marchant hacia el sur. Marchant impulsó revista El Ojo (1989) y revivió Extramuros en formato digital en la década de 2000."
         },
         fundadores: [
-            { nombre: "Carlos Amador Marchant", rol: "Fundador y director" }
+            { nombre: "Carlos Amador Marchant", rol: "Fundador y director (enero 1983)" }
         ],
         integrantes: [
             { nombre: "Juvenal Ayala", rol: "Colaborador (Iquique)" },
@@ -2501,7 +2502,17 @@ const talleres = [
             { nombre: "Mayo Muñoz", rol: "Diseño gráfico" },
             { nombre: "José Martínez Fernández", rol: "Colaborador" },
             { nombre: "Guillermo Ross-Murray", rol: "Colaborador (Iquique)" },
-            { nombre: "Marta Milesi", rol: "Colaboradora (Argentina)" }
+            { nombre: "Marta Milesi", rol: "Colaboradora (Argentina)" },
+            { nombre: "Doris Seura", rol: "Ilustradora/dibujante" },
+            { nombre: "Eduardo Dalter", rol: "Poeta invitado (Buenos Aires, N°7)" },
+            { nombre: "Andrés Sabella", rol: "Poeta invitado (visita entrega premios 1984)" }
+        ],
+        mujeresColaboradoras: [
+            { nombre: "Doris Seura", rol: "Ilustradora/dibujante", enRevista: true },
+            { nombre: "Clara Seura Rocafull", rol: "Poeta + Ensayista", obras: "'Renacer' (poema, p.16), 'Oscar Wilde y su polémica inmortalidad' (ensayo, pp.9-10)", premio: "1er lugar compartido concurso poesía U. Tarapacá julio 1984", enRevista: true },
+            { nombre: "Jacqueline Castillo", rol: "Poeta", obra: "'Yo te recuerdo Pablo' (poema, p.16)", premio: "1er lugar compartido concurso poesía U. Tarapacá julio 1984", enRevista: true },
+            { nombre: "Elizabeth Lillo", rol: "Colaboradora/Mecenas", nota: "Mencionada en agradecimientos como 'constantemente preocupada de la sobrevivencia de esta revista'", enRevista: false },
+            { nombre: "Marta Milesi", rol: "Colaboradora (Argentina)", enRevista: true }
         ],
         publicaciones: [
             {
@@ -2509,11 +2520,12 @@ const talleres = [
                 años: "1983–1985",
                 numeros: "Revista (10 números)",
                 detalles: [
-                    "Nº 1 (1983) – No localizado en catálogos públicos",
+                    "Nº 1 (enero 1983) – No localizado en catálogos públicos",
                     "Nº 2 (marzo 1983) – Conservado BNC",
                     "Nº 4 (noviembre 1983) – Conservado BNC",
-                    "Nº 7 (marzo-abril 1985) – Conservado BNC",
-                    "Nº 8, 9, 10 (1985) – No localizados en catálogos"
+                    "Nº 7 (marzo-abril 1985) – Conservado BNC, incluye concurso poesía U. Tarapacá",
+                    "Nº 8, 9, 10 (1985) – No localizados en catálogos",
+                    "Epígrafe Baudelaire: 'Sin pan podréis vivir tres días pero sin poesía, nunca'"
                 ],
                 personas: [],
                 existencias: [
@@ -2526,21 +2538,23 @@ const talleres = [
             { autor: "Eloy, H.", año: "2000", titulo: "Revistas y publicaciones literarias durante la dictadura (1973-1990)", medio: "Revista Simpson 7", link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0063468.pdf" },
             { autor: "La Estrella de Arica", año: "1983", titulo: "Apareció revista de poesía Extramuros", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-287740.html" },
             { autor: "La Estrella de Arica", año: "1984", titulo: "Extramuros se convirtió en una gran revista literaria", medio: "Biblioteca Nacional Digital", link: null },
-            { autor: "Memoria Chilena", año: "n.d.", titulo: "Extramuros: revista internacional de poesía", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-147129.html" }
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "Extramuros: revista internacional de poesía", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-147129.html" },
+            { autor: "Memoria Chilena", año: "1985", titulo: "Extramuros N°7, marzo-abril 1985", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
     {
         nombre: "Revista Pobresía",
         coords: [-20.2141, -70.1525],
-        zona: "Tarapacá (Iquique)",
+        zona: "Tarapacá (Iquique, Casilla 2223)",
         region: "norte-grande",
         años: "1983–1987 (+ II época)",
         tipo: "revista",
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
-            origen: "Hoja de poesía fundada en 1983 por el poeta Juvenal Jorge Ayala (Iquique, 1959), pescador artesanal oriundo del barrio El Colorado, de familia de pescadores. Formato: publicación pequeña, 'casi del tamaño de un panfleto de la época, pero llena de poesía' (Guerrero, 2009).",
-            contexto: "Parte del movimiento de micromedios de resistencia cultural durante la dictadura. El bar El Wagón (calle Bolívar, abierto en junio de 1983) era centro de reunión donde se leía poesía. Ayala 'dinamizó buena parte de la actividad cultural iquiqueña' en los años 80 (Guerrero, 2009).",
-            desarrollos: "Se publicaron 'cerca de 20 ediciones' (Guerrero, 2009). Distribución 'por manos amigas y solidarias'. Patricia Hurtado Cosgrove diseñó al menos una edición. Colaboradores: Eduardo Correa, Arturo Olavarría, Eduardo Kong, entre otros.",
+            origen: "Hoja de poesía fundada en 1983 por el poeta Juvenal Jorge Ayala (Iquique, 1959), pescador artesanal oriundo del barrio El Colorado, de familia de pescadores. Formato: publicación pequeña fotocopiada, 'casi del tamaño de un panfleto de la época, pero llena de poesía' (Guerrero, 2009).",
+            contexto: "Parte del movimiento de micromedios de resistencia cultural durante la dictadura. El bar El Wagón (calle Bolívar, abierto en junio de 1983) era centro de reunión donde se leía poesía. Ayala 'dinamizó buena parte de la actividad cultural iquiqueña' en los años 80 (Guerrero, 2009). Fuerte contenido regional: referencias al desierto de Tarapacá, Tamarugal, Pica, Huantajaya, cultura aymara, Pachamama, playa Cavancha.",
+            desarrollos: "Se publicaron 'cerca de 20 ediciones' (Guerrero, 2009). Distribución 'por manos amigas y solidarias'. Patricia Hurtado Cosgrove diseñó al menos una edición. Formato fotocopiado característico de publicaciones independientes del período dictatorial.",
             continuidad: "Aporte fundamental a la resistencia cultural nortina. Ayala publicó además: Escupitario (1984), Zona de pesca (1986), La diablada (1986, bilingüe), Andanzas (1999), De naufragios y otros poemas (2002)."
         },
         fundadores: [
@@ -2549,8 +2563,12 @@ const talleres = [
         integrantes: [
             { nombre: "Patricia Hurtado Cosgrove", rol: "Diseño gráfico" },
             { nombre: "Eduardo Correa", rol: "Colaborador" },
-            { nombre: "Arturo Olavarría", rol: "Colaborador" },
-            { nombre: "Eduardo Kong", rol: "Colaborador" }
+            { nombre: "Arturo Olavarría", rol: "Colaborador (A. Olavarría O.)" },
+            { nombre: "Eduardo Kong", rol: "Colaborador" },
+            { nombre: "Víctor Otero", rol: "Colaborador (N°11)" },
+            { nombre: "Pichón Taberna", rol: "Colaborador (N°11)" },
+            { nombre: "Bernardo Guerrero", rol: "Colaborador (N°11)" },
+            { nombre: "P. Fierro García", rol: "Ilustrador portada N°14 (firma parcialmente legible)" }
         ],
         publicaciones: [
             {
@@ -2559,13 +2577,16 @@ const talleres = [
                 numeros: "Hoja de poesía (casi 20 números + II época)",
                 detalles: [
                     "Primera época: casi 20 números (1983-1987)",
+                    "N°11, Año 4 (agosto 1985): Víctor Otero, Juvenal J. Ayala, Pichón Taberna, Bernardo Guerrero",
+                    "N°14 (noviembre 1986): Juvenal J. Ayala ('Botellas al mar'), A. Olavarría O. ('Indoamérica')",
                     "Segunda época: al menos Nº 5 registrado",
-                    "Varios números digitalizados en Memoria Chilena"
+                    "Temática: poesía regional nortina, contenido social/político"
                 ],
                 personas: [],
                 existencias: [
                     { lugar: "Memoria Chilena - Nº 2, año 1", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121667.html", nota: "Digitalizado" },
                     { lugar: "Memoria Chilena - Nº 8, octubre 1985", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121671.html", nota: "Digitalizado" },
+                    { lugar: "Memoria Chilena - Nº 11, año 4 (agosto 1985)", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Digitalizado" },
                     { lugar: "Memoria Chilena - Nº 14, noviembre 1986", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121664.html", nota: "Digitalizado" },
                     { lugar: "Memoria Chilena - II época Nº 5", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121666.html", nota: "Digitalizado" }
                 ]
@@ -2575,7 +2596,9 @@ const talleres = [
             { autor: "Guerrero, B.", año: "2009", titulo: "Pobresía", medio: "La Estrella de Iquique / Fundación Crear", link: "https://crear.cl/pobresia/" },
             { autor: "Guerrero, B.", año: "2020", titulo: "Los 80 en Iquique", medio: "Tarapacá en el Mundo", link: "https://tarapacaenelmundo.com/los-80-en-iquique/" },
             { autor: "Lavquén, A.", año: "2008", titulo: "Poesía de Juvenal Ayala", medio: "Proyecto Patrimonio", link: "http://www.letras.mysite.com/al0904081.html" },
-            { autor: "Biblioteca Nacional de Chile", año: "s.f.", titulo: "Pobresía (registros digitalizados)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-121667.html" }
+            { autor: "Biblioteca Nacional de Chile", año: "s.f.", titulo: "Pobresía (registros digitalizados)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-121667.html" },
+            { autor: "Memoria Chilena", año: "1985", titulo: "Pobresía N°11, año 4", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" },
+            { autor: "Memoria Chilena", año: "1986", titulo: "Pobresía N°14, noviembre 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
     {
@@ -2822,23 +2845,97 @@ const talleres = [
         ]
     },
     {
+        nombre: "Círculo Literario Carlos Mondaca",
+        coords: [-29.9080, -71.2510],
+        zona: "Coquimbo (La Serena)",
+        region: "norte-chico",
+        años: "1986",
+        tipo: "taller",
+        verificado: "fuente única: Añañuca N°21",
+        ultimaActualizacion: "2026-01-09",
+        descripcion: "Grupo literario activo en La Serena, mencionado en nota sobre creación de SECH filial IV Región (mayo 1986).",
+        contexto: "Documentado en Añañuca N°21 (mayo-junio 1986, p. 14) como uno de los grupos participantes en la creación de la filial regional de la SECH.",
+        integrantes: [],
+        publicaciones: [],
+        fuentes: [
+            { autor: "Añañuca N°21", año: "1986", titulo: "Nota sobre creación SECH IV Región (p. 14)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Grupo Tacuaco",
+        coords: [-29.9530, -71.3400],
+        zona: "Coquimbo (ciudad)",
+        region: "norte-chico",
+        años: "1986",
+        tipo: "taller",
+        verificado: "fuente única: Añañuca N°21",
+        ultimaActualizacion: "2026-01-09",
+        descripcion: "Grupo literario activo en Coquimbo, mencionado en nota sobre creación de SECH filial IV Región (mayo 1986).",
+        contexto: "Documentado en Añañuca N°21 (mayo-junio 1986, p. 14) como uno de los grupos participantes en la creación de la filial regional de la SECH.",
+        integrantes: [],
+        publicaciones: [],
+        fuentes: [
+            { autor: "Añañuca N°21", año: "1986", titulo: "Nota sobre creación SECH IV Región (p. 14)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Revista La Pilar",
+        coords: [-29.9110, -71.2550],
+        zona: "Coquimbo (La Serena)",
+        region: "norte-chico",
+        años: "1986",
+        tipo: "revista",
+        verificado: "fuente única: Añañuca N°21",
+        ultimaActualizacion: "2026-01-09",
+        descripcion: "Revista literaria de La Serena, mencionada en nota sobre creación de SECH filial IV Región (mayo 1986).",
+        contexto: "Documentada en Añañuca N°21 (mayo-junio 1986, p. 14) como una de las publicaciones participantes en la creación de la filial regional de la SECH.",
+        integrantes: [],
+        publicaciones: [],
+        fuentes: [
+            { autor: "Añañuca N°21", año: "1986", titulo: "Nota sobre creación SECH IV Región (p. 14)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
         nombre: "Revista Añañuca",
         coords: [-29.9200, -71.2700],
-        zona: "Coquimbo (La Serena)",
+        zona: "Coquimbo (La Serena, Calle Ayacucho 3411, Cía Alta)",
         region: "norte-chico",
         años: "1984–2002",
         tipo: "revista",
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
         historia: {
-            origen: "Revista de poesía, narrativa y gráfica publicada en La Serena entre 1984 y 2002, dirigida por el poeta Samuel Núñez (La Serena Online, 2021). Alcanzó más de 140 números publicados a lo largo de 18 años.",
+            origen: "Revista de poesía, narrativa y gráfica publicada en La Serena entre 1984 y 2002, dirigida por el poeta Samuel Núñez. Alcanzó más de 140 números publicados a lo largo de 18 años. Subtítulo: 'Poesía - Narrativa - Gráfica'. Se acepta intercambio.",
             contexto: "Samuel Núñez, descrito como 'el último beat' por sus pares, combinó múltiples oficios —tramoyista, disc-jockey, guardia nocturno, rockero— mientras editaba y difundía la revista. Edición artesanal y autogestionada, tirajes ~500 ejemplares.",
-            desarrollos: "En 1986 alcanzó el Nº 20. En 1989 llegó al Nº 43. En febrero 1993 publicó Nº 70. Ediciones especiales dedicadas a Violeta Parra, Víctor Jara, Rodrigo Lira. Suplemento 'La Maquinita' (1985-1987).",
+            desarrollos: "En 1986 alcanzó el Nº 21 con red de corresponsales nacionales (Iquique a Puerto Natales) e internacionales (Argentina, Alemania, España). En febrero 1993 publicó Nº 70. Ediciones especiales dedicadas a Violeta Parra, Víctor Jara, Rodrigo Lira. Suplemento 'La Maquinita' (1985-1987).",
             continuidad: "Publicó hasta 2002. Memoria Chilena cataloga 18 volúmenes de la revista, con varios números digitalizados."
         },
         fundadores: [
             { nombre: "Samuel Núñez", rol: "Director y editor" }
         ],
-        integrantes: [],
+        integrantes: [
+            { nombre: "Luis Contreras ('Lucot')", rol: "Dibujos" },
+            { nombre: "Jorge Nieto", rol: "Redacción" },
+            { nombre: "Juvenal Ayala", rol: "Corresponsal Iquique" },
+            { nombre: "Caupolicán Peña Lagos", rol: "Corresponsal Ovalle" },
+            { nombre: "Pedro Araucario", rol: "Corresponsal Santiago" },
+            { nombre: "Jonás", rol: "Corresponsal El Tabo" },
+            { nombre: "Cecilia Pérez", rol: "Corresponsal Valdivia" },
+            { nombre: "Jorge Salazar", rol: "Corresponsal Temuco" },
+            { nombre: "Patricia Ojeda", rol: "Corresponsal Puerto Natales" },
+            { nombre: "Esteban Barruel", rol: "Corresponsal Calbuco" },
+            { nombre: "Rolando Revagliatti", rol: "Corresponsal Buenos Aires" },
+            { nombre: "Juan Samuel", rol: "Corresponsal Berlín" },
+            { nombre: "Rosa Ruiz Cuenca", rol: "Corresponsal Málaga" }
+        ],
+        mujeresColaboradoras: [
+            { nombre: "Cecilia Pérez", rol: "Corresponsal Valdivia, Autora", obra: "'Rojo' (prosa poética, N°21 p.12)", enRevista: true },
+            { nombre: "Patricia Ojeda", rol: "Corresponsal Puerto Natales", enRevista: true },
+            { nombre: "Viviana Benz", rol: "Vice-presidenta SECH filial IV Región (mencionada N°21 p.14)", enRevista: false },
+            { nombre: "Juana Boudoin", rol: "Relaciones públicas SECH filial IV Región (mencionada N°21 p.14)", enRevista: false },
+            { nombre: "Catalina Lafertte", rol: "Autora plaquette 'Valparaíso' (Publicaciones recibidas N°21 p.15)", enRevista: false },
+            { nombre: "Rosa Ruiz Cuenca", rol: "Corresponsal Málaga, España", enRevista: true }
+        ],
         publicaciones: [
             {
                 titulo: "Añañuca",
@@ -2853,13 +2950,70 @@ const talleres = [
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99275.html", nota: "Nº 43, julio-oct 1989 (MC0005414)" },
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99273.html", nota: "Nº 31, sept 1987 (MC0005412)" },
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html", nota: "Nº 20, abril 1986" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html", nota: "Nº 20, abril 1986" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Nº 21, mayo-junio 1986 (ejemplar digitalizado)" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Taller Lapislázuli", id: "lapislazuli" },
+                { nombre: "Colectivo de Escritores de Guayacán", id: "guayacan" }
+            ],
+            revistas: [
+                { nombre: "Revista Pobresía", id: "pobresia" },
+                { nombre: "Revista Galera", id: "galera" }
+            ]
+        },
+        fuentes: [
+            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" },
+            { autor: "Diario La Quinta", año: "2021", titulo: "Quintaesencia: En el aniversario de la segunda ciudad más antigua de Chile", medio: "Diario La Quinta", link: "https://diariolaquinta.cl/2021/08/28/quinatesencia-en-el-aniversario-de-la-segunda-ciudad-mas-antigua-de-chile-por-arturo-volantines/" },
+            { autor: "Memoria Chilena", año: "1986", titulo: "Añañuca N° 21, mayo-junio 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+
+    // ==================== ZONA CENTRAL (O'HIGGINS) ====================
+    {
+        nombre: "Revista La Oruga",
+        coords: [-34.1708, -70.7444],
+        zona: "O'Higgins (Rancagua, Río Cachapoal)",
+        region: "sur",
+        años: "1980s",
+        tipo: "revista",
+        verificado: "fuente única: MC ejemplar",
+        ultimaActualizacion: "2026-01-09",
+        historia: {
+            origen: "Publicación orientada a difundir voces poéticas emergentes. Presenta poetas jóvenes autodefinidos como 'inéditos'.",
+            contexto: "Epígrafe de Charles Baudelaire: 'Sin pan podréis vivir tres días pero sin poesía, nunca'. Referencias al Río Cachapoal sugieren vínculo con zona de O'Higgins/Rancagua.",
+            desarrollos: "El N°1 incluye poemas de Lorenzo Peirano A. (Santiago, 1962) y Mauricio Ramírez Pino (Santiago, 1967), ambos declarados 'poetas inéditos'.",
+            continuidad: "Por determinar."
+        },
+        fundadores: [],
+        integrantes: [
+            { nombre: "Mario López V.", rol: "Diseño" },
+            { nombre: "Lorenzo Peirano A.", rol: "Poeta (Santiago, 1962)" },
+            { nombre: "Mauricio Ramírez Pino", rol: "Poeta (Santiago, 1967)" }
+        ],
+        mujeresColaboradoras: [
+            { nombre: "Ana Magdalena Labbé", rol: "Ilustradora (portada)", enRevista: true }
+        ],
+        publicaciones: [
+            {
+                titulo: "La Oruga N° 1",
+                años: "s.f. (1980s probable)",
+                tipo: "Revista",
+                detalles: [
+                    "Poemas: 'Al Río Cachapoal', 'Escondo las manos', 'A Miguel Hernández' (Lorenzo Peirano A.)",
+                    "Poemas: 'Gregorio Samsa ha resucitado', 'El diálogo con la muerte', 'Espero' (Mauricio Ramírez Pino)",
+                    "Anotación manuscrita última página: 'Bhern/Behm' (posible firma archivo)"
+                ],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Ejemplar digitalizado" }
                 ]
             }
         ],
         fuentes: [
-            { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" },
-            { autor: "Diario La Quinta", año: "2021", titulo: "Quintaesencia: En el aniversario de la segunda ciudad más antigua de Chile", medio: "Diario La Quinta", link: "https://diariolaquinta.cl/2021/08/28/quinatesencia-en-el-aniversario-de-la-segunda-ciudad-mas-antigua-de-chile-por-arturo-volantines/" }
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "La Oruga N° 1", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
 
@@ -3425,7 +3579,7 @@ const talleres = [
         historia: {
             origen: "Fundada en Valdivia en 1981 por Pedro Guillermo Jara y el artista gráfico Ricardo Mendoza. Publicación literaria independiente surgida en pleno régimen militar como espacio alternativo de expresión cultural.",
             contexto: "Primera etapa (1981-1984): 4 números dedicados a poesía. Nº1 poetas mexicanos, Nº2 poetas del sur de Chile, Nº3 haikú, Nº4 poesía de David Miralles. Formato 14,5x25cm, tirajes ~300 ejemplares, distribución casi clandestina. Pausa 1985-1990 (Mendoza exonerado de U. Austral). Durante pausa, Jara publicó boletín '¡Oh, Valdivia!' (1988-1990).",
-            continuidad: "Segunda etapa (1991-2013): ampliado como medio periodístico cultural. Formato reducido 8x11cm ('revista de bolsillo'). Total 81 números. Último Nº81 (sept. 2013) sobre 40º aniversario golpe de Estado."
+            continuidad: "Segunda etapa (1991-2013): ampliado como medio periodístico cultural. Formato reducido 8x11cm ('revista de bolsillo'). Total 81 números. Último Nº81 (sept. 2013) sobre 40º aniversario golpe de Estado. Pedro Jara también dirigió 'El Cronopio' (Valdivia, 1986)."
         },
         fundadores: [
             { nombre: "Pedro Guillermo Jara", rol: "Fundador y Director" },
@@ -3444,6 +3598,14 @@ const talleres = [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99355.html", nota: "Año 13, Nº28 (agosto 1995)" },
                     { lugar: "Ediciones UACh/Kultrún", tiene: true, link: "https://catalogo.edicionesuach.cl/libro/caballo-de-proa-edicion-facsimilar-completa-1981-2013-tomos-i-y-ii/", nota: "Edición facsimilar completa 2024 (2 tomos)" }
                 ]
+            },
+            {
+                titulo: "El Cronopio",
+                años: "1986",
+                numeros: "Hoja/plaquette (N°1 documentado)",
+                detalles: ["Director: Pedro Jara", "Casilla 574, Valdivia", "Mencionado en Añañuca N°21 (mayo-junio 1986)"],
+                personas: [],
+                existencias: []
             }
         ],
         fuentes: [
@@ -4608,16 +4770,16 @@ const talleres = [
     {
         nombre: "Revista Galera / Taller Berghof",
         coords: [-33.5100, -70.7600],
-        zona: "Santiago (Maipú)",
+        zona: "Santiago (Maipú, Alberto Llona 988)",
         region: "metropolitana",
         años: "1985–1986",
         tipo: "taller",
-        verificado: "fuente única: MC121725",
+        verificado: true,
         ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Órgano del Taller Literario Berghof, que cumplió su primer año en marzo 1986. Segunda época (ex-Servum Pecus). Dirección: Alberto Llona N° 988, Maipú, Santiago.",
             contexto: "Declaran influencias de Rilke, Valéry, Maiakovski, T. Mann, Huidobro, Teillier, Quezada, Zurita. Se posicionan como respuesta a 'este momento histórico' y en solidaridad con organizaciones populares.",
-            desarrollos: "El N° 3 (marzo 1986) incluye poemas de Cristina Jara y Cristina Palacios. Palacios ganó 1er lugar en concurso de Poesía organizado por revista Contramuro en 5to Festival de Expresión Popular.",
+            desarrollos: "El N° 3 (marzo 1986) incluye poemas de Cristina Jara y Cristina Palacios. Palacios ganó 1er lugar en concurso de Poesía organizado por revista Contramuro en 5to Festival de Expresión Popular. N° 3 mencionado en publicaciones recibidas de Añañuca N°21 (mayo-junio 1986).",
             continuidad: "Vinculados al Colectivo de Escritores Jóvenes."
         },
         fundadores: [
@@ -4649,7 +4811,8 @@ const talleres = [
             { nombre: "Patricia Sauvat", rol: "Colaboradora", enRevista: false }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "1986", titulo: "Galera: revista literaria: año 1, no. 3 (1986)", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
+            { autor: "Memoria Chilena", año: "1986", titulo: "Galera: revista literaria: año 1, no. 3 (1986)", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" },
+            { autor: "Añañuca N°21", año: "1986", titulo: "Publicaciones recibidas: Galera N°3", medio: "Ejemplar digitalizado Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
     {
@@ -4700,12 +4863,13 @@ const poetas = [
         region: "norte-chico",
         años: "Activa desde 1980s",
         verificado: true,
+        ultimaActualizacion: "2026-01-09",
         foto: null,
         biografia: {
             nacimiento: "Temuco, 1956",
             formacion: "Estudió Obstetricia y Puericultura en la Universidad de Chile, Sede Temuco.",
             contexto: "Integrante del Taller Lapislázuli en La Serena. Publicó en 'La Servilleta de Papel', órgano del Colectivo de Guayacán, junto a Gregorio Moreno y traducciones de Constantino Cavafis.",
-            trayectoria: "En 1997 obtuvo la Beca de Escritores del Fondo Nacional del Libro. Nombrada Miembro de Honor de la Cátedra Gabriela Mistral de la Universidad de La Habana. Ex-Presidenta de la SECH, IV Región. Ex-Directora de Cultura de la Municipalidad de La Serena."
+            trayectoria: "Vice-presidenta SECH filial IV Región en mayo 1986 (directiva presidida por Arturo Volantines). En 1997 obtuvo la Beca de Escritores del Fondo Nacional del Libro. Nombrada Miembro de Honor de la Cátedra Gabriela Mistral de la Universidad de La Habana. Ex-Presidenta de la SECH, IV Región. Ex-Directora de Cultura de la Municipalidad de La Serena."
         },
         publicaciones: [
             {
