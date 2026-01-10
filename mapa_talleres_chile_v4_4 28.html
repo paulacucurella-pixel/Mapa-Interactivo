@@ -8403,7 +8403,7 @@ const poetas = [
         zona: "Santiago (Barrio París-Londres)",
         region: "metropolitana",
         años: "1925–",
-        rol: "gestora",
+        rol: "poeta-gestora",
         verificado: true,
         ultimaActualizacion: "2026-01-09",
         foto: null,
@@ -8476,7 +8476,7 @@ const poetas = [
         zona: "Provincia de Llanquihue (X Región de Los Lagos)",
         region: "sur",
         años: "Activa 1970s–actualidad",
-        rol: "gestora",
+        rol: "poeta-gestora",
         verificado: true,
         ultimaActualizacion: "2026-01-09",
         foto: null,
@@ -8549,7 +8549,7 @@ const poetas = [
         zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
         años: "1945–",
-        rol: "gestora",
+        rol: "poeta-gestora",
         foto: null,
         verificado: true,
         ultimaActualizacion: "2026-01-09",
@@ -8769,7 +8769,7 @@ const poetas = [
         zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
         años: "1956–",
-        rol: "gestora",
+        rol: "escritora-gestora",
         verificado: true,
         ultimaActualizacion: "2026-01-09",
         foto: null,
@@ -8845,7 +8845,7 @@ const poetas = [
         zona: "Lebu (VIII Región del Biobío)",
         region: "sur",
         años: "1951–",
-        rol: "gestora",
+        rol: "poeta-gestora",
         foto: null,
         verificado: true,
         ultimaActualizacion: "2026-01-09",
@@ -9186,15 +9186,15 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
             filteredPoetas = filteredPoetas.filter(p => p.region === regionFilter);
         }
         
-        // Filtrar gestoras si se selecciona ese filtro
+        // Filtrar gestoras si se selecciona ese filtro (incluye poeta-gestora y escritora-gestora)
         if (typeFilter === 'gestoras') {
-            filteredPoetas = filteredPoetas.filter(p => p.rol === 'gestora');
+            filteredPoetas = filteredPoetas.filter(p => p.rol && p.rol.includes('gestora'));
         }
         
         filteredPoetasCount = filteredPoetas.length;
         
         filteredPoetas.forEach(p => {
-            const isGestora = p.rol === 'gestora';
+            const isGestora = p.rol && p.rol.includes('gestora');
             const markerClass = isGestora ? 'marker-gestora' : 'marker-poeta';
             const markerSize = isGestora ? 32 : 28;
             const icon = L.divIcon({
@@ -9534,10 +9534,19 @@ function createPoetaPopup(p) {
         fuentesContent = '<p class="por-determinar">Por determinar</p>';
     }
     
-    // Determinar si es gestora
-    const isGestora = p.rol === 'gestora';
+    // Determinar si es gestora (incluye poeta-gestora y escritora-gestora)
+    const isGestora = p.rol && p.rol.includes('gestora');
     const headerClass = isGestora ? 'popup-header gestora-header' : 'popup-header poeta-header';
-    const tipoBadge = isGestora ? '<div class="gestora-badge">★ Gestora Cultural</div>' : '<div class="tipo-badge">Poeta</div>';
+    
+    // Badge según rol
+    let tipoBadge = '<div class="tipo-badge">Poeta</div>';
+    if (p.rol === 'poeta-gestora') {
+        tipoBadge = '<div class="gestora-badge">★ Poeta & Gestora Cultural</div>';
+    } else if (p.rol === 'escritora-gestora') {
+        tipoBadge = '<div class="gestora-badge">★ Escritora & Gestora Cultural</div>';
+    } else if (p.rol === 'gestora') {
+        tipoBadge = '<div class="gestora-badge">★ Gestora Cultural</div>';
+    }
     
     return `
         <div class="${headerClass}">
