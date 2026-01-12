@@ -1208,15 +1208,15 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         <div class="silencio-region">
             <div class="silencio-region-header">📍 Zona Austral</div>
             
-            <div class="silencio-item" onclick="focusSilencio('Aumen')">
-                <h5>Aumen (Chiloé)</h5>
+            <div class="silencio-item" onclick="focusSilencio('Taller Literario Aumen')">
+                <h5>Taller Literario Aumen (Chiloé)</h5>
                 <p>Existencias físicas: verificación pendiente</p>
                 <span class="vacio-tipo">Por documentar</span>
             </div>
         </div>
     </div>
     <div class="silencios-panel-footer">
-        Click en un nombre para ver en el mapa · Actualizado: 7 enero 2026
+        Click en un nombre para ver en el mapa · Actualizado: 11 enero 2026
     </div>
 </div>
 
@@ -3452,25 +3452,6 @@ const talleres = [
 
     // ==================== ZONA AUSTRAL ====================
     {
-        nombre: "Aumen",
-        coords: [-42.4721, -73.7732],
-        zona: "Los Lagos (Chiloé, Castro)",
-        region: "austral",
-        años: "Fundado 1975–ca. 1985",
-        tipo: "taller",
-        verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        historia: { origen: null, contexto: null, continuidad: null },
-        fundadores: [
-            { nombre: "Carlos Alberto Trujillo", rol: "Fundador" },
-            { nombre: "Renato Cárdenas", rol: "Fundador" }
-        ],
-        publicaciones: [
-            { titulo: "Aumen", años: "1975–1985", numeros: "Revista", detalles: [], personas: [], existencias: [] }
-        ],
-        fuentes: []
-    },
-    {
         nombre: "Revista Archipiélago",
         coords: [-41.8688, -73.8296],
         zona: "Los Lagos (Chiloé, Ancud)",
@@ -3909,21 +3890,6 @@ const talleres = [
         ]
     },
     // === TALLERES Y REVISTAS ADICIONALES ===
-    {
-        nombre: "Taller Aumen",
-        coords: [-42.48, -73.765],
-        zona: "Chiloé (Castro)",
-        region: "sur",
-        años: "1975–1990s",
-        tipo: "taller",
-        verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        descripcion: "Taller literario fundado en Castro, Chiloé. Importante centro de formación de poetas del sur de Chile.",
-        contexto: "Surgió en el contexto de resistencia cultural durante la dictadura, vinculado a la identidad chilota.",
-        integrantes: [],
-        publicaciones: [],
-        fuentes: []
-    },
     {
         nombre: "Taller Huelén",
         coords: [-33.435, -70.645],
@@ -5178,36 +5144,43 @@ const poetas = [
         coords: [-53.1638, -70.9171],
         zona: "Magallanes (Punta Arenas)",
         region: "austral",
-        años: "Activa desde 1960s",
+        años: "1949–",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-01-11",
         foto: null,
         biografia: {
-            nacimiento: "Punta Arenas, 1948/1949",
-            formacion: "Vocación poética temprana. A los 12 años ganó primer premio del concurso nacional 'Rostros de Chile' con el poema 'A esas Manos'. Padeció dislalia y disgrafía de niña, lo que influyó en su estilo ligado a la sonoridad e invención de palabras.",
-            contexto: "Cofundó la Casa de la Cultura de Magallanes en los años 70. Cercana a Stella Díaz Varín y Pablo Neruda. Durante la dictadura luchó en la clandestinidad bajo amparo de sectores de la Iglesia. Usó el exterminio de pueblos originarios como metáfora de la represión política.",
-            trayectoria: "Premio de la Academia Chilena de la Lengua (1989) por 'Los círculos'. En la inauguración de la sede magallánica de SECH conoció a Pablo Neruda."
+            nacimiento: "Punta Arenas, 2 de enero de 1949.",
+            formacion: "Educadora de Párvulos, Universidad de Chile. Vocación poética temprana. A los 12 años ganó primer premio del concurso nacional 'Rostros de Chile' con el poema 'A esas Manos'. Padeció dislalia y disgrafía de niña, lo que influyó en su estilo ligado a la sonoridad e invención de palabras.",
+            contexto: "Actividades Literarias: Corresponsal del programa 'Enlaces' de la radio Faro Aviateca, dependiente del Ministerio de Cultura y Ministerio de Educación de Guatemala. Cofundó la Casa de la Cultura de Magallanes en los años 70. Cercana a Stella Díaz Varín y Pablo Neruda. Durante la dictadura luchó en la clandestinidad bajo amparo de sectores de la Iglesia. Usó el exterminio de pueblos originarios como metáfora de la represión política. Talleres: Taller Literario de Marino Muñoz Lagos (1960-1965) / Taller 'Altazor' (1978-79) / Taller Fidel Sepúlveda (1986) / Taller Nueve (1986) / Taller Kuartophia (1987). Integrante de GRUPOGRAMA.",
+            trayectoria: "Premio de la Academia Chilena de la Lengua (1989) por 'Los círculos'. Autora del prólogo 'MAIN' en la antología 'La Mujer en la Poesía Chilena de los '80' (1987). En la inauguración de la sede magallánica de SECH conoció a Pablo Neruda."
         },
         publicaciones: [
             {
                 titulo: "Poemas",
                 años: "1966",
                 tipo: "Poemario",
-                detalles: ["Municipalidad de Punta Arenas", "Primer libro"],
+                detalles: ["Ilustre Municipalidad de Punta Arenas", "Primer libro"],
+                existencias: []
+            },
+            {
+                titulo: "Siete Poemas",
+                años: "1969",
+                tipo: "Poemario",
+                detalles: [],
                 existencias: []
             },
             {
                 titulo: "Una casa en la lluvia",
                 años: "1975",
                 tipo: "Poemario",
-                detalles: ["Ediciones Gabriela Mistral"],
+                detalles: ["Editorial Gabriela Mistral"],
                 existencias: []
             },
             {
-                titulo: "¿Quién soy?",
-                años: "1983",
-                tipo: "Poemario",
-                detalles: ["Agrupación Amigos del Libro (impresión Nascimento)"],
+                titulo: "Quién es quién en las letras chilenas",
+                años: "1982",
+                tipo: "Antología/Referencia",
+                detalles: ["Editorial Nascimento"],
                 existencias: []
             },
             {
@@ -5218,29 +5191,38 @@ const poetas = [
                 existencias: []
             },
             {
-                titulo: "Travesías",
+                titulo: "Travesías (Antología GRUPOGRAMA)",
                 años: "1986",
                 tipo: "Antología poética",
-                detalles: [],
+                detalles: ["GRUPOGRAMA"],
+                existencias: []
+            },
+            {
+                titulo: "Chile enlutado (Artefacto)",
+                años: "1987",
+                tipo: "Artefacto poético",
+                detalles: ["Editorial Ergo Sum"],
                 existencias: []
             },
             {
                 titulo: "A manos del año",
                 años: "1987",
-                tipo: "Poemario",
+                tipo: "Cuento",
                 detalles: ["Editorial Ergo Sum"],
                 existencias: []
             },
             {
-                titulo: "Chile enlutado",
+                titulo: "La Mujer en la Poesía Chilena de los '80",
                 años: "1987",
-                tipo: "Poemario",
-                detalles: ["Editorial Ergo Sum"],
-                existencias: []
+                tipo: "Antología",
+                detalles: ["Inge Corssen (ed.)", "Ediciones INCOR", "pp. 74-79", "Autora del prólogo 'MAIN'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
             },
             {
                 titulo: "Los círculos",
-                años: "1988",
+                años: "1988 (inédito en 1987)",
                 tipo: "Poemario",
                 detalles: ["Editorial Ergo Sum", "Premio Academia Chilena de la Lengua 1989", "Aborda el exterminio de etnias chilenas como metáfora de la dictadura"],
                 existencias: []
@@ -5248,12 +5230,19 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Ergo Sum", id: "ergo-sum" }
+                { nombre: "Taller Literario Marino Muñoz Lagos", id: "taller-munoz-lagos" },
+                { nombre: "Taller Altazor", id: "taller-altazor" },
+                { nombre: "Taller Fidel Sepúlveda", id: "taller-sepulveda" },
+                { nombre: "Taller Nueve", id: "taller-nueve" },
+                { nombre: "Taller Kuartophia", id: "kuartophia" },
+                { nombre: "Taller Ergo Sum", id: "ergo-sum" },
+                { nombre: "GRUPOGRAMA", id: "grupograma" }
             ],
             revistas: []
         },
         fuentes: [
-            { autor: "Urbe Salvaje", año: "s.f.", titulo: "Publicaciones sobre Astrid Fugellie", medio: "Urbe Salvaje", link: "https://urbesalvaje.wordpress.com" }
+            { autor: "Urbe Salvaje", año: "s.f.", titulo: "Publicaciones sobre Astrid Fugellie", medio: "Urbe Salvaje", link: "https://urbesalvaje.wordpress.com" },
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía p. 75)", medio: "Ediciones INCOR, Santiago", link: null }
         ]
     },
     {
@@ -5950,10 +5939,12 @@ const poetas = [
         region: "metropolitana",
         años: "1945–",
         foto: { url: null, credito: "Memoria Chilena", año: null, nota: "Retrato disponible en archivo patrimonial" },
+        verificado: true,
+        ultimaActualizacion: "2026-01-11",
         biografia: {
-            nacimiento: "Santiago de Chile, 1945",
-            formacion: "Estudió Artes Plásticas (pintura, teatro, literatura) en Universidad de Chile (años 60). Formación en talleres: Taller Altazor de la Biblioteca Nacional (1977-1978) con Miguel Arteche, Jaime Quezada y Pía Barros.",
-            contexto: "Se integró a SECH a fines de los 70. En 1983 fue editora de poesía de revista 'Huelén'. Cofundadora del Primer Congreso de Literatura Femenina Latinoamericana (1987). Impartió talleres en poblaciones y en la Cárcel de Mujeres de Santiago.",
+            nacimiento: "Santiago de Chile, 1945.",
+            formacion: "Estudió Artes Plásticas (pintura, teatro, literatura) en Universidad de Chile (años 60). Formación en talleres: Taller Altazor (1977-1978) / Taller de Novela de Enrique Lafourcade (1980).",
+            contexto: "Editora de Revista de poesía 'Huelén' (1983-1985). Se integró a SECH a fines de los 70. Cofundadora del Primer Congreso de Literatura Femenina Latinoamericana (1987). Impartió talleres en poblaciones y en la Cárcel de Mujeres de Santiago.",
             trayectoria: "Premio Pedro de Oña 1980 por novela 'Paradero 28' (inédita). Vicepresidenta de SECH en los 90. Colaboró con Fundación Pablo Neruda en Isla Negra (1993-1996). Miembro del Consejo Nacional del Libro y la Lectura."
         },
         publicaciones: [
@@ -5961,9 +5952,46 @@ const poetas = [
                 titulo: "Memorias de un pájaro asustado",
                 años: "1982",
                 tipo: "Poemario",
-                detalles: ["Primera publicación literaria"],
+                detalles: ["Editorial Universitaria", "Primera publicación literaria"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "http://www.memoriachilena.gob.cl/archivos2/pdfs/MC0051986.pdf", nota: "Comentario crítico en Antología de la nueva poesía femenina chilena" }
+                ]
+            },
+            {
+                titulo: "Lugar y tiempo de poetas (Antología Pen Club)",
+                años: "1984",
+                tipo: "Antología",
+                detalles: ["Pen Club Chile"],
+                existencias: []
+            },
+            {
+                titulo: "Poesía Chilena Contemporánea",
+                años: "1984",
+                tipo: "Antología",
+                detalles: ["Editorial Andrés Bello"],
+                existencias: []
+            },
+            {
+                titulo: "Poets of Chile",
+                años: "1985",
+                tipo: "Antología",
+                detalles: ["Steven White (ed.)", "Antología bilingüe inglés-español"],
+                existencias: []
+            },
+            {
+                titulo: "Antología de la Nueva Poesía Femenina Chilena",
+                años: "1985",
+                tipo: "Antología",
+                detalles: ["Juan Villegas (ed.)", "Editorial La Noria"],
+                existencias: []
+            },
+            {
+                titulo: "La Mujer en la Poesía Chilena de los '80",
+                años: "1987",
+                tipo: "Antología",
+                detalles: ["Inge Corssen (ed.)", "Ediciones INCOR"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
                 ]
             },
             {
@@ -5990,7 +6018,8 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Altazor", id: "altazor" }
+                { nombre: "Taller Altazor", id: "altazor" },
+                { nombre: "Taller de Novela de Enrique Lafourcade", id: "taller-lafourcade" }
             ],
             revistas: [
                 { nombre: "Revista Huelén", id: "huelen" }
@@ -5999,9 +6028,9 @@ const poetas = [
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Escribir en los bordes (MC92709)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-92709.html" },
-            { autor: "Fundación Pablo Neruda", año: "2020", titulo: "4 poemas de Paz Molina", medio: "Cultura Fundación Pablo Neruda", link: "https://cultura.fundacionneruda.org/2020/11/4-poemas-de-paz-molina/" }
-        ],
-        verificado: true
+            { autor: "Fundación Pablo Neruda", año: "2020", titulo: "4 poemas de Paz Molina", medio: "Cultura Fundación Pablo Neruda", link: "https://cultura.fundacionneruda.org/2020/11/4-poemas-de-paz-molina/" },
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null }
+        ]
     },
     {
         nombre: "Teresa Calderón",
@@ -6116,19 +6145,58 @@ const poetas = [
         region: "sur",
         años: "1938–",
         foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-11",
         biografia: {
-            nacimiento: "Chillán, 1938",
-            formacion: "Poeta y narradora.",
-            contexto: "Durante los años 1980 integró el Taller Nueve, dirigido por Miguel Arteche. Una de las autoras menos conocidas del periodo de dictadura.",
+            nacimiento: "Chillán, 8 de julio de 1938.",
+            formacion: "Estudios en la Escuela de Arte, Universidad Católica de Chile. Poeta y narradora.",
+            contexto: "Actividades literarias: Taller Nueve (1979-1987). Una de las integrantes más constantes del taller dirigido por Miguel Arteche. Participó en la selección de textos para la antología 'La Mujer en la Poesía Chilena de los '80' (1987). Integrante de GRUPOGRAMA.",
             trayectoria: "En 1997 un poemario suyo fue premiado y publicado en España por la Asociación Prometeo de la Poesía. Menciones honrosas en certámenes de poesía y cuento en Chile."
         },
         publicaciones: [
             {
+                titulo: "Ejercicio en Sol (Antología Taller Nueve)",
+                años: "1980",
+                tipo: "Antología",
+                detalles: ["Antología de poesía, Taller Nueve"],
+                existencias: []
+            },
+            {
                 titulo: "Noche llamada del mar",
                 años: "1983",
                 tipo: "Poemario",
-                detalles: ["Taller Nueve", "Primer libro, debut en plena dictadura"],
+                detalles: ["Taller Nueve", "Primer libro individual"],
                 existencias: []
+            },
+            {
+                titulo: "Tercera Antología de Taller Nueve",
+                años: "1984",
+                tipo: "Antología",
+                detalles: ["Poesía y cuento", "Taller Nueve"],
+                existencias: []
+            },
+            {
+                titulo: "Poesía Chilena Contemporánea",
+                años: "1984",
+                tipo: "Antología",
+                detalles: ["Editorial Andrés Bello"],
+                existencias: []
+            },
+            {
+                titulo: "Travesías (Antología GRUPOGRAMA)",
+                años: "1986",
+                tipo: "Antología",
+                detalles: ["Antología de poesía", "GRUPOGRAMA"],
+                existencias: []
+            },
+            {
+                titulo: "La Mujer en la Poesía Chilena de los '80",
+                años: "1987",
+                tipo: "Antología",
+                detalles: ["Inge Corssen (ed.)", "Ediciones INCOR", "Participó en selección de textos"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
             },
             {
                 titulo: "Cuando la noche",
@@ -6175,12 +6243,14 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Nueve", id: "taller-nueve" }
+                { nombre: "Taller Nueve", id: "taller-nueve" },
+                { nombre: "GRUPOGRAMA", id: "grupograma" }
             ],
             revistas: []
         },
         fuentes: [
-            { autor: "Editorial Forja", año: "2025", titulo: "Grimal, Ivonne", medio: "Editorial Forja", link: "https://www.editorialforja.cl/autor/ivonne-grimal/" }
+            { autor: "Editorial Forja", año: "2025", titulo: "Grimal, Ivonne", medio: "Editorial Forja", link: "https://www.editorialforja.cl/autor/ivonne-grimal/" },
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null }
         ]
     },
     {
@@ -6323,7 +6393,7 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Aumen", id: "aumen" }
+                { nombre: "Taller Literario Aumen", id: "taller-aumen" }
             ],
             revistas: []
         },
@@ -6669,20 +6739,22 @@ const poetas = [
     {
         nombre: "Eliana Vásquez",
         nombreReal: "Eliana Vásquez Quezada",
-        coords: [-33.438, -70.658],
-        zona: "Región Metropolitana (Santiago)",
-        region: "metropolitana",
-        años: "Activa desde 1970s",
+        coords: [-36.8201, -73.0444],
+        zona: "Concepción (nacimiento) / Santiago (actividad)",
+        region: "sur",
+        años: "1930–",
         foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-11",
         biografia: {
-            nacimiento: "Chile (fecha por determinar)",
-            formacion: "Poeta y articulista cultural. Directora del suplemento educativo 'Icarito' de La Tercera (ca. 1979).",
-            contexto: "Miembro del Taller Nueve (Miguel Arteche). Operó activamente como crítica literaria en medios escritos durante dictadura (1974-1980). Colaboró en La Tercera con reseñas sobre Hugo Correa, Mistral, Mariano Latorre, Eduardo Barrios.",
+            nacimiento: "Concepción, 10 de marzo de 1930.",
+            formacion: "Profesora de Educación Básica, Universidad de Concepción (1949). Poeta y articulista cultural. Directora del suplemento educativo 'Icarito' de La Tercera (ca. 1979).",
+            contexto: "Miembro del Taller Nueve (Miguel Arteche). Una de las poetas de mayor edad de la generación de los 80 (tenía 57 años en 1987). Operó activamente como crítica literaria en medios escritos durante dictadura (1974-1980). Colaboró en La Tercera con reseñas sobre Hugo Correa, Mistral, Mariano Latorre, Eduardo Barrios. Integrante de GRUPOGRAMA.",
             trayectoria: "No publicó poemario individual durante dictadura. Publicó 'Siete cuentos breves' (2004). Participó en Cuarta Antología Taller Nueve (2008, homenaje a Arteche)."
         },
         publicaciones: [
             {
-                titulo: "Ejercicio en sol (antología)",
+                titulo: "Ejercicio en Sol (Antología Taller Nueve)",
                 años: "1980",
                 tipo: "Antología colectiva",
                 detalles: ["Taller Nueve", "Primera antología del taller"],
@@ -6691,11 +6763,20 @@ const poetas = [
                 ]
             },
             {
-                titulo: "Tercera Antología del Taller Nueve",
+                titulo: "Tercera Antología de Taller Nueve",
                 años: "1984",
                 tipo: "Antología colectiva",
-                detalles: ["Editorial Universitaria"],
+                detalles: ["Poesía y cuento", "Editorial Universitaria"],
                 existencias: []
+            },
+            {
+                titulo: "La Mujer en la Poesía Chilena de los '80",
+                años: "1987",
+                tipo: "Antología",
+                detalles: ["Inge Corssen (ed.)", "Ediciones INCOR"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
             },
             {
                 titulo: "Siete cuentos breves",
@@ -6714,14 +6795,16 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Nueve", id: "taller-nueve" }
+                { nombre: "Taller Nueve", id: "taller-nueve" },
+                { nombre: "GRUPOGRAMA", id: "grupograma" }
             ],
             revistas: []
         },
         fuentes: [
             { autor: "Morales, A.", año: "2010", titulo: "Alejandra Basualto. Los años que nos (a)cercan", medio: "Periódico Carajo", link: "https://carajo.cl/alejandra-basualto-los-anos-que-nos-acercan-o-el-tiempo-recobrado-por-andres-morales-poemas/" },
             { autor: "Vásquez Q., E.", año: "1974", titulo: "Los altísimos (Reseña)", medio: "La Tercera", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-219953.html" },
-            { autor: "Vásquez Q., E.", año: "1978", titulo: "Cartas de amor de Gabriela Mistral", medio: "La Tercera", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-224588.html" }
+            { autor: "Vásquez Q., E.", año: "1978", titulo: "Cartas de amor de Gabriela Mistral", medio: "La Tercera", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-224588.html" },
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null }
         ]
     },
     {
@@ -6859,7 +6942,7 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Aumen", id: "aumen" }
+                { nombre: "Taller Literario Aumen", id: "taller-aumen" }
             ],
             revistas: []
         },
@@ -6910,7 +6993,7 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Aumen", id: "aumen" }
+                { nombre: "Taller Literario Aumen", id: "taller-aumen" }
             ],
             revistas: []
         },
@@ -6954,7 +7037,7 @@ const poetas = [
         ],
         conexiones: {
             talleres: [
-                { nombre: "Taller Aumen", id: "aumen" }
+                { nombre: "Taller Literario Aumen", id: "taller-aumen" }
             ],
             revistas: []
         },
@@ -7093,12 +7176,12 @@ const poetas = [
         region: "sur",
         años: "1944–",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-01-11",
         foto: null,
         biografia: {
-            nacimiento: "Puerto Montt, 1944",
+            nacimiento: "Puerto Montt, 18 de octubre de 1944.",
             formacion: "Profesora de Estado en Artes Plásticas, Universidad de Chile (1967). Exonerada política de la Facultad de Bellas Artes. En agosto de 1974 detenida por la DINA. Cesante por motivos políticos 1973-1980.",
-            contexto: "Publicó poemarios en editoriales independientes durante dictadura. Creadora y editora de la Revista 'Palabra de Mujer' (1988-1997), dedicada a promover la poesía femenina latinoamericana.",
+            contexto: "Actividades literarias: Taller Centro Imagen (1979) / Taller Jaime Quezada en SECH (1981) / Taller Horizon Carré (1986). Publicó poemarios en editoriales independientes durante dictadura. Creadora y editora de la Revista 'Palabra de Mujer' (1988-1997), dedicada a promover la poesía femenina latinoamericana.",
             trayectoria: "Artículo 'Las faldas ya están echadas' en Cauce (1988). Reseña 'Tres bravas poetas' por Ignacio Valente, El Mercurio (1989)."
         },
         publicaciones: [
@@ -7106,26 +7189,40 @@ const poetas = [
                 titulo: "Palabra de mujer: poemas",
                 años: "1984",
                 tipo: "Poemario",
-        verificado: true,
-        ultimaActualizacion: "2026-01-09",
-                detalles: ["Editorial Tragaluz"],
+                detalles: ["Ediciones Tragaluz"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0028768.pdf", nota: "PDF digitalizado" }
                 ]
             },
             {
-                titulo: "Óvulos",
-                años: "1986",
-                tipo: "Poemario",
-                detalles: ["Editorial Tragaluz"],
+                titulo: "Antología de la Nueva Poesía Femenina Chilena",
+                años: "1985",
+                tipo: "Antología",
+                detalles: ["Juan Villegas (ed.)", "Editorial La Noria"],
                 existencias: []
             },
             {
-                titulo: "Oda al macho",
+                titulo: "Óvulos",
+                años: "1986",
+                tipo: "Poemario",
+                detalles: ["Ediciones Tragaluz"],
+                existencias: []
+            },
+            {
+                titulo: "Oda al Macho",
                 años: "1987",
                 tipo: "Poemario",
                 detalles: ["Editorial Ergo Sum"],
                 existencias: []
+            },
+            {
+                titulo: "La Mujer en la Poesía Chilena de los '80",
+                años: "1987",
+                tipo: "Antología",
+                detalles: ["Inge Corssen (ed.)", "Ediciones INCOR"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
             },
             {
                 titulo: "Poemas insurrectos",
@@ -7145,15 +7242,19 @@ const poetas = [
             }
         ],
         conexiones: {
-            talleres: [],
+            talleres: [
+                { nombre: "Taller Centro Imagen", id: "centro-imagen" },
+                { nombre: "Taller Jaime Quezada (SECH)", id: "taller-quezada-sech" },
+                { nombre: "Taller Horizon Carré", id: "horizon-carre" }
+            ],
             revistas: []
         },
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Palabra de mujer (MC98213)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98213.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Poesía escrita por mujeres en la década de 1980 (MC7684)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-7684.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" }
-        ],
-        verificado: true
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null }
+        ]
     },
     {
         nombre: "Malú Urriola",
