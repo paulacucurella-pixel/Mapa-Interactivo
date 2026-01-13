@@ -139,6 +139,16 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         z-index: 1002 !important;
     }
     
+    /* Popup scroll fix for mobile */
+    .popup-body {
+        max-height: 45vh;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+    .leaflet-popup-content-wrapper {
+        overflow: visible !important;
+    }
+    
     /* Footer responsive */
     #copyright-footer {
         padding: 6px 10px;
@@ -4118,15 +4128,15 @@ const talleres = [
         coords: [-33.4420, -70.6540],
         zona: "Región Metropolitana (Santiago, Almirante Simpson 7 - SECH)",
         region: "metropolitana",
-        años: "1986",
+        años: "1983–1987",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-01-13",
         historia: {
             origen: "Revista de poesía, gráfica y humor. Ediciones Tragaluz. Correspondencia: Almirante Simpson 7 (Sociedad de Escritores de Chile).",
             contexto: "Vinculada a Ediciones Tragaluz y al Taller Ergo Sum. Incluye sección 'Poetas Jóvenes Chilenos en Europa' dedicada a poetas del exilio.",
-            desarrollos: "El N°6 (Invierno 1986) incluye cuento de Ana María del Río y ensayo de Enrique Lihn sobre el ilustrador Coré.",
-            continuidad: "Publicación periódica de resistencia cultural."
+            desarrollos: "El N°6 (Invierno 1986) incluye cuento de Ana María del Río y ensayo de Enrique Lihn sobre el ilustrador Coré. El N°7 (Primavera 1987) publica poemas de Teresa Calderón y Verónica Zondek.",
+            continuidad: "Publicación periódica de resistencia cultural. Al menos 7 números documentados (1983-1987)."
         },
         fundadores: [
             { nombre: "Luis Albornoz", rol: "Editor" },
@@ -4139,7 +4149,9 @@ const talleres = [
             { nombre: "Erwin Díaz", rol: "Distribución" }
         ],
         mujeresPublicadas: [
-            { nombre: "Ana María del Río", rol: "Narradora", obra: "Cuento 'Altar' (pp. 11-12)", bio: "Autora de 'Entreparéntesis', integrante del Taller Soffia. Premio María Luisa Bombal 1986.", enRevista: true },
+            { nombre: "Ana María del Río", rol: "Narradora", obra: "Cuento 'Altar' (pp. 11-12, N°6)", bio: "Autora de 'Entreparéntesis', integrante del Taller Soffia. Premio María Luisa Bombal 1986.", enRevista: true },
+            { nombre: "Teresa Calderón", rol: "Poeta", obra: "Poema 'A Diez Round' (p. 27, N°7 Primavera 1987)", enRevista: true },
+            { nombre: "Verónica Zondek", rol: "Poeta", obra: "Poema 'El Hueso de la Memoria (fragmento)' (p. 16, N°7 Primavera 1987)", enRevista: true },
             { nombre: "Heddy Navarro", rol: "Poeta", obra: "Poemario 'Óvulos' (anunciado)", enRevista: false },
             { nombre: "Pía Barros", rol: "Narradora/Editora", obra: "'Miedos transitorios' (anunciado)", enRevista: true },
             { nombre: "Sonia González", rol: "Narradora", obra: "'Tejer historias' (anunciado)", enRevista: false }
@@ -4153,7 +4165,8 @@ const talleres = [
             revistas: []
         },
         fuentes: [
-            { autor: "Memoria Chilena", año: "1986", titulo: "La Castaña N° 6, Invierno 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+            { autor: "Memoria Chilena", año: "1986", titulo: "La Castaña N° 6, Invierno 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" },
+            { autor: "Memoria Chilena", año: "1987", titulo: "La Castaña N° 7, Primavera 1987 (MC0005423)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
     {
@@ -5625,13 +5638,15 @@ const poetas = [
                 { nombre: "Taller Ergo Sum", id: "ergo-sum" }
             ],
             revistas: [
-                { nombre: "Editorial Cuarto Propio", id: "cuarto-propio" }
+                { nombre: "Editorial Cuarto Propio", id: "cuarto-propio" },
+                { nombre: "Revista La Castaña", id: "castana" }
             ]
         },
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Poesía escrita por mujeres en la década de 1980 (MC7684)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-7684.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "El hueso de la memoria (MC98212)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98212.html" },
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" }
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
+            { autor: "Memoria Chilena", año: "1987", titulo: "La Castaña N°7, Primavera 1987 (MC0005423) - Poema 'El Hueso de la Memoria (fragmento)' p. 16", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
         ],
         verificado: true
     },
@@ -6270,13 +6285,16 @@ const poetas = [
             talleres: [
                 { nombre: "GRUPOGRAMA", id: "grupograma" }
             ],
-            revistas: []
+            revistas: [
+                { nombre: "Revista La Castaña", id: "castana" }
+            ]
         },
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Teresa Calderón (1955-) (MC3714)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3714.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Causas perdidas (MC98209)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98209.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Poesía escrita por mujeres en la década de 1980 (MC7684)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-7684.html" },
-            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía p. 45)", medio: "Ediciones INCOR, Santiago", link: null }
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía p. 45)", medio: "Ediciones INCOR, Santiago", link: null },
+            { autor: "Memoria Chilena", año: "1987", titulo: "La Castaña N°7, Primavera 1987 (MC0005423) - Poema 'A Diez Round' p. 27", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
     {
@@ -10696,8 +10714,10 @@ function updatePoetsList(poetasList) {
         } else {
             thumbHtml = ''; // No mostrar nada si no hay foto
         }
+        // Escapar comillas simples en el nombre para el onclick
+        const safeName = p.nombre.replace(/'/g, "\\'");
         return `
-        <div class="poet-list-item" onclick="focusOnPoet('${p.nombre}')" style="display:flex;gap:10px;align-items:center;">
+        <div class="poet-list-item" onclick="event.stopPropagation(); focusOnPoet('${safeName}')" style="display:flex;gap:10px;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;">
             ${thumbHtml}
             <div>
                 <h4>${p.nombre}</h4>
@@ -10716,14 +10736,27 @@ window.focusOnPoet = function(nombre) {
     
     const marker = poetMarkers[nombre];
     if (marker) {
+        // En móvil, cerrar el panel primero para evitar conflictos
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            const panel = document.getElementById('poetsPanel');
+            if (panel && panel.classList.contains('open')) {
+                panel.classList.remove('open');
+            }
+        }
+        
         // Hacer zoom al marcador
         map.setView(marker.getLatLng(), 12);
-        // Abrir el popup después de un pequeño delay
+        
+        // Abrir el popup después de un delay más largo en móvil
+        const delay = isMobile ? 500 : 300;
         setTimeout(() => {
             markerClusterGroup.zoomToShowLayer(marker, () => {
-                marker.openPopup();
+                setTimeout(() => {
+                    marker.openPopup();
+                }, isMobile ? 200 : 0);
             });
-        }, 300);
+        }, delay);
     }
 };
 
@@ -11128,16 +11161,6 @@ createMarkers();
 
 // Limpiar conexiones al hacer click en el mapa
 map.on('click', removeConnectionLineWithLabels);
-
-// Auto-close poets panel on mobile when popup opens
-map.on('popupopen', function() {
-    if (window.innerWidth <= 768) {
-        const panel = document.getElementById('poetsPanel');
-        if (panel && panel.classList.contains('open')) {
-            panel.classList.remove('open');
-        }
-    }
-});
 
 // Event listener para filtro de región
 document.getElementById('regionFilter').addEventListener('change', function() {
