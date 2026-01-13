@@ -4977,7 +4977,28 @@ const talleres = [
             { autor: "Memoria Chilena", año: "1980", titulo: "Golpes del día", medio: "Ejemplar digitalizado en repositorio Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" }
         ]
     }
-];
+,
+    {
+        nombre: "Taller Literario Concha Marina",
+        coords: [-33.45, -70.665],
+        zona: "Ubicación por verificar (referencia en Revista Galera)",
+        region: "metropolitana",
+        años: "1985",
+        tipo: "taller",
+        verificado: false,
+        ultimaActualizacion: "2026-01-12",
+        historia: {
+            origen: "Taller literario mencionado en Revista Galera (Año 1, N° 3, marzo 1986).",
+            contexto: "Espacio de formación para poetas jóvenes.",
+            desarrollos: null,
+            continuidad: null
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [],
+        fuentes: [{ autor: "Revista Galera", año: "1986", titulo: "Galera Año 1, N° 3, marzo 1986", medio: "Memoria Chilena", link: null }]
+    }
+    ];
 
 // ==================== POETAS MUJERES ====================
 const poetas = [
@@ -5076,6 +5097,46 @@ const poetas = [
         ]
     },
     // --- REGIÓN METROPOLITANA ---
+    {
+        nombre: "Lita Gutiérrez",
+        nombreReal: null,
+        coords: [-39.10, -72.67],
+        zona: "Gorbea (IX Región de la Araucanía)",
+        region: "sur",
+        años: "1937–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Gorbea, Chile (1937).",
+            formacion: "Poeta con extensa producción desde fines de los años 60.",
+            contexto: "Publicó en revista La Gota Pura N° 10 (abril 1984).",
+            trayectoria: "Libros: Siluetas Extraviadas (1969), El Reino del Agua (1974)."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista La Gota Pura", id: "la-gota-pura" }] },
+        fuentes: [{ autor: "La Gota Pura", año: "1984", titulo: "La Gota Pura N° 10", medio: "Memoria Chilena", link: null }]
+    },
+    {
+        nombre: "Leonora Vicuña",
+        nombreReal: "Elisa Montesinos",
+        coords: [-33.4490, -70.6590],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "Activa 1981–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-12",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Poeta y gestora cultural.",
+            contexto: "Cofundadora de revista La Gota Pura (1981) junto a Ramón Díaz Eterovic y Aristóteles España.",
+            trayectoria: "Directora de La Gota Pura (1981-1984)."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista La Gota Pura", id: "la-gota-pura" }] },
+        fuentes: []
+    },
     {
         nombre: "Alicia Puig",
         nombreReal: null,
@@ -9743,7 +9804,49 @@ const poetas = [
             { autor: "SWI swissinfo.ch", año: "2024", titulo: "Elvira Hernández, poeta chilena: 'El golpe de Estado nos cambió completamente'", medio: "SWI", link: "https://www.swissinfo.ch/spa/elvira-hernandez-poeta-chilena-el-golpe-de-estado-nos-cambio-completamente/48991050" }
         ]
     }
-];
+,
+    {
+        nombre: "Marcela Campos",
+        nombreReal: null,
+        coords: [-33.443, -70.6506],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "1964–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-10",
+        biografia: {
+            nacimiento: "Santiago, Chile (1964).",
+            formacion: "Por determinar.",
+            contexto: "Poeta antologada en 'La Mujer en la Poesía Chilena de los 80' (Inge Corssen, 1987).",
+            trayectoria: "Integrante del grupo GRUPOGRAMA."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [{ nombre: "GRUPOGRAMA", id: "grupograma" }], revistas: [] },
+        fuentes: [{ autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80", medio: "Ediciones INCOR", link: null }]
+    }
+    ,
+    {
+        nombre: "Emma Jauch",
+        nombreReal: null,
+        coords: [-35.85, -71.59],
+        zona: "Linares (VII Región del Maule)",
+        region: "sur",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-12",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta integrante del Grupo Ancoa de Linares.",
+            trayectoria: "Publicó en Colecciones Ancoa."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [{ nombre: "Grupo Ancoa", id: "ancoa" }], revistas: [] },
+        fuentes: [{ autor: "Revista Huelen", año: "1981", titulo: "Huelen N° 5, septiembre 1981", medio: "Ejemplar original", link: null }]
+    }
+    ];
 
 // Initialize map
 const map = L.map('map', {
@@ -11064,8 +11167,4 @@ document.getElementById('typeFilter').addEventListener('change', function() {
     <strong>© Paula Cucurella 2025</strong> · Mapa literario de poesía escrita por mujeres en Chile. Talleres, revistas y poetas (1973-90)
     <br>
     <span style="font-size: 11px;">
-        Contacto: <a href="mailto:paulacucurella@gmail.com" style="color: #8B4513;">paulacucurella@gmail.com</a>
-    </span>
-</div>
-</body>
-</html>
+        Contacto: <a href="/cdn-cgi/l/email-protection#c5b5a4b0a9a4a6b0a6b0b7a0a9a9a485a2a8a4aca9eba6aaa8" style="color: #8B4513;"><span class="__cf
