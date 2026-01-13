@@ -9999,7 +9999,7 @@ window.zoomToConnection = function(fromCoords, toCoords, poetaNombre, conexionNo
         fillOpacity: 1
     }).addTo(map);
     if (poeta) {
-        poetaCircle.bindPopup(createPoetaPopup(poeta), { maxWidth: 450 });
+        poetaCircle.bindPopup(createPoetaPopup(poeta), { maxWidth: 450, autoPan: false, closeOnClick: false });
     }
     tempMarkers.push(poetaCircle);
     
@@ -10025,7 +10025,7 @@ window.zoomToConnection = function(fromCoords, toCoords, poetaNombre, conexionNo
         fillOpacity: 1
     }).addTo(map);
     if (taller) {
-        conexionCircle.bindPopup(createExpandedPopup(taller), { maxWidth: 450 });
+        conexionCircle.bindPopup(createExpandedPopup(taller), { maxWidth: 450, autoPan: false, closeOnClick: false });
     }
     tempMarkers.push(conexionCircle);
     
@@ -10119,7 +10119,7 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
             
             const marker = L.marker(t.coords, { icon: icon });
             marker.bindTooltip(t.nombre, { direction: 'top', offset: [0, -10], className: 'tooltip-elegant' });
-            marker.bindPopup(createExpandedPopup(t), { maxWidth: 450 });
+            marker.bindPopup(createExpandedPopup(t), { maxWidth: 450, autoPan: false, closeOnClick: false });
             // Limpiar conexiones activas cuando se abre un popup de taller
             marker.on('popupopen', function() {
                 if (conexionesActivas) {
@@ -10163,7 +10163,7 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
             const marker = L.marker(p.coords, { icon: icon });
             const tooltipLabel = isGestora ? `★ ${p.nombre}` : p.nombre;
             marker.bindTooltip(tooltipLabel, { direction: 'top', offset: [0, -12], className: 'tooltip-elegant' });
-            marker.bindPopup(createPoetaPopup(p), { maxWidth: 450 });
+            marker.bindPopup(createPoetaPopup(p), { maxWidth: 450, autoPan: false, closeOnClick: false });
             marker.on('popupclose', removeConnectionLineWithLabels);
             // Limpiar conexiones activas cuando se abre un nuevo popup
             marker.on('popupopen', function() {
@@ -10728,6 +10728,8 @@ function updatePoetsList(poetasList) {
 }
 
 // Función para hacer zoom a una poeta específica
+let popupProtected = false; // Flag para proteger popup en móvil
+
 window.focusOnPoet = function(nombre) {
     // IMPORTANTE: Limpiar cualquier conexión activa antes de abrir nuevo perfil
     if (conexionesActivas) {
@@ -10743,18 +10745,26 @@ window.focusOnPoet = function(nombre) {
             if (panel && panel.classList.contains('open')) {
                 panel.classList.remove('open');
             }
+            // Activar protección del popup en móvil
+            popupProtected = true;
         }
         
         // Hacer zoom al marcador
         map.setView(marker.getLatLng(), 12);
         
         // Abrir el popup después de un delay más largo en móvil
-        const delay = isMobile ? 500 : 300;
+        const delay = isMobile ? 600 : 300;
         setTimeout(() => {
             markerClusterGroup.zoomToShowLayer(marker, () => {
                 setTimeout(() => {
                     marker.openPopup();
-                }, isMobile ? 200 : 0);
+                    // Desactivar protección después de abrir
+                    if (isMobile) {
+                        setTimeout(() => {
+                            popupProtected = false;
+                        }, 500);
+                    }
+                }, isMobile ? 300 : 0);
             });
         }, delay);
     }
@@ -10981,7 +10991,7 @@ window.highlightConexiones = function(poetaNombre) {
         opacity: 1,
         fillOpacity: 1
     }).addTo(map);
-    poetaCircle.bindPopup(createPoetaPopup(poeta), { maxWidth: 450 });
+    poetaCircle.bindPopup(createPoetaPopup(poeta), { maxWidth: 450, autoPan: false, closeOnClick: false });
     tempMarkers.push(poetaCircle);
     
     // Etiqueta visible para la poeta
@@ -11008,7 +11018,7 @@ window.highlightConexiones = function(poetaNombre) {
             opacity: 1,
             fillOpacity: 1
         }).addTo(map);
-        tallerCircle.bindPopup(createExpandedPopup(taller), { maxWidth: 450 });
+        tallerCircle.bindPopup(createExpandedPopup(taller), { maxWidth: 450, autoPan: false, closeOnClick: false });
         tempMarkers.push(tallerCircle);
         
         // Etiqueta visible para el taller
@@ -11036,7 +11046,7 @@ window.highlightConexiones = function(poetaNombre) {
             opacity: 1,
             fillOpacity: 1
         }).addTo(map);
-        revistaCircle.bindPopup(createExpandedPopup(revista), { maxWidth: 450 });
+        revistaCircle.bindPopup(createExpandedPopup(revista), { maxWidth: 450, autoPan: false, closeOnClick: false });
         tempMarkers.push(revistaCircle);
         
         // Etiqueta visible para la revista
@@ -11159,8 +11169,12 @@ function showConexionesLegend(poetaNombre, conexiones, talleresData, revistasDat
 // Inicializar
 createMarkers();
 
-// Limpiar conexiones al hacer click en el mapa
-map.on('click', removeConnectionLineWithLabels);
+// Limpiar conexiones al hacer click en el mapa (respeta protección de popup)
+map.on('click', function(e) {
+    if (!popupProtected) {
+        removeConnectionLineWithLabels();
+    }
+});
 
 // Event listener para filtro de región
 document.getElementById('regionFilter').addEventListener('change', function() {
