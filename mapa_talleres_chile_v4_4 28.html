@@ -127,8 +127,16 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         right: 0;
         top: auto;
         bottom: 50px;
-        max-height: 50vh;
+        max-height: 35vh;
         border-radius: 8px 8px 0 0;
+    }
+    
+    /* Ensure popups appear above panel on mobile */
+    .leaflet-popup-pane {
+        z-index: 1001 !important;
+    }
+    .leaflet-popup {
+        z-index: 1002 !important;
     }
     
     /* Footer responsive */
@@ -192,17 +200,17 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         min-width: 120px;
     }
     
-    /* Poets panel fullscreen en móviles pequeños */
+    /* Poets panel compact on small mobile */
     .poets-panel {
         width: 100%;
         right: 0;
         left: 0;
         bottom: 45px;
-        max-height: 45vh;
+        max-height: 30vh;
         border-radius: 12px 12px 0 0;
     }
     .poets-panel-body {
-        max-height: calc(45vh - 100px);
+        max-height: calc(30vh - 100px);
     }
     
     /* Footer más compacto */
@@ -1070,7 +1078,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 11 enero 2026</p>
+        <p>Última actualización: 13 enero 2026</p>
     </div>
     <div class="header-right">
         <select id="typeFilter">
@@ -11121,6 +11129,16 @@ createMarkers();
 // Limpiar conexiones al hacer click en el mapa
 map.on('click', removeConnectionLineWithLabels);
 
+// Auto-close poets panel on mobile when popup opens
+map.on('popupopen', function() {
+    if (window.innerWidth <= 768) {
+        const panel = document.getElementById('poetsPanel');
+        if (panel && panel.classList.contains('open')) {
+            panel.classList.remove('open');
+        }
+    }
+});
+
 // Event listener para filtro de región
 document.getElementById('regionFilter').addEventListener('change', function() {
     const { typeFilter } = getFilters();
@@ -11164,7 +11182,7 @@ document.getElementById('typeFilter').addEventListener('change', function() {
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 ">
-    <strong>© Paula Cucurella 2025</strong> · Mapa literario de poesía escrita por mujeres en Chile. Talleres, revistas y poetas (1973-90)
+    <strong>© Paula Cucurella 2026</strong> · Mapa literario de poesía escrita por mujeres en Chile. Talleres, revistas y poetas (1973-90)
     <br>
     <span style="font-size: 11px;">
         Contacto: <a href="/cdn-cgi/l/email-protection#c5b5a4b0a9a4a6b0a6b0b7a0a9a9a485a2a8a4aca9eba6aaa8" style="color: #8B4513;"><span class="__cf
