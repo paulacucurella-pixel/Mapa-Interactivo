@@ -1424,10 +1424,14 @@ const talleres = [
                 detalles: [
                     "Año 1 (1983): primer número",
                     "Nº 2, año 2 (abril 1984)",
-                    "Nº 3, año 3 (octubre 1985)",
+                    "Nº 3, año 3 (octubre 1985): poemas de Irene García ('Ausencia'), Victoria Valdés ('Sólo para leer'), Ximena Pokluda ('Clima siglo XX 21:00')",
                     "Directora: Victoria Valdés"
                 ],
-                personas: [{ nombre: "Victoria Valdés", rol: "Directora" }],
+                personas: [
+                    { nombre: "Victoria Valdés", rol: "Directora", poema: "Sólo para leer (Nº 3, 1985)" },
+                    { nombre: "Irene García", rol: "Poeta", poema: "Ausencia (Nº 3, 1985)" },
+                    { nombre: "Ximena Pokluda", rol: "Poeta", poema: "Clima siglo XX 21:00 (Nº 3, 1985)" }
+                ],
                 existencias: [
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "Nº 2, abril 1984 (digitalizado)" },
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "Nº 3, octubre 1985 (digitalizado)" }
@@ -2842,15 +2846,16 @@ const talleres = [
     {
         nombre: "Taller Recital",
         coords: [-23.6550, -70.4000],
-        zona: "Antofagasta",
+        zona: "Antofagasta (Ed. Guerra 33)",
         region: "norte-grande",
         años: "ca. 1975–1980s",
         tipo: "taller",
         verificado: true,
+        ultimaActualizacion: "2026-01-13",
         historia: {
-            origen: "Sello editorial fundado a mediados de la década de 1970 por el profesor Sergio Gaytán Marambio, quien 'aprovechando sus funciones en la imprenta, se dedicó a publicitar cuanto escrito inédito surgió en la ciudad en esa década y los años 80' (González, 2019).",
+            origen: "Sello editorial fundado a mediados de la década de 1970 por el profesor Sergio Gaytán Marambio, quien 'aprovechando sus funciones en la imprenta, se dedicó a publicitar cuanto escrito inédito surgió en la ciudad en esa década y los años 80' (González, 2019). Dirección: Ed. Guerra 33, Antofagasta.",
             contexto: "Gaytán mantuvo estrecha amistad con el poeta Andrés Sabella, siendo su secretario por más de dos décadas (Noticias UCN, 2019). En 1979, organizó con José Antonio González la presentación del poeta Raúl Zurita en la Séptima Compañía de Bomberos de Antofagasta, 'absolutamente desconocido en el norte' en ese momento.",
-            desarrollos: "Publicó escritos inéditos de autores locales. También participó en la Revista Ensemble del Instituto Chileno Francés de Cultura, 'una tribuna cultural disidente', que funcionó en calle Prat hasta 1981. En 1980 editó 'La Iglesia y la Revolución de 1891 en Antofagasta' de José Antonio González.",
+            desarrollos: "En 1984 publicó: Sergio Gaytán ('Ejercicios del componedor'), Hernán Rivera ('Mes del mar y otros poemas'), Ariel Santibañez ('¿Dónde está?'), Jaime Ceballos ('Poemas'), y antología colectiva 'Ah Mor' con Gonzalo Rojas, Pablo Neruda, Oscar Hahn, D. Turkeltaub, Manuel Silva, P. Jolly y Raúl Zurita. También Antonio Frasconi ('De Pablo Neruda') y Elicura Chihuailaf ('Poemas'). Además participó en Revista Ensemble del Instituto Chileno Francés de Cultura.",
             continuidad: "Gaytán (1947-2019) continuó como crítico literario, ensayista y académico del Departamento de Letras de la UCN. Fue miembro de la Academia Chilena de la Lengua desde 2014 y fundador de la Corporación Cultural Linterna de Papel de Andrés Sabella."
         },
         fundadores: [
@@ -2884,16 +2889,24 @@ const talleres = [
         años: "1983–1990 (+ posteriores)",
         tipo: "revista",
         verificado: true,
+        ultimaActualizacion: "2026-01-13",
         historia: {
             origen: "Revista literaria internacional de poesía fundada en Antofagasta en 1983 por la poeta y periodista Alejandra Zarhi García. Publicación sin fines de lucro, sostenida con colaboración de poetas locales e internacionales.",
             contexto: "Carácter internacional y plural, difundiendo poesía chilena e hispanoamericana. Apoyo logístico de la Universidad del Norte para impresión. Suscripción: $2.500 anuales en Chile, US$10 extranjero.",
-            desarrollos: "Numeración por 'Años' (desde 'Año 0' en 1983). Periodicidad irregular. En 1988 publicó edición homenaje póstumo a Braulio Arenas (Premio Nacional 1984). Número especial antológico en diciembre 1990.",
+            desarrollos: "Numeración por 'Años' (desde 'Año 0' en 1983). Periodicidad irregular. En 1988 publicó edición homenaje póstumo a Braulio Arenas (Premio Nacional 1984). Número especial antológico en diciembre 1990. El I Concurso de Poesía Internacional (29 sept 1986) premió por unanimidad: 1º Pedro Mardones Barrientos (Villa Alemana), 2º Edda Morales Bonansco (Viña del Mar), 3º Juana Baudoin Madrid (La Serena). Menciones a poemas: María Angélica Alvarez López, María Nidia Martínez González, Juana M. Salgado Rivera.",
             continuidad: "Zarhi continuó con concursos literarios en los '90 y en 2001 inició Colección Imágenes de Océanos para publicar libros. En 2011 celebró 30º aniversario en SECH Santiago."
         },
         fundadores: [
             { nombre: "Alejandra Zarhi García", rol: "Fundadora, editora y directora" }
         ],
         integrantes: [],
+        mujeresPoetas: [
+            { nombre: "Edda Morales Bonansco", rol: "2º Premio I Concurso Poesía Internacional 1986", poema: "Donde está la ciudad", bio: "Viña del Mar", enRevista: true },
+            { nombre: "Juana Baudoin Madrid", rol: "3er Premio I Concurso Poesía Internacional 1986", poema: "El Hombre", bio: "La Serena", enRevista: true },
+            { nombre: "María Angélica Alvarez López", rol: "Mención a los poemas", poema: "Pequeñísimo Silencio", enRevista: true },
+            { nombre: "María Nidia Martínez González", rol: "Mención a los poemas", poema: "Partida", enRevista: true },
+            { nombre: "Juana M. Salgado Rivera", rol: "Mención a los poemas", poema: "Los peces también saben amar", enRevista: true }
+        ],
         publicaciones: [
             {
                 titulo: "Imágenes de Océanos",
@@ -2947,19 +2960,21 @@ const talleres = [
         ],
         integrantes: [
             { nombre: "Manuel Cabrera", rol: "Integrante (posterior), actual secretario" },
-            { nombre: "Viviana Benz", rol: "Integrante, poeta" }
+            { nombre: "Viviana Benz", rol: "Integrante, poeta" },
+            { nombre: "Ricardo Rozas E.", rol: "Secretario (1985)" }
         ],
         publicaciones: [
             {
                 titulo: "Revista Lapislázuli",
                 años: "1983–presente",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-01-13",
                 numeros: "Revista literaria",
-                detalles: ["Diseño inspirado en 'Poetas del Norte' de Antofagasta"],
+                detalles: ["Diseño inspirado en 'Poetas del Norte' de Antofagasta", "Año III (1985) - N°17 documentado", "Dirección: Casilla 286, La Serena", "Secretario: Ricardo Rozas E."],
                 personas: [],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99270.html", nota: "Nº 7 digitalizado" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99270.html", nota: "Nº 7 digitalizado" },
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "N°17 (1985) consultado (enero 2026)" }
                 ]
             }
         ],
@@ -3779,15 +3794,25 @@ const talleres = [
         años: "1975–presente",
         tipo: "taller",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-01-13",
         historia: {
             origen: "Fundado en 1975 en Castro por Carlos Trujillo y Renato Cárdenas. Uno de los movimientos culturales más importantes de Chiloé.",
             contexto: "Considerado 'el de más larga vida en el Chile del régimen autoritario' (Corvalán, 1987). Publicaciones circularon 'por mano y por correo' en formato de 'modestas revistas, hojas volantes, libros artesanales'.",
+            desarrollos: "En 1984 el taller publicó obras de Carlos A. Trujillo ('A Galope Tendido'), Sergio Mansilla ('Jinete muerto bajo la lluvia'), Oscar Galindo ('Retrato de mujer en la calle'), Sandra Henríquez Sandoval ('Poemas') y Nelson Torres ('Liricanalludas' / 'Metarrelatos').",
             continuidad: "En 2025 celebra 50 años. Autores vinculados: Sergio Mansilla, Sonia Caicheo, José Teiguel, Jorge Velásquez, Nelson Torres."
         },
         fundadores: [
             { nombre: "Carlos Trujillo", rol: "Cofundador" },
             { nombre: "Renato Cárdenas", rol: "Cofundador" }
+        ],
+        integrantes: [
+            { nombre: "Sergio Mansilla", rol: "Integrante" },
+            { nombre: "Oscar Galindo", rol: "Integrante" },
+            { nombre: "Nelson Torres", rol: "Integrante" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Sandra Henríquez Sandoval", rol: "Poeta", poema: "Poemas (1984)", enRevista: true },
+            { nombre: "Sonia Caicheo", rol: "Integrante fundadora", enRevista: true }
         ],
         publicaciones: [
             {
@@ -3930,7 +3955,7 @@ const talleres = [
         verificado: true,
         ultimaActualizacion: "2026-01-09",
                 numeros: "Nº 1 (julio 1983) - Nº 11 (mayo-agosto 1990)",
-                detalles: ["Incluía poesía mapuche", "Número doble 4-5 (agosto 1984)", "Nº 11 último número, órgano oficial SECH Temuco"],
+                detalles: ["Incluía poesía mapuche", "Número doble 4-5 (agosto 1984): poema 'Muleta' de Heddy Navarro", "Nº 11 (mayo-agosto 1990): entrevista a Cecilia Castaings sobre poesía durante dictadura", "Nº 11 último número, órgano oficial SECH Temuco"],
                 personas: [],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-93537.html", nota: "Artículo sobre la revista" },
@@ -4143,7 +4168,7 @@ const talleres = [
         historia: {
             origen: "Revista de poesía, gráfica y humor. Ediciones Tragaluz. Correspondencia: Almirante Simpson 7 (Sociedad de Escritores de Chile).",
             contexto: "Vinculada a Ediciones Tragaluz y al Taller Ergo Sum. Incluye sección 'Poetas Jóvenes Chilenos en Europa' dedicada a poetas del exilio.",
-            desarrollos: "El N°6 (Invierno 1986) incluye cuento de Ana María del Río y ensayo de Enrique Lihn sobre el ilustrador Coré. El N°7 (Primavera 1987) publica poemas de Teresa Calderón y Verónica Zondek.",
+            desarrollos: "El N°6 (Invierno 1986) incluye cuento de Ana María del Río y ensayo de Enrique Lihn sobre el ilustrador Coré. El N°7 (Año Quinto, Primavera 1987) publica poemas de Teresa Calderón y Verónica Zondek. Subtítulo: 'Gráfica, Humor'.",
             continuidad: "Publicación periódica de resistencia cultural. Al menos 7 números documentados (1983-1987)."
         },
         fundadores: [
@@ -4175,6 +4200,74 @@ const talleres = [
         fuentes: [
             { autor: "Memoria Chilena", año: "1986", titulo: "La Castaña N° 6, Invierno 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" },
             { autor: "Memoria Chilena", año: "1987", titulo: "La Castaña N° 7, Primavera 1987 (MC0005423)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+        ]
+    },
+    {
+        nombre: "Revista LAR",
+        coords: [-33.4460, -70.6530],
+        zona: "Santiago (Ediciones Tragaluz)",
+        region: "metropolitana",
+        años: "1980s",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista de literatura editada por Ediciones Tragaluz, dirigida por el poeta Omar Lara.",
+            contexto: "Publicación que reunió a destacados poetas chilenos del período. Vinculada al circuito de revistas independientes durante la dictadura.",
+            desarrollos: "Representantes: Juan Octavio Prenz, Patricia Jeréz, Gustavo Mujica, Sergio Badilla, Adrián Santini, Federico Schopf, Juan Epple, Juan Cameron, Elicura Chihuailaf, Eugenio Matus, Raúl Barrientos.",
+            continuidad: "Vinculada a Ediciones Tragaluz y otras publicaciones de Omar Lara."
+        },
+        fundadores: [
+            { nombre: "Omar Lara", rol: "Director-Editor" }
+        ],
+        integrantes: [
+            { nombre: "Patricia Jeréz", rol: "Representante" },
+            { nombre: "Juan Octavio Prenz", rol: "Representante" },
+            { nombre: "Gustavo Mujica", rol: "Representante" },
+            { nombre: "Elicura Chihuailaf", rol: "Representante" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Patricia Jeréz", rol: "Representante", enRevista: true }
+        ],
+        publicaciones: [],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "LAR - revista de literatura (MC0005727)", medio: "Memoria Chilena", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Tamarugal",
+        coords: [-33.4465, -70.6535],
+        zona: "Santiago",
+        region: "metropolitana",
+        años: "1982",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista literaria fundada en Santiago en 1982.",
+            contexto: "Publicación independiente del período de dictadura.",
+            desarrollos: "Directores: Baisy Bennett y Ariel Fernández.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [
+            { nombre: "Baisy Bennett", rol: "Directora" },
+            { nombre: "Ariel Fernández", rol: "Director" }
+        ],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Tamarugal N° 1",
+                años: "1982",
+                tipo: "Revista",
+                detalles: ["Santiago, Chile"],
+                existencias: []
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Baisy Bennett", rol: "Directora", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista Nueva Línea", año: "s.f.", titulo: "Nueva línea de revistas (pp. 102-103)", medio: "Memoria Chilena", link: null }
         ]
     },
     {
@@ -4253,16 +4346,16 @@ const talleres = [
     {
         nombre: "Revista Palabra Escrita",
         coords: [-33.4450, -70.6520],
-        zona: "Santiago (Arturo Prat 236, local 111)",
+        zona: "Santiago (Avda. Matta 1425 / Arturo Prat 236, local 111)",
         region: "metropolitana",
-        años: "1984–1987",
+        años: "1983–1987",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-01-13",
         historia: {
-            origen: "Revista de poesía con red de corresponsales nacionales e internacionales. Tiraje: 1.000 ejemplares.",
+            origen: "Revista de poesía fundada en 1983 con red de corresponsales nacionales e internacionales. Tiraje: 1.000 ejemplares. Diseño gráfico: Toñocadima.",
             contexto: "Declaradamente opositora a la dictadura. El editorial 'Por un amplio espectro opositor' (N°19, 1987) llama a consolidar un frente único contra el régimen.",
-            desarrollos: "N°16 (dic. 1984) incluye carta manuscrita de Gonzalo Rojas apoyando su candidatura al Premio Nobel. Sección 'Publicaciones recibidas' documenta otras revistas del período.",
+            desarrollos: "N°11 (enero 1983): corresponsales Chile: Mayo Muñoz (Arica), Pablo Anuary (Calama), Arturo Volantines (La Serena), Alfonso Olave (Rancagua), Lorenzo González (San Fernando), Matías Rafide (Talca), Carlos René Ibacache (Chillán), Luis Alberto Barría (P. Arenas). Corresponsales extranjero: Marta Milesi (Argentina), Arturo Peña (Costa Rica), Eduardo Arcángel (Colombia), Alfonso Cruz Vásquez (México), Sergio Medina (Suiza), Sergio Cuadros (Holanda), Julio César Moshes (Israel). N°16 (dic. 1984) incluye carta manuscrita de Gonzalo Rojas apoyando su candidatura al Premio Nobel.",
             continuidad: "Red de corresponsales desde Arica hasta Punta Arenas, además de Colombia, Guatemala, México, Estados Unidos, España, Holanda."
         },
         fundadores: [
@@ -4371,21 +4464,31 @@ const talleres = [
         años: "1980s",
         tipo: "taller",
         verificado: true,
-        ultimaActualizacion: "2026-01-11",
+        ultimaActualizacion: "2026-01-13",
         historia: {
             origen: "Grupo literario activo en Chillán durante los años 80.",
-            contexto: "Centro de actividad literaria en la región de Ñuble. Espacio de acogida para poetas regionales.",
+            contexto: "Centro de actividad literaria en la región de Ñuble. Espacio de acogida para poetas regionales. Carlos René Ibacache era corresponsal de revista Palabra Escrita en Chillán.",
+            desarrollos: "Publicó el 'Boletín Cultural' (al menos Núms. 21 y 22 documentados).",
             continuidad: null
         },
         fundadores: [
-            { nombre: "Carlos René Ibacache", rol: "Presidente" }
+            { nombre: "Carlos René Ibacache", rol: "Presidente / Director Boletín Cultural" }
         ],
         integrantes: [
             { nombre: "Amanda Fuller", rol: "Poeta integrante", obra: "'Hasta cerrar la sombra' (1985)" }
         ],
-        publicaciones: [],
+        publicaciones: [
+            {
+                titulo: "Boletín Cultural",
+                años: "1980s",
+                tipo: "Boletín",
+                detalles: ["Núms. 21 y 22 documentados", "Publicación del Grupo Literario Ñuble, Chillán", "Director: Carlos René Ibacache"],
+                existencias: []
+            }
+        ],
         fuentes: [
-            { autor: "Ibacache, C.R.", año: "1985", titulo: "Prólogo a 'Hasta cerrar la sombra' de Amanda Fuller", medio: "Documento original", link: null }
+            { autor: "Ibacache, C.R.", año: "1985", titulo: "Prólogo a 'Hasta cerrar la sombra' de Amanda Fuller", medio: "Documento original", link: null },
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "MC0005481 - Reseña publicaciones recibidas", medio: "Memoria Chilena", link: null }
         ]
     },
     {
@@ -5026,6 +5129,333 @@ const talleres = [
         integrantes: [],
         publicaciones: [],
         fuentes: [{ autor: "Revista Galera", año: "1986", titulo: "Galera Año 1, N° 3, marzo 1986", medio: "Memoria Chilena", link: null }]
+    },
+    // ==================== NUEVAS REVISTAS - SESIÓN 14 ENERO 2026 ====================
+    {
+        nombre: "Revista Epicentro",
+        coords: [-33.4510, -70.6480],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1989",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista literaria asociada a la AEJ (Agrupación de Escritores Jóvenes). Publicada en Santiago.",
+            contexto: "Espacio de difusión para poetas jóvenes en los últimos años de la dictadura.",
+            desarrollos: "Nº 2 publicado en diciembre 1989.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Epicentro Nº 2",
+                años: "diciembre 1989",
+                tipo: "Revista",
+                detalles: ["Santiago", "Asociada a AEJ"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Paula Pascual", rol: "Poeta", poema: "Alguien", enRevista: true },
+            { nombre: "Paula Miranda", rol: "Poeta", poema: "Duda", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista Epicentro", año: "1989", titulo: "Epicentro Nº 2", medio: "Colección particular Paula Cucurella", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Eurídice",
+        coords: [-33.0458, -71.6197],
+        zona: "Valparaíso (V Región)",
+        region: "zona-central",
+        años: "1987",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista literaria fundada en Valparaíso en 1987 bajo el sello Ediciones del Mito.",
+            contexto: "Publicar como 'milagro digno de mejores santos que poetas'. Propósito declarado: 'desarrollar una actividad cultural que permita a la comunidad acercarse al creador y su obra'. El nombre Eurídice remite al mito de Orfeo y la tarea de hacer hablar a los fantasmas.",
+            desarrollos: "Nota editorial del N°1: 'He aquí nuestro desvelo entonces: Eurídice; sostén de todo un (des)orden poético [...] esperamos lector te sumes a rescatar a Eurídice de este infierno que ya nadie desconoce, porque de una u otra manera es el que todos vivimos'.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Eurídice Nº 1",
+                años: "1987",
+                tipo: "Revista",
+                detalles: ["Ediciones del Mito", "Valparaíso"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Revista Eurídice", año: "1987", titulo: "Eurídice Nº 1", medio: "Colección particular Paula Cucurella", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Fragua",
+        coords: [-34.5897, -71.0114],
+        zona: "San Fernando (VI Región de O'Higgins)",
+        region: "zona-central",
+        años: "1980s",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista literaria de la Casa de la Cultura de San Fernando.",
+            contexto: "Publicación regional vinculada a espacios culturales de la zona de O'Higgins.",
+            desarrollos: "Nº 12 incluye homenaje a Juan Danus.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Fragua Nº 12 - Homenaje a Juan Danus",
+                años: "1980s",
+                tipo: "Revista",
+                detalles: ["Casa de la Cultura San Fernando"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "María Cristina Palma P.", rol: "Poeta", poema: "'En la enorme sala de la espera...', 'Angustias'", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista Fragua", año: "s.f.", titulo: "Fragua Nº 12", medio: "Colección particular Paula Cucurella", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Harapos",
+        coords: [-39.8142, -73.2459],
+        zona: "Valdivia (XIV Región de Los Ríos)",
+        region: "sur",
+        años: "1989",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista literaria del Centro de Alumnos de Castellano y Letras de la Universidad Austral de Chile (UACH).",
+            contexto: "Publicación estudiantil universitaria en el sur de Chile durante el fin de la dictadura.",
+            desarrollos: "Nº 3 publicado en 1989.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Harapos Nº 3",
+                años: "1989",
+                tipo: "Revista",
+                detalles: ["Centro de Alumnos Castellano y Letras", "UACH, Valdivia"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Marcela Campos", rol: "Poeta", poema: "Dejando Constancia", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista Harapos", año: "1989", titulo: "Harapos Nº 3", medio: "Colección particular Paula Cucurella", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Refugio",
+        coords: [-33.4520, -70.6550],
+        zona: "Santiago (ubicación por confirmar)",
+        region: "metropolitana",
+        años: "1988-1989",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista literaria activa a fines de los años 80.",
+            contexto: "Publicación de poesía en los últimos años de la dictadura.",
+            desarrollos: "Año 2, Nº 3 publicado en diciembre 1989.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Refugio Año 2, Nº 3",
+                años: "diciembre 1989",
+                tipo: "Revista",
+                detalles: [],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Isabel Gómez", rol: "Poeta", poema: "Opus II", enRevista: true },
+            { nombre: "Mirna Huentelicán Hraste", rol: "Poeta", poema: "Pena del niño", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista Refugio", año: "1989", titulo: "Refugio Año 2, Nº 3", medio: "Colección particular Paula Cucurella", link: null }
+        ]
+    },
+    {
+        nombre: "Revista SAFO M.R.",
+        coords: [-34.1708, -70.7444],
+        zona: "Rancagua (VI Región de O'Higgins) / Santiago",
+        region: "zona-central",
+        años: "1989–",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista Literaria Femenina fundada en Rancagua el 28 de diciembre de 1989. Directora y Representante Legal: María León Bascur.",
+            contexto: "Una de las pocas revistas literarias dirigidas por mujeres y dedicadas a la literatura femenina del período. Nombre evoca a Safo de Lesbos, poeta griega.",
+            desarrollos: "Dirección postal: Av. Santa Rosa 8171, Depto. 207, Santiago. Teléfono: 5253355.",
+            continuidad: "Continuó publicándose en los años 90."
+        },
+        fundadores: [
+            { nombre: "María León Bascur", rol: "Directora y Representante Legal" }
+        ],
+        integrantes: [],
+        publicaciones: [],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Revista SAFO M.R.", año: "1999", titulo: "SAFO M.R. (julio-agosto 1999)", medio: "Memoria Chilena MC0005480", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Periferia",
+        coords: [-29.9027, -71.2519],
+        zona: "La Serena (IV Región de Coquimbo)",
+        region: "norte-chico",
+        años: "1980s",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista de poesía editada en La Serena.",
+            contexto: "Contenido de textos poéticos, ecológicos y sociales. Vinculada al circuito de poetas serenenses que incluía a Arturo Volantines.",
+            desarrollos: "N°2: poetas publicados incluyen Mauricio Ossandón, Susana Moya, O. Elgueta, Arturo Volantines, Sergio Peña.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Periferia N° 2",
+                años: "s.f.",
+                tipo: "Revista",
+                detalles: ["La Serena", "Textos poéticos, ecológicos, sociales"],
+                existencias: []
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Susana Moya", rol: "Poeta publicada", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Reseña en revista de la época", medio: "Memoria Chilena", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Literabierta",
+        coords: [-33.4833, -70.5167],
+        zona: "Peñalolén (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1985",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista editada por el Colectivo de Poetas de la Comuna de Peñalolén, Santiago.",
+            contexto: "Publicación vinculada a colectivos de poetas poblacionales de la zona oriente de Santiago.",
+            desarrollos: "N°7 (febrero-marzo 1985): trabajos de Andrés Echeverría, Mariano Ponce, y un homenaje a Gonzalo Rojas.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [
+            { nombre: "Colectivo de Poetas de la Comuna de Peñalolén", rol: "Editor" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Literabierta N° 7",
+                años: "febrero-marzo 1985",
+                tipo: "Revista",
+                detalles: ["Homenaje a Gonzalo Rojas"],
+                existencias: []
+            }
+        ],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "MC0005481", medio: "Memoria Chilena", link: null }
+        ]
+    },
+    {
+        nombre: "Revista América Joven",
+        coords: [51.9225, 4.4792],
+        zona: "Rotterdam, Holanda (exilio)",
+        region: "exilio",
+        años: "1985",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista publicada en Rotterdam, Holanda, por un grupo de poetas y escritores chilenos en el exilio.",
+            contexto: "Espacio de difusión para escritores chilenos exiliados en Europa. Incluía sección de poesía del Colectivo de Escritores Jóvenes.",
+            desarrollos: "N°41 (enero 1985): redactada por Rigoberto Heinsonh, Mariano Maturana, Juan Heinsonh. Contenidos: 'Cultura y democracia' de Fernando Mires, fragmento de Sergio Arrau, cuento de Camilo Fenino, poemas de Gustavo Mujica. Dirección: Postbus 23367, 3001 Kj Rotterdam, Nederlan.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [
+            { nombre: "Rigoberto Heinsonh", rol: "Redactor" },
+            { nombre: "Mariano Maturana", rol: "Redactor" },
+            { nombre: "Juan Heinsonh", rol: "Redactor" }
+        ],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "América Joven N° 41",
+                años: "enero 1985",
+                tipo: "Revista",
+                detalles: ["Rotterdam, Holanda", "Incluye sección poesía Colectivo de Escritores Jóvenes"],
+                existencias: []
+            }
+        ],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "MC0005481", medio: "Memoria Chilena", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Jerigonza",
+        coords: [-33.4530, -70.6560],
+        zona: "Santiago (ubicación por confirmar)",
+        region: "metropolitana",
+        años: "1980s",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        historia: {
+            origen: "Revista literaria de los años 80. Año de publicación exacto por determinar.",
+            contexto: "Publicación de poesía durante la dictadura.",
+            desarrollos: "Sin información adicional.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [],
+        mujeresPoetas: [
+            { nombre: "Jeannette Saide", rol: "Poeta", poema: "In (con) clusión", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista Jerigonza", año: "s.f.", titulo: "Jerigonza", medio: "Colección particular Paula Cucurella", link: null }
+        ]
     }
     ];
 
@@ -5139,10 +5569,20 @@ const poetas = [
         biografia: {
             nacimiento: "Gorbea, Chile (1937).",
             formacion: "Poeta con extensa producción desde fines de los años 60.",
-            contexto: "Publicó en revista La Gota Pura N° 10 (abril 1984).",
+            contexto: "Publicó en revista La Gota Pura N° 10 (abril 1984). Poema 'Soy y Seré'.",
             trayectoria: "Libros: Siluetas Extraviadas (1969), El Reino del Agua (1974)."
         },
-        publicaciones: [],
+        publicaciones: [
+            {
+                titulo: "Revista La Gota Pura",
+                años: "abril 1984",
+                tipo: "Poema en revista",
+                detalles: ["Nº 10", "Poema: 'Soy y Seré'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
         conexiones: { talleres: [], revistas: [{ nombre: "Revista La Gota Pura", id: "la-gota-pura" }] },
         fuentes: [{ autor: "La Gota Pura", año: "1984", titulo: "La Gota Pura N° 10", medio: "Memoria Chilena", link: null }]
     },
@@ -5162,7 +5602,17 @@ const poetas = [
             contexto: "Cofundadora de revista La Gota Pura (1981) junto a Ramón Díaz Eterovic y Aristóteles España.",
             trayectoria: "Directora de La Gota Pura (1981-1984)."
         },
-        publicaciones: [],
+        publicaciones: [
+            {
+                titulo: "Revista La Gota Pura",
+                años: "1984",
+                tipo: "Revista",
+                detalles: ["Abril 1984", "Poema: 'Es la hora del lobo'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
         conexiones: { talleres: [], revistas: [{ nombre: "Revista La Gota Pura", id: "la-gota-pura" }] },
         fuentes: []
     },
@@ -5676,6 +6126,15 @@ const poetas = [
         },
         publicaciones: [
             {
+                titulo: "Revista La Gota Pura",
+                años: "1984",
+                tipo: "Revista",
+                detalles: ["Abril 1984", "Poemas: 'Solo sé como se sienten los muertos' (dedicado a Salvador Allende), 'El francotirador', 'Santiago tango'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            },
+            {
                 titulo: "Bobby Sands desfallece en el muro",
                 años: "1983",
                 tipo: "Poemario",
@@ -5973,6 +6432,159 @@ const poetas = [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Poetas chilenos de la década de 1980 (MC3658)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3658.html" },
             { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía p. 21)", medio: "Ediciones INCOR, Santiago", link: null }
+        ]
+    },
+    {
+        nombre: "Alejandra Pares",
+        nombreReal: null,
+        coords: [-36.8201, -73.0444],
+        zona: "Concepción (VIII Región del Biobío)",
+        region: "sur",
+        años: "1962–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Concepción, 1962.",
+            formacion: "Por determinar.",
+            contexto: "Promisoria exponente de la nueva poesía en Chile durante los años 80. Para Alejandra, la misión del arte es 'ir barriendo... todas aquellas basuritas que el mundo deposita en el banco de la desesperanza'.",
+            trayectoria: "Publicó 'Recreo' (Cuadernos de movilización literaria, Concepción, 1986)."
+        },
+        publicaciones: [
+            {
+                titulo: "Recreo",
+                años: "1986",
+                tipo: "Poemario",
+                detalles: ["Poesía - Cuadernos de movilización literaria", "Concepción"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: null, nota: "MC0005682 (referencia)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [] },
+        fuentes: [
+            { autor: "Revista Trayectoria poética", año: "1987", titulo: "Biografía de Alejandra Pares", medio: "Memoria Chilena MC0005682", link: null }
+        ]
+    },
+    {
+        nombre: "Maura Brescia",
+        nombreReal: null,
+        coords: [-33.4500, -70.6500],
+        zona: "Chile (ubicación por determinar)",
+        region: "metropolitana",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta activa durante dictadura con al menos tres libros publicados.",
+            trayectoria: "Publicó 'La estirpe censurada', 'Fembra' y 'Mares de leyenda'."
+        },
+        publicaciones: [
+            { titulo: "La estirpe censurada", años: "s.f.", tipo: "Poemario", detalles: [], existencias: [] },
+            { titulo: "Fembra", años: "s.f.", tipo: "Poemario", detalles: [], existencias: [] },
+            { titulo: "Mares de leyenda", años: "s.f.", tipo: "Poemario", detalles: [], existencias: [] }
+        ],
+        conexiones: { talleres: [], revistas: [] },
+        fuentes: [
+            { autor: "Revista Trayectoria poética", año: "1987", titulo: "Lista de autores", medio: "Memoria Chilena MC0005682", link: null }
+        ]
+    },
+    {
+        nombre: "Inés Cornejo",
+        nombreReal: null,
+        coords: [-33.4505, -70.6505],
+        zona: "Chile (ubicación por determinar)",
+        region: "metropolitana",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta activa durante dictadura.",
+            trayectoria: "Publicó 'El mundo de Eva'."
+        },
+        publicaciones: [
+            { titulo: "El mundo de Eva", años: "s.f.", tipo: "Poemario", detalles: [], existencias: [] }
+        ],
+        conexiones: { talleres: [], revistas: [] },
+        fuentes: [
+            { autor: "Revista Trayectoria poética", año: "1987", titulo: "Lista de autores", medio: "Memoria Chilena MC0005682", link: null }
+        ]
+    },
+    {
+        nombre: "Marina Flores",
+        nombreReal: null,
+        coords: [-36.7167, -73.1167],
+        zona: "Talcahuano (VIII Región del Biobío)",
+        region: "sur",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Talcahuano (por determinar).",
+            formacion: "Asistente Social.",
+            contexto: "Asistente social y poetisa de Talcahuano.",
+            trayectoria: "Mencionada en Trayectoria poética (1987)."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [], revistas: [] },
+        fuentes: [
+            { autor: "Revista Trayectoria poética", año: "1987", titulo: "Lista de autores", medio: "Memoria Chilena MC0005682", link: null }
+        ]
+    },
+    {
+        nombre: "Valeria Vergara",
+        nombreReal: null,
+        coords: [-33.4510, -70.6510],
+        zona: "Chile (ubicación por determinar)",
+        region: "metropolitana",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta activa durante dictadura.",
+            trayectoria: "Publicó 'Diccionario de los sueños' y 'Vagabundos en el infinito' (este último en compañía de su padre)."
+        },
+        publicaciones: [
+            { titulo: "Diccionario de los sueños", años: "s.f.", tipo: "Poemario", detalles: [], existencias: [] },
+            { titulo: "Vagabundos en el infinito", años: "s.f.", tipo: "Poemario", detalles: ["En compañía de su padre"], existencias: [] }
+        ],
+        conexiones: { talleres: [], revistas: [] },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "MC0005486", medio: "Memoria Chilena", link: null }
+        ]
+    },
+    {
+        nombre: "Susana Moya",
+        nombreReal: null,
+        coords: [-29.9030, -71.2520],
+        zona: "La Serena (IV Región de Coquimbo)",
+        region: "norte-chico",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta serenense activa en el circuito literario del norte chico. Publicó en Revista Periferia junto a Arturo Volantines y otros poetas de La Serena.",
+            trayectoria: "Publicada en Periferia N°2 (La Serena)."
+        },
+        publicaciones: [
+            { titulo: "Poema en Revista Periferia", años: "s.f.", tipo: "Poema en revista", detalles: ["Periferia N°2", "La Serena"], existencias: [] }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Periferia", id: "periferia" }] },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Reseña Periferia N°2", medio: "Memoria Chilena", link: null }
         ]
     },
     {
@@ -7354,6 +7966,15 @@ const poetas = [
         },
         publicaciones: [
             {
+                titulo: "Revista Poesía Diaria",
+                años: "1984",
+                tipo: "Revista",
+                detalles: ["Nº 4-5 (agosto 1984)", "Poema: 'Muleta'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            },
+            {
                 titulo: "Palabra de mujer: poemas",
                 años: "1984",
                 tipo: "Poemario",
@@ -7440,6 +8061,15 @@ const poetas = [
         },
         publicaciones: [
             {
+                titulo: "Taller Mar Abierto (2da edición)",
+                años: "1985",
+                tipo: "Publicación de taller",
+                detalles: ["Poema: '(del atado de mugremas)' (escrito noviembre 1984)"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            },
+            {
                 titulo: "Piedras rodantes",
                 años: "1988",
                 tipo: "Poemario",
@@ -7450,7 +8080,9 @@ const poetas = [
             }
         ],
         conexiones: {
-            talleres: [],
+            talleres: [
+                { nombre: "Taller Mar Abierto", id: "mar-abierto" }
+            ],
             revistas: [
                 { nombre: "La Bicicleta", id: "bicicleta" }
             ]
@@ -7579,9 +8211,9 @@ const poetas = [
         años: "ca. 1950s–2010",
         foto: null,
         biografia: {
-            nacimiento: "Chile, ca. 1950s. Falleció en 2010.",
-            formacion: "Miembro de Unión de Escritores Jóvenes (UEJ) desde mediados de los 70. Participó y dirigió talleres en casona Simpson 7 (SECH).",
-            contexto: "Única mención honrosa Concurso Nacional de Poesía revista La Bicicleta 1979 (jurado presidido por Enrique Lihn). Poemas publicados en La Bicicleta 1980: 'Ojos', 'El Monstruo', 'Siete leguas'. Usó seudónimo 'Ariadna' (1979).",
+            nacimiento: "Santiago, ca. 1952-1953. Falleció en 2010.",
+            formacion: "Egresada de Pedagogía en Castellano. Miembro de Unión de Escritores Jóvenes (UEJ) desde mediados de los 70. Participó y dirigió talleres en casona Simpson 7 (SECH).",
+            contexto: "Única mención honrosa Concurso Nacional de Poesía revista La Bicicleta 1979 (jurado presidido por Enrique Lihn, ver Bicicleta Nº 6). Poemas publicados en La Bicicleta 1980: 'Ojos', 'El Monstruo', 'Siete leguas'. Usó seudónimo 'Ariadna' (1979).",
             trayectoria: "Incluida en antología 'Poesía para el camino' (UEJ, 1977). No publicó libros durante dictadura. Publicó 'Silencios Permitidos' (2015) póstumamente."
         },
         publicaciones: [
@@ -7596,9 +8228,10 @@ const poetas = [
                 titulo: "Poemas en revista La Bicicleta",
                 años: "1980",
                 tipo: "Revista",
-                detalles: ["'Ojos', 'El Monstruo', 'Siete leguas'", "Premio concurso 1979"],
+                detalles: ["Nº 7 y otros números", "'Ojos', 'El Monstruo', 'Siete leguas'", "Premio concurso 1979"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100795.html", nota: "Revista digitalizada" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100795.html", nota: "Revista digitalizada" },
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Nº 7 consultado (enero 2026)" }
                 ]
             }
         ],
@@ -7972,11 +8605,12 @@ const poetas = [
         publicaciones: [
             {
                 titulo: "Poemas en revista Carmina",
-                años: "1984",
+                años: "1984-1985",
                 tipo: "Revista",
-                detalles: ["Año 2, Nº 2 (abril 1984)", "Poemas: 'Consecuencia de un modelito', 'Oficio', 'Territorio libre', 'Censura y consejos de' (p. 5)"],
+                detalles: ["Año 2, Nº 2 (abril 1984): 'Consecuencia de un modelito', 'Oficio', 'Territorio libre', 'Censura y consejos de' (p. 5)", "Año 3, Nº 3 (octubre 1985): 'Clima siglo XX 21:00'"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "PDF descargable (MC0005673)" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "PDF descargable (MC0005673)" },
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico Nº3 consultado (enero 2026)" }
                 ]
             }
         ],
@@ -8175,9 +8809,10 @@ const poetas = [
                 titulo: "Revista Trayectoria poética (directora)",
                 años: "1987",
                 tipo: "Revista",
-                detalles: ["Nº 1 (Arica)", "Directora editorial", "Poema '¿Qué busca la humanidad ciega?'"],
+                detalles: ["Directora editorial", "Poemas: '¿Qué busca la humanidad ciega?', 'Mundo' (junio 1987)", "Editorial sobre rol político de la poesía regional"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100921.html", nota: "PDF descargable" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100921.html", nota: "PDF descargable" },
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico junio 1987 consultado (enero 2026)" }
                 ]
             },
             {
@@ -8267,9 +8902,10 @@ const poetas = [
                 titulo: "Y al centro, fuego",
                 años: "1982",
                 tipo: "Folleto/Plaquette",
-                detalles: ["Taller de Literatura 'Recital'", "Antofagasta"],
+                detalles: ["Taller de Literatura 'Recital'", "Antofagasta", "Incluye poema 'Estatuaria'"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121739.html", nota: "Digitalizado (MC0005683)" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121739.html", nota: "Digitalizado (MC0005683)" },
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
                 ]
             },
             {
@@ -8870,9 +9506,10 @@ const poetas = [
                 titulo: "Revista Carmina (directora)",
                 años: "1983-1985",
                 tipo: "Revista (dirección)",
-                detalles: ["Taller Literario Gredazul, Santiago", "Ejemplares: Año 2 Nº2 (abril 1984), Año 3 Nº3 (octubre 1985)"],
+                detalles: ["Taller Literario Gredazul, Santiago", "Ejemplares: Año 2 Nº2 (abril 1984), Año 3 Nº3 (octubre 1985)", "Poema publicado en Nº3 (oct 1985): 'Sólo para leer'"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Números digitalizados en colección" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Números digitalizados en colección" },
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico Nº3 consultado (enero 2026)" }
                 ]
             }
         ],
@@ -9879,6 +10516,345 @@ const poetas = [
         publicaciones: [],
         conexiones: { talleres: [{ nombre: "Grupo Ancoa", id: "ancoa" }], revistas: [] },
         fuentes: [{ autor: "Revista Huelen", año: "1981", titulo: "Huelen N° 5, septiembre 1981", medio: "Ejemplar original", link: null }]
+    },
+    // ==================== NUEVAS POETAS - SESIÓN 14 ENERO 2026 ====================
+    {
+        nombre: "Paula Pascual",
+        nombreReal: null,
+        coords: [-33.4540, -70.6570],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1989",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta publicada en Revista Epicentro, asociada a la AEJ (Agrupación de Escritores Jóvenes).",
+            trayectoria: "Poema 'Alguien' publicado en Epicentro Nº 2 (diciembre 1989)."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista Epicentro",
+                años: "1989",
+                tipo: "Revista",
+                detalles: ["Nº 2 (diciembre 1989)", "Poema: 'Alguien'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Epicentro", id: "epicentro" }] },
+        fuentes: [{ autor: "Revista Epicentro", año: "1989", titulo: "Epicentro Nº 2", medio: "Colección particular Paula Cucurella", link: null }]
+    },
+    {
+        nombre: "Erna Gallardo",
+        nombreReal: null,
+        coords: [-33.4545, -70.6575],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta publicada en Revista Lapislázuli.",
+            trayectoria: "Poema 'Testamento' publicado en Lapislázuli Nº 5."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista Lapislázuli",
+                años: "1980s",
+                tipo: "Revista",
+                detalles: ["Nº 5", "Poema: 'Testamento'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Lapislázuli", id: "lapislazuli" }] },
+        fuentes: [{ autor: "Revista Lapislázuli", año: "s.f.", titulo: "Lapislázuli Nº 5", medio: "Colección particular Paula Cucurella", link: null }]
+    },
+    {
+        nombre: "Lita Gutiérrez",
+        nombreReal: null,
+        coords: [-33.4550, -70.6580],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1984",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta publicada en Revista La Gota Pura.",
+            trayectoria: "Poema 'Soy y Seré' publicado en La Gota Pura (abril 1984)."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista La Gota Pura",
+                años: "1984",
+                tipo: "Revista",
+                detalles: ["Abril 1984", "Poema: 'Soy y Seré'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista La Gota Pura", id: "la-gota-pura" }] },
+        fuentes: [{ autor: "Revista La Gota Pura", año: "1984", titulo: "La Gota Pura, abril 1984", medio: "Colección particular Paula Cucurella", link: null }]
+    },
+    {
+        nombre: "Malú García",
+        nombreReal: null,
+        coords: [-33.4555, -70.6585],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1985",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Integrante del Taller Mar Abierto.",
+            contexto: "Poeta publicada en Revista Contramuro del Taller Urbano de Poesía. Autora de 'atado de mugremas' y 'Profanario libre sin cargos', su obra poética permaneció mayormente inédita.",
+            trayectoria: "Poema 'En el principio corrieron a la nada...' publicado en Contramuro Nº 14 (mayo 1985)."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista Contramuro",
+                años: "1985",
+                tipo: "Revista",
+                detalles: ["Nº 14 (mayo 1985)", "Taller Urbano de Poesía", "Poema: 'En el principio corrieron a la nada...'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [{ nombre: "Taller Mar Abierto", id: "mar-abierto" }], revistas: [{ nombre: "Revista Contramuro", id: "contramuro" }] },
+        fuentes: [{ autor: "Revista Contramuro", año: "1985", titulo: "Contramuro Nº 14", medio: "Colección particular Paula Cucurella", link: null }]
+    },
+    {
+        nombre: "Margarita Pino Illanes",
+        nombreReal: null,
+        coords: [-33.4560, -70.6590],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1985",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta publicada en Revista Lapislázuli.",
+            trayectoria: "Poema 'Monólogo' publicado en Lapislázuli Nº 16 (1985)."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista Lapislázuli",
+                años: "1985",
+                tipo: "Revista",
+                detalles: ["Nº 16 (1985)", "Poema: 'Monólogo'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Lapislázuli", id: "lapislazuli" }] },
+        fuentes: [{ autor: "Revista Lapislázuli", año: "1985", titulo: "Lapislázuli Nº 16", medio: "Colección particular Paula Cucurella", link: null }]
+    },
+    {
+        nombre: "Mirna Huentelicán Hraste",
+        nombreReal: null,
+        coords: [-33.4565, -70.6595],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1989",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta publicada en Revista Refugio.",
+            trayectoria: "Poema 'Pena del niño' publicado en Refugio Año 2, Nº 3 (diciembre 1989)."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista Refugio",
+                años: "1989",
+                tipo: "Revista",
+                detalles: ["Año 2, Nº 3 (diciembre 1989)", "Poema: 'Pena del niño'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Refugio", id: "refugio" }] },
+        fuentes: [{ autor: "Revista Refugio", año: "1989", titulo: "Refugio Año 2, Nº 3", medio: "Colección particular Paula Cucurella", link: null }]
+    },
+    {
+        nombre: "Jeannette Saide",
+        nombreReal: null,
+        coords: [-33.4570, -70.6600],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta publicada en Revista Jerigonza.",
+            trayectoria: "Poema 'In (con) clusión' publicado en Jerigonza."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista Jerigonza",
+                años: "1980s",
+                tipo: "Revista",
+                detalles: ["Poema: 'In (con) clusión'"],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (enero 2026)" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Jerigonza", id: "jerigonza" }] },
+        fuentes: [{ autor: "Revista Jerigonza", año: "s.f.", titulo: "Jerigonza", medio: "Colección particular Paula Cucurella", link: null }]
+    },
+    {
+        nombre: "Edda Morales Bonansco",
+        nombreReal: null,
+        coords: [-33.0153, -71.5500],
+        zona: "Viña del Mar (V Región de Valparaíso)",
+        region: "zona-central",
+        años: "Activa 1986",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Viña del Mar (por determinar).",
+            formacion: "Por determinar.",
+            contexto: "Poeta galardonada en el I Concurso de Poesía Internacional de la revista 'Imágenes de Océanos' (Antofagasta, 29 sept 1986).",
+            trayectoria: "2do Premio I Concurso Poesía Internacional por su poema 'Donde está la ciudad'."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Imágenes de Océanos", id: "imagenes-oceanos" }] },
+        fuentes: [{ autor: "Memoria Chilena", año: "1986", titulo: "Acta del Jurado I Concurso de Poesía Internacional Imágenes de Océanos (MC0005347)", medio: "Memoria Chilena", link: null }]
+    },
+    {
+        nombre: "Juana Baudoin Madrid",
+        nombreReal: null,
+        coords: [-29.9027, -71.2525],
+        zona: "La Serena (IV Región de Coquimbo)",
+        region: "norte-chico",
+        años: "Activa 1986",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "La Serena (por determinar).",
+            formacion: "Por determinar.",
+            contexto: "Poeta galardonada en el I Concurso de Poesía Internacional de la revista 'Imágenes de Océanos' (Antofagasta, 29 sept 1986).",
+            trayectoria: "3er Premio I Concurso Poesía Internacional por su poema 'El Hombre'."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Imágenes de Océanos", id: "imagenes-oceanos" }] },
+        fuentes: [{ autor: "Memoria Chilena", año: "1986", titulo: "Acta del Jurado I Concurso de Poesía Internacional Imágenes de Océanos (MC0005347)", medio: "Memoria Chilena", link: null }]
+    },
+    {
+        nombre: "Isabel Velasco",
+        nombreReal: null,
+        coords: [-33.4575, -70.6605],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1971-1984",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Poetisa y Narradora. Secretaria General de la Sociedad de Escritores de Chile.",
+            contexto: "Destacada gestora literaria y poeta con varios libros publicados durante dictadura.",
+            trayectoria: "Libros: 'Sol, dónde estas' (poesía, 1971), 'Cardos' (poesía, 1972), 'Tú, ayer' (1975), 'Quién soy' (Serie ¿Quién es Quién en las letras Chilenas?, 1978), 'Del Silencio' (poesía, 1984)."
+        },
+        publicaciones: [
+            { titulo: "Sol, dónde estas", años: "1971", tipo: "Poemario", detalles: [], existencias: [] },
+            { titulo: "Cardos", años: "1972", tipo: "Poemario", detalles: [], existencias: [] },
+            { titulo: "Tú, ayer", años: "1975", tipo: "Poemario", detalles: [], existencias: [] },
+            { titulo: "Quién soy", años: "1978", tipo: "Serie ¿Quién es Quién?", detalles: [], existencias: [] },
+            { titulo: "Del Silencio", años: "1984", tipo: "Poemario", detalles: [], existencias: [] }
+        ],
+        conexiones: { talleres: [{ nombre: "SECH", id: "sech" }], revistas: [] },
+        fuentes: [{ autor: "Revista Nueva Línea", año: "s.f.", titulo: "Biografías de autores (pp. 106-107)", medio: "Memoria Chilena", link: null }]
+    },
+    {
+        nombre: "Sandra Henríquez Sandoval",
+        nombreReal: null,
+        coords: [-42.4805, -73.7655],
+        zona: "Castro, Chiloé (X Región de Los Lagos)",
+        region: "sur",
+        años: "Activa 1984",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta integrante del Taller Literario AUMEN de Castro, Chiloé.",
+            trayectoria: "Publicó 'Poemas' con el Taller Literario AUMEN en 1984."
+        },
+        publicaciones: [
+            { titulo: "Poemas", años: "1984", tipo: "Publicación de taller", detalles: ["Taller Literario AUMEN", "Castro, Chiloé"], existencias: [] }
+        ],
+        conexiones: { talleres: [{ nombre: "Taller Literario Aumen", id: "taller-aumen" }], revistas: [] },
+        fuentes: [{ autor: "Memoria Chilena", año: "1984", titulo: "Lista publicaciones Taller AUMEN (MC0005727)", medio: "Memoria Chilena", link: null }]
+    },
+    {
+        nombre: "Alicia Dauvin",
+        nombreReal: null,
+        coords: [-33.4580, -70.6610],
+        zona: "Chile (ubicación por determinar)",
+        region: "metropolitana",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poeta descrita como 'promesa en la poesía chilena'. Su obra 'sin buscar inútiles experimentos de renovación, labora con la dignidad de los auténticos creadores'.",
+            trayectoria: "Hasta mediados de los 80 su poesía permanecía inédita. 'Tiene en su verso fuerte y buen contenido el anuncio de una obra futura que sin duda la harán destacarse'."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [], revistas: [] },
+        fuentes: [{ autor: "Revista Nueva Línea", año: "s.f.", titulo: "Biografías de autores (pp. 106-107)", medio: "Memoria Chilena", link: null }]
+    },
+    {
+        nombre: "Kay Strange Aura",
+        nombreReal: null,
+        coords: [-33.4585, -70.6615],
+        zona: "Chile (ubicación por determinar)",
+        region: "metropolitana",
+        años: "Activa 1980s",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-13",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Por determinar.",
+            contexto: "Poetisa descrita como 'promesa en la poesía chilena'. Su poesía 'es de voz directa, penetrando con ella en los oscuros laberintos del alma humana'.",
+            trayectoria: "Su verso contiene 'antiguas reminiscencias de los cantos bíblicos y también un interrogante, cuya respuesta halla en el eco de su propia voz'. Obra inédita hasta mediados de los 80."
+        },
+        publicaciones: [],
+        conexiones: { talleres: [], revistas: [] },
+        fuentes: [{ autor: "Revista Nueva Línea", año: "s.f.", titulo: "Biografías de autores (pp. 106-107)", medio: "Memoria Chilena", link: null }]
     }
     ];
 
