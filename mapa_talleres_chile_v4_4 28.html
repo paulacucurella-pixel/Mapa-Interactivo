@@ -1915,6 +1915,26 @@ const talleres = [
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121691.html", nota: "Nº 1, octubre 1983 (digitalizado, código MC0005493)" },
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121692.html", nota: "Nº 3, mayo 1984 (digitalizado, código MC0005494)" }
                 ]
+            },
+            {
+                titulo: "Revista Tranvía",
+                años: "1984",
+                numeros: "Al menos 2 números",
+                detalles: [
+                    "Firmada colectivamente como 'G.L.T.' (Grupo Literario Tranvía)",
+                    "Nº 2 (noviembre 1984): orientación político-literaria de izquierda",
+                    "Editorial denuncia 'exilio interno' de intelectuales, critica a El Mercurio",
+                    "Incluye poema 'Huelga' de Gioconda Belli (nicaragüense)",
+                    "Poetas: Mauricio Redoles (exiliado en Inglaterra), Pedro Lillo"
+                ],
+                personas: [
+                    { nombre: "Gioconda Belli", rol: "Poeta invitada (nicaragüense)" },
+                    { nombre: "Mauricio Redoles", rol: "Poeta" },
+                    { nombre: "Pedro Lillo", rol: "Poeta" }
+                ],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF Nº 2, noviembre 1984 consultado enero 2026" }
+                ]
             }
         ],
         fuentes: [
@@ -5114,15 +5134,47 @@ const talleres = [
         coords: [-18.4783, -70.3126],
         zona: "Arica (XV Región)",
         region: "norte-grande",
-        años: "1980s",
+        años: "1987–",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        descripcion: "Revista de poesía del norte extremo de Chile.",
-        contexto: "Difusión de voces poéticas ariqueñas.",
+        ultimaActualizacion: "2026-01-15",
+        historia: {
+            origen: "Revista fundada en Arica con el propósito de incentivar la vocación poética y ser vínculo de comunicación sin barreras de frontera. Directora: Priscilla Marinkovic.",
+            desarrollos: "Declara llenar 'una sentida necesidad en el extremo norte de Chile, donde se dan especiales circunstancias de contacto con países vecinos'. Precio: $100. Impresión: Artegráfica.",
+            continuidad: "Por investigar números posteriores."
+        },
+        fundadores: [
+            { nombre: "Priscilla Marinkovic", rol: "Directora" }
+        ],
         integrantes: [],
-        publicaciones: [],
-        fuentes: []
+        publicaciones: [
+            {
+                titulo: "Trayectoria Poética Nº 1",
+                años: "junio 1987",
+                numeros: "Nº 1",
+                detalles: [
+                    "Dirección: Raúl del Canto 922, Arica",
+                    "Conexiones internacionales: Bolivia, Perú, Uruguay, Bélgica",
+                    "Agradece apoyo de Sindicato de Suplementeros de Arica y Rosalía Fernández"
+                ],
+                personas: [
+                    { nombre: "Priscilla Marinkovic", rol: "Poeta/Directora" },
+                    { nombre: "Alejandra Pares", rol: "Poeta" },
+                    { nombre: "Edith Von Borries", rol: "Poeta (Bolivia)" }
+                ],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Priscilla Marinkovic", rol: "Directora y poeta", poema: "'En la Tarde', 'Mundo'", enRevista: true },
+            { nombre: "Alejandra Pares", rol: "Poeta", poema: "'¿Qué busca la Humanite ciega?' - Nacida Concepción 1962, autora de RECREO (1986)", enRevista: true },
+            { nombre: "Edith Von Borries", rol: "Poeta (Bolivia)", poema: "'Flor sin Nombre' de 'En la Rueca del Tiempo'", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Trayectoria Poética Nº 1", año: "junio 1987", titulo: "Primer número", medio: "PDF consultado", link: null }
+        ]
     },
     {
         nombre: "Revista Alerce",
@@ -5767,21 +5819,87 @@ const talleres = [
         años: "1989–",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2025-09-15",
+        ultimaActualizacion: "2026-01-15",
         historia: {
-            origen: "Revista Literaria Femenina fundada en Rancagua el 28 de diciembre de 1989. Directora y Representante Legal: María León Bascur.",
-            contexto: "Una de las pocas revistas literarias dirigidas por mujeres y dedicadas a la literatura femenina del período. Nombre evoca a Safo de Lesbos, poeta griega.",
-            desarrollos: "Dirección postal: Av. Santa Rosa 8171, Depto. 207, Santiago. Teléfono: 5253355.",
-            continuidad: "Continuó publicándose en los años 90."
+            origen: "Revista Literaria Femenina fundada en Rancagua el 28 de diciembre de 1989. Directora y Representante Legal: María León Bascur. Subtítulo: 'La revista de las poetas chilenas'.",
+            contexto: "Una de las pocas revistas literarias dirigidas por mujeres y dedicadas a la literatura femenina del período. Nombre evoca a Safo de Lesbos, poeta griega. Periodicidad bimestral.",
+            desarrollos: "Dirección postal: Av. Santa Rosa 8171, Depto. 207, Santiago. Editor Periodístico: Sergio Gutiérrez Patri. Taller Literario: Miguel Reyes Suárez. Comentarios Literarios: Juan Antonio Massone.",
+            continuidad: "Continuó publicándose en los años 90, alcanzando aprox. 59 números hacia 1999. Conectada con revistas internacionales: Cigarra (Brasil), Somos Mujeres (Perú), Mujer/Fempress."
         },
         fundadores: [
             { nombre: "María León Bascur", rol: "Directora y Representante Legal" }
         ],
         integrantes: [],
-        publicaciones: [],
+        publicaciones: [
+            {
+                titulo: "SAFO (número ca. 59)",
+                años: "julio-agosto 1999",
+                numeros: "Aproximadamente Nº 59",
+                detalles: [
+                    "Más de 50 poetas mujeres publicadas en este número",
+                    "Incluye poetas activas desde dictadura: Amanda Fuller, Alejandra Basualto, Rosabetty Muñoz, Antonieta Rodríguez París",
+                    "Concurso 'Caballo de Fuego' organizado por Corporación Cultural homónima",
+                    "Red de revistas afines: La Punta de Buque, Correo de la Poesía, Rayentrú, La Hoja Verde"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Poetas con trayectoria desde dictadura", rol: "Varias", poema: "Amanda Fuller, Alejandra Basualto, Rosabetty Muñoz, Antonieta Rodríguez París, Lila Calderón, entre otras", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista SAFO M.R.", año: "1999", titulo: "SAFO M.R. (julio-agosto 1999)", medio: "Memoria Chilena MC0005480", link: null },
+            { autor: "SAFO Nº ca. 59", año: "julio-agosto 1999", titulo: "Número consultado", medio: "PDF consultado enero 2026", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Presión 27",
+        coords: [-27.3668, -70.3323],
+        zona: "Copiapó (Atacama)",
+        region: "norte-chico",
+        años: "1985–",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-15",
+        historia: {
+            origen: "Revista del Colectivo Takicardia, nacida 'como tribuna de toda la expresión cultural' con el propósito de 'difundir una cultura de vida diametralmente opuesta a aquella cultura de muerte'. Lema: 'La cultura sin censura'.",
+            desarrollos: "Director: Jorge Oporto Marín. Administración: Salas 687 Depto. 3, Copiapó. Representante Legal: Blanca Aguilera. Integrantes del Colectivo: Gabriel Indey, Fernando Rivera, Jorge Oporto.",
+            continuidad: "Por investigar números posteriores."
+        },
+        fundadores: [
+            { nombre: "Jorge Oporto Marín", rol: "Director" },
+            { nombre: "Gabriel Indey", rol: "Colectivo Takicardia" },
+            { nombre: "Fernando Rivera", rol: "Colectivo Takicardia" }
+        ],
+        integrantes: [
+            { nombre: "Blanca Aguilera", rol: "Representante Legal" },
+            { nombre: "Kika", rol: "Portada" },
+            { nombre: "Guaren", rol: "Humor" },
+            { nombre: "Bermudo", rol: "Dibujo" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Presión 27 Nº 1",
+                años: "octubre-noviembre 1985",
+                numeros: "Año 1, Nº 1",
+                detalles: [
+                    "Propone 'romper formas tradicionales en el arte, ya sea subvirtiendo el lenguaje y cuestionando dogmas o rescatando la cultura popular'",
+                    "Artículo sobre Tercer Encuentro Regional de Escritores de Atacama",
+                    "Mención de SEA (Sociedad de Escritores de Atacama)",
+                    "Acuerdo de publicar 'Antología Poética Contemporánea del Norte'"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
         mujeresPoetas: [],
         fuentes: [
-            { autor: "Revista SAFO M.R.", año: "1999", titulo: "SAFO M.R. (julio-agosto 1999)", medio: "Memoria Chilena MC0005480", link: null }
+            { autor: "Presión 27 Nº 1", año: "octubre-noviembre 1985", titulo: "Año 1, Nº 1", medio: "PDF consultado", link: null }
         ]
     },
     {
@@ -5908,6 +6026,142 @@ const talleres = [
         ],
         fuentes: [
             { autor: "Revista Jerigonza", año: "s.f.", titulo: "Jerigonza", medio: "Colección particular Paula Cucurella", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Tráficos",
+        coords: [-36.8270, -73.0503],
+        zona: "Concepción",
+        region: "sur",
+        años: "1988–",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-15",
+        historia: {
+            origen: "Publicación de actualidad multimedia surgida en Concepción. Se declaran 'transeúntes de un tiempo que no eligieron' buscando 'la emergencia de una nueva cultura'.",
+            desarrollos: "Comité editor incluye mujeres: Rosa Díaz, Olga Grandón. Correspondencia y distribución: Iris González. Casilla 5054, ex Carrera 848, Concepción.",
+            continuidad: "Por investigar números posteriores."
+        },
+        fundadores: [],
+        integrantes: [
+            { nombre: "Rosa Díaz", rol: "Comité editor" },
+            { nombre: "Olga Grandón", rol: "Comité editor" },
+            { nombre: "Iris González", rol: "Correspondencia y distribución" },
+            { nombre: "Ricardo Pérez Zúñiga", rol: "Comité editor" },
+            { nombre: "Juan Ricardo Vásquez", rol: "Comité editor" },
+            { nombre: "Carlos Zapata Sepúlveda", rol: "Comité editor" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Tráficos Nº 1",
+                años: "junio 1988",
+                numeros: "Nº 1",
+                detalles: [
+                    "Publicación de actualidad multimedia",
+                    "Artículo relevante: 'Refrescando la memoria femenina: Un Congreso Literario, Marginal y Contestatario' sobre Congreso Internacional de Literatura Femenina Latinoamericana (agosto 1987)",
+                    "Menciona: Mercedes Valdivieso, Eliana Ortega, Gabriela Mistral, Violeta Parra, Amanda Labarca",
+                    "Colaboradoras: Maite Astudillo, Ernestina Concha, Carmen Durán, Moira Dölenz, Mónica Pérez Zúñiga"
+                ],
+                personas: [
+                    { nombre: "Arinda Ojeda Aravena", rol: "Poeta" },
+                    { nombre: "Nana", rol: "Poeta (seudónimo)" },
+                    { nombre: "Blanca Espinoza", rol: "Poeta (mencionada)" }
+                ],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Arinda Ojeda Aravena", rol: "Poeta, presa política", poema: "Poemas de 'Mi rebeldía es vivir' (Ed. Letra Nueva, Concepción, feb. 1988)", bio: "Analista químico, detenida 18 abril 1981, condena 22 años, Cárcel de Coronel", enRevista: true },
+            { nombre: "Nana", rol: "Poeta (seudónimo)", poema: "'a ojo desnudo'", enRevista: true },
+            { nombre: "Blanca Espinoza", rol: "Poeta (mencionada)", poema: "'Ojos de agua' (cuaderno de poesía)", enRevista: false }
+        ],
+        fuentes: [
+            { autor: "Tráficos Nº 1", año: "junio 1988", titulo: "Publicación de actualidad multimedia", medio: "PDF consultado", link: null }
+        ]
+    },
+    {
+        nombre: "Revista TIZA",
+        coords: [-33.4569, -70.6483],
+        zona: "Santiago (Facultad de Artes)",
+        region: "metropolitana",
+        años: "1986–1987",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-15",
+        historia: {
+            origen: "Revista del taller de arte y encuentro TIZA, vinculada a la Facultad de Artes de una universidad santiaguina. El grupo trabaja desde octubre de 1986.",
+            desarrollos: "Se define como 'más que un taller exclusivamente literario': integra plástica, música, poesía, teatro y danza. Editorial declara: 'Integrar, mostrar, criticar, crear, son derechos ejercidos por quienes por sobre todo, hacen del arte y la belleza un camino'.",
+            continuidad: "Por investigar números posteriores."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "TIZA (primer número)",
+                años: "ca. 1987",
+                numeros: "Nº 1 (sin numerar explícitamente)",
+                detalles: [
+                    "Incluye texto de Pablo Oyarzún del Coloquio de Literatura Chilena (dic. 1984)",
+                    "Menciona a Diamela Eltit como figura de la 'nueva vanguardia nacional'",
+                    "Texto de Carlos Ossa sobre producción cultural en poblaciones"
+                ],
+                personas: [
+                    { nombre: "María de La Luz Torres B.", rol: "Poeta" },
+                    { nombre: "Sandra Espinoza", rol: "Poeta" }
+                ],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "María de La Luz Torres B.", rol: "Poeta", poema: "'Cuando saliva y aliento se confundan...'", enRevista: true },
+            { nombre: "Sandra Espinoza", rol: "Poeta", poema: "'El papel es el soporte...', 'No dejéis que las amapolas...'", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Revista TIZA", año: "ca. 1987", titulo: "Primer número", medio: "PDF consultado", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Todavía",
+        coords: [-36.6066, -72.1034],
+        zona: "Chillán",
+        region: "sur",
+        años: "1985",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-15",
+        historia: {
+            origen: "Revista de creación y crítica literaria editada en Chillán. Primer número dedicado al tema 'El loco amor'. Tiraje: 100 ejemplares.",
+            desarrollos: "Propone tres tipos de diálogo: generacional (entre poesía fundacional chilena y actual), entre textos desde perspectivas temáticas, y entre textos y lectores.",
+            continuidad: "Por investigar números posteriores."
+        },
+        fundadores: [],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Todavía Nº 1",
+                años: "verano 1985 (marzo)",
+                numeros: "Nº 1",
+                detalles: [
+                    "Tema: 'El loco amor'",
+                    "Impresora NAHUEL, Roble 515, Chillán",
+                    "Tiraje: 100 ejemplares",
+                    "Poetas incluidos: Gonzalo Rojas, Homero Aridjis, Jaime Giordano, Eduardo Llanos",
+                    "Menciona a Gabriela Mistral en poesía fundacional chilena",
+                    "Menciona a Berta Quiero (generación del 60, Concepción)"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Todavía Nº 1", año: "verano 1985", titulo: "Revista de creación y crítica literaria", medio: "PDF consultado", link: null }
         ]
     }
     ];
@@ -12090,6 +12344,103 @@ const poetas = [
             { autor: "M. Arteche - R. Cánovas", año: "1989", titulo: "Poesía Religiosa Chilena, Antología", medio: "Referencia bibliográfica", link: null },
             { autor: "Contraportada Gato Encerrado", año: "1990", titulo: "Datos biobibliográficos", medio: "Fotografía documento original", link: null }
         ]
+    },
+    {
+        nombre: "Arinda Ojeda Aravena",
+        nombreReal: null,
+        coords: [-37.0294, -73.1548],
+        zona: "Coronel (Cárcel)",
+        region: "sur",
+        años: "Activa 1988",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-15",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Analista químico de profesión.",
+            contexto: "Presa política. Vivió varios años en exilio, regresó a Chile clandestinamente. Detenida el 18 de abril de 1981. Madre de un adolescente en el exilio.",
+            trayectoria: "Escribió poesía desde la Cárcel de Coronel, donde cumplía condena de 22 años y un día. Publicada en revista Tráficos Nº 1 (Concepción, junio 1988)."
+        },
+        publicaciones: [
+            {
+                titulo: "Mi rebeldía es vivir",
+                años: "febrero 1988",
+                tipo: "Poemario",
+                detalles: ["Ediciones Letra Nueva, Concepción", "Poemas escritos en prisión"],
+                existencias: []
+            },
+            {
+                titulo: "Tráficos Nº 1",
+                años: "junio 1988",
+                tipo: "Revista",
+                detalles: ["Poemas de 'Mi rebeldía es vivir'", "Fragmentos: 'El espacio es tan pequeño / e infinito...', 'En verdad es una guerra / personal y prolongada...'"],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista Tráficos", id: "traficos" }] },
+        fuentes: [{ autor: "Tráficos Nº 1", año: "junio 1988", titulo: "Poemas y nota biográfica", medio: "PDF consultado", link: null }]
+    },
+    {
+        nombre: "María de La Luz Torres B.",
+        nombreReal: null,
+        coords: [-33.4575, -70.6490],
+        zona: "Santiago",
+        region: "metropolitana",
+        años: "Activa ca. 1986-1987",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-15",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Vinculada a Facultad de Artes (universidad por determinar).",
+            contexto: "Poeta publicada en revista TIZA, taller de arte y encuentro universitario que integraba plástica, música, poesía, teatro y danza.",
+            trayectoria: "Publicó poema en revista TIZA (ca. 1987)."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista TIZA",
+                años: "ca. 1987",
+                tipo: "Revista",
+                detalles: ["Poema sin título: 'Cuando saliva y aliento se confundan...'"],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista TIZA", id: "tiza" }] },
+        fuentes: [{ autor: "Revista TIZA", año: "ca. 1987", titulo: "Poema publicado", medio: "PDF consultado", link: null }]
+    },
+    {
+        nombre: "Sandra Espinoza",
+        nombreReal: null,
+        coords: [-33.4580, -70.6495],
+        zona: "Santiago",
+        region: "metropolitana",
+        años: "Activa ca. 1986-1987",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-15",
+        biografia: {
+            nacimiento: "Por determinar.",
+            formacion: "Vinculada a Facultad de Artes (universidad por determinar).",
+            contexto: "Poeta publicada en revista TIZA, taller de arte y encuentro universitario.",
+            trayectoria: "Publicó dos poemas en revista TIZA (ca. 1987)."
+        },
+        publicaciones: [
+            {
+                titulo: "Revista TIZA",
+                años: "ca. 1987",
+                tipo: "Revista",
+                detalles: ["Poemas: 'El papel es el soporte...', 'No dejéis que las amapolas...'"],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF consultado enero 2026" }
+                ]
+            }
+        ],
+        conexiones: { talleres: [], revistas: [{ nombre: "Revista TIZA", id: "tiza" }] },
+        fuentes: [{ autor: "Revista TIZA", año: "ca. 1987", titulo: "Poemas publicados", medio: "PDF consultado", link: null }]
     }
     ];
 
