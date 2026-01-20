@@ -1096,8 +1096,8 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 16 enero 2026</p>
-        <p style="font-size: 0.85em;">Contacto: paulacucurella@gmail.com</p>
+        <p>Última actualización: 20 enero 2026</p>
+        <p style="font-size: 0.85em;">Contacto: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c5c4d59404d4f594f595e4940404d6c4b414d4540024f4341">[email&#160;protected]</a></p>
     </div>
     <div class="header-right">
         <select id="typeFilter">
@@ -1306,11 +1306,11 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         </div>
     </div>
     <div class="silencios-panel-footer">
-        Click en un nombre para ver en el mapa · Actualizado: 11 septiembre 2025
+        Click en un nombre para ver en el mapa · Actualizado: 20 enero 2026
     </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Complete workshop data with expanded profiles
 const talleres = [
     // ==================== REGIÓN METROPOLITANA ====================
@@ -3593,36 +3593,174 @@ const talleres = [
         fuentes: []
     },
     {
-        nombre: "Centro de Escritores Jóvenes de Magallanes",
+        nombre: "Centro de Escritores Jóvenes de Magallanes (CEJ)",
         coords: [-53.1638, -70.9171],
         zona: "Magallanes (Punta Arenas)",
         region: "austral",
-        años: "ca. 1975–1985",
+        años: "1978–1986",
         tipo: "taller",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        historia: { origen: null, contexto: null, continuidad: null },
-        fundadores: [{ nombre: "Aristóteles España", rol: "Por determinar" }],
-        publicaciones: [
-            { titulo: "Momentos", años: "1980–1985", numeros: "Revista (8 números)", detalles: [], personas: [], existencias: [] }
+        ultimaActualizacion: "2026-01-20",
+        historia: {
+            origen: "Fundado en Punta Arenas a mediados de 1978 en el contexto de un Congreso de Escritores Jóvenes (julio 1978). Formalizado en agosto de 1978. Nueva generación de poetas, narradores y dramaturgos magallánicos.",
+            contexto: "Influenciado por propuestas estéticas del colectivo Aumen (Chiloé), que proponía una vuelta a lo vernáculo, la ruptura con la métrica y el verso libre. Muchos integrantes provenían del Taller Literario de la U.T.E. sede Punta Arenas. Respuesta a necesidad de espacios independientes de creación bajo dictadura.",
+            desarrollos: "Publicaron revista 'Momentos' (8 números, 1980-1985), órgano oficial del grupo, producida en mimeógrafo. Compartieron actividades con grupo teatral 'Fartum' y taller 'Lacolet' de la U.T.E.",
+            continuidad: "Algunos miembros fundaron después revista 'La Pata de Liebre' (1986). A fines de 1980, varios integrantes participaron en la fundación de la SECH filial Magallanes."
+        },
+        fundadores: [
+            { nombre: "Aristóteles España", rol: "Integrante fundador, director Momentos" },
+            { nombre: "Luis Alberto Barría", rol: "Integrante fundador" },
+            { nombre: "Juan Garay Álvarez", rol: "Integrante fundador" }
         ],
-        fuentes: []
+        integrantes: [
+            { nombre: "Ximena Alvarado", rol: "Integrante" },
+            { nombre: "Brígida Soto", rol: "Integrante" },
+            { nombre: "Maribel Valle", rol: "Integrante, poeta" },
+            { nombre: "Mirna Huentelicán", rol: "Integrante, poeta infantil, redactora Momentos" },
+            { nombre: "María Neira González", rol: "Integrante, poeta" },
+            { nombre: "Nora Patricia Bohle", rol: "Integrante, poeta" },
+            { nombre: "Hernán Andrade", rol: "Integrante" },
+            { nombre: "Mario Oyarzún", rol: "Integrante" },
+            { nombre: "Óscar Pacheco", rol: "Integrante" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Maribel Valle", rol: "Poeta", poema: "'Mi canto', 'Camposanto Santo', 'Trayecto Fugaz' (Nuevos Poetas Magallánicos, 1983)", enRevista: true },
+            { nombre: "Mirna Huentelicán", rol: "Poeta infantil", poema: "'Niño de hoy', 'Gianina', 'La danza de los elefantes' (Nuevos Poetas Magallánicos, 1983)", enRevista: true },
+            { nombre: "María Neira González", rol: "Poeta", poema: "'Los ciegos paisajes' (libro, 1982)", enRevista: true },
+            { nombre: "Nora Patricia Bohle", rol: "Poeta", poema: "'Destino', 'Quiero', 'Instantes' (Nuevos Poetas Magallánicos, 1983)", enRevista: true },
+            { nombre: "Ximena Alvarado", rol: "Integrante", poema: null, enRevista: false },
+            { nombre: "Brígida Soto", rol: "Integrante", poema: null, enRevista: false }
+        ],
+        publicaciones: [
+            {
+                titulo: "Revista Momentos",
+                años: "1980–1985",
+                numeros: "8 números",
+                detalles: [
+                    "Órgano oficial del Centro de Escritores Jóvenes",
+                    "Producida en mimeógrafo",
+                    "Director: Aristóteles España"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Fondo Sociedad de Escritores de Magallanes" }
+                ]
+            }
+        ],
+        fuentes: [
+            { autor: "Hernández, V.", año: "2023", titulo: "Entorno de la Sociedad de Escritores de Magallanes", medio: "La Prensa Austral", link: "https://laprensaaustral.cl/2023/02/28/entorno-de-la-sociedad-de-escritores-de-magallanes-y-aparicion-del-circulo-literario-roque-esteban-scarpa-1987-1990/" },
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM", link: null }
+        ]
     },
     {
-        nombre: "Sociedad de Escritores de Magallanes",
+        nombre: "Sociedad de Escritores de Chile filial Magallanes (SECH Magallanes)",
         coords: [-53.1600, -70.9100],
         zona: "Magallanes (Punta Arenas)",
         region: "austral",
-        años: "1983–ca. 1987",
+        años: "1980–presente",
         tipo: "taller",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        historia: { origen: "No 'taller joven'", contexto: null, continuidad: null },
-        fundadores: [],
-        publicaciones: [
-            { titulo: "Suplemento Literario de Magallanes", años: "1983–1987", numeros: "En diario El Magallanes (59 números)", detalles: [], personas: [], existencias: [] }
+        ultimaActualizacion: "2026-01-20",
+        historia: {
+            origen: "Fundada el 28 de diciembre de 1980. Reunió a escritores de diversas generaciones, continuando el legado del antiguo Centro de Escritores de Magallanes (1946-1973).",
+            contexto: "Durante la dictadura cívico-militar, proporcionó espacio de encuentro y difusión literaria. La sede se estableció en el domicilio de la familia Amarante. Organizó talleres literarios y encuentros nacionales de escritores.",
+            desarrollos: "Publicó el Suplemento Literario en el dominical 'El Magallanes' (1983-1989, 59 números). Creó la Editorial Magallánica (1983). Organizó tres Encuentros Nacionales de Escritores de Magallanes (1980, 1982, 1984). En 1987 creó el Concurso Literario María Cristina Ursic para estudiantes.",
+            continuidad: "Sigue activa. Publicó revista 'Aguanieve' desde 1988. En 1990 organizó la Primera Feria del Libro de Magallanes."
+        },
+        fundadores: [
+            { nombre: "Marino Muñoz Lagos", rol: "Primer presidente" },
+            { nombre: "Eugenio Mimica Barassi", rol: "Directivo fundador" },
+            { nombre: "Osvaldo Wegmann", rol: "Directivo fundador" },
+            { nombre: "Silvestre Fugellie", rol: "Directivo fundador" }
         ],
-        fuentes: []
+        integrantes: [
+            { nombre: "María Cecilia Cerda", rol: "Fundadora, poeta" },
+            { nombre: "Juanita Sánchez Oyarzo", rol: "Fundadora, poeta" },
+            { nombre: "Mónica Bunster", rol: "Directora Suplemento Literario" },
+            { nombre: "Rosa de Amarante", rol: "Integrante histórica, cedió domicilio como sede" },
+            { nombre: "José Grimaldi", rol: "Integrante, escritor" },
+            { nombre: "Carlos Vega Letelier", rol: "Integrante, poeta y narrador" }
+        ],
+        mujeresPoetas: [
+            { nombre: "María Cecilia Cerda", rol: "Fundadora, poeta", poema: "'Búsqueda' (libro, 1981); 'Quizás mañana', 'Muy tarde' (Antología Magallánica, 1981)", enRevista: true },
+            { nombre: "Juanita Sánchez Oyarzo", rol: "Fundadora, poeta", poema: "'Las horas y el silencio' (1986); poemas en Nuevos Poetas Magallánicos (1983)", enRevista: true },
+            { nombre: "María Cristina Ursic Leal", rol: "Poeta (1940-1985)", poema: "'Mano Fugaz' (1980); 'Casa de Chabunco' (Antología, 1981)", enRevista: true },
+            { nombre: "Mónica Bunster", rol: "Directora Suplemento", poema: null, enRevista: false },
+            { nombre: "Desenka Vukasovic", rol: "Poeta", poema: "'Tarde de domingo' (1982); 'La maleta', 'Harlem' (Antología, 1981)", enRevista: true },
+            { nombre: "Helga Villagrán Gómez", rol: "Poeta", poema: "'La hora detenida' (1974); 'Desde mi silencio' (1986)", enRevista: true },
+            { nombre: "Maruja Scott", rol: "Poeta", poema: "'Esperanzas mágicas' (1984)", enRevista: true },
+            { nombre: "Eliana Yañez Eterovic", rol: "Poeta", poema: "'Espejos y sueños' (1985)", enRevista: true },
+            { nombre: "Rosalicia Barría", rol: "Poeta", poema: "'Huida', 'Mariposa', 'Ciudad Amada' (Nuevos Poetas, 1983)", enRevista: true },
+            { nombre: "Loretti Rojas Ciscutti", rol: "Poeta", poema: "'Fuerza de roca', 'Sinopsis nocturna' (Nuevos Poetas, 1983)", enRevista: true }
+        ],
+        publicaciones: [
+            {
+                titulo: "Suplemento Literario de Magallanes",
+                años: "marzo 1983–julio 1989",
+                numeros: "59 números",
+                detalles: [
+                    "Publicado en dominical diario El Magallanes",
+                    "Directora: Mónica Bunster",
+                    "Incluyó poemas, cuentos, entrevistas, semblanzas"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Colección completa en MRM" }
+                ]
+            },
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                numeros: "Volumen único",
+                detalles: [
+                    "Primera selección poética regional",
+                    "29 creadores, incluyendo 10 mujeres",
+                    "Publi Offset, Punta Arenas"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            },
+            {
+                titulo: "Antología Magallánica, tomo 2 (cuentos)",
+                años: "1981",
+                numeros: "Volumen único",
+                detalles: ["Publi Offset, Punta Arenas"],
+                personas: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-114" }
+                ]
+            },
+            {
+                titulo: "Nuevos Poetas Magallánicos",
+                años: "diciembre 1983",
+                numeros: "Antología",
+                detalles: [
+                    "17 autores seleccionados",
+                    "Editorial Magallánica",
+                    "Talleres Gráficos Impresos Copihue"
+                ],
+                personas: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Gris-A-307" }
+                ]
+            },
+            {
+                titulo: "Revista Aguanieve",
+                años: "julio 1988–",
+                numeros: "Desde N°0, año 1",
+                detalles: ["Revista oficial SECH Magallanes post-Suplemento"],
+                personas: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Colección MRM" }
+                ]
+            }
+        ],
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM", link: null },
+            { autor: "Hernández, V.", año: "2023", titulo: "Entorno de la Sociedad de Escritores de Magallanes", medio: "La Prensa Austral", link: "https://laprensaaustral.cl/2023/02/28/entorno-de-la-sociedad-de-escritores-de-magallanes-y-aparicion-del-circulo-literario-roque-esteban-scarpa-1987-1990/" }
+        ]
     },
     {
         nombre: "Revista La Pata de Liebre",
@@ -3674,6 +3812,153 @@ const talleres = [
             { titulo: "Impactos", años: "1989", numeros: "Revista", detalles: [], personas: [], existencias: [] }
         ],
         fuentes: []
+    },
+    {
+        nombre: "Revista Cornamusa / Círculo de Escritores Natalinos",
+        coords: [-51.7333, -72.5167],
+        zona: "Última Esperanza (Puerto Natales)",
+        region: "austral",
+        años: "1983–?",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        historia: {
+            origen: "Revista y colectivo literario fundado el 12 de septiembre de 1983 en Cerro Castillo, Última Esperanza. Primera organización literaria documentada de Puerto Natales.",
+            contexto: "Surgió en contexto de resistencia cultural durante la dictadura. Vinculado al circuito literario austral junto a SECH Magallanes y CEJ de Punta Arenas.",
+            desarrollos: "Publicaron revista homónima y 'biombos poéticos mimeografiados'. Algunos integrantes también participaron del Taller Talihue.",
+            continuidad: "Secretaria Jane Mary Linford anunció publicación trimestral. Por investigar duración del colectivo."
+        },
+        fundadores: [
+            { nombre: "Katherine Kingma", rol: "Socia fundadora, poeta" },
+            { nombre: "Jane Mary Linford", rol: "Socia fundadora, escritora, secretaria" },
+            { nombre: "María Ulloa Ulloa", rol: "Socia fundadora, poeta" }
+        ],
+        integrantes: [
+            { nombre: "Beatriz Budías", rol: "Integrante, poeta" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Katherine Kingma", rol: "Poeta (1969–)", poema: "'A un Padre', 'Salta, Niña, Salta' (Cornamusa, octubre 1983)", enRevista: true },
+            { nombre: "Jane Mary Linford", rol: "Escritora (1949–)", poema: "'A ti', 'Esa sonrisa que mira' (Cornamusa, 1983); libro 'Ídolos de Piedra' (1983)", enRevista: true },
+            { nombre: "María Ulloa Ulloa", rol: "Poeta (1955–)", poema: "'Todo pasa' (Cornamusa, octubre 1983)", enRevista: true },
+            { nombre: "Beatriz Budías", rol: "Poeta", poema: "Biombo poético mimeografiado (mencionado Suplemento Literario N°24, marzo 1985)", enRevista: false }
+        ],
+        publicaciones: [
+            {
+                titulo: "Revista Cornamusa",
+                años: "1983–?",
+                numeros: "Al menos 1 número (octubre 1983)",
+                detalles: [
+                    "Fundada 12 de septiembre de 1983 en Cerro Castillo",
+                    "Incluye poemas y fichas biográficas de integrantes",
+                    "Poemas de María Cristina Ursic también publicados"
+                ],
+                personas: [
+                    { nombre: "Katherine Kingma", rol: "Poeta" },
+                    { nombre: "Jane Mary Linford", rol: "Escritora" },
+                    { nombre: "María Ulloa Ulloa", rol: "Poeta" },
+                    { nombre: "María Cristina Ursic", rol: "Poeta invitada" }
+                ],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Naranjo-B-0258" }
+                ]
+            },
+            {
+                titulo: "Ídolos de Piedra",
+                años: "1983",
+                numeros: "Libro de Jane Mary Linford",
+                detalles: ["Primer libro publicado por integrante del grupo"],
+                personas: [{ nombre: "Jane Mary Linford", rol: "Autora" }],
+                existencias: []
+            }
+        ],
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM", link: null },
+            { autor: "Suplemento Literario SECH Magallanes", año: "1983", titulo: "N°8, 6 noviembre 1983: Nacimiento de Cornamusa", medio: "Diario El Magallanes", link: null },
+            { autor: "Suplemento Literario SECH Magallanes", año: "1985", titulo: "N°24, marzo 1985: Biombos poéticos de SECH Última Esperanza", medio: "Diario El Magallanes", link: null }
+        ]
+    },
+    {
+        nombre: "Taller Literario Universidad Técnica del Estado (U.T.E.) sede Punta Arenas",
+        coords: [-53.1580, -70.9120],
+        zona: "Magallanes (Punta Arenas)",
+        region: "austral",
+        años: "ca. 1975–1981",
+        tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        historia: {
+            origen: "Taller literario institucional que funcionó en la sede regional de la Universidad Técnica del Estado en Punta Arenas. Dirigido por los escritores José Grimaldi Acotto y Carlos Vega Letelier.",
+            contexto: "Espacio formativo clave durante la dictadura. Funcionó en paralelo al grupo teatral 'Fartum' (órgano oficial de actividades dramáticas de la U.T.E.) y al taller 'Lacolet'. Primer poemario publicado por el taller: 'Simplezas' de Elisa Rojas Soto (1977).",
+            desarrollos: "El Área de Extensión y Comunicaciones de la Universidad publicó la serie 'Cuadernos del Taller Literario'. En julio 1978 varios integrantes realizaron el Congreso de Escritores Jóvenes.",
+            continuidad: "En agosto 1978 varios integrantes fundaron el Centro de Escritores Jóvenes (CEJ). Otros pasaron a la SECH Magallanes (1980)."
+        },
+        fundadores: [
+            { nombre: "José Grimaldi Acotto", rol: "Director del taller" },
+            { nombre: "Carlos Vega Letelier", rol: "Director del taller" }
+        ],
+        integrantes: [
+            { nombre: "Nora Patricia Bohle", rol: "Integrante, poeta" },
+            { nombre: "María Neira González", rol: "Integrante, poeta" },
+            { nombre: "Elisa Rojas Soto", rol: "Integrante, poeta" },
+            { nombre: "Aristóteles España", rol: "Integrante" },
+            { nombre: "Luis Alberto Barría", rol: "Integrante" },
+            { nombre: "Maribel Valle", rol: "Integrante, poeta" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Elisa Rojas Soto", rol: "Poeta (1949–)", poema: "'Simplezas' (poemario, 1977) – Cuaderno N°1 del Taller Literario", enRevista: true },
+            { nombre: "Nora Patricia Bohle", rol: "Poeta (1959–)", poema: "Primeros versos escritos en el taller", enRevista: false },
+            { nombre: "María Neira González", rol: "Poeta (1964–)", poema: "Primeros versos escritos en el taller", enRevista: false }
+        ],
+        publicaciones: [
+            {
+                titulo: "Simplezas",
+                años: "abril 1977",
+                numeros: "Cuaderno N°1 Taller Literario",
+                detalles: [
+                    "Poemario de Elisa Rojas Soto",
+                    "Presentación de José Grimaldi",
+                    "Apoyo de Armando Braun Menéndez",
+                    "Imprenta Rasmussen, Punta Arenas"
+                ],
+                personas: [{ nombre: "Elisa Rojas Soto", rol: "Autora" }],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Naranjo-B-394" }
+                ]
+            }
+        ],
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM", link: null }
+        ]
+    },
+    {
+        nombre: "Taller Literario Chaicura",
+        coords: [-41.8700, -73.8310],
+        zona: "Chiloé (Ancud)",
+        region: "austral",
+        años: "1976–?",
+        tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        historia: {
+            origen: "Fundado en enero de 1976 en Ancud, Chiloé. Junto al grupo Aumen de Castro, renovó el lenguaje poético en Chiloé.",
+            contexto: "Surgió en contexto de represión política e imposición de censura (DINACOS). Organizó el Primer Certamen de Poesía para escritores de la Décima Región (febrero 1977).",
+            desarrollos: "Certamen de Poesía (feb. 1977): 1° Carlos Alberto Trujillo (Castro), 2° Walter Hoefler (Valdivia), Menciones: Milagros Mímica Soto, Mario Contreras (integrantes), Renato Cárdenas (Castro).",
+            continuidad: "Integrantes participaron en el Primer Encuentro de la Joven Poesía del Sur de Chile (agosto 1977, Valdivia, Universidad Austral)."
+        },
+        fundadores: [
+            { nombre: "Milagros Mímica Soto", rol: "Cofundadora, poeta" }
+        ],
+        integrantes: [
+            { nombre: "Mario Contreras Vega", rol: "Integrante, poeta" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Milagros Mímica Soto", rol: "Poeta (1951–)", poema: "'De Cualquier Forma' (AUMEN 6, 1977); 'Soy' (AUMEN 9); Mención honrosa Certamen Chaicura 1977", enRevista: true }
+        ],
+        publicaciones: [],
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM", link: null },
+            { autor: "AUMEN N°6", año: "mayo 1977", titulo: "Noticias Literarias: Certamen Grupo CHAICURA", medio: "Colección privada Carlos Trujillo", link: null }
+        ]
     },
     {
         nombre: "Grupo Índice",
@@ -12442,6 +12727,784 @@ const poetas = [
         ],
         conexiones: { talleres: [], revistas: [{ nombre: "Revista TIZA", id: "tiza" }] },
         fuentes: [{ autor: "Revista TIZA", año: "ca. 1987", titulo: "Poemas publicados", medio: "PDF consultado", link: null }]
+    },
+    // ==================== POETAS ZONA AUSTRAL (Fuente: La Letra Escondida, MRM 2023) ====================
+    {
+        nombre: "Astrid Fugellie Gezan",
+        nombreReal: null,
+        coords: [-53.1620, -70.9080],
+        zona: "Magallanes (Punta Arenas / Santiago)",
+        region: "austral",
+        años: "1949–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Punta Arenas, 2 de enero de 1949.",
+            formacion: "Educadora de párvulos, Universidad de Chile. Una de las primeras generaciones de profesionales egresadas tras la creación de la Junta Nacional de Jardines Infantiles (1970).",
+            contexto: "Cofundadora de la Casa de la Cultura en Punta Arenas (primera administración municipal de Carlos González Yaksic, 1964-1967). Integrante del primer taller literario de la Casa de la Cultura, dirigido por Marino Muñoz Lagos. Participó activamente en SECH Santiago (presidencia de Luis Sánchez Latorre). Autora del prólogo 'MAIN' en 'La Mujer en la Poesía Chilena de los '80' (1987).",
+            trayectoria: "Premio concurso 'Rostro de Chile' (U. de Chile, 1964) por poema 'A esas manos' a los 15 años. Premio Academia Chilena de la Lengua (1989) por 'Los círculos'. Premio Municipal de Literatura de Punta Arenas (2017). Obra posterior incluye 'Dioses del sueño' (1991), 'Fragmentos para mañana' (1995), 'El libro del mal morir' (2015), 'Las letanías de Key Pacha' (2018)."
+        },
+        publicaciones: [
+            {
+                titulo: "Poemas",
+                años: "1966",
+                tipo: "Poemario",
+                detalles: ["Primer poemario", "Departamento de Extensión Cultural, Municipalidad de Magallanes"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Naranjo-B-0407" }
+                ]
+            },
+            {
+                titulo: "Siete poemas",
+                años: "1970",
+                tipo: "Poemario",
+                detalles: ["Segundo poemario"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Naranjo-B-133" }
+                ]
+            },
+            {
+                titulo: "Una casa en la lluvia",
+                años: "1975",
+                tipo: "Poemario",
+                detalles: ["Publicado durante dictadura"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde-A-0069" }
+                ]
+            },
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Poemas: 'Mi padre y el mar', 'El barril a la sombra del Sauco' (pp. 32-35)", "SECH Magallanes"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            },
+            {
+                titulo: "Las jornadas del silencio",
+                años: "1984",
+                tipo: "Poemario",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Travesías",
+                años: "1986",
+                tipo: "Antología",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Chile enlutado",
+                años: "1987",
+                tipo: "Poemario",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "A mano del año",
+                años: "1987",
+                tipo: "Cuentos",
+                detalles: ["Debut en narrativa"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Casa de la Cultura Punta Arenas", id: null },
+                { nombre: "SECH Magallanes", id: "sech-magallanes" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 75-77)", link: null },
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (prólogo 'MAIN')", medio: "Ediciones INCOR, Santiago", link: null }
+        ]
+    },
+    {
+        nombre: "María Asunción Requena Aizcorbe",
+        nombreReal: null,
+        coords: [-53.1640, -70.9160],
+        zona: "Magallanes (Punta Arenas) / Exilio Francia",
+        region: "austral",
+        años: "1915–1986",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Coronel Pringles, Argentina, ca. 1915 (fechas varían: 1911, 1915, 1916). Llegó a Punta Arenas siendo bebé.",
+            formacion: "Odontóloga, Universidad de Chile (1937). Primera mujer magallánica en obtener brevet de aviadora civil (ca. 1940). Directora del Liceo de Niñas cuando era estudiante fue Gabriela Mistral.",
+            contexto: "Dramaturga de la Generación del '50 (o '57). Obras estrenadas por Teatro Experimental U. de Chile e ITUCH. 'Fuerte Bulnes' (1955) considerada obra fundacional del teatro magallánico. Acusada de tener ideas marxistas tras golpe de 1973, exiliada a Francia en 1974 con su compañero Raúl Rivera.",
+            trayectoria: "Premios: Municipal de Santiago en Teatro (1956, 1965, 1973); Alerce SECH (1963) por 'Ayayema'. UNESCO (1975): mejor pieza teatral latinoamericana por 'Chiloé, cielos cubiertos'. Falleció en Lille, Francia, 18 de marzo de 1986. Teatro completo reeditado por RIL Editores (2019)."
+        },
+        publicaciones: [
+            {
+                titulo: "Poemas",
+                años: "1949",
+                tipo: "Poemario",
+                detalles: ["Primer premio poesía, Centenario de Punta Arenas", "Venció a Roque Esteban Scarpa y Marino Muñoz Lagos"],
+                existencias: []
+            },
+            {
+                titulo: "Fuerte Bulnes",
+                años: "1955",
+                tipo: "Dramaturgia",
+                detalles: ["Estrenada agosto 1955", "Premio Teatro Experimental 1953", "Premio Municipal Santiago 1956"],
+                existencias: []
+            },
+            {
+                titulo: "El camino más largo",
+                años: "1958",
+                tipo: "Dramaturgia",
+                detalles: ["Sobre Ernestina Pérez, primera mujer médica en Chile", "Premio Juegos Florales Gabriela Mistral"],
+                existencias: []
+            },
+            {
+                titulo: "Ayayema",
+                años: "1964",
+                tipo: "Dramaturgia",
+                detalles: ["Sobre pueblo kawésqar", "Premio Alerce SECH 1963", "Premio Municipal Santiago 1965"],
+                existencias: []
+            },
+            {
+                titulo: "Chiloé cielos cubiertos",
+                años: "1972",
+                tipo: "Dramaturgia",
+                detalles: ["Música de Luis Advis, arreglos de Margot Loyola", "Premio Municipal Santiago 1973", "Premio UNESCO 1975: mejor pieza teatral latinoamericana"],
+                existencias: []
+            },
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Poemas: 'Pan nuestro que estás en América', 'Diapositiva' (pp. 64-67)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 106-110)", link: null },
+            { autor: "Piña, J. A. (ed.)", año: "2019", titulo: "Teatro completo de María Asunción Requena", medio: "RIL Editores", link: null }
+        ]
+    },
+    {
+        nombre: "Patricia Stambuk Mayorga",
+        nombreReal: null,
+        coords: [-53.1560, -70.9040],
+        zona: "Magallanes (Punta Arenas) / Valparaíso",
+        region: "austral",
+        años: "1951–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Punta Arenas, 14 de agosto de 1951.",
+            formacion: "Periodista, Universidad de Chile. Profesora asociada e investigadora, directora Escuela de Periodismo PUCV (1995-2003).",
+            contexto: "A los 15 años entrevistó al presidente Eduardo Frei Montalva en su primera visita al austro (julio 1967). Directora de Comunicaciones, Universidad de Magallanes (1984-1988). Escribió libreto del documental del encuentro Allende-Castro en Magallanes.",
+            trayectoria: "Premio María Luisa Bombal (Viña del Mar, 1986) por 'Rosa Yagán'. Premio Escrituras de la Memoria (2006, 2009). Miembro de Número de la Academia Chilena de la Lengua (2018), primera periodista en 133 años. Vicepresidenta de la Academia (2022). Premio Manuel Montt (2019) por 'Rongo'."
+        },
+        publicaciones: [
+            {
+                titulo: "Violeta Parra, gracias a la vida",
+                años: "1972",
+                tipo: "Testimonio/Ensayo",
+                detalles: ["Con Patricia Bravo", "26 entrevistas a personas vinculadas a Violeta Parra", "Seminario sobre Literatura y Testimonio, U. de Chile"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Códigos Azul-B-0165 y Amarillo-E-0154" }
+                ]
+            },
+            {
+                titulo: "Rosa Yagán. Lakutaia le kipa",
+                años: "1986",
+                tipo: "Testimonio",
+                detalles: ["Testimonio de una de las últimas sobrevivientes de la cultura yagán", "Premio María Luisa Bombal 1986", "Traducido al inglés y croata"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Códigos Azul-B-0068 y Calipso-A-0183" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 118-121)", link: null }
+        ]
+    },
+    {
+        nombre: "Ágata Gligo Viel",
+        nombreReal: null,
+        coords: [-53.1680, -70.9200],
+        zona: "Magallanes (Punta Arenas) / Santiago",
+        region: "austral",
+        años: "1936–1997",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Punta Arenas, 1936.",
+            formacion: "Abogada, Pontificia Universidad Católica de Chile (1962). Tesis: 'La tasa de Gamboa' (sobre medidas impositivas coloniales en beneficio de comunidades indígenas).",
+            contexto: "Generación que vivió transformaciones de Magallanes como provincia. Educada en Liceo María Auxiliadora. Crítica literaria del diario 'La Época'. Asesora jurídica y de contenidos en administración Aylwin en materias culturales, participó en creación del Fondo Nacional de las Artes.",
+            trayectoria: "Premio Ricardo Levene (Buenos Aires, 1965) por 'La tasa de Gamboa'. Premio Municipal de Santiago en Ensayo (1985) por 'María Luisa'. Premio Academia Chilena de la Lengua (1985) por 'María Luisa'. Falleció julio 1997. 'Diario de una pasajera' publicado póstumamente."
+        },
+        publicaciones: [
+            {
+                titulo: "La tasa de Gamboa",
+                años: "1962",
+                tipo: "Monografía/Tesis",
+                detalles: ["Tesis de Derecho, PUC", "Premio Academia Chilena de la Historia", "Premio Ricardo Levene (Buenos Aires, 1965)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde-A-0152" }
+                ]
+            },
+            {
+                titulo: "María Luisa",
+                años: "1984",
+                tipo: "Ensayo biográfico",
+                detalles: ["Sobre María Luisa Bombal (1910-1980)", "Premio Municipal Santiago 1985", "Premio Academia Chilena de la Lengua 1985"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 78-80)", link: null }
+        ]
+    },
+    {
+        nombre: "Marina Latorre Uribe",
+        nombreReal: null,
+        coords: [-53.1700, -70.9280],
+        zona: "Magallanes (Punta Arenas) / Santiago",
+        region: "austral",
+        años: "1930–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Punta Arenas, ca. 1930 (otras fuentes: 1925).",
+            formacion: "Profesora de Castellano, Instituto Pedagógico, Universidad de Chile.",
+            contexto: "Radicada en Santiago desde principios de los '50. Fundadora de Ediciones Bolt (1964) con su esposo Eduardo Bolt. Fundadora y editora de revista 'Portal' (1965-2014), una de las revistas culturales más longevas de Chile.",
+            trayectoria: "Primer Premio Quimantú en ensayo (9 septiembre 1973) por 'El incendio de la Federación Obrera de Magallanes' (texto perdido durante dictadura, editado 2012). Medalla de la Mujer de Santiago (8 marzo 2008). Reedición de 'Galería clausurada' por U. Alberto Hurtado (2021)."
+        },
+        publicaciones: [
+            {
+                titulo: "Galería clausurada",
+                años: "1964",
+                tipo: "Cuentos",
+                detalles: ["7 cuentos", "2 cuentos vinculados a Magallanes: 'En Tierra del Fuego', 'Tercer Piso de la Clínica Santa María'", "Reeditado U. Alberto Hurtado 2021"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde-A-155" }
+                ]
+            },
+            {
+                titulo: "Fauna austral",
+                años: "1977",
+                tipo: "Poemario",
+                detalles: ["Exalta flora y fauna de Magallanes"],
+                existencias: []
+            },
+            {
+                titulo: "¿Cuál es el dios que pasa?",
+                años: "1978",
+                tipo: "Novela",
+                detalles: ["Prólogo de Francisco Coloane", "Narrada desde mirada de un niño", "Describe paisaje austral y sistema estanciero"],
+                existencias: []
+            },
+            {
+                titulo: "Ventisquero",
+                años: "1981",
+                tipo: "Poemario",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Poemas: 'Caranchos', 'Cóndores' (pp. 50-53)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            },
+            {
+                titulo: "Habitante de un mundo mágico",
+                años: "1987",
+                tipo: "Testimonio",
+                detalles: [],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [{ nombre: "Revista Portal", id: null }]
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 87-89)", link: null }
+        ]
+    },
+    {
+        nombre: "María Cristina Ursic Leal",
+        nombreReal: "Rita Baltra O'Muall (seudónimo)",
+        coords: [-53.1540, -70.9000],
+        zona: "Magallanes (Punta Arenas)",
+        region: "austral",
+        años: "1940–1985",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Punta Arenas, 1940.",
+            formacion: "Profesora de Castellano, Pontificia Universidad Católica de Chile.",
+            contexto: "Educación primaria en Colegio Sagrada Familia, secundaria en Liceo María Auxiliadora. Participó activamente en grupo artístico 'Ventarrón' (fundado 1958). Escribió artículos sobre panorama artístico y literario en 'La Prensa Austral' bajo seudónimo Rita Baltra O'Muall.",
+            trayectoria: "Único poemario: 'Mano Fugaz' (1980). Incluida en Antología Magallánica (1981). Falleció por suicidio en junio 1985. La SECH Magallanes creó en su honor el Concurso Literario María Cristina Ursic (1987) para estudiantes. Óscar Barrientos Bradasic ganó el primer concurso (1988). 'Mano Fugaz' reeditado por Editorial Municipal (2015)."
+        },
+        publicaciones: [
+            {
+                titulo: "Mano Fugaz",
+                años: "31 octubre 1980",
+                tipo: "Poemario",
+                detalles: ["22 poemas", "Prólogo de Marino Muñoz Lagos", "Certificado DINACOS 5 agosto 1980", "Imprenta Hersaprint", "Reeditado Editorial Municipal 2015 con prólogo de Óscar Barrientos Bradasic"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Amarillo-D-0034" }
+                ]
+            },
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Poemas: 'Casa de Chabunco', 'En la triste distancia de los años' (pp. 75-76)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            },
+            {
+                titulo: "Revista Cornamusa",
+                años: "octubre 1983",
+                tipo: "Revista",
+                detalles: ["Poemas: 'Desafío', 'En la Triste Distancia de los Años', 'Autorretrato' (pp. 8-9)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Naranjo-B-0258" }
+                ]
+            },
+            {
+                titulo: "Suplemento Literario SECH Magallanes N°28",
+                años: "7 julio 1985",
+                tipo: "Suplemento",
+                detalles: ["Poemas inéditos póstumos"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "SECH Magallanes", id: "sech-magallanes" },
+                { nombre: "Grupo Ventarrón", id: null }
+            ],
+            revistas: [{ nombre: "Revista Cornamusa", id: "cornamusa" }]
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 128-130)", link: null }
+        ]
+    },
+    {
+        nombre: "Teresa Hamel Nieto",
+        nombreReal: null,
+        coords: [-53.1520, -70.8960],
+        zona: "Magallanes / Viña del Mar / Santiago",
+        region: "austral",
+        años: "1918–2005",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Viña del Mar, 20 de abril de 1918.",
+            formacion: "Teatro en Universidad de Chile y PUC. Diseño y decoración de interiores en Nueva York. Literatura en Universidad La Sorbonne, París.",
+            contexto: "Generación del '50. Narradora que recorrió el austro y escribió crónicas sobre gente que venía de Chiloé a Magallanes. Escribió libreto del documental del encuentro Allende-Castro en Magallanes.",
+            trayectoria: "Segundo Premio Gabriela Mistral (1967) por novela 'La noche del rebelde'. Primer Premio Internacional Julio Cortázar (1984) por cuento 'La sorpresa'. Primer lugar concurso Paula (1985) por 'La Rucia Guzmán'. Participó en Segundo y Tercer Encuentro Nacional de Escritores de Magallanes (1982, 1984). Falleció 2005. Sala Museo y Concurso Nacional en su honor desde 2008."
+        },
+        publicaciones: [
+            {
+                titulo: "El contramaestre",
+                años: "1951",
+                tipo: "Cuentos",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Gente sencilla",
+                años: "1958",
+                tipo: "Cuentos",
+                detalles: ["Colección Mazorca"],
+                existencias: []
+            },
+            {
+                titulo: "Raquel devastada",
+                años: "1959",
+                tipo: "Cuentos",
+                detalles: ["Editorial Universitaria"],
+                existencias: []
+            },
+            {
+                titulo: "La noche del rebelde",
+                años: "1969",
+                tipo: "Novela",
+                detalles: ["Inspirada en pasaje de Neruda clandestino en Valparaíso", "Segundo Premio Gabriela Mistral", "Editorial Zig-Zag"],
+                existencias: []
+            },
+            {
+                titulo: "Verano austral",
+                años: "1979",
+                tipo: "Relatos de viaje",
+                detalles: ["Crónicas sobre gente de Chiloé a Magallanes", "Editorial Nascimento"],
+                existencias: []
+            },
+            {
+                titulo: "Las causas ocultas",
+                años: "1980",
+                tipo: "Cuentos",
+                detalles: ["Ambientación de Magallanes en algunos relatos", "Ediciones Paulinas"],
+                existencias: []
+            },
+            {
+                titulo: "Quién es quién en las letras chilenas",
+                años: "1982",
+                tipo: "Autobiografía",
+                detalles: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Calipso-A-0287" }
+                ]
+            },
+            {
+                titulo: "Dadme el derecho de existir",
+                años: "1984",
+                tipo: "Cuentos",
+                detalles: [],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "SECH Santiago", id: null }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 81-83)", link: null }
+        ]
+    },
+    {
+        nombre: "Desenka Vukasovic Vrsalovic",
+        nombreReal: null,
+        coords: [-52.3167, -69.2833],
+        zona: "Magallanes (Cerro Sombrero, Tierra del Fuego)",
+        region: "austral",
+        años: "1932–2011",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Punta Arenas, 28 de marzo de 1932.",
+            formacion: "Autodidacta. Asistente regular a Escuelas de Temporada de Invierno de la Universidad de Chile.",
+            contexto: "Comenzó escribiendo radioteatro para programa 'Por los senderos del verso'. Se trasladó a Cerro Sombrero en 1960, en el apogeo de la actividad petrolera. Espectadora privilegiada de la 'Brasilia de Tierra del Fuego' (observatorio astronómico, policlínico modelo, primer supermercado de la provincia).",
+            trayectoria: "Múltiples premios en concursos de poesía de Punta Arenas: Flor de Plata (1968), Flor de Oro (1976), primeros lugares en 1967, 1971, 1979, 1981. En 1989 única escritora chilena incluida en antología 'World poetry' (Olimpiadas de Seúl). En 1992 ganó concurso 'Antonio Pigafetta' (SECH Magallanes/UMAG) por 'En balde cantan los Triles'. Traducida al inglés, francés y japonés. Falleció en Cerro Sombrero, 1 octubre 2011. Biblioteca Pública de Cerro Sombrero lleva su nombre (2022)."
+        },
+        publicaciones: [
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Poemas: 'La maleta', 'Harlem' (pp. 83-85)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            },
+            {
+                titulo: "Tarde de domingo",
+                años: "27 septiembre 1982",
+                tipo: "Poemario",
+                detalles: ["Prólogo de Osvaldo Wegmann Hansen", "Ilustraciones de Betty Adema", "Talleres Gráficos Hersaprint"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Códigos Amarillo-D-0030 y Amarillo-D-0035" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Centro de Escritores Magallánicos", id: null },
+                { nombre: "SECH Magallanes", id: "sech-magallanes" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 138-140)", link: null }
+        ]
+    },
+    {
+        nombre: "Rosa de Amarante",
+        nombreReal: "Rosa Miranda Tijeras",
+        coords: [-53.1660, -70.9240],
+        zona: "Magallanes (Punta Arenas)",
+        region: "austral",
+        años: "1901–1999",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Puerto Montt, 1901. Llegó a Punta Arenas con su madre viuda.",
+            formacion: "Escuela Nocturna Popular. En 1924 ingresó como cajista en vespertino 'El Magallanes'.",
+            contexto: "Usó 'de Amarante' (apellido de casada) como recurso irónico contra la inequidad de las mujeres ante la ley. Durante los años '20 escribió para el periódico feminista 'Nosotras' (Valparaíso) sobre emancipación femenina y cuestión social. Primera mujer en firmar registros del Partido Socialista Marxista de Magallanes (3 septiembre 1932). Fundó club deportivo 'Nirvana' (1928) con mujeres de escuelas vocacionales. Guionista de radio teatro infantil en Radio 'La Voz del Sur'.",
+            trayectoria: "Múltiples primeros lugares en Fiestas de la Primavera (1931, 1932, 1933, 1936, 1941, 1946, 1947). Libro de cuentos 'El Vengador' (1951) con prólogo de Baltazar Castro y nota de Laura Rodig. Convenció a escritores de fijar como sede de SECH el domicilio de la familia Amarante. 'Huellas en el humo' (1982) publicado durante dictadura. Falleció en Punta Arenas, 1 junio 1999. 'El Vengador' reeditado por U. de Magallanes (2021)."
+        },
+        publicaciones: [
+            {
+                titulo: "El Vengador",
+                años: "abril 1951",
+                tipo: "Cuentos",
+                detalles: ["10 cuentos", "Prólogo de Baltazar Castro", "Nota de Laura Rodig", "Imprenta CULTURA, Santiago", "Reeditado U. de Magallanes 2021"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Amarillo-E-0138" }
+                ]
+            },
+            {
+                titulo: "Antología del cuento magallánico",
+                años: "1952",
+                tipo: "Antología",
+                detalles: ["Centro de Escritores de Magallanes", "Presentación biográfica de Julio Ramírez Fernández"],
+                existencias: []
+            },
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Poemas: 'Extraña locura', 'Recuerdos...'", "Publi Offset, Punta Arenas"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            },
+            {
+                titulo: "Antología Magallánica, tomo 2 (cuentos)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Cuento: 'Derrota'"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-114" }
+                ]
+            },
+            {
+                titulo: "Huellas en el humo",
+                años: "1982",
+                tipo: "Poemario",
+                detalles: ["Publicado durante dictadura con apoyo de José Grimaldi y Silvestre Fugellie"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Códigos Verde A-121 y Gris-A-148" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Centro de Escritores de Magallanes", id: null },
+                { nombre: "SECH Magallanes", id: "sech-magallanes" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 53-56)", link: null }
+        ]
+    },
+    {
+        nombre: "Pepita Turina",
+        nombreReal: "Josefa Alvina Turina Turina",
+        coords: [-53.1580, -70.8920],
+        zona: "Magallanes (Punta Arenas) / Valdivia / Santiago",
+        region: "austral",
+        años: "1907–1986",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Punta Arenas, 1 de marzo de 1907. Emigró a los 5 años cuando se instaló la aduana.",
+            formacion: "Autodidacta. Estudió piano. Secretaria de la Escuela de Educadoras de Párvulos y del Boletín del Centro de Estudios Federico Fröebel. Catalogadora de la Biblioteca Central de la Universidad de Chile.",
+            contexto: "Esposa del escritor Oreste Plath. Se inició leyendo autores como Vargas Vila, Guido de Verona y Pitigrilli. Fundamentalmente ensayista, 'devota de la literatura de ideas'. Se reencontró con Magallanes en 1976. Participó con Oreste Plath en los tres Encuentros Nacionales de Escritores de Magallanes (1980, 1982, 1984).",
+            trayectoria: "Primer Premio Concurso Floral Fiestas Primaverales (1935) por 'Prólogo a la Primavera'. Mención honrosa Juegos Literarios Gabriela Mistral (1983) por 'MultiDiálogo sobre el matrimonio, la familia y sus prismas'. Anotó ante notario (1967) su deseo de que sus cenizas fueran esparcidas en el Estrecho de Magallanes, lo que se cumplió el 21 noviembre 1990 en la patrullera 'Ona'. Puso fin a su vida el 1 marzo 1986, día de su cumpleaños 79."
+        },
+        publicaciones: [
+            {
+                titulo: "Un drama de almas",
+                años: "1934",
+                tipo: "Novela",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Zona íntima: la Soltería",
+                años: "1941",
+                tipo: "Novela",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Walt Whitman, cotidiano y eterno",
+                años: "1942",
+                tipo: "Ensayo biográfico",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Sombras y entre sombras de la poesía chilena actual",
+                años: "1952",
+                tipo: "Ensayo",
+                detalles: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde-A-0048" }
+                ]
+            },
+            {
+                titulo: "Seis cuentos de escritores chileno-yugoslavos",
+                años: "1960",
+                tipo: "Antología",
+                detalles: ["Con Instituto Chileno Yugoslavo de Cultura", "Sesquicentenario Independencia Nacional"],
+                existencias: []
+            },
+            {
+                titulo: "¿Quién es quién en las letras chilenas?",
+                años: "1978",
+                tipo: "Autobiografía",
+                detalles: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Naranjo-B-186" }
+                ]
+            },
+            {
+                titulo: "MultiDiálogos",
+                años: "1978",
+                tipo: "Ensayo",
+                detalles: [],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Códigos Verde-A-0046 y Verde-A-0047" }
+                ]
+            },
+            {
+                titulo: "¿Quiénes somos?",
+                años: "1983",
+                tipo: "Autobiografía colectiva",
+                detalles: ["Con Roque Esteban Scarpa, Enrique Campos Menéndez, Nicolás Mihovilovic, Eugenio Mimica B."],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde-A-163" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 124-126)", link: null }
+        ]
+    },
+    {
+        nombre: "Helga Villagrán Gómez",
+        nombreReal: null,
+        coords: [-53.1500, -70.8880],
+        zona: "Magallanes (Punta Arenas) / Villa Alemana",
+        region: "austral",
+        años: "1932–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Villa Alemana, 1932. Llegó a Magallanes a los 9 años (2 noviembre 1942).",
+            formacion: "Profesora normalista, Escuela Normal Superior José Abelardo Núñez, Santiago. Especialidad en castellano. Segundo lugar provincial en Bachillerato.",
+            contexto: "Educación secundaria en Liceo de Niñas de Punta Arenas, donde colaboró en revista estudiantil 'Despertar'. Fundó uno de los primeros talleres de teatro infantil en Magallanes (Colegio Británico). Secretaria del Centro de Escritores de Magallanes. Columna tres veces por semana en 'La Prensa Austral' por dos décadas. Escribió libretos para Radio Presidente Ibáñez.",
+            trayectoria: "Primer libro 'La hora detenida' preparado para junio 1973, publicado 20 diciembre 1974 por golpe de Estado. Primer Premio en Poesía para Niños de la Secretaría de Relaciones Culturales (1981). Participó en Segundo Encuentro Nacional de Escritores Magallánicos (octubre 1982). Retornó a Villa Alemana. 'Desde mi silencio' (1986)."
+        },
+        publicaciones: [
+            {
+                titulo: "La hora detenida",
+                años: "20 diciembre 1974",
+                tipo: "Poemario",
+                detalles: ["28 poemas", "Prólogo de Marino Muñoz Lagos", "Talleres Gráficos Hersaprint", "Preparado para junio 1973, retrasado por golpe"],
+                existencias: []
+            },
+            {
+                titulo: "Antología Magallánica, tomo 1 (poesía)",
+                años: "1981",
+                tipo: "Antología",
+                detalles: ["Poemas: 'Autorretrato', 'La hora detenida' (pp. 81-82)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Verde A-098" }
+                ]
+            },
+            {
+                titulo: "Desde mi silencio",
+                años: "1986",
+                tipo: "Poemario",
+                detalles: ["53 páginas", "Editorial Rumbos"],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Centro de Escritores de Magallanes", id: null },
+                { nombre: "SECH Magallanes", id: "sech-magallanes" }
+            ],
+            revistas: []
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 135-137)", link: null }
+        ]
+    },
+    {
+        nombre: "Jane Mary Linford",
+        nombreReal: null,
+        coords: [-51.7350, -72.5200],
+        zona: "Última Esperanza (Puerto Natales)",
+        region: "austral",
+        años: "1949–",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-01-20",
+        biografia: {
+            nacimiento: "Santiago, 31 de octubre de 1949.",
+            formacion: "Maestra de enseñanza básica.",
+            contexto: "Se inició literariamente en 1961 con primer lugar en Prosa en Concurso Literario Rotary Club. Socia fundadora del Círculo de Escritores Natalinos 'Cornamusa' (1983). Asumió como secretaria en el período de publicación trimestral de la revista.",
+            trayectoria: "Seis premios en concursos literarios provinciales. Quince premios y distinciones en otras regiones. Publicó libro 'Ídolos de Piedra' (1983). Biombos poéticos mimeografiados mencionados en Suplemento Literario SECH Magallanes N°24 (marzo 1985)."
+        },
+        publicaciones: [
+            {
+                titulo: "Ídolos de Piedra",
+                años: "1983",
+                tipo: "Libro",
+                detalles: ["Primer libro publicado"],
+                existencias: []
+            },
+            {
+                titulo: "Revista Cornamusa",
+                años: "octubre 1983",
+                tipo: "Revista",
+                detalles: ["Poemas: 'A ti', 'Esa sonrisa que mira' (pp. 4-5)"],
+                existencias: [
+                    { lugar: "Museo Regional de Magallanes", tiene: true, link: null, nota: "Código Naranjo-B-0258" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Círculo de Escritores Natalinos Cornamusa", id: "cornamusa" }
+            ],
+            revistas: [{ nombre: "Revista Cornamusa", id: "cornamusa" }]
+        },
+        fuentes: [
+            { autor: "Museo Regional de Magallanes", año: "2023", titulo: "La Letra Escondida: Mujeres Creadoras en los Archivos de la Sociedad de Escritores (1918-1987)", medio: "MRM (pp. 150-151)", link: null }
+        ]
     }
     ];
 
@@ -13790,7 +14853,4 @@ document.getElementById('typeFilter').addEventListener('change', function() {
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 ">
-    <strong>© Paula Cucurella 2026</strong> · Mapa literario de poesía escrita por mujeres en Chile. Talleres, revistas y poetas (1973-90)
-    <br>
-    <span style="font-size: 11px;">
-        Contacto: <a href="/cdn-cgi/l/email-protection#c5b5a4b0a9a4a6b0a6b0b7a0a9a9a485a2a8a4aca9eba6aaa8" style="color: #8B4513;"><span class="__cf
+    <strong>© Paula Cucurella 2026</strong> · Mapa literario de poesía escrita por mujeres en Chi
