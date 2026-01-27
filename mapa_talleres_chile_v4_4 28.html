@@ -89,7 +89,9 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         font-size: 12px;
         padding: 5px 8px;
     }
-    .toggle-poets-btn {
+    .toggle-poets-btn,
+    .toggle-talleres-btn,
+    .toggle-revistas-btn {
         font-size: 11px;
         padding: 6px 10px;
     }
@@ -170,7 +172,9 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     
     /* Botones más grandes para touch */
     .toggle-silencios-btn,
-    .toggle-poets-btn {
+    .toggle-poets-btn,
+    .toggle-talleres-btn,
+    .toggle-revistas-btn {
         min-height: 44px;
         min-width: 44px;
         padding: 10px 14px;
@@ -692,6 +696,36 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     align-items: center;
     gap: 6px;
 }
+.toggle-talleres-btn {
+    background: #c75b39;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.toggle-talleres-btn:hover {
+    background: #a84a2d;
+}
+.toggle-revistas-btn {
+    background: #c9a227;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.toggle-revistas-btn:hover {
+    background: #a8861f;
+}
 
 /* Panel Mapear Silencios - estilo archivo clasificado */
 .silencios-panel {
@@ -1115,6 +1149,12 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
             <option value="sur">Zona Sur</option>
             <option value="austral">Zona Austral</option>
         </select>
+        <button class="toggle-talleres-btn" onclick="toggleTalleresPanel()">
+            📋 Talleres
+        </button>
+        <button class="toggle-revistas-btn" onclick="toggleRevistasPanel()">
+            📋 Revistas
+        </button>
         <button class="toggle-poets-btn" onclick="togglePoetsPanel()">
             📋 Poetas
         </button>
@@ -1144,6 +1184,34 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         <button class="close-btn" onclick="togglePoetsPanel()">×</button>
     </div>
     <div class="poets-panel-body" id="poetsList">
+        <!-- Se llena dinámicamente -->
+    </div>
+    <div class="poets-panel-footer">
+        Click en un nombre para ver en el mapa
+    </div>
+</div>
+
+<!-- Panel lateral de talleres -->
+<div id="talleresPanel" class="poets-panel">
+    <div class="poets-panel-header">
+        <span>📋 Listado de Talleres</span>
+        <button class="close-btn" onclick="toggleTalleresPanel()">×</button>
+    </div>
+    <div class="poets-panel-body" id="talleresList">
+        <!-- Se llena dinámicamente -->
+    </div>
+    <div class="poets-panel-footer">
+        Click en un nombre para ver en el mapa
+    </div>
+</div>
+
+<!-- Panel lateral de revistas -->
+<div id="revistasPanel" class="poets-panel">
+    <div class="poets-panel-header">
+        <span>📋 Listado de Revistas</span>
+        <button class="close-btn" onclick="toggleRevistasPanel()">×</button>
+    </div>
+    <div class="poets-panel-body" id="revistasList">
         <!-- Se llena dinámicamente -->
     </div>
     <div class="poets-panel-footer">
@@ -13954,6 +14022,14 @@ function createMarkers(regionFilter = 'all', typeFilter = 'all') {
             // Guardar referencia para panel Silencios
             tallerMarkers[t.nombre] = marker;
         });
+        
+        // Actualizar paneles laterales de talleres y revistas
+        updateTalleresList(filteredTalleres);
+        updateRevistasList(filteredTalleres);
+    } else {
+        // Si no hay talleres/revistas visibles, vaciar los paneles
+        updateTalleresList([]);
+        updateRevistasList([]);
     }
     
     // Filtrar y mostrar poetas (si el filtro de tipo lo permite)
@@ -14393,6 +14469,27 @@ window.toggleAccordion = function(header) {
 window.togglePoetsPanel = function() {
     const panel = document.getElementById('poetsPanel');
     panel.classList.toggle('open');
+    // Cerrar otros paneles
+    document.getElementById('talleresPanel').classList.remove('open');
+    document.getElementById('revistasPanel').classList.remove('open');
+};
+
+// Función para toggle del panel de talleres
+window.toggleTalleresPanel = function() {
+    const panel = document.getElementById('talleresPanel');
+    panel.classList.toggle('open');
+    // Cerrar otros paneles
+    document.getElementById('poetsPanel').classList.remove('open');
+    document.getElementById('revistasPanel').classList.remove('open');
+};
+
+// Función para toggle del panel de revistas
+window.toggleRevistasPanel = function() {
+    const panel = document.getElementById('revistasPanel');
+    panel.classList.toggle('open');
+    // Cerrar otros paneles
+    document.getElementById('poetsPanel').classList.remove('open');
+    document.getElementById('talleresPanel').classList.remove('open');
 };
 
 // Función para toggle panel de silencios
@@ -14550,6 +14647,54 @@ function updatePoetsList(poetasList) {
     `;}).join('');
 }
 
+// Función para actualizar la lista de talleres en el panel
+function updateTalleresList(talleresList) {
+    const container = document.getElementById('talleresList');
+    if (!container) return;
+    
+    const soloTalleres = talleresList.filter(t => t.tipo !== 'revista');
+    if (soloTalleres.length === 0) {
+        container.innerHTML = '<div style="padding: 20px; text-align: center; color: #888;">No hay talleres para mostrar con los filtros actuales</div>';
+        return;
+    }
+    
+    container.innerHTML = soloTalleres.map(t => {
+        const safeName = t.nombre.replace(/'/g, "\\'");
+        return `
+        <div class="poet-list-item" onclick="event.stopPropagation(); focusOnTaller('${safeName}')" style="display:flex;gap:10px;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;">
+            <div style="width:36px;height:36px;border-radius:50%;background:#c75b39;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;flex-shrink:0;">📝</div>
+            <div>
+                <h4>${t.nombre}</h4>
+                <p>${t.zona} · ${t.años || ''}</p>
+            </div>
+        </div>
+    `;}).join('');
+}
+
+// Función para actualizar la lista de revistas en el panel
+function updateRevistasList(revistasList) {
+    const container = document.getElementById('revistasList');
+    if (!container) return;
+    
+    const soloRevistas = revistasList.filter(t => t.tipo === 'revista');
+    if (soloRevistas.length === 0) {
+        container.innerHTML = '<div style="padding: 20px; text-align: center; color: #888;">No hay revistas para mostrar con los filtros actuales</div>';
+        return;
+    }
+    
+    container.innerHTML = soloRevistas.map(t => {
+        const safeName = t.nombre.replace(/'/g, "\\'");
+        return `
+        <div class="poet-list-item" onclick="event.stopPropagation(); focusOnTaller('${safeName}')" style="display:flex;gap:10px;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;">
+            <div style="width:36px;height:36px;border-radius:50%;background:#2e7d32;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;flex-shrink:0;">📰</div>
+            <div>
+                <h4>${t.nombre}</h4>
+                <p>${t.zona} · ${t.años || ''}</p>
+            </div>
+        </div>
+    `;}).join('');
+}
+
 // Función para hacer zoom a una poeta específica
 let popupProtected = false; // Flag para proteger popup en móvil
 
@@ -14587,6 +14732,37 @@ window.focusOnPoet = function(nombre) {
                             popupProtected = false;
                         }, 500);
                     }
+                }, isMobile ? 300 : 0);
+            });
+        }, delay);
+    }
+};
+
+// Función para hacer zoom a un taller/revista específica
+window.focusOnTaller = function(nombre) {
+    // Limpiar cualquier conexión activa
+    if (typeof conexionesActivas !== 'undefined' && conexionesActivas) {
+        clearHighlights();
+    }
+    
+    const marker = tallerMarkers[nombre];
+    if (marker) {
+        // En móvil, cerrar los paneles primero
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            document.getElementById('talleresPanel').classList.remove('open');
+            document.getElementById('revistasPanel').classList.remove('open');
+        }
+        
+        // Hacer zoom al marcador
+        map.setView(marker.getLatLng(), 12);
+        
+        // Abrir el popup
+        const delay = isMobile ? 600 : 300;
+        setTimeout(() => {
+            markerClusterGroup.zoomToShowLayer(marker, () => {
+                setTimeout(() => {
+                    marker.openPopup();
                 }, isMobile ? 300 : 0);
             });
         }, delay);
