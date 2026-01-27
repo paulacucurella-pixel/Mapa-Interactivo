@@ -693,6 +693,196 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     gap: 6px;
 }
 
+/* Botones toggle para Revistas y Talleres */
+.toggle-revistas-btn {
+    background: #c9a227;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.toggle-revistas-btn:hover {
+    background: #b8922a;
+}
+.toggle-talleres-btn {
+    background: #c75b39;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.toggle-talleres-btn:hover {
+    background: #b54d2d;
+}
+
+/* Panel de Revistas */
+.revistas-panel {
+    position: absolute;
+    top: 70px;
+    right: 270px;
+    width: 280px;
+    max-height: calc(100vh - 150px);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    overflow: hidden;
+    display: none;
+}
+.revistas-panel.open {
+    display: block;
+}
+.revistas-panel-header {
+    background: linear-gradient(135deg, #c9a227 0%, #a68520 100%);
+    color: white;
+    padding: 12px 15px;
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.revistas-panel-header .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+.revistas-panel-body {
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+}
+.revista-list-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.revista-list-item:hover {
+    background: #fef9e7;
+}
+.revista-list-item h4 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 14px;
+    margin: 0 0 3px 0;
+    color: #2c2416;
+}
+.revista-list-item p {
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+}
+.revistas-panel-footer {
+    background: #fef9e7;
+    padding: 8px 15px;
+    font-size: 11px;
+    color: #c9a227;
+    text-align: center;
+}
+
+/* Panel de Talleres */
+.talleres-panel {
+    position: absolute;
+    top: 70px;
+    right: 560px;
+    width: 280px;
+    max-height: calc(100vh - 150px);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    overflow: hidden;
+    display: none;
+}
+.talleres-panel.open {
+    display: block;
+}
+.talleres-panel-header {
+    background: linear-gradient(135deg, #c75b39 0%, #a84a2e 100%);
+    color: white;
+    padding: 12px 15px;
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.talleres-panel-header .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+.talleres-panel-body {
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+}
+.taller-list-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.taller-list-item:hover {
+    background: #fef5f2;
+}
+.taller-list-item h4 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 14px;
+    margin: 0 0 3px 0;
+    color: #2c2416;
+}
+.taller-list-item p {
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+}
+.talleres-panel-footer {
+    background: #fef5f2;
+    padding: 8px 15px;
+    font-size: 11px;
+    color: #c75b39;
+    text-align: center;
+}
+
+/* Responsive para paneles */
+@media screen and (max-width: 1200px) {
+    .revistas-panel {
+        right: 10px;
+        top: 120px;
+    }
+    .talleres-panel {
+        right: 10px;
+        top: 170px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .revistas-panel, .talleres-panel {
+        width: 100%;
+        right: 0;
+        top: auto;
+        bottom: 50px;
+        max-height: 50vh;
+        border-radius: 8px 8px 0 0;
+    }
+}
+
 /* Panel Mapear Silencios - estilo archivo clasificado */
 .silencios-panel {
     position: absolute;
@@ -1118,6 +1308,12 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         <button class="toggle-poets-btn" onclick="togglePoetsPanel()">
             📋 Poetas
         </button>
+        <button class="toggle-revistas-btn" onclick="toggleRevistasPanel()">
+            📰 Revistas
+        </button>
+        <button class="toggle-talleres-btn" onclick="toggleTalleresPanel()">
+            🏠 Talleres
+        </button>
         <!-- INHABILITADO TEMPORALMENTE
         <button class="toggle-silencios-btn" onclick="toggleSilenciosPanel()">
             🔍 Mapear Silencios
@@ -1147,6 +1343,34 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         <!-- Se llena dinámicamente -->
     </div>
     <div class="poets-panel-footer">
+        Click en un nombre para ver en el mapa
+    </div>
+</div>
+
+<!-- Panel lateral de revistas -->
+<div id="revistasPanel" class="revistas-panel">
+    <div class="revistas-panel-header">
+        <span>📰 Listado de Revistas</span>
+        <button class="close-btn" onclick="toggleRevistasPanel()">×</button>
+    </div>
+    <div class="revistas-panel-body" id="revistasList">
+        <!-- Se llena dinámicamente -->
+    </div>
+    <div class="revistas-panel-footer">
+        Click en un nombre para ver en el mapa
+    </div>
+</div>
+
+<!-- Panel lateral de talleres -->
+<div id="talleresPanel" class="talleres-panel">
+    <div class="talleres-panel-header">
+        <span>🏠 Listado de Talleres</span>
+        <button class="close-btn" onclick="toggleTalleresPanel()">×</button>
+    </div>
+    <div class="talleres-panel-body" id="talleresList">
+        <!-- Se llena dinámicamente -->
+    </div>
+    <div class="talleres-panel-footer">
         Click en un nombre para ver en el mapa
     </div>
 </div>
@@ -1377,7 +1601,8 @@ const talleres = [
             { nombre: "Alejandra Basualto", rol: "Integrante" },
             { nombre: "Ivonne Grimal", rol: "Integrante" },
             { nombre: "Violeta Camerati", rol: "Integrante" },
-            { nombre: "Andrés Morales", rol: "Integrante" }
+            { nombre: "Andrés Morales", rol: "Integrante" },
+            { nombre: "Paz Molina", rol: "Integrante (1978)" }
         ],
         publicaciones: [],
         nota: "No tuvo publicación propia. Su grupo heredero, Taller Nueve, produjo varias antologías colectivas.",
@@ -3427,6 +3652,98 @@ const talleres = [
         ]
     },
     {
+        nombre: "El Espíritu del Valle",
+        coords: [-33.4320, -70.6340],
+        zona: "Santiago (Región Metropolitana, Providencia)",
+        region: "metropolitana",
+        años: "1985–1998",
+        tipo: "revista",
+        verificado: true,
+        ultimaActualizacion: "2026-01-27",
+        direccion: "Antonia López de Bello 075, Providencia",
+        historia: {
+            origen: "Revista semestral de poesía y crítica fundada en diciembre de 1985 por el poeta Gonzalo Millán (1947–2006). Coproducción de Fundación Cooperación Chile-Canadá (Santiago) y Ediciones Cordillera (Ottawa). Impresa por Gráfica Andes Ltda. Representante legal: Manuel Basoalto.",
+            contexto: "Revista-puente entre la poesía de Chile y Canadá. Editorial del Nº 1 reflexiona sobre el 'apagón cultural' post-1973 y la necesidad de 'recoger lo disperso y rescatar lo inicuamente desdorado'. El nombre proviene del Tao Te-King y del ensayo de Millán 'Promociones poéticas emergentes: El espíritu del valle' (Postdata Nº 4, 1985).",
+            desarrollos: "Conectó poetas 'de adentro' y 'de afuera' post-golpe del 73. Artículo de Federico Schopf (Nº 1, pp. 28-31) documenta condiciones de producción bajo dictadura: censura, autocensura, dificultades de circulación. Menciona surgimiento de poesía para ser recitada/escuchada como alternativa ante imposibilidad de publicar.",
+            continuidad: "5 números en 3 entregas (1985–1998). Publicación intermitente: largo hiato entre 1987 y 1998."
+        },
+        fundadores: [
+            { nombre: "Gonzalo Millán", rol: "Director (1947–2006)" }
+        ],
+        integrantes: [
+            { nombre: "Manuel Basoalto", rol: "Consejo editorial / Comité redacción / Representante legal" },
+            { nombre: "Jorge Etcheverry", rol: "Consejo editorial" },
+            { nombre: "Naín Nómez", rol: "Consejo editorial" },
+            { nombre: "Ramón Sepúlveda", rol: "Consejo editorial" },
+            { nombre: "Fernando de Toro", rol: "Consejo editorial" },
+            { nombre: "José Leandro Urbina", rol: "Consejo editorial" },
+            { nombre: "Patricio Gonzáles", rol: "Editor / Diseño" },
+            { nombre: "Sergio Medina", rol: "Comité redacción" },
+            { nombre: "José Paredes", rol: "Comité redacción" },
+            { nombre: "Miguel Vicuña N.", rol: "Comité redacción / Poeta antologado Nº 1" },
+            { nombre: "Hugo Rojas", rol: "Diagramación" },
+            { nombre: "Manuel Molina", rol: "Fotografía" },
+            { nombre: "Jimena Castillo", rol: "Relaciones Públicas" },
+            { nombre: "Eugenio Dittborn", rol: "Portada Nº 1 (imagen satelital Valle Aconcagua)" }
+        ],
+        mujeresColaboradoras: [
+            { nombre: "Paz Molina", rol: "Poeta antologada Nº 1 (p. 63): 'Divagando', 'Carcomido de alfabetos'", enRevista: true, nota: "Santiago 1945. Taller Altazor (1978). Editora poesía en Huelén. Obra: Memorias de un pájaro asustado (1982)" },
+            { nombre: "Carmen Berenguer", rol: "Colaboradora Nº 1 / Autora reseñada (Bobby Sands desfallece en el muro)", enRevista: true, nota: "Sin poemas propios en Nº 1, pero libro reseñado por Eduardo Briceño" },
+            { nombre: "Lake Sagaris", rol: "Colaboradora Nº 1", enRevista: true },
+            { nombre: "Jimena Castillo", rol: "Relaciones Públicas", enRevista: false }
+        ],
+        publicaciones: [
+            {
+                titulo: "El Espíritu del Valle: Revista semestral de poesía y crítica",
+                años: "1985–1998",
+                numeros: "5 números en 3 entregas",
+                detalles: [
+                    "Nº 1: Diciembre 1985, 96 pp. Portada: Eugenio Dittborn (imagen satelital Valle Aconcagua, Landsat 1975)",
+                    "Nº 2-3: 1987 (número doble), 123 pp.",
+                    "Nº 4-5: 1998 (número doble), 160 pp. Incluye poesía visual de Millán"
+                ],
+                personas: [
+                    { nombre: "Paz Molina", rol: "Poeta antologada Nº 1 (p. 63)" },
+                    { nombre: "Carmen Berenguer", rol: "Colaboradora / Autora reseñada Nº 1" },
+                    { nombre: "Lake Sagaris", rol: "Colaboradora Nº 1" },
+                    { nombre: "Humberto Díaz-Casanueva", rol: "Poeta Nº 1 (pp. 32-33)" },
+                    { nombre: "Gonzalo Rojas", rol: "Poeta Nº 1 (pp. 34)" },
+                    { nombre: "Armando Uribe Arce", rol: "Poeta Nº 1 (pp. 35-36)" },
+                    { nombre: "Enrique Lihn", rol: "Poeta Nº 1 (pp. 37-38) / Reseñista" },
+                    { nombre: "Waldo Rojas", rol: "Entrevistado Nº 1 (pp. 39-48)" },
+                    { nombre: "Juan Cameron", rol: "Reseñista Nº 1" },
+                    { nombre: "Federico Schopf", rol: "Teórico Nº 1: 'Sobre la poesía joven en Chile' (pp. 28-31)" },
+                    { nombre: "J.G. Cobo Borda", rol: "Teórico Nº 1: 'Voces nuevas en la poesía latinoamericana' (pp. 13-27)" }
+                ],
+                existencias: [
+                    { lugar: "Memoria Chilena (BN)", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html", nota: "Nº 1 (dic. 1985) - PDF digitalizado descargable (MC0005475)" },
+                    { lugar: "Memoria Chilena (BN)", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-83501.html", nota: "Nº 5 (1998) - Poesía visual de Millán (pp. 92-95)" },
+                    { lugar: "Biblioteca Nacional de Chile (Hemeroteca)", tiene: true, link: null, nota: "Colección física" },
+                    { lugar: "Libros del Ayer (librería anticuaria)", tiene: true, link: "https://www.librosdelayer.cl/nuestros_libros/detalle/poesia-y-narrativa/9896/gonzalo-millan-director-el-espiritu-del-valle-revista-de-creacion-y-critica", nota: "Colección completa Nº 1-5 (a la venta)" },
+                    { lugar: "Girol Books (Ottawa)", tiene: true, link: "https://www.girol.com/books/el-espiritu-del-valle-revista-de-poesia-y-critica-1-diciembre/", nota: "Nº 1 (dic. 1985) - Librería canadiense" }
+                ]
+            }
+        ],
+        contenidoN1: {
+            antologiaDiezPoetasDispersos: ["Raúl Barrientos", "Claudio Bertoni", "Javier Campos", "José Ángel Cuevas", "Walter Hoefler", "Hernán Miranda", "Paz Molina (p. 63)", "Jaime Anselmo Silva (p. 64)", "Miguel Vicuña Navarro (p. 65)", "Antonio Vieyra"],
+            librosResenados: [
+                "Literatura chilena en Canadá (Naín Nómez, ed., Cordillera, 1982) - reseña: Basil Mogridge",
+                "Bobby Sands desfallece en el muro (Carmen Berenguer, 1983) - reseña: Eduardo Briceño",
+                "La Tirana (Diego Maquieira, 1983) - reseña: Tomás Harris",
+                "Karra Maw'n (Clemente Riedemann, 1984) - reseña: Jorge Narváez",
+                "La Nueva Novela (Juan Luis Martínez, 2ª ed., 1985) - reseña: Enrique Lihn"
+            ],
+            talleresYEspaciosMencionados: ["Taller Altazor – Biblioteca Nacional (1978) – Paz Molina", "Taller Murciélago – Valdivia (1971-1973) – mención en reseña Riedemann", "Revista Huelén – Paz Molina editora de poesía"]
+        },
+        fuentes: [
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "Gonzalo Millán (1947-2006)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3442.html" },
+            { autor: "Etcheverry, J.", año: "2017", titulo: "El concepto del 'espíritu del valle' de Gonzalo Millán", medio: "Proyecto Patrimonio / Letras.mysite", link: "http://letras.mysite.com/jetc230517.html" },
+            { autor: "Cameron, J.", año: "2010", titulo: "El espíritu del valle 25 años después", medio: "Trilce (Concepción), Nº 29", link: "https://www.bibliotecanacionaldigital.gob.cl/visor/BND:343262" },
+            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" },
+            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, diciembre 1985", medio: "Fuente primaria digitalizada", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
+        ]
+    },
+    {
         nombre: "Etcétera",
         coords: [-36.8250, -73.0350],
         zona: "Biobío (Concepción)",
@@ -4690,12 +5007,35 @@ const talleres = [
         años: "1982–1990s",
         tipo: "taller",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        descripcion: "Taller literario activo en Santiago durante los años 80.",
-        contexto: "Espacio de formación poética en dictadura.",
-        integrantes: [],
-        publicaciones: [],
-        fuentes: []
+        ultimaActualizacion: "2026-01-27",
+        historia: {
+            origen: "Taller literario activo en Santiago durante los años 80.",
+            contexto: "Espacio de formación poética en dictadura. Publicó la Revista Huelén.",
+            desarrollos: "Integrantes incluyen Hernán Ortega Parada (director de la revista). Paz Molina fue editora de poesía de la revista vinculada.",
+            continuidad: "Parte del circuito de talleres literarios de Santiago en los 80."
+        },
+        integrantes: [
+            { nombre: "Hernán Ortega Parada", rol: "Coordinador / Director Revista Huelén" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Paz Molina", rol: "Editora de poesía (Revista Huelén)", enRevista: true }
+        ],
+        publicaciones: [
+            {
+                titulo: "Revista Huelén",
+                años: "1980s",
+                numeros: "Al menos 14 números documentados",
+                detalles: ["Director: Hernán Ortega Parada", "Editora de poesía: Paz Molina", "Nº 14 (1984) mencionado en Palabra Escrita Nº 16"],
+                personas: [
+                    { nombre: "Paz Molina", rol: "Editora de poesía" }
+                ],
+                existencias: []
+            }
+        ],
+        fuentes: [
+            { autor: "Palabra Escrita N°16", año: "1984", titulo: "'Publicaciones recibidas': Huelén Nº 14", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" },
+            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, p. 63: datos biográficos Paz Molina - editora poesía Huelén", medio: "Memoria Chilena MC0005475", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
+        ]
     },
     {
         nombre: "Taller Ernesto Montenegro",
@@ -4818,7 +5158,7 @@ const talleres = [
         años: "1980s",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-01-27",
         historia: {
             origen: "Publicación literaria vinculada al Taller Huelén.",
             contexto: "Difusión de poesía joven en dictadura.",
@@ -4828,10 +5168,13 @@ const talleres = [
         fundadores: [
             { nombre: "Hernán Ortega Parada", rol: "Director (documentado en Palabra Escrita N°16, 1984)" }
         ],
-        integrantes: [],
+        integrantes: [
+            { nombre: "Paz Molina", rol: "Editora de poesía (doc. El Espíritu del Valle Nº 1, 1985)" }
+        ],
         publicaciones: [],
         fuentes: [
-            { autor: "Palabra Escrita N°16", año: "1984", titulo: "Sección 'Publicaciones recibidas': Huelen Nº 14, dir. Hernán Ortega Parada", medio: "Ejemplar digitalizado Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" }
+            { autor: "Palabra Escrita N°16", año: "1984", titulo: "Sección 'Publicaciones recibidas': Huelen Nº 14, dir. Hernán Ortega Parada", medio: "Ejemplar digitalizado Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" },
+            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, p. 63: datos biográficos Paz Molina", medio: "Memoria Chilena MC0005475", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
         ]
     },
     {
@@ -7204,7 +7547,8 @@ const poetas = [
                 { nombre: "Solidaridad", id: "solidaridad" },
                 { nombre: "Añañuca", id: "ananuca" },
                 { nombre: "Eurídice", id: "euridice" },
-                { nombre: "Centro de Alumnos Escuela de Arte UCH", id: "centro-alumnos-arte-uch" }
+                { nombre: "Centro de Alumnos Escuela de Arte UCH", id: "centro-alumnos-arte-uch" },
+                { nombre: "El Espíritu del Valle", id: "espiritu-valle", nota: "Colaboradora Nº 1 (1985), libro reseñado" }
             ]
         },
         fuentes: [
@@ -7756,6 +8100,15 @@ const poetas = [
                 existencias: []
             },
             {
+                titulo: "El Espíritu del Valle Nº 1",
+                años: "1985",
+                tipo: "Revista",
+                detalles: ["Antología 'Diez poetas dispersos' (p. 63)", "Poemas: 'Divagando', 'Carcomido de alfabetos'", "Dir. Gonzalo Millán"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html", nota: "PDF completo descargable (MC0005475)" }
+                ]
+            },
+            {
                 titulo: "La Mujer en la Poesía Chilena de los '80",
                 años: "1987",
                 tipo: "Antología",
@@ -7792,14 +8145,16 @@ const poetas = [
                 { nombre: "Taller de Novela de Enrique Lafourcade", id: "taller-lafourcade" }
             ],
             revistas: [
-                { nombre: "Revista Huelén", id: "huelen" }
+                { nombre: "Revista Huelén", id: "huelen", nota: "Editora de poesía" },
+                { nombre: "El Espíritu del Valle", id: "espiritu-valle", nota: "Poeta antologada Nº 1 (dic. 1985, p. 63)" }
             ]
         },
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Escribir en los bordes (MC92709)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-92709.html" },
             { autor: "Fundación Pablo Neruda", año: "2020", titulo: "4 poemas de Paz Molina", medio: "Cultura Fundación Pablo Neruda", link: "https://cultura.fundacionneruda.org/2020/11/4-poemas-de-paz-molina/" },
-            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null }
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null },
+            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, p. 63: datos biográficos y poemas", medio: "Memoria Chilena MC0005475", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
         ]
     },
     {
@@ -14210,6 +14565,111 @@ window.togglePoetsPanel = function() {
 window.toggleSilenciosPanel = function() {
     const panel = document.getElementById('silenciosPanel');
     panel.classList.toggle('open');
+};
+
+// Función para toggle panel de revistas
+window.toggleRevistasPanel = function() {
+    const panel = document.getElementById('revistasPanel');
+    panel.classList.toggle('open');
+    // Llenar lista si está abierto
+    if (panel.classList.contains('open')) {
+        updateRevistasList();
+    }
+};
+
+// Función para toggle panel de talleres
+window.toggleTalleresPanel = function() {
+    const panel = document.getElementById('talleresPanel');
+    panel.classList.toggle('open');
+    // Llenar lista si está abierto
+    if (panel.classList.contains('open')) {
+        updateTalleresList();
+    }
+};
+
+// Función para actualizar lista de revistas
+function updateRevistasList() {
+    const container = document.getElementById('revistasList');
+    
+    // Filtrar entidades tipo revista y ordenar alfabéticamente
+    const revistas = talleres
+        .filter(t => t.tipo === 'revista')
+        .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+    
+    if (revistas.length === 0) {
+        container.innerHTML = '<div style="padding: 20px; text-align: center; color: #888;">No hay revistas para mostrar</div>';
+        return;
+    }
+    
+    container.innerHTML = revistas.map(r => {
+        const safeName = r.nombre.replace(/'/g, "\\'");
+        return `
+        <div class="revista-list-item" onclick="focusOnTaller('${safeName}')">
+            <h4>${r.nombre}</h4>
+            <p>${r.zona || ''} · ${r.años || ''}</p>
+        </div>
+    `;}).join('');
+}
+
+// Función para actualizar lista de talleres
+function updateTalleresList() {
+    const container = document.getElementById('talleresList');
+    
+    // Filtrar entidades tipo taller y ordenar alfabéticamente
+    const talleresFiltrados = talleres
+        .filter(t => t.tipo === 'taller')
+        .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+    
+    if (talleresFiltrados.length === 0) {
+        container.innerHTML = '<div style="padding: 20px; text-align: center; color: #888;">No hay talleres para mostrar</div>';
+        return;
+    }
+    
+    container.innerHTML = talleresFiltrados.map(t => {
+        const safeName = t.nombre.replace(/'/g, "\\'");
+        return `
+        <div class="taller-list-item" onclick="focusOnTaller('${safeName}')">
+            <h4>${t.nombre}</h4>
+            <p>${t.zona || ''} · ${t.años || ''}</p>
+        </div>
+    `;}).join('');
+}
+
+// Función para hacer focus en un taller/revista desde los paneles
+window.focusOnTaller = function(nombre) {
+    // Limpiar conexiones activas
+    if (conexionesActivas) {
+        clearHighlights();
+    }
+    
+    const marker = tallerMarkers[nombre];
+    if (marker) {
+        // En móvil, cerrar los paneles primero
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            const revPanel = document.getElementById('revistasPanel');
+            const talPanel = document.getElementById('talleresPanel');
+            if (revPanel && revPanel.classList.contains('open')) {
+                revPanel.classList.remove('open');
+            }
+            if (talPanel && talPanel.classList.contains('open')) {
+                talPanel.classList.remove('open');
+            }
+        }
+        
+        // Hacer zoom al marcador
+        map.setView(marker.getLatLng(), 12);
+        
+        // Abrir el popup
+        const delay = isMobile ? 600 : 300;
+        setTimeout(() => {
+            markerClusterGroup.zoomToShowLayer(marker, () => {
+                setTimeout(() => {
+                    marker.openPopup();
+                }, isMobile ? 300 : 0);
+            });
+        }, delay);
+    }
 };
 
 // Función para enfocar entidad desde panel Silencios (oculta todo menos la seleccionada)
