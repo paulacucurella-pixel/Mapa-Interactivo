@@ -1287,7 +1287,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
         <p>Última actualización: 20 enero 2026</p>
-        <p style="font-size: 0.85em;">Contacto: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c5c4d59404d4f594f595e4940404d6c4b414d4540024f4341">[email&#160;protected]</a></p>
+        <p style="font-size: 0.85em;">Contacto: <a href="mailto:paula.cucurella@gmail.com">paula.cucurella@gmail.com</a></p>
     </div>
     <div class="header-right">
         <select id="typeFilter">
@@ -1534,7 +1534,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Complete workshop data with expanded profiles
 const talleres = [
     // ==================== REGIÓN METROPOLITANA ====================
@@ -3744,7 +3744,109 @@ const talleres = [
         ]
     },
     {
-        nombre: "Etcétera",
+        nombre: "Taller/Colectivo Caja Negra",
+        coords: [-33.4545, -70.6020],
+        zona: "Santiago (Región Metropolitana, Ñuñoa)",
+        region: "metropolitana",
+        años: "1977–2013",
+        tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-27",
+        direccion: "Irarrázabal 2345, Ñuñoa",
+        historia: {
+            origen: "Origen en 1977 en Café Concert Comendador (Campus UC Lo Contador). Espacio de entretenimiento estudiantil que permitía evitar censura y persecución militar. Se leía a Pablo Neruda (literatura prohibida).",
+            contexto: "Espacio cultural alternativo que trabajó al margen de la institucionalidad en dictadura. Actividades de teatro, música, poesía, artes visuales. Publicó la revista 'El Espíritu de la Época' y libros bajo sello Ediciones Caja Negra.",
+            desarrollos: "Tres etapas: Talleres Caja Negra (1982-1988, dir. Sebastián Grey); Laboratorio de Arte Experimental (1988-1998, dir. Fernando Van de Wingard); Caja Negra Artes Visuales (1998-2013, dir. Víctor Hugo Bravo). Participaron activamente en eventos previos al plebiscito de 1988.",
+            continuidad: "Cierre en 2013 por venta del inmueble. 30 años de funcionamiento en el mismo lugar."
+        },
+        fundadores: [
+            { nombre: "Sebastián Grey", rol: "Director fundador (1977-1988)" }
+        ],
+        integrantes: [
+            { nombre: "Fernando Van de Wingard", rol: "Director (1988-1998)" },
+            { nombre: "Víctor Hugo Bravo", rol: "Director (1998-2013)" },
+            { nombre: "Carlos Montes de Oca", rol: "Artista/poeta" },
+            { nombre: "Norton Maza", rol: "Artista" },
+            { nombre: "Eugenia Prado", rol: "Escritora" },
+            { nombre: "Gonzalo Arqueros", rol: "Colaborador" }
+        ],
+        mujeresArtistas: [
+            { nombre: "Ana María Fell", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Lorena Araya", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Cecilia Avendaño", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Paz Carvajal", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Klaudia Kemper", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Consuelo Lewin", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Melania Lynch", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Eli Neira", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
+            { nombre: "Eugenia Prado Bassi", rol: "Escritora", verificado: true, fuente: "La Tercera (2017)" }
+        ],
+        poetasPorVerificar: [
+            { nombre: "Silvia Gallo", estado: "Sin registros localizados en fuentes disponibles" },
+            { nombre: "Nelda Mella", estado: "Poeta documentada (BND 1988), vínculo con colectivo pendiente de verificación" }
+        ],
+        publicaciones: [
+            {
+                titulo: "El Espíritu de la Época",
+                años: "1980s",
+                tipo: "Revista cultural",
+                detalles: ["Revista producida clandestinamente durante dictadura"],
+                existencias: []
+            },
+            {
+                titulo: "Serie Fin de Siglo",
+                años: "1980s",
+                tipo: "Ediciones",
+                detalles: ["Serie de publicaciones"],
+                existencias: []
+            }
+        ],
+        fuentes: [
+            { autor: "El Mostrador", año: "2018", titulo: "Caja negra 1977-2013: 36 años de arte colectivo en Chile", medio: "El Mostrador Cultura", link: "https://www.elmostrador.cl/cultura/2018/01/02/caja-negra-1977-2013-36-anos-de-arte-colectivo-en-chile/" },
+            { autor: "VADB", año: "n.d.", titulo: "Caja Negra Artes Visuales", medio: "Arte Contemporáneo Latinoamericano", link: "https://vadb.org/institutions/caja-negra" },
+            { autor: "El Mostrador", año: "2013", titulo: "Colectivo Caja Negra: ícono del arte independiente quedaría en la calle", medio: "El Mostrador Cultura", link: "https://www.elmostrador.cl/cultura/2013/08/27/colectivo-caja-negra-icono-del-arte-independiente-quedaria-en-la-calle/" },
+            { autor: "Escáner Cultural", año: "n.d.", titulo: "CAJA NEGRA 1977-2013", medio: "Revista Escáner Cultural", link: "https://revista.escaner.cl/node/8155.html" }
+        ]
+    },
+    {
+        nombre: "Taller de Poesía Fundación Pablo Neruda",
+        coords: [-33.4327, -70.6327],
+        zona: "Santiago (Región Metropolitana, Bellavista)",
+        region: "metropolitana",
+        años: "1987–presente",
+        tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-27",
+        direccion: "La Chascona, Fernando Márquez de la Plata 0192, Bellavista",
+        historia: {
+            origen: "Creado en 1987 por los poetas Jaime Quezada y Floridor Pérez como una manera de orientar y canalizar los afanes vocacionales de las nuevas generaciones de escritores jóvenes.",
+            contexto: "Uno de los talleres más antiguos y prestigiosos de Chile e Hispanoamérica. Beca creada en 1988: suma de dinero + asistencia al taller durante 10 meses. 10 becarios por año (menores de 30 años, desde 2019 con criterio paritario).",
+            desarrollos: "Más de 300 poetas jóvenes han recibido la beca (tres generaciones de poesía chilena). En 1994 se extendió a La Sebastiana (Valparaíso). En 2007 se creó el Taller Latinoamericano de Poesía que integra poetas de Uruguay, Argentina y Bolivia.",
+            continuidad: "Sigue activo. Desde 2019 dirigido por Malú Urriola y coordinado por Francisco Martinovich."
+        },
+        fundadores: [
+            { nombre: "Jaime Quezada", rol: "Cofundador y director (1987-2019)" },
+            { nombre: "Floridor Pérez", rol: "Cofundador y director (1987-2019)" }
+        ],
+        integrantes: [
+            { nombre: "Malú Urriola", rol: "Directora (2019-presente)" },
+            { nombre: "Francisco Martinovich", rol: "Coordinador (2019-presente)" },
+            { nombre: "Sergio Muñoz", rol: "Director Taller La Sebastiana (1994-)" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Nadia Prado", rol: "Becaria 1991", enRevista: true, nota: "Poeta, ensayista. Obras: Simples placeres (1992), Carnal (1998), Job (2006)" },
+            { nombre: "Isabel Larraín", rol: "Becaria ca. 1990-1991", enRevista: true, nota: "Por verificar datos" }
+        ],
+        publicaciones: [],
+        nota: "El taller no tiene publicación propia, pero los becarios publican individualmente. La Fundación edita las revistas 'Cuadernos' (desde 1989) y 'Nerudiana'.",
+        fuentes: [
+            { autor: "Fundación Pablo Neruda", año: "2024", titulo: "Talleres", medio: "Sitio oficial", link: "https://fundacionneruda.org/talleres/" },
+            { autor: "Wikipedia", año: "2025", titulo: "Fundación Pablo Neruda", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Fundaci%C3%B3n_Pablo_Neruda" },
+            { autor: "El Desconcierto", año: "2019", titulo: "Floridor Pérez: Lo más importante es aprender a borrar", medio: "El Desconcierto", link: "https://www.eldesconcierto.cl/tipos-moviles/letras/2019/09/25/floridor-perez-lo-mas-importante-es-aprender-a-borrar.html" },
+            { autor: "Cultura Fundación Neruda", año: "2021", titulo: "Regresa el Taller Neruda en su versión on line", medio: "Portal Cultura Fundación Neruda", link: "https://cultura.fundacionneruda.org/2021/06/regresa-el-taller-neruda-en-su-version-on-line/" }
+        ]
+    },
+    {
         coords: [-36.8250, -73.0350],
         zona: "Biobío (Concepción)",
         region: "sur",
@@ -15313,4 +15415,11 @@ document.getElementById('typeFilter').addEventListener('change', function() {
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 ">
-    <strong>© Paula Cucurella 2026</strong> · Mapa literario de poesía escrita por mujeres en Chi
+    <strong>© Paula Cucurella 2026</strong> · Mapa literario de poesía escrita por mujeres en Chile (1973-1990)
+    <br>
+    <span style="font-size: 11px;">
+        Contacto: <a href="mailto:paula.cucurella@gmail.com" style="color: #8B4513; text-decoration: none;">paula.cucurella@gmail.com</a>
+    </span>
+</div>
+</body>
+</html>
