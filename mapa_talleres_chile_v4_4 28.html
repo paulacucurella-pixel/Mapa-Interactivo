@@ -693,196 +693,6 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     gap: 6px;
 }
 
-/* Botones toggle para Revistas y Talleres */
-.toggle-revistas-btn {
-    background: #c9a227;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.toggle-revistas-btn:hover {
-    background: #b8922a;
-}
-.toggle-talleres-btn {
-    background: #c75b39;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.toggle-talleres-btn:hover {
-    background: #b54d2d;
-}
-
-/* Panel de Revistas */
-.revistas-panel {
-    position: absolute;
-    top: 70px;
-    right: 270px;
-    width: 280px;
-    max-height: calc(100vh - 150px);
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    z-index: 1000;
-    overflow: hidden;
-    display: none;
-}
-.revistas-panel.open {
-    display: block;
-}
-.revistas-panel-header {
-    background: linear-gradient(135deg, #c9a227 0%, #a68520 100%);
-    color: white;
-    padding: 12px 15px;
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.revistas-panel-header .close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 0;
-    line-height: 1;
-}
-.revistas-panel-body {
-    max-height: calc(100vh - 220px);
-    overflow-y: auto;
-}
-.revista-list-item {
-    padding: 10px 15px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.revista-list-item:hover {
-    background: #fef9e7;
-}
-.revista-list-item h4 {
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 14px;
-    margin: 0 0 3px 0;
-    color: #2c2416;
-}
-.revista-list-item p {
-    font-size: 11px;
-    color: #888;
-    margin: 0;
-}
-.revistas-panel-footer {
-    background: #fef9e7;
-    padding: 8px 15px;
-    font-size: 11px;
-    color: #c9a227;
-    text-align: center;
-}
-
-/* Panel de Talleres */
-.talleres-panel {
-    position: absolute;
-    top: 70px;
-    right: 560px;
-    width: 280px;
-    max-height: calc(100vh - 150px);
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    z-index: 1000;
-    overflow: hidden;
-    display: none;
-}
-.talleres-panel.open {
-    display: block;
-}
-.talleres-panel-header {
-    background: linear-gradient(135deg, #c75b39 0%, #a84a2e 100%);
-    color: white;
-    padding: 12px 15px;
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.talleres-panel-header .close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 0;
-    line-height: 1;
-}
-.talleres-panel-body {
-    max-height: calc(100vh - 220px);
-    overflow-y: auto;
-}
-.taller-list-item {
-    padding: 10px 15px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.taller-list-item:hover {
-    background: #fef5f2;
-}
-.taller-list-item h4 {
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 14px;
-    margin: 0 0 3px 0;
-    color: #2c2416;
-}
-.taller-list-item p {
-    font-size: 11px;
-    color: #888;
-    margin: 0;
-}
-.talleres-panel-footer {
-    background: #fef5f2;
-    padding: 8px 15px;
-    font-size: 11px;
-    color: #c75b39;
-    text-align: center;
-}
-
-/* Responsive para paneles */
-@media screen and (max-width: 1200px) {
-    .revistas-panel {
-        right: 10px;
-        top: 120px;
-    }
-    .talleres-panel {
-        right: 10px;
-        top: 170px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .revistas-panel, .talleres-panel {
-        width: 100%;
-        right: 0;
-        top: auto;
-        bottom: 50px;
-        max-height: 50vh;
-        border-radius: 8px 8px 0 0;
-    }
-}
-
 /* Panel Mapear Silencios - estilo archivo clasificado */
 .silencios-panel {
     position: absolute;
@@ -1286,7 +1096,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 20 enero 2026</p>
+        <p>Última actualización: 27 enero 2026</p>
         <p style="font-size: 0.85em;">Contacto: <a href="mailto:paula.cucurella@gmail.com">paula.cucurella@gmail.com</a></p>
     </div>
     <div class="header-right">
@@ -1307,12 +1117,6 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         </select>
         <button class="toggle-poets-btn" onclick="togglePoetsPanel()">
             📋 Poetas
-        </button>
-        <button class="toggle-revistas-btn" onclick="toggleRevistasPanel()">
-            📰 Revistas
-        </button>
-        <button class="toggle-talleres-btn" onclick="toggleTalleresPanel()">
-            🏠 Talleres
         </button>
         <!-- INHABILITADO TEMPORALMENTE
         <button class="toggle-silencios-btn" onclick="toggleSilenciosPanel()">
@@ -1343,34 +1147,6 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         <!-- Se llena dinámicamente -->
     </div>
     <div class="poets-panel-footer">
-        Click en un nombre para ver en el mapa
-    </div>
-</div>
-
-<!-- Panel lateral de revistas -->
-<div id="revistasPanel" class="revistas-panel">
-    <div class="revistas-panel-header">
-        <span>📰 Listado de Revistas</span>
-        <button class="close-btn" onclick="toggleRevistasPanel()">×</button>
-    </div>
-    <div class="revistas-panel-body" id="revistasList">
-        <!-- Se llena dinámicamente -->
-    </div>
-    <div class="revistas-panel-footer">
-        Click en un nombre para ver en el mapa
-    </div>
-</div>
-
-<!-- Panel lateral de talleres -->
-<div id="talleresPanel" class="talleres-panel">
-    <div class="talleres-panel-header">
-        <span>🏠 Listado de Talleres</span>
-        <button class="close-btn" onclick="toggleTalleresPanel()">×</button>
-    </div>
-    <div class="talleres-panel-body" id="talleresList">
-        <!-- Se llena dinámicamente -->
-    </div>
-    <div class="talleres-panel-footer">
         Click en un nombre para ver en el mapa
     </div>
 </div>
@@ -1530,7 +1306,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         </div>
     </div>
     <div class="silencios-panel-footer">
-        Click en un nombre para ver en el mapa · Actualizado: 20 enero 2026
+        Click en un nombre para ver en el mapa · Actualizado: 27 enero 2026
     </div>
 </div>
 
@@ -1601,8 +1377,7 @@ const talleres = [
             { nombre: "Alejandra Basualto", rol: "Integrante" },
             { nombre: "Ivonne Grimal", rol: "Integrante" },
             { nombre: "Violeta Camerati", rol: "Integrante" },
-            { nombre: "Andrés Morales", rol: "Integrante" },
-            { nombre: "Paz Molina", rol: "Integrante (1978)" }
+            { nombre: "Andrés Morales", rol: "Integrante" }
         ],
         publicaciones: [],
         nota: "No tuvo publicación propia. Su grupo heredero, Taller Nueve, produjo varias antologías colectivas.",
@@ -3652,201 +3427,7 @@ const talleres = [
         ]
     },
     {
-        nombre: "El Espíritu del Valle",
-        coords: [-33.4320, -70.6340],
-        zona: "Santiago (Región Metropolitana, Providencia)",
-        region: "metropolitana",
-        años: "1985–1998",
-        tipo: "revista",
-        verificado: true,
-        ultimaActualizacion: "2026-01-27",
-        direccion: "Antonia López de Bello 075, Providencia",
-        historia: {
-            origen: "Revista semestral de poesía y crítica fundada en diciembre de 1985 por el poeta Gonzalo Millán (1947–2006). Coproducción de Fundación Cooperación Chile-Canadá (Santiago) y Ediciones Cordillera (Ottawa). Impresa por Gráfica Andes Ltda. Representante legal: Manuel Basoalto.",
-            contexto: "Revista-puente entre la poesía de Chile y Canadá. Editorial del Nº 1 reflexiona sobre el 'apagón cultural' post-1973 y la necesidad de 'recoger lo disperso y rescatar lo inicuamente desdorado'. El nombre proviene del Tao Te-King y del ensayo de Millán 'Promociones poéticas emergentes: El espíritu del valle' (Postdata Nº 4, 1985).",
-            desarrollos: "Conectó poetas 'de adentro' y 'de afuera' post-golpe del 73. Artículo de Federico Schopf (Nº 1, pp. 28-31) documenta condiciones de producción bajo dictadura: censura, autocensura, dificultades de circulación. Menciona surgimiento de poesía para ser recitada/escuchada como alternativa ante imposibilidad de publicar.",
-            continuidad: "5 números en 3 entregas (1985–1998). Publicación intermitente: largo hiato entre 1987 y 1998."
-        },
-        fundadores: [
-            { nombre: "Gonzalo Millán", rol: "Director (1947–2006)" }
-        ],
-        integrantes: [
-            { nombre: "Manuel Basoalto", rol: "Consejo editorial / Comité redacción / Representante legal" },
-            { nombre: "Jorge Etcheverry", rol: "Consejo editorial" },
-            { nombre: "Naín Nómez", rol: "Consejo editorial" },
-            { nombre: "Ramón Sepúlveda", rol: "Consejo editorial" },
-            { nombre: "Fernando de Toro", rol: "Consejo editorial" },
-            { nombre: "José Leandro Urbina", rol: "Consejo editorial" },
-            { nombre: "Patricio Gonzáles", rol: "Editor / Diseño" },
-            { nombre: "Sergio Medina", rol: "Comité redacción" },
-            { nombre: "José Paredes", rol: "Comité redacción" },
-            { nombre: "Miguel Vicuña N.", rol: "Comité redacción / Poeta antologado Nº 1" },
-            { nombre: "Hugo Rojas", rol: "Diagramación" },
-            { nombre: "Manuel Molina", rol: "Fotografía" },
-            { nombre: "Jimena Castillo", rol: "Relaciones Públicas" },
-            { nombre: "Eugenio Dittborn", rol: "Portada Nº 1 (imagen satelital Valle Aconcagua)" }
-        ],
-        mujeresColaboradoras: [
-            { nombre: "Paz Molina", rol: "Poeta antologada Nº 1 (p. 63): 'Divagando', 'Carcomido de alfabetos'", enRevista: true, nota: "Santiago 1945. Taller Altazor (1978). Editora poesía en Huelén. Obra: Memorias de un pájaro asustado (1982)" },
-            { nombre: "Carmen Berenguer", rol: "Colaboradora Nº 1 / Autora reseñada (Bobby Sands desfallece en el muro)", enRevista: true, nota: "Sin poemas propios en Nº 1, pero libro reseñado por Eduardo Briceño" },
-            { nombre: "Lake Sagaris", rol: "Colaboradora Nº 1", enRevista: true },
-            { nombre: "Jimena Castillo", rol: "Relaciones Públicas", enRevista: false }
-        ],
-        publicaciones: [
-            {
-                titulo: "El Espíritu del Valle: Revista semestral de poesía y crítica",
-                años: "1985–1998",
-                numeros: "5 números en 3 entregas",
-                detalles: [
-                    "Nº 1: Diciembre 1985, 96 pp. Portada: Eugenio Dittborn (imagen satelital Valle Aconcagua, Landsat 1975)",
-                    "Nº 2-3: 1987 (número doble), 123 pp.",
-                    "Nº 4-5: 1998 (número doble), 160 pp. Incluye poesía visual de Millán"
-                ],
-                personas: [
-                    { nombre: "Paz Molina", rol: "Poeta antologada Nº 1 (p. 63)" },
-                    { nombre: "Carmen Berenguer", rol: "Colaboradora / Autora reseñada Nº 1" },
-                    { nombre: "Lake Sagaris", rol: "Colaboradora Nº 1" },
-                    { nombre: "Humberto Díaz-Casanueva", rol: "Poeta Nº 1 (pp. 32-33)" },
-                    { nombre: "Gonzalo Rojas", rol: "Poeta Nº 1 (pp. 34)" },
-                    { nombre: "Armando Uribe Arce", rol: "Poeta Nº 1 (pp. 35-36)" },
-                    { nombre: "Enrique Lihn", rol: "Poeta Nº 1 (pp. 37-38) / Reseñista" },
-                    { nombre: "Waldo Rojas", rol: "Entrevistado Nº 1 (pp. 39-48)" },
-                    { nombre: "Juan Cameron", rol: "Reseñista Nº 1" },
-                    { nombre: "Federico Schopf", rol: "Teórico Nº 1: 'Sobre la poesía joven en Chile' (pp. 28-31)" },
-                    { nombre: "J.G. Cobo Borda", rol: "Teórico Nº 1: 'Voces nuevas en la poesía latinoamericana' (pp. 13-27)" }
-                ],
-                existencias: [
-                    { lugar: "Memoria Chilena (BN)", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html", nota: "Nº 1 (dic. 1985) - PDF digitalizado descargable (MC0005475)" },
-                    { lugar: "Memoria Chilena (BN)", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-83501.html", nota: "Nº 5 (1998) - Poesía visual de Millán (pp. 92-95)" },
-                    { lugar: "Biblioteca Nacional de Chile (Hemeroteca)", tiene: true, link: null, nota: "Colección física" },
-                    { lugar: "Libros del Ayer (librería anticuaria)", tiene: true, link: "https://www.librosdelayer.cl/nuestros_libros/detalle/poesia-y-narrativa/9896/gonzalo-millan-director-el-espiritu-del-valle-revista-de-creacion-y-critica", nota: "Colección completa Nº 1-5 (a la venta)" },
-                    { lugar: "Girol Books (Ottawa)", tiene: true, link: "https://www.girol.com/books/el-espiritu-del-valle-revista-de-poesia-y-critica-1-diciembre/", nota: "Nº 1 (dic. 1985) - Librería canadiense" }
-                ]
-            }
-        ],
-        contenidoN1: {
-            antologiaDiezPoetasDispersos: ["Raúl Barrientos", "Claudio Bertoni", "Javier Campos", "José Ángel Cuevas", "Walter Hoefler", "Hernán Miranda", "Paz Molina (p. 63)", "Jaime Anselmo Silva (p. 64)", "Miguel Vicuña Navarro (p. 65)", "Antonio Vieyra"],
-            librosResenados: [
-                "Literatura chilena en Canadá (Naín Nómez, ed., Cordillera, 1982) - reseña: Basil Mogridge",
-                "Bobby Sands desfallece en el muro (Carmen Berenguer, 1983) - reseña: Eduardo Briceño",
-                "La Tirana (Diego Maquieira, 1983) - reseña: Tomás Harris",
-                "Karra Maw'n (Clemente Riedemann, 1984) - reseña: Jorge Narváez",
-                "La Nueva Novela (Juan Luis Martínez, 2ª ed., 1985) - reseña: Enrique Lihn"
-            ],
-            talleresYEspaciosMencionados: ["Taller Altazor – Biblioteca Nacional (1978) – Paz Molina", "Taller Murciélago – Valdivia (1971-1973) – mención en reseña Riedemann", "Revista Huelén – Paz Molina editora de poesía"]
-        },
-        fuentes: [
-            { autor: "Memoria Chilena", año: "n.d.", titulo: "Gonzalo Millán (1947-2006)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3442.html" },
-            { autor: "Etcheverry, J.", año: "2017", titulo: "El concepto del 'espíritu del valle' de Gonzalo Millán", medio: "Proyecto Patrimonio / Letras.mysite", link: "http://letras.mysite.com/jetc230517.html" },
-            { autor: "Cameron, J.", año: "2010", titulo: "El espíritu del valle 25 años después", medio: "Trilce (Concepción), Nº 29", link: "https://www.bibliotecanacionaldigital.gob.cl/visor/BND:343262" },
-            { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-97515.html" },
-            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, diciembre 1985", medio: "Fuente primaria digitalizada", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
-        ]
-    },
-    {
-        nombre: "Taller/Colectivo Caja Negra",
-        coords: [-33.4545, -70.6020],
-        zona: "Santiago (Región Metropolitana, Ñuñoa)",
-        region: "metropolitana",
-        años: "1977–2013",
-        tipo: "taller",
-        verificado: true,
-        ultimaActualizacion: "2026-01-27",
-        direccion: "Irarrázabal 2345, Ñuñoa",
-        historia: {
-            origen: "Origen en 1977 en Café Concert Comendador (Campus UC Lo Contador). Espacio de entretenimiento estudiantil que permitía evitar censura y persecución militar. Se leía a Pablo Neruda (literatura prohibida).",
-            contexto: "Espacio cultural alternativo que trabajó al margen de la institucionalidad en dictadura. Actividades de teatro, música, poesía, artes visuales. Publicó la revista 'El Espíritu de la Época' y libros bajo sello Ediciones Caja Negra.",
-            desarrollos: "Tres etapas: Talleres Caja Negra (1982-1988, dir. Sebastián Grey); Laboratorio de Arte Experimental (1988-1998, dir. Fernando Van de Wingard); Caja Negra Artes Visuales (1998-2013, dir. Víctor Hugo Bravo). Participaron activamente en eventos previos al plebiscito de 1988.",
-            continuidad: "Cierre en 2013 por venta del inmueble. 30 años de funcionamiento en el mismo lugar."
-        },
-        fundadores: [
-            { nombre: "Sebastián Grey", rol: "Director fundador (1977-1988)" }
-        ],
-        integrantes: [
-            { nombre: "Fernando Van de Wingard", rol: "Director (1988-1998)" },
-            { nombre: "Víctor Hugo Bravo", rol: "Director (1998-2013)" },
-            { nombre: "Carlos Montes de Oca", rol: "Artista/poeta" },
-            { nombre: "Norton Maza", rol: "Artista" },
-            { nombre: "Eugenia Prado", rol: "Escritora" },
-            { nombre: "Gonzalo Arqueros", rol: "Colaborador" }
-        ],
-        mujeresArtistas: [
-            { nombre: "Ana María Fell", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Lorena Araya", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Cecilia Avendaño", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Paz Carvajal", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Klaudia Kemper", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Consuelo Lewin", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Melania Lynch", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Eli Neira", rol: "Artista", verificado: true, fuente: "La Tercera (2017)" },
-            { nombre: "Eugenia Prado Bassi", rol: "Escritora", verificado: true, fuente: "La Tercera (2017)" }
-        ],
-        poetasPorVerificar: [
-            { nombre: "Silvia Gallo", estado: "Sin registros localizados en fuentes disponibles" },
-            { nombre: "Nelda Mella", estado: "Poeta documentada (BND 1988), vínculo con colectivo pendiente de verificación" }
-        ],
-        publicaciones: [
-            {
-                titulo: "El Espíritu de la Época",
-                años: "1980s",
-                tipo: "Revista cultural",
-                detalles: ["Revista producida clandestinamente durante dictadura"],
-                existencias: []
-            },
-            {
-                titulo: "Serie Fin de Siglo",
-                años: "1980s",
-                tipo: "Ediciones",
-                detalles: ["Serie de publicaciones"],
-                existencias: []
-            }
-        ],
-        fuentes: [
-            { autor: "El Mostrador", año: "2018", titulo: "Caja negra 1977-2013: 36 años de arte colectivo en Chile", medio: "El Mostrador Cultura", link: "https://www.elmostrador.cl/cultura/2018/01/02/caja-negra-1977-2013-36-anos-de-arte-colectivo-en-chile/" },
-            { autor: "VADB", año: "n.d.", titulo: "Caja Negra Artes Visuales", medio: "Arte Contemporáneo Latinoamericano", link: "https://vadb.org/institutions/caja-negra" },
-            { autor: "El Mostrador", año: "2013", titulo: "Colectivo Caja Negra: ícono del arte independiente quedaría en la calle", medio: "El Mostrador Cultura", link: "https://www.elmostrador.cl/cultura/2013/08/27/colectivo-caja-negra-icono-del-arte-independiente-quedaria-en-la-calle/" },
-            { autor: "Escáner Cultural", año: "n.d.", titulo: "CAJA NEGRA 1977-2013", medio: "Revista Escáner Cultural", link: "https://revista.escaner.cl/node/8155.html" }
-        ]
-    },
-    {
-        nombre: "Taller de Poesía Fundación Pablo Neruda",
-        coords: [-33.4327, -70.6327],
-        zona: "Santiago (Región Metropolitana, Bellavista)",
-        region: "metropolitana",
-        años: "1987–presente",
-        tipo: "taller",
-        verificado: true,
-        ultimaActualizacion: "2026-01-27",
-        direccion: "La Chascona, Fernando Márquez de la Plata 0192, Bellavista",
-        historia: {
-            origen: "Creado en 1987 por los poetas Jaime Quezada y Floridor Pérez como una manera de orientar y canalizar los afanes vocacionales de las nuevas generaciones de escritores jóvenes.",
-            contexto: "Uno de los talleres más antiguos y prestigiosos de Chile e Hispanoamérica. Beca creada en 1988: suma de dinero + asistencia al taller durante 10 meses. 10 becarios por año (menores de 30 años, desde 2019 con criterio paritario).",
-            desarrollos: "Más de 300 poetas jóvenes han recibido la beca (tres generaciones de poesía chilena). En 1994 se extendió a La Sebastiana (Valparaíso). En 2007 se creó el Taller Latinoamericano de Poesía que integra poetas de Uruguay, Argentina y Bolivia.",
-            continuidad: "Sigue activo. Desde 2019 dirigido por Malú Urriola y coordinado por Francisco Martinovich."
-        },
-        fundadores: [
-            { nombre: "Jaime Quezada", rol: "Cofundador y director (1987-2019)" },
-            { nombre: "Floridor Pérez", rol: "Cofundador y director (1987-2019)" }
-        ],
-        integrantes: [
-            { nombre: "Malú Urriola", rol: "Directora (2019-presente)" },
-            { nombre: "Francisco Martinovich", rol: "Coordinador (2019-presente)" },
-            { nombre: "Sergio Muñoz", rol: "Director Taller La Sebastiana (1994-)" }
-        ],
-        mujeresPoetas: [
-            { nombre: "Nadia Prado", rol: "Becaria 1991", enRevista: true, nota: "Poeta, ensayista. Obras: Simples placeres (1992), Carnal (1998), Job (2006)" },
-            { nombre: "Isabel Larraín", rol: "Becaria ca. 1990-1991", enRevista: true, nota: "Por verificar datos" }
-        ],
-        publicaciones: [],
-        nota: "El taller no tiene publicación propia, pero los becarios publican individualmente. La Fundación edita las revistas 'Cuadernos' (desde 1989) y 'Nerudiana'.",
-        fuentes: [
-            { autor: "Fundación Pablo Neruda", año: "2024", titulo: "Talleres", medio: "Sitio oficial", link: "https://fundacionneruda.org/talleres/" },
-            { autor: "Wikipedia", año: "2025", titulo: "Fundación Pablo Neruda", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Fundaci%C3%B3n_Pablo_Neruda" },
-            { autor: "El Desconcierto", año: "2019", titulo: "Floridor Pérez: Lo más importante es aprender a borrar", medio: "El Desconcierto", link: "https://www.eldesconcierto.cl/tipos-moviles/letras/2019/09/25/floridor-perez-lo-mas-importante-es-aprender-a-borrar.html" },
-            { autor: "Cultura Fundación Neruda", año: "2021", titulo: "Regresa el Taller Neruda en su versión on line", medio: "Portal Cultura Fundación Neruda", link: "https://cultura.fundacionneruda.org/2021/06/regresa-el-taller-neruda-en-su-version-on-line/" }
-        ]
-    },
-    {
+        nombre: "Etcétera",
         coords: [-36.8250, -73.0350],
         zona: "Biobío (Concepción)",
         region: "sur",
@@ -5109,35 +4690,12 @@ const talleres = [
         años: "1982–1990s",
         tipo: "taller",
         verificado: true,
-        ultimaActualizacion: "2026-01-27",
-        historia: {
-            origen: "Taller literario activo en Santiago durante los años 80.",
-            contexto: "Espacio de formación poética en dictadura. Publicó la Revista Huelén.",
-            desarrollos: "Integrantes incluyen Hernán Ortega Parada (director de la revista). Paz Molina fue editora de poesía de la revista vinculada.",
-            continuidad: "Parte del circuito de talleres literarios de Santiago en los 80."
-        },
-        integrantes: [
-            { nombre: "Hernán Ortega Parada", rol: "Coordinador / Director Revista Huelén" }
-        ],
-        mujeresPoetas: [
-            { nombre: "Paz Molina", rol: "Editora de poesía (Revista Huelén)", enRevista: true }
-        ],
-        publicaciones: [
-            {
-                titulo: "Revista Huelén",
-                años: "1980s",
-                numeros: "Al menos 14 números documentados",
-                detalles: ["Director: Hernán Ortega Parada", "Editora de poesía: Paz Molina", "Nº 14 (1984) mencionado en Palabra Escrita Nº 16"],
-                personas: [
-                    { nombre: "Paz Molina", rol: "Editora de poesía" }
-                ],
-                existencias: []
-            }
-        ],
-        fuentes: [
-            { autor: "Palabra Escrita N°16", año: "1984", titulo: "'Publicaciones recibidas': Huelén Nº 14", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" },
-            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, p. 63: datos biográficos Paz Molina - editora poesía Huelén", medio: "Memoria Chilena MC0005475", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
-        ]
+        ultimaActualizacion: "2026-01-09",
+        descripcion: "Taller literario activo en Santiago durante los años 80.",
+        contexto: "Espacio de formación poética en dictadura.",
+        integrantes: [],
+        publicaciones: [],
+        fuentes: []
     },
     {
         nombre: "Taller Ernesto Montenegro",
@@ -5260,7 +4818,7 @@ const talleres = [
         años: "1980s",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-27",
+        ultimaActualizacion: "2026-01-09",
         historia: {
             origen: "Publicación literaria vinculada al Taller Huelén.",
             contexto: "Difusión de poesía joven en dictadura.",
@@ -5270,13 +4828,10 @@ const talleres = [
         fundadores: [
             { nombre: "Hernán Ortega Parada", rol: "Director (documentado en Palabra Escrita N°16, 1984)" }
         ],
-        integrantes: [
-            { nombre: "Paz Molina", rol: "Editora de poesía (doc. El Espíritu del Valle Nº 1, 1985)" }
-        ],
+        integrantes: [],
         publicaciones: [],
         fuentes: [
-            { autor: "Palabra Escrita N°16", año: "1984", titulo: "Sección 'Publicaciones recibidas': Huelen Nº 14, dir. Hernán Ortega Parada", medio: "Ejemplar digitalizado Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" },
-            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, p. 63: datos biográficos Paz Molina", medio: "Memoria Chilena MC0005475", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
+            { autor: "Palabra Escrita N°16", año: "1984", titulo: "Sección 'Publicaciones recibidas': Huelen Nº 14, dir. Hernán Ortega Parada", medio: "Ejemplar digitalizado Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
     {
@@ -6894,6 +6449,177 @@ const talleres = [
         fuentes: [
             { autor: "Todavía Nº 1", año: "verano 1985", titulo: "Revista de creación y crítica literaria", medio: "PDF consultado", link: null }
         ]
+    },
+
+    {
+        nombre: "Taller/Colectivo Caja Negra",
+        coords: [-33.4545, -70.6020],
+        zona: "Región Metropolitana (Ñuñoa)",
+        region: "metropolitana",
+        años: "1977–2013",
+        tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-27",
+        direccion: "Irarrázabal 2345, Ñuñoa",
+        historia: {
+            origen: "Origen en 1977 en Café Concert Comendador (Campus UC Lo Contador). Espacio de entretenimiento estudiantil que permitía evitar censura y persecución militar. Se leía a Pablo Neruda (literatura prohibida).",
+            contexto: "Espacio cultural alternativo que trabajó al margen de la institucionalidad en dictadura. Actividades de teatro, música, poesía, artes visuales. Publicó la revista 'El Espíritu de la Época' y libros bajo sello Ediciones Caja Negra.",
+            desarrollos: "Tres etapas: Talleres Caja Negra (1982-1988, dir. Sebastián Grey); Laboratorio de Arte Experimental (1988-1998, dir. Fernando Van de Wingard); Caja Negra Artes Visuales (1998-2013, dir. Víctor Hugo Bravo). Participaron activamente en eventos previos al plebiscito de 1988.",
+            continuidad: "Cierre en 2013 por venta del inmueble. 30 años de funcionamiento en el mismo lugar."
+        },
+        fundadores: [
+            { nombre: "Sebastián Grey", rol: "Director fundador (1977-1988)" }
+        ],
+        integrantes: [
+            { nombre: "Fernando Van de Wingard", rol: "Director (1988-1998)" },
+            { nombre: "Víctor Hugo Bravo", rol: "Director (1998-2013)" },
+            { nombre: "Carlos Montes de Oca", rol: "Artista/poeta" },
+            { nombre: "Norton Maza", rol: "Artista" },
+            { nombre: "Eugenia Prado Bassi", rol: "Escritora" },
+            { nombre: "Gonzalo Arqueros", rol: "Colaborador" }
+        ],
+        mujeresArtistas: [
+            { nombre: "Ana María Fell", rol: "Artista" },
+            { nombre: "Lorena Araya", rol: "Artista" },
+            { nombre: "Cecilia Avendaño", rol: "Artista" },
+            { nombre: "Paz Carvajal", rol: "Artista" },
+            { nombre: "Klaudia Kemper", rol: "Artista" },
+            { nombre: "Consuelo Lewin", rol: "Artista" },
+            { nombre: "Melania Lynch", rol: "Artista" },
+            { nombre: "Eli Neira", rol: "Artista" },
+            { nombre: "Eugenia Prado Bassi", rol: "Escritora" }
+        ],
+        poetasPorVerificar: [
+            { nombre: "Silvia Gallo", estado: "Sin registros localizados en fuentes disponibles" },
+            { nombre: "Nelda Mella", estado: "Poeta documentada (BND 1988), vínculo con colectivo pendiente de verificación" }
+        ],
+        publicaciones: [
+            {
+                titulo: "El Espíritu de la Época",
+                años: "1980s",
+                tipo: "Revista cultural",
+                detalles: ["Revista producida clandestinamente durante dictadura"],
+                existencias: []
+            }
+        ],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "El Mostrador", año: "2018", titulo: "Caja negra 1977-2013: 36 años de arte colectivo en Chile", medio: "El Mostrador Cultura", link: "https://www.elmostrador.cl/cultura/2018/01/02/caja-negra-1977-2013-36-anos-de-arte-colectivo-en-chile/" },
+            { autor: "VADB", año: "n.d.", titulo: "Caja Negra Artes Visuales", medio: "Arte Contemporáneo Latinoamericano", link: "https://vadb.org/institutions/caja-negra" },
+            { autor: "El Mostrador", año: "2013", titulo: "Colectivo Caja Negra: ícono del arte independiente quedaría en la calle", medio: "El Mostrador Cultura", link: "https://www.elmostrador.cl/cultura/2013/08/27/colectivo-caja-negra-icono-del-arte-independiente-quedaria-en-la-calle/" }
+        ]
+    },
+    {
+        nombre: "El Espíritu del Valle",
+        coords: [-33.4495, -70.6610],
+        zona: "Región Metropolitana (Santiago)",
+        region: "metropolitana",
+        años: "1985–1998",
+        tipo: "revista",
+        verificado: true,
+        historia: {
+            origen: "Revista de poesía y crítica fundada por Gonzalo Millán (1947-2006) en coproducción binacional entre Fundación Cooperación Chile-Canadá (Santiago) y Ediciones Cordillera (Ottawa, Canadá).",
+            contexto: "Revista-puente entre la poesía de Chile y Canadá. Espacio de acogida para idiomas y quehaceres poéticos de Chile, Canadá, América Latina y Europa. Conexión entre poetas 'de adentro' y 'de afuera' post-golpe del 73. Integración de compromiso político con experimentación vanguardista e inclusión de poesía visual.",
+            desarrollos: "El nombre proviene del Tao Te-King y del ensayo de Millán 'Promociones poéticas emergentes: El espíritu del valle' (Postdata Nº 4, Concepción, 1985). Propuso considerar la tradición poética chilena no solo por 'las altas cumbres' sino por el conjunto colectivo. Publicó 5 números: Nº 1 (dic. 1985, 96 pp.), Nº 2-3 (1987, doble, 123 pp.), Nº 4-5 (1998, doble, 160 pp.).",
+            continuidad: "Millán regresó a Chile en 1984 y dirigió la revista desde Santiago manteniendo el vínculo transnacional con Ediciones Cordillera hasta 1998."
+        },
+        fundadores: [
+            { nombre: "Gonzalo Millán", rol: "Director y fundador" }
+        ],
+        integrantes: [
+            { nombre: "Jorge Teillier", rol: "Colaborador" },
+            { nombre: "Juvencio Valle", rol: "Colaborador" },
+            { nombre: "Gonzalo Rojas", rol: "Colaborador" },
+            { nombre: "Cecilia Vicuña", rol: "Colaboradora" },
+            { nombre: "Juan Cameron", rol: "Colaborador" },
+            { nombre: "Enrique Lihn", rol: "Colaborador" },
+            { nombre: "Juan Luis Martínez", rol: "Colaborador" },
+            { nombre: "Carlos Montes de Oca", rol: "Colaborador" },
+            { nombre: "Álvaro Carredaño", rol: "Fotografías" },
+            { nombre: "Pamela González", rol: "Fotografías" },
+            { nombre: "Manuel Rodríguez", rol: "Comic" }
+        ],
+        publicaciones: [
+            {
+                titulo: "El Espíritu del Valle Nº 1",
+                años: "diciembre 1985",
+                tipo: "Revista",
+                detalles: ["Formato rústica 27×21 cm", "96 páginas", "Imprenta Gráfica Andes (Santiago)"],
+                personas: [],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html", nota: "PDF completo, código MC0005475" },
+                    { lugar: "Biblioteca Nacional (Hemeroteca)", tiene: true, link: null, nota: "Físico" },
+                    { lugar: "Girol Books (Ottawa)", tiene: true, link: "https://www.girol.com/books/el-espiritu-del-valle-revista-de-poesia-y-critica-1-diciembre/", nota: "Comercialización" }
+                ]
+            },
+            {
+                titulo: "El Espíritu del Valle Nº 2-3",
+                años: "1987",
+                tipo: "Revista (número doble)",
+                detalles: ["Formato rústica 26.5×20.5 cm", "123 páginas"],
+                personas: [],
+                existencias: [
+                    { lugar: "Biblioteca Nacional (Hemeroteca)", tiene: true, link: null, nota: "Físico" },
+                    { lugar: "Libros del Ayer (Santiago)", tiene: true, link: "https://www.librosdelayer.cl/nuestros_libros/detalle/poesia-y-narrativa/9896/gonzalo-millan-director-el-espiritu-del-valle-revista-de-creacion-y-critica", nota: "Colección completa" }
+                ]
+            },
+            {
+                titulo: "El Espíritu del Valle Nº 4-5",
+                años: "1998",
+                tipo: "Revista (número doble)",
+                detalles: ["Formato rústica 30×21 cm", "160 páginas", "Incluye poesía visual de Gonzalo Millán (pp. 92-95)"],
+                personas: [],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-83501.html", nota: "Solo poesía visual de Millán" },
+                    { lugar: "Biblioteca Nacional (Hemeroteca)", tiene: true, link: null, nota: "Físico" },
+                    { lugar: "Libros del Ayer (Santiago)", tiene: true, link: "https://www.librosdelayer.cl/nuestros_libros/detalle/poesia-y-narrativa/9896/gonzalo-millan-director-el-espiritu-del-valle-revista-de-creacion-y-critica", nota: "Colección completa" }
+                ]
+            }
+        ],
+        mujeresPoetas: [
+            { nombre: "Cecilia Vicuña", rol: "Colaboradora", enRevista: true }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Espíritu del Valle: revista semestral de poesía y crítica: n° 1, diciembre 1985", medio: "Colección digital MC0005475", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" },
+            { autor: "Cameron, J.", año: "2010", titulo: "El espíritu del valle 25 años después", medio: "Trilce, (29), 41-42", link: "https://www.bibliotecanacionaldigital.gob.cl/visor/BND:343262" },
+            { autor: "Etcheverry, J.", año: "2017", titulo: "El concepto del 'espíritu del valle' de Gonzalo Millán", medio: "Proyecto Patrimonio", link: "http://letras.mysite.com/jetc230517.html" },
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Gonzalo Millán (1947-2006)", medio: "Perfil biográfico", link: "https://www.memoriachilena.gob.cl/602/w3-article-3442.html" }
+        ]
+    },
+    {
+        nombre: "Taller de Poesía Fundación Pablo Neruda",
+        coords: [-33.4327, -70.6327],
+        zona: "Región Metropolitana (Bellavista)",
+        region: "metropolitana",
+        años: "1987–presente",
+        tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-01-27",
+        direccion: "La Chascona, Fernando Márquez de la Plata 0192, Bellavista",
+        historia: {
+            origen: "Creado en 1987 por los poetas Jaime Quezada y Floridor Pérez como una manera de orientar y canalizar los afanes vocacionales de las nuevas generaciones de escritores jóvenes.",
+            contexto: "Uno de los talleres más antiguos y prestigiosos de Chile e Hispanoamérica. Beca creada en 1988: suma de dinero + asistencia al taller durante 10 meses. 10 becarios por año (menores de 30 años, desde 2019 con criterio paritario).",
+            desarrollos: "Más de 300 poetas jóvenes han recibido la beca (tres generaciones de poesía chilena). En 1994 se extendió a La Sebastiana (Valparaíso). En 2007 se creó el Taller Latinoamericano de Poesía que integra poetas de Uruguay, Argentina y Bolivia.",
+            continuidad: "Sigue activo. Desde 2019 dirigido por Malú Urriola y coordinado por Francisco Martinovich."
+        },
+        fundadores: [
+            { nombre: "Jaime Quezada", rol: "Cofundador y director (1987-2019)" },
+            { nombre: "Floridor Pérez", rol: "Cofundador y director (1987-2019)" }
+        ],
+        integrantes: [
+            { nombre: "Malú Urriola", rol: "Directora (2019-presente)" },
+            { nombre: "Francisco Martinovich", rol: "Coordinador (2019-presente)" }
+        ],
+        becarias: [
+            { nombre: "Nadia Prado", año: "1991", verificado: true },
+            { nombre: "Isabel Larraín", año: "ca. 1990-1991", verificado: false, nota: "Por verificar" }
+        ],
+        publicaciones: [],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Fundación Pablo Neruda", año: "n.d.", titulo: "Taller de Poesía", medio: "Sitio oficial", link: "https://fundacionneruda.org/taller-de-poesia/" },
+            { autor: "El Desconcierto", año: "2019", titulo: "Taller de Poesía Fundación Pablo Neruda: nueva dirección", medio: "El Desconcierto", link: null }
+        ]
     }
     ];
 
@@ -7649,8 +7375,7 @@ const poetas = [
                 { nombre: "Solidaridad", id: "solidaridad" },
                 { nombre: "Añañuca", id: "ananuca" },
                 { nombre: "Eurídice", id: "euridice" },
-                { nombre: "Centro de Alumnos Escuela de Arte UCH", id: "centro-alumnos-arte-uch" },
-                { nombre: "El Espíritu del Valle", id: "espiritu-valle", nota: "Colaboradora Nº 1 (1985), libro reseñado" }
+                { nombre: "Centro de Alumnos Escuela de Arte UCH", id: "centro-alumnos-arte-uch" }
             ]
         },
         fuentes: [
@@ -8202,15 +7927,6 @@ const poetas = [
                 existencias: []
             },
             {
-                titulo: "El Espíritu del Valle Nº 1",
-                años: "1985",
-                tipo: "Revista",
-                detalles: ["Antología 'Diez poetas dispersos' (p. 63)", "Poemas: 'Divagando', 'Carcomido de alfabetos'", "Dir. Gonzalo Millán"],
-                existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html", nota: "PDF completo descargable (MC0005475)" }
-                ]
-            },
-            {
                 titulo: "La Mujer en la Poesía Chilena de los '80",
                 años: "1987",
                 tipo: "Antología",
@@ -8247,16 +7963,14 @@ const poetas = [
                 { nombre: "Taller de Novela de Enrique Lafourcade", id: "taller-lafourcade" }
             ],
             revistas: [
-                { nombre: "Revista Huelén", id: "huelen", nota: "Editora de poesía" },
-                { nombre: "El Espíritu del Valle", id: "espiritu-valle", nota: "Poeta antologada Nº 1 (dic. 1985, p. 63)" }
+                { nombre: "Revista Huelén", id: "huelen" }
             ]
         },
         fuentes: [
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Las escritoras (MC98211)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-98211.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Escribir en los bordes (MC92709)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-92709.html" },
             { autor: "Fundación Pablo Neruda", año: "2020", titulo: "4 poemas de Paz Molina", medio: "Cultura Fundación Pablo Neruda", link: "https://cultura.fundacionneruda.org/2020/11/4-poemas-de-paz-molina/" },
-            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null },
-            { autor: "El Espíritu del Valle", año: "1985", titulo: "Nº 1, p. 63: datos biográficos y poemas", medio: "Memoria Chilena MC0005475", link: "https://www.memoriachilena.gob.cl/602/w3-article-121687.html" }
+            { autor: "Corssen, I. (ed.)", año: "1987", titulo: "La Mujer en la Poesía Chilena de los '80 (biografía)", medio: "Ediciones INCOR, Santiago", link: null }
         ]
     },
     {
@@ -13977,6 +13691,24 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
     maxZoom: 18
 }).addTo(map);
 
+// ========== FUNCIÓN PARA CERRAR POPUPS AUTOMÁTICAMENTE ==========
+// Cuando se abre un popup nuevo, cierra el anterior
+let currentOpenPopup = null;
+
+map.on('popupopen', function(e) {
+    if (currentOpenPopup && currentOpenPopup !== e.popup) {
+        map.closePopup(currentOpenPopup);
+    }
+    currentOpenPopup = e.popup;
+});
+
+map.on('popupclose', function(e) {
+    if (currentOpenPopup === e.popup) {
+        currentOpenPopup = null;
+    }
+});
+// ================================================================
+
 let markerClusterGroup;
 let connectionLine = null; // Para las líneas de conexión
 
@@ -14669,111 +14401,6 @@ window.toggleSilenciosPanel = function() {
     panel.classList.toggle('open');
 };
 
-// Función para toggle panel de revistas
-window.toggleRevistasPanel = function() {
-    const panel = document.getElementById('revistasPanel');
-    panel.classList.toggle('open');
-    // Llenar lista si está abierto
-    if (panel.classList.contains('open')) {
-        updateRevistasList();
-    }
-};
-
-// Función para toggle panel de talleres
-window.toggleTalleresPanel = function() {
-    const panel = document.getElementById('talleresPanel');
-    panel.classList.toggle('open');
-    // Llenar lista si está abierto
-    if (panel.classList.contains('open')) {
-        updateTalleresList();
-    }
-};
-
-// Función para actualizar lista de revistas
-function updateRevistasList() {
-    const container = document.getElementById('revistasList');
-    
-    // Filtrar entidades tipo revista y ordenar alfabéticamente
-    const revistas = talleres
-        .filter(t => t.tipo === 'revista')
-        .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
-    
-    if (revistas.length === 0) {
-        container.innerHTML = '<div style="padding: 20px; text-align: center; color: #888;">No hay revistas para mostrar</div>';
-        return;
-    }
-    
-    container.innerHTML = revistas.map(r => {
-        const safeName = r.nombre.replace(/'/g, "\\'");
-        return `
-        <div class="revista-list-item" onclick="focusOnTaller('${safeName}')">
-            <h4>${r.nombre}</h4>
-            <p>${r.zona || ''} · ${r.años || ''}</p>
-        </div>
-    `;}).join('');
-}
-
-// Función para actualizar lista de talleres
-function updateTalleresList() {
-    const container = document.getElementById('talleresList');
-    
-    // Filtrar entidades tipo taller y ordenar alfabéticamente
-    const talleresFiltrados = talleres
-        .filter(t => t.tipo === 'taller')
-        .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
-    
-    if (talleresFiltrados.length === 0) {
-        container.innerHTML = '<div style="padding: 20px; text-align: center; color: #888;">No hay talleres para mostrar</div>';
-        return;
-    }
-    
-    container.innerHTML = talleresFiltrados.map(t => {
-        const safeName = t.nombre.replace(/'/g, "\\'");
-        return `
-        <div class="taller-list-item" onclick="focusOnTaller('${safeName}')">
-            <h4>${t.nombre}</h4>
-            <p>${t.zona || ''} · ${t.años || ''}</p>
-        </div>
-    `;}).join('');
-}
-
-// Función para hacer focus en un taller/revista desde los paneles
-window.focusOnTaller = function(nombre) {
-    // Limpiar conexiones activas
-    if (conexionesActivas) {
-        clearHighlights();
-    }
-    
-    const marker = tallerMarkers[nombre];
-    if (marker) {
-        // En móvil, cerrar los paneles primero
-        const isMobile = window.innerWidth <= 768;
-        if (isMobile) {
-            const revPanel = document.getElementById('revistasPanel');
-            const talPanel = document.getElementById('talleresPanel');
-            if (revPanel && revPanel.classList.contains('open')) {
-                revPanel.classList.remove('open');
-            }
-            if (talPanel && talPanel.classList.contains('open')) {
-                talPanel.classList.remove('open');
-            }
-        }
-        
-        // Hacer zoom al marcador
-        map.setView(marker.getLatLng(), 12);
-        
-        // Abrir el popup
-        const delay = isMobile ? 600 : 300;
-        setTimeout(() => {
-            markerClusterGroup.zoomToShowLayer(marker, () => {
-                setTimeout(() => {
-                    marker.openPopup();
-                }, isMobile ? 300 : 0);
-            });
-        }, delay);
-    }
-};
-
 // Función para enfocar entidad desde panel Silencios (oculta todo menos la seleccionada)
 window.focusSilencio = function(nombre) {
     // Limpiar conexiones activas
@@ -15400,6 +15027,7 @@ document.getElementById('typeFilter').addEventListener('change', function() {
 </script>
 
 <!-- Footer con Copyright -->
+<!-- Footer con Copyright -->
 <div id="copyright-footer" style="
     position: fixed;
     bottom: 0;
@@ -15415,7 +15043,7 @@ document.getElementById('typeFilter').addEventListener('change', function() {
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 ">
-    <strong>© Paula Cucurella 2026</strong> · Mapa literario de poesía escrita por mujeres en Chile (1973-1990)
+    <strong>© Paula Cucurella 2026</strong> · Mapa Literario de Poesía Escrita por Mujeres en Chile (1973-1990)
     <br>
     <span style="font-size: 11px;">
         Contacto: <a href="mailto:paula.cucurella@gmail.com" style="color: #8B4513; text-decoration: none;">paula.cucurella@gmail.com</a>
