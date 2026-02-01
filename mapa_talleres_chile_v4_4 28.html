@@ -1130,7 +1130,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 29 enero 2026</p>
+        <p>Última actualización: 31 enero 2026</p>
         <p style="font-size: 0.85em;">Contacto: <a href="/cdn-cgi/l/email-protection#ea9a8b9f868bc4899f899f988f86868baa8d878b8386c4898587"><span class="__cf_email__" data-cfemail="ed9d8c98818cc38e988e989f8881818cad8a808c8481c38e8280">[email&#160;protected]</span></a></p>
     </div>
     <div class="header-right">
@@ -5353,15 +5353,33 @@ const talleres = [
         coords: [-33.46, -71.66],
         zona: "El Tabo (Litoral Central)",
         region: "metropolitana",
-        años: "1980s",
+        años: "1983 (al menos)",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        descripcion: "Publicación literaria del litoral central.",
-        contexto: "Difusión de poesía costera.",
-        integrantes: [],
-        publicaciones: [],
-        fuentes: []
+        ultimaActualizacion: "2026-01-31",
+        descripcion: "Revista literaria 'Arte y Conocimiento'. Creada por Jonás (Jaime Gómez Rogers) y Vania Escobar como parte de Ediciones de Alta Marea.",
+        contexto: "Publicación del litoral central vinculada a la Sala de Arte Alta Marea. Difundió poesía latinoamericana contemporánea, textos clásicos y literatura Zen. Formato artesanal con ilustraciones originales. Parte de la resistencia cultural durante dictadura.",
+        integrantes: [
+            { nombre: "Vania Escobar Herrera", rol: "Co-directora y poeta" },
+            { nombre: "Jaime Gómez Rogers (Jonás)", rol: "Co-director" },
+            { nombre: "Angela Pardo", rol: "Ilustradora" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Alta Marea - Verano 1983",
+                años: "1983",
+                tipo: "Revista",
+                detalles: ["Subtítulo: Arte y Conocimiento", "Incluye poesía de Vania Escobar ('Aun' y 'Sin un quejido me dueles')", "Poetas latinoamericanos: María Kril (Argentina), Carlos Orellana (Perú), Héctor Prieto, Álvaro Ruiz, Humberto Quino (Bolivia)", "Textos clásicos: Bécquer, Tao Yuan-Ming", "Ilustraciones: Angela Pardo", "Publicidad local de El Tabo y Santo Domingo"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99337.html", nota: "PDF descargable (MC0005700)" }
+                ]
+            }
+        ],
+        fuentes: [
+            { autor: "Memoria Chilena", año: "1983", titulo: "Alta marea: verano 1983", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-99337.html" },
+            { autor: "Wikipedia", año: "2024", titulo: "Jaime Gómez Rogers", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Jaime_G%C3%B3mez_Rogers" },
+            { autor: "Litoralpoeta.cl", año: "2021", titulo: "Jaime Gómez Rogers (Jonás)", medio: "Litoral Poeta y de las Artes", link: "https://litoralpoeta.cl/autores/jonas/" }
+        ]
     },
     {
         nombre: "Agrupación Cultural Trilce",
@@ -10239,16 +10257,16 @@ const poetas = [
         foto: null,
         biografia: {
             nacimiento: "Chile, 1947",
-            formacion: "Sin formación literaria formal. Se nutrió del ambiente creativo junto a su esposo, el poeta Jaime 'Jonás' Gómez Rogers (1940-2005). Rol de musa, editora y poeta autodidacta.",
-            contexto: "Se radicaron en El Tabo (litoral central) desde 1980, convirtiendo su casa en foco artístico de la resistencia cultural. En 1983 revista Alta Marea anotó: 'Chilena, 1947. No tiene obras publicadas'.",
-            trayectoria: "No publicó libros individuales durante la dictadura. Cofundó con Jonás el Taller Mar Abierto (1980). Tras muerte de su esposo (2005), organiza cada año recital 'Adiós a Jonás' en El Tabo."
+            formacion: "Sin formación literaria formal. Se nutrió del ambiente creativo junto a su esposo, el poeta Jaime 'Jonás' Gómez Rogers (1940-2005). Rol de musa, editora, co-directora de revista y poeta autodidacta.",
+            contexto: "Se radicaron en El Tabo (litoral central) desde 1980, convirtiendo su casa en foco artístico de la resistencia cultural. Junto a Jonás creó la Sala de Arte Alta Marea y Ediciones de Alta Marea. En 1983 co-dirigió revista Alta Marea donde publicó sus primeros poemas.",
+            trayectoria: "Co-directora y poeta en revista Alta Marea (1983). No publicó libros individuales durante la dictadura. Cofundó con Jonás el Taller Mar Abierto (1980). Tras muerte de su esposo (2005), organiza cada año recital 'Adiós a Jonás' en El Tabo."
         },
         publicaciones: [
             {
-                titulo: "Mención en Alta Marea",
+                titulo: "Poemas en Alta Marea",
                 años: "1983",
                 tipo: "Revista",
-                detalles: ["Verano 1983", "El Tabo, Ed. Patmos", "Nota biográfica: 'Chilena, 1947. No tiene obras publicadas'"],
+                detalles: ["Verano 1983", "El Tabo, Ed. Patmos", "Co-directora junto a Jaime Gómez Rogers", "Publicó dos poemas: 'Aun' y 'Sin un quejido me dueles' (p. 19)", "Nota biográfica en revista: 'Chilena, 1947. No tiene obras publicadas'", "Ilustraciones: Angela Pardo"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99337.html", nota: "PDF descargable (MC0005700)" }
                 ]
@@ -10265,7 +10283,8 @@ const poetas = [
         fuentes: [
             { autor: "Memoria Chilena", año: "1983", titulo: "Alta marea: verano 1983", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-99337.html" },
             { autor: "Eloy, H.", año: "2021", titulo: "Jonás y alta marea", medio: "Periódico Carajo", link: "https://carajo.cl/columna-de-horacio-eloy-jonas-y-alta-marea/" },
-            { autor: "Biblioteca Nacional Digital", año: "2005", titulo: "Sigue acompañándome (entrevista)", medio: "El Líder (San Antonio)", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-260474.html" }
+            { autor: "Biblioteca Nacional Digital", año: "2005", titulo: "Sigue acompañándome (entrevista)", medio: "El Líder (San Antonio)", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/628/w3-article-260474.html" },
+            { autor: "Wikipedia", año: "2024", titulo: "Jaime Gómez Rogers", medio: "Wikipedia", link: "https://es.wikipedia.org/wiki/Jaime_G%C3%B3mez_Rogers" }
         ]
     },
     {
