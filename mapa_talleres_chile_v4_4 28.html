@@ -1130,7 +1130,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 14 febrero 2026</p>
+        <p>Última actualización: 20 febrero 2026</p>
         <p style="font-size: 0.85em;">Contacto: <a href="/cdn-cgi/l/email-protection#ea9a8b9f868bc4899f899f988f86868baa8d878b8386c4898587"><span class="__cf_email__" data-cfemail="ed9d8c98818cc38e988e989f8881818cad8a808c8481c38e8280">[email&#160;protected]</span></a></p>
     </div>
     <div class="header-right">
@@ -1374,7 +1374,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         </div>
     </div>
     <div class="silencios-panel-footer">
-        Click en un nombre para ver en el mapa · Actualizado: 14 febrero 2026
+        Click en un nombre para ver en el mapa · Actualizado: 20 febrero 2026
     </div>
 </div>
 
@@ -5237,14 +5237,14 @@ const talleres = [
         verificado: true,
         ultimaActualizacion: "2025-09-15",
         historia: {
-            origen: "Revista literaria fundada en Santiago en 1982.",
-            contexto: "Publicación independiente del período de dictadura.",
-            desarrollos: "Directores: Baisy Bennett y Ariel Fernández.",
+            origen: "Revista del Grupo Literario Tamarugal, fundado en Santiago. El grupo preexiste a la revista: ya aparece mencionado en Revista Nueva Línea Nº 2 (enero-marzo 1977) como Ediciones Tamarugal M.R., con reuniones semanales los viernes a las 19:00 hrs. en la Cámara Chilena del Libro (Avda. Bulnes 188, Santiago).",
+            contexto: "Publicación independiente del período de dictadura. El Grupo Literario Tamarugal también operó como sello editorial (Ediciones Tamarugal M.R.), publicando 'Vértigo' de Daisy Bennett (1976) y obras de Fernando Hernández Jara.",
+            desarrollos: "Directores: Daisy Bennett y Claudio Ariel Fernández D. Integrantes del grupo incluían a Udo Stefansky, Roberto Araya Gallegos, Fernando Hernández Jara y Miriam Litvak (Froimovich). Fernández D. era además director de la Fundación Tichauer.",
             continuidad: "Por investigar."
         },
         fundadores: [
-            { nombre: "Baisy Bennett", rol: "Directora" },
-            { nombre: "Ariel Fernández", rol: "Director" }
+            { nombre: "Daisy Bennett", rol: "Directora" },
+            { nombre: "Claudio Ariel Fernández D.", rol: "Director" }
         ],
         integrantes: [],
         publicaciones: [
@@ -5257,10 +5257,84 @@ const talleres = [
             }
         ],
         mujeresPoetas: [
-            { nombre: "Baisy Bennett", rol: "Directora", enRevista: true }
+            { nombre: "Daisy Bennett", rol: "Directora", enRevista: true }
         ],
         fuentes: [
-            { autor: "Revista Nueva Línea", año: "s.f.", titulo: "Nueva línea de revistas (pp. 102-103)", medio: "Memoria Chilena", link: null }
+            { autor: "Revista Nueva Línea", año: "s.f.", titulo: "Nueva línea de revistas (pp. 102-103)", medio: "Memoria Chilena", link: null },
+            { autor: "Revista Nueva Línea Nº 1-2", año: "1976-1977", titulo: "Notas biográficas y contraportada (Ediciones Tamarugal M.R.)", medio: "Ejemplar UCLA (A 000 916 743)", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Nueva Línea",
+        id: "revista-nueva-linea",
+        coords: [-33.4475, -70.6545],
+        zona: "Santiago (Casilla 16.346, Stgo. 9)",
+        region: "metropolitana",
+        años: "1976–1977+",
+        tipo: "revista",
+        verificado: false,
+        ultimaActualizacion: "2026-02-20",
+        nota: "⚠️ Años confirmados: Nº 1 (sept.-dic. 1976) y Nº 2 (ene.-mar. 1977). Probablemente continuó publicándose (el mapa ya citaba pp. 102-107 de números posteriores). Requiere segunda fuente independiente para marcar verificado.",
+        historia: {
+            origen: "Revista de Poesía y Teoría Poética fundada en Santiago en 1976 por Francisco Medina Cárdenas (director) y Enrique Volpe (subdirector). Publicación bimestral. Desde el Nº 2 se incorpora Ricardo de la Castilleja como Representante Legal y Redactor.",
+            contexto: "Declaró ser apolítica y sin sectarismos, enfocada exclusivamente en la calidad poética. Sin embargo, su existencia como espacio de publicación independiente durante dictadura, su vínculo con la Vicaría Sur (Casa Cultural 'Puelche' / Unión de Escritores Jóvenes de Chile) y sus redes de intercambio internacional la sitúan en el circuito de resistencia cultural.",
+            desarrollos: "Publicó poetas chilenos (10 en Nº 1, incluyendo 3 mujeres), poetas internacionales (España, Francia, Grecia clásica, Venezuela, Argentina, Rep. Dominicana, Panamá, Perú, Brasil, Senegal/África), ensayos de teoría y crítica literaria, reseñas de libros, y noticias literarias. Mantuvo intercambio con revistas de Perú, Brasil, España, Venezuela, EE.UU. y Chile (incluida Aumen de Castro). El director (Medina Cárdenas) era miembro del directorio de la Unión de Escritores Jóvenes de Chile, vinculada a la Vicaría Sur.",
+            continuidad: "El mapa ya contenía referencias a páginas 102-107 de números posteriores (vía Memoria Chilena). Existencia confirmada en UCLA. Por determinar número total de entregas."
+        },
+        fundadores: [
+            { nombre: "Francisco Medina Cárdenas", rol: "Director (n. 1943). Autor de 'Sol Invisible' (1973) y 'La Poética del Hombre' (1975). Creador de talleres de poesía. Vicepresidente de 'Fraternidad del Agua' (SECH)." },
+            { nombre: "Enrique Volpe", rol: "Subdirector (n. 1939, origen italiano). Fundó grupo 'Rosa del Maule' en Linares (1957). Autor de 'Cabaña entre las rosas' (1959)." }
+        ],
+        integrantes: [
+            { nombre: "Ricardo de la Castilleja", rol: "Representante Legal y Redactor (desde Nº 2). Argentino, criado en Fuentes Vaqueros, educado en Toledo." },
+            { nombre: "Osvaldo Ventura de la Fuente", rol: "Diseño de portada (Nº 2)" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Daisy Bennett", rol: "Poeta", poema: "'Tiempo' (Nº 1, 1976)", enRevista: true },
+            { nombre: "Antonieta Rodríguez Paris", rol: "Poeta", poema: "'Los molinos de viento' (Nº 1, 1976)", enRevista: true },
+            { nombre: "Angelina Buch Solís", rol: "Poeta (Página del poema inédito)", poema: "'Mandrágora' (Nº 1, 1976)", enRevista: true },
+            { nombre: "Dely Padilla", rol: "Poeta", poema: "'Vanidad' (Nº 2, 1977)", enRevista: true },
+            { nombre: "Miriam Litvak (Froimovich)", rol: "Poeta", poema: "'Búsqueda' (Nº 2, 1977)", enRevista: true }
+        ],
+        publicaciones: [
+            {
+                titulo: "Nueva Línea Nº 1 (2ª Entrega)",
+                años: "Septiembre-Diciembre 1976",
+                tipo: "Revista",
+                detalles: [
+                    "Subtítulo: Revista de Poesía y Teoría Poética",
+                    "Editorial: 'La poética joven chilena / Contra los profanos' (Francisco Medina Cárdenas)",
+                    "Secciones: Dos poetas de España, Grecia Clásica, 10 Poetas Chilenos, Venezuela, Argentina, Rep. Dominicana, Página del poema inédito, Libros chilenos y extranjeros, Noticias literarias",
+                    "Mujeres publicadas: Daisy Bennett ('Tiempo'), Antonieta Rodríguez Paris ('Los molinos de viento'), Angelina Buch Solís ('Mandrágora')",
+                    "Mención: Unión de Escritores Jóvenes de Chile / Casa Cultural 'Puelche' (Vicaría Sur)"
+                ],
+                existencias: [
+                    { lugar: "UCLA Southern Regional Library Facility", tiene: true, link: null, nota: "Ejemplar encuadernado Nº 1-2 (A 000 916 743). Posible signatura BN: PQ 7960 N889 no.1-2" }
+                ]
+            },
+            {
+                titulo: "Nueva Línea Nº 2 (2º Período)",
+                años: "Enero-Marzo 1977",
+                tipo: "Revista",
+                detalles: [
+                    "Subtítulo: Poesía, Literatura, Ideas",
+                    "Ensayo: 'Alcances y desviaciones en la crítica literaria' (Claudio Ariel Fernández D.)",
+                    "Secciones: Dos poetas de España, Poesía Mexicana (Carlos Pellicer), Perú, Poetas Chilenos, Poesía Africana, Poesía Brasileña, Panamá, Venezuela, Rincón del Cuento, Homenaje a Oscar Castro, Perfiles, Libros chilenos y extranjeros",
+                    "Mujeres publicadas: Dely Padilla ('Vanidad'), Miriam Litvak ('Búsqueda')",
+                    "Registro propiedad intelectual: Nº 26.085"
+                ],
+                existencias: [
+                    { lugar: "UCLA Southern Regional Library Facility", tiene: true, link: null, nota: "Ejemplar encuadernado Nº 1-2 (A 000 916 743)" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [{ nombre: "Grupo Literario Tamarugal", id: "revista-tamarugal" }],
+            revistas: [{ nombre: "Revista Aumen", id: "taller-aumen" }]
+        },
+        fuentes: [
+            { autor: "Revista Nueva Línea Nº 1", año: "1976", titulo: "Año 1º Nº 1 (2ª Entrega), sept.-dic. 1976", medio: "Ejemplar UCLA (A 000 916 743)", link: null },
+            { autor: "Revista Nueva Línea Nº 2", año: "1977", titulo: "Año 1 Nº 2 (2º Período), ene.-mar. 1977", medio: "Ejemplar UCLA (A 000 916 743)", link: null }
         ]
     },
     {
@@ -12474,6 +12548,60 @@ const poetas = [
         ]
     },
     {
+        nombre: "Daisy Bennett",
+        nombreReal: null,
+        coords: [-33.4470, -70.6540],
+        zona: "Santiago (Región Metropolitana). Nacida en Antofagasta.",
+        region: "metropolitana",
+        años: "Activa 1966–2003",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-02-20",
+        nota: "Fuentes: Revista Nueva Línea Nº 1-2 (1976-1977) + perfil biográfico Cosmica Fanzine (2022). Escritora, bailarina y coreógrafa. Egresada de la Facultad de Derecho, Universidad de Chile. Miembro de la SECH (Secretaria de la Comisión de Relaciones Nacionales).",
+        biografia: {
+            nacimiento: "Antofagasta. Padre: Carlos Bennett (periodista). Madre: Elsa Arriagada (pintora).",
+            formacion: "Egresada de la Facultad de Derecho, Universidad de Chile. Escritora, bailarina clásica/contemporánea y coreógrafa. Co-conductora del programa radial 'El Mundo de las Letras: El Escritor y sus Libros' en Radio Universidad Técnica del Estado, junto a su esposo el poeta Claudio Ariel Fernández D.",
+            contexto: "Poeta con obra publicada desde 1966, activa durante toda la dictadura y después. Directora del Grupo Literario Tamarugal y de Ediciones Tamarugal M.R. Miembro de la SECH (Secretaria de la Comisión de Relaciones Nacionales). Miembro de la Fundación Tichauer. Incluida en la 'Antología de la Poesía Femenina de Chile' de Nina Donoso (1974). Teatralizaciones poéticas: 'Vértigo', 'Tú, Yo… y la Poesía', 'Buenas noches Theodorakis', 'Neruda, ven a danzar conmigo', 'Gabriela Mistral y Yo' (estas últimas presentadas en Festival Internacional de Teatro, La Habana, Cuba, 1995).",
+            trayectoria: "Obras: 'Solo Recuerdo' (1966, 17 poemas, prólogo de Carlos Sander), 'La Paloma Encendida' (1972), 'Vértigo' (Ediciones Tamarugal, 1976, prólogo de Claudio Ariel Fernández), 'Los doce apóstoles' (1991), 'Los escarabajos del silencio' (2000, Ediciones Tamarugal, Antofagasta), 'El diario oculto de Yenni' (2003, novela corta). Poema 'Tiempo' en Revista Nueva Línea Nº 1 (1976). Incluida en 'Antología de la Poesía Femenina de Chile' de Nina Donoso (1974)."
+        },
+        publicaciones: [
+            { titulo: "Solo Recuerdo", años: "1966", tipo: "Poemario", detalles: [], existencias: [] },
+            { titulo: "La Paloma Encendida", años: "1972", tipo: "Poemario", detalles: [], existencias: [] },
+            {
+                titulo: "Antología de la Poesía Femenina",
+                años: "1974",
+                tipo: "Antología",
+                detalles: ["Compiladora: Nina Donoso", "Incluye poemas de Daisy Bennett"],
+                existencias: []
+            },
+            {
+                titulo: "Vértigo",
+                años: "1976",
+                tipo: "Poemario",
+                detalles: ["Ediciones Tamarugal, Santiago, Chile"],
+                existencias: []
+            },
+            {
+                titulo: "Revista Nueva Línea Nº 1",
+                años: "1976",
+                tipo: "Poesía en revista",
+                detalles: ["Poema: 'Tiempo'", "Revista de Poesía y Teoría Poética, Santiago, sept.-dic. 1976"],
+                existencias: [
+                    { lugar: "UCLA Southern Regional Library Facility", tiene: true, link: null, nota: "Ejemplar encuadernado Nº 1-2 (A 000 916 743)" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [{ nombre: "Grupo Literario Tamarugal", id: "revista-tamarugal" }],
+            revistas: [{ nombre: "Revista Nueva Línea", id: "revista-nueva-linea" }, { nombre: "Revista Tamarugal", id: "revista-tamarugal" }]
+        },
+        fuentes: [
+            { autor: "Revista Nueva Línea Nº 1", año: "1976", titulo: "Poema 'Tiempo' y nota biográfica", medio: "Ejemplar UCLA (A 000 916 743)", link: null },
+            { autor: "Revista Nueva Línea Nº 2 (contraportada)", año: "1977", titulo: "Ediciones Tamarugal M.R. / Grupo Literario Tamarugal", medio: "Ejemplar UCLA (A 000 916 743)", link: null },
+            { autor: "Cosmica Fanzine", año: "2022", titulo: "Vida y obra de Daisy Bennett. Escritora y bailarina chilena", medio: "Cosmica Fanzine", link: "https://cosmicafanzine.wixsite.com/website/post/vida-y-obra-de-daisy-bennett-escritora-y-bailarina-chilena" }
+        ]
+    },
+    {
         nombre: "Alicia Dauvin",
         nombreReal: null,
         coords: [-33.4580, -70.6610],
@@ -12736,17 +12864,33 @@ const poetas = [
         coords: [-42.9167, -72.7167],
         zona: "Chaitén",
         region: "sur",
-        años: "Activa ca. 1978–1981",
+        años: "Activa ca. 1974–1981",
         foto: null,
         verificado: true,
-        ultimaActualizacion: "2025-09-15",
+        ultimaActualizacion: "2026-02-20",
         biografia: {
             nacimiento: "Por determinar.",
-            formacion: "Por determinar.",
-            contexto: "Poeta de Chaitén vinculada al circuito literario de Chiloé. Publicó en AUMEN N°9 y participó en Arcoiris de Poesía 1981.",
-            trayectoria: "Publicó poema breve en AUMEN N°9 (ca. 1978-1980). Participó en el 2do Encuentro Regional de Poesía 'Arcoiris de Poesía' (Puerto Montt, 20 noviembre 1981). Única mujer poeta del encuentro con procedencia geográfica confirmada."
+            formacion: "Colaboradora del diario El Llanquihue. Becada por el Instituto Chileno Hispánico de Cultura (estadía en Madrid).",
+            contexto: "Poeta de Chaitén vinculada al circuito literario de Chiloé y al sur de Chile. Publicó en la antología 'Perfil Poético de Puerto Montt' (1974), en Revista Nueva Línea Nº 1 (Santiago, 1976), en AUMEN N°9 y participó en Arcoiris de Poesía 1981.",
+            trayectoria: "Aparece en la antología 'Perfil Poético de Puerto Montt' (1974). Publicó 'Los molinos de viento' en Revista Nueva Línea Nº 1 (sept.-dic. 1976, Santiago). Tiene un libro inédito 'Cartas desde España', escrito en Madrid con beca del Instituto Chileno Hispánico de Cultura. Publicó poema breve en AUMEN N°9 (ca. 1978-1980). Participó en el 2do Encuentro Regional de Poesía 'Arcoiris de Poesía' (Puerto Montt, 20 noviembre 1981)."
         },
         publicaciones: [
+            {
+                titulo: "Perfil Poético de Puerto Montt",
+                años: "1974",
+                tipo: "Antología",
+                detalles: ["Antología colectiva de Puerto Montt"],
+                existencias: []
+            },
+            {
+                titulo: "Revista Nueva Línea Nº 1",
+                años: "1976",
+                tipo: "Poesía en revista",
+                detalles: ["Poema: 'Los molinos de viento'", "Revista de Poesía y Teoría Poética, Santiago, sept.-dic. 1976"],
+                existencias: [
+                    { lugar: "UCLA Southern Regional Library Facility", tiene: true, link: null, nota: "Ejemplar encuadernado Nº 1-2 (A 000 916 743)" }
+                ]
+            },
             {
                 titulo: "AUMEN N°9",
                 años: "ca. 1978-1980",
@@ -12757,10 +12901,11 @@ const poetas = [
                 ]
             }
         ],
-        conexiones: { talleres: [{ nombre: "Taller Literario Aumen", id: "taller-aumen" }], revistas: [], eventos: [{ nombre: "Arcoiris de Poesía 1981", id: "arcoiris-1981" }] },
+        conexiones: { talleres: [{ nombre: "Taller Literario Aumen", id: "taller-aumen" }], revistas: [{ nombre: "Revista Nueva Línea", id: "revista-nueva-linea" }], eventos: [{ nombre: "Arcoiris de Poesía 1981", id: "arcoiris-1981" }] },
         fuentes: [
             { autor: "AUMEN N°9", año: "ca. 1978-1980", titulo: "Poema publicado", medio: "Colección privada Carlos Trujillo", link: null },
-            { autor: "Programa Arcoiris de Poesía", año: "1981", titulo: "2do Encuentro Regional de Poesía", medio: "Colección privada Carlos Trujillo", link: null }
+            { autor: "Programa Arcoiris de Poesía", año: "1981", titulo: "2do Encuentro Regional de Poesía", medio: "Colección privada Carlos Trujillo", link: null },
+            { autor: "Revista Nueva Línea Nº 1", año: "1976", titulo: "Poema 'Los molinos de viento' y nota biográfica", medio: "Ejemplar UCLA (A 000 916 743)", link: null }
         ]
     },
     {
