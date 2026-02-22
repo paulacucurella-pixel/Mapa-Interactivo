@@ -1130,7 +1130,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 20 febrero 2026</p>
+        <p>Última actualización: 22 febrero 2026</p>
         <p style="font-size: 0.85em;">Contacto: <a href="/cdn-cgi/l/email-protection#ea9a8b9f868bc4899f899f988f86868baa8d878b8386c4898587"><span class="__cf_email__" data-cfemail="ed9d8c98818cc38e988e989f8881818cad8a808c8481c38e8280">[email&#160;protected]</span></a></p>
     </div>
     <div class="header-right">
@@ -3259,9 +3259,9 @@ const talleres = [
         años: "1984–2002",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-02-22",
         historia: {
-            origen: "Revista de poesía, narrativa y gráfica publicada en La Serena entre 1984 y 2002, dirigida por el poeta Samuel Núñez. Alcanzó más de 140 números publicados a lo largo de 18 años. Subtítulo: 'Poesía - Narrativa - Gráfica'. Se acepta intercambio.",
+            origen: "Revista de poesía, narrativa y gráfica publicada en La Serena entre 1984 y 2002, dirigida por el poeta Samuel Núñez. Fundada el 15 de abril de 1984 (según editorial del Nº 20). Alcanzó más de 140 números publicados a lo largo de 18 años. Diagramación e ilustraciones: Juan C. Molina (Mogui). Dirección en 1986: Pasaje Pablo Cavada 723, Población Figari, La Serena (Nº 20) / Calle Ayacucho 3411, Cía Alta (Nº 21). Aceptaba intercambio con cualquier tipo de publicaciones.",
             contexto: "Samuel Núñez, descrito como 'el último beat' por sus pares, combinó múltiples oficios —tramoyista, disc-jockey, guardia nocturno, rockero— mientras editaba y difundía la revista. Edición artesanal y autogestionada, tirajes ~500 ejemplares.",
             desarrollos: "En 1986 alcanzó el Nº 21 con red de corresponsales nacionales (Iquique a Puerto Natales) e internacionales (Argentina, Alemania, España). En febrero 1993 publicó Nº 70. Ediciones especiales dedicadas a Violeta Parra, Víctor Jara, Rodrigo Lira. Suplemento 'La Maquinita' (1985-1987).",
             continuidad: "Publicó hasta 2002. Memoria Chilena cataloga 18 volúmenes de la revista, con varios números digitalizados."
@@ -3278,15 +3278,22 @@ const talleres = [
             { nombre: "Jonás", rol: "Corresponsal El Tabo" },
             { nombre: "Cecilia Pérez", rol: "Corresponsal Valdivia" },
             { nombre: "Jorge Salazar", rol: "Corresponsal Temuco" },
-            { nombre: "Patricia Ojeda", rol: "Corresponsal Puerto Natales" },
+            { nombre: "Patricia Gómez / Patricia Ojeda [verificar: Nº 20 dice Gómez, Nº 21 dice Ojeda]", rol: "Corresponsal Puerto Natales" },
             { nombre: "Esteban Barruel", rol: "Corresponsal Calbuco" },
             { nombre: "Rolando Revagliatti", rol: "Corresponsal Buenos Aires" },
             { nombre: "Juan Samuel", rol: "Corresponsal Berlín" },
-            { nombre: "Rosa Ruiz Cuenca", rol: "Corresponsal Málaga" }
+            { nombre: "Rosa Ruiz Cuenca", rol: "Corresponsal Málaga" },
+            { nombre: "Juan C. Molina (Mogui)", rol: "Diagramación e ilustraciones [confirmado en Nº 20]" },
+            { nombre: "Arturo Volantines", rol: "Colaborador, Colectivo escritores jóvenes Guayacán [confirmado en Nº 20]" },
+            { nombre: "Luis Aguilera", rol: "Colaborador, Colectivo escritores jóvenes Guayacán [confirmado en Nº 20]" },
+            { nombre: "Benito Cortés", rol: "Poeta, sector norte de La Serena [confirmado en Nº 20]" },
+            { nombre: "Carlos Simón", rol: "Poeta, Antofagasta / U. de La Serena [confirmado en Nº 20]" },
+            { nombre: "Raúl Herrera Salinas", rol: "Poeta, Copiapó / U. de La Serena [confirmado en Nº 20]" },
+            { nombre: "Sebastián Gómez Solar", rol: "Poeta (1967) [confirmado en Nº 20]" }
         ],
         mujeresColaboradoras: [
-            { nombre: "Cecilia Pérez", rol: "Corresponsal Valdivia, Autora", obra: "'Rojo' (prosa poética, N°21 p.12)", enRevista: true },
-            { nombre: "Patricia Ojeda", rol: "Corresponsal Puerto Natales", enRevista: true },
+            { nombre: "Cecilia Pérez", rol: "Corresponsal Valdivia, Autora", obra: "'Para el otoño donde estabas tú' (poema, Nº 20 p.5), 'El poeta y yo' (poema, Nº 19), 'Rojo' (prosa poética, Nº 21 p.12)", enRevista: true },
+            { nombre: "Patricia Gómez / Patricia Ojeda [nombre varía entre Nº 20 y Nº 21; verificar]", rol: "Corresponsal Puerto Natales", enRevista: true },
             { nombre: "Viviana Benz", rol: "Vice-presidenta SECH filial IV Región (mencionada N°21 p.14)", enRevista: false },
             { nombre: "Juana Boudoin", rol: "Relaciones públicas SECH filial IV Región (mencionada N°21 p.14)", enRevista: false },
             { nombre: "Catalina Lafertte", rol: "Autora plaquette 'Valparaíso' (Publicaciones recibidas N°21 p.15)", enRevista: false },
@@ -3302,7 +3309,9 @@ const talleres = [
                     "Nº 31 (sept. 1987), Nº 43 (julio-oct. 1989)",
                     "Suplemento 'La Maquinita' (1985-1987)"
                 ],
-                personas: [],
+                personas: [
+                    "Nº 20 (abril 1986): Cecilia Pérez (Valdivia, poema), Jonás (El Tabo, poema), Jorge Nieto (La Serena, 2 poemas), Samuel Núñez (La Serena, 2 poemas), Raúl Herrera Salinas (Copiapó, poema), Sebastián Gómez Solar (poema), Carlos Simón (Antofagasta, poema), Caupolicán Peña Lagos (Arica/Ovalle, poema), Juvenal Ayala (Iquique, 2 poemas), Benito Cortés (La Serena, poema). Ilustraciones: Juan C. Molina (Mogui)."
+                ],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99275.html", nota: "Nº 43, julio-oct 1989 (MC0005414)" },
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99273.html", nota: "Nº 31, sept 1987 (MC0005412)" },
@@ -3311,6 +3320,7 @@ const talleres = [
                 ]
             }
         ],
+        nota: "Nº 20 (abril 1986): Sección INFORMATIVO documenta homenaje de la comunidad universitaria de La Serena a Guerrero, Nattino y Parada (31 marzo 1986) con mural desmontable del Taller Aguja. Sección PUBLICACIONES RECIBIDAS registra intercambio con: Poesía diaria Nº 7 (Temuco, Chihuailaf/Eytel), Servum pecus Nº 2 (Taller Berghof, Maipú), Hechos urbanos Nº 49 (Santiago), Columpio de andén Nº 1 (Linares, Fernando Lemuz), Taller Ayllu (Los Andes, Ana Bustamante L.), Taller Alonso de Ercilla (Concepción), Ediciones ariete de Temuco (Pitrufquén). Libro recibido: 'Después del silencio' de Jonás y Claudio Durán (Ediciones Alta Marea, Toronto, 1986, bilingüe).",
         conexiones: {
             talleres: [
                 { nombre: "Taller Lapislázuli", id: "lapislazuli" },
@@ -3325,7 +3335,8 @@ const talleres = [
         fuentes: [
             { autor: "La Serena Online", año: "2021", titulo: "Antología de la poesía del Valle del Elqui", medio: "La Serena Online", link: "https://laserenaonline.cl/2021/02/15/antologia-de-la-poesia-del-valle-de-elqui/" },
             { autor: "Diario La Quinta", año: "2021", titulo: "Quintaesencia: En el aniversario de la segunda ciudad más antigua de Chile", medio: "Diario La Quinta", link: "https://diariolaquinta.cl/2021/08/28/quinatesencia-en-el-aniversario-de-la-segunda-ciudad-mas-antigua-de-chile-por-arturo-volantines/" },
-            { autor: "Memoria Chilena", año: "1986", titulo: "Añañuca N° 21, mayo-junio 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" }
+            { autor: "Memoria Chilena", año: "1986", titulo: "Añañuca N° 21, mayo-junio 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" },
+            { autor: "Añañuca [fuente primaria]", año: "1986", titulo: "Añañuca Nº 20, abril 1986 (PDF digitalizado)", medio: "Revista de poesía, narrativa y gráfica, La Serena", link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html" }
         ]
     },
     {
@@ -3582,40 +3593,65 @@ const talleres = [
         años: "1975–1979",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-02-22",
         historia: {
-            origen: "Revista literaria fundada en 1975 bajo el alero de la Academia de Estudiantes del Instituto Central de Filosofía de la U. de Concepción. Título en honor al poeta alemán Friedrich Hölderlin.",
-            contexto: "Taller literario universitario que buscaba difundir poesía y pensamiento crítico al margen de los circuitos oficiales durante el 'apagón cultural'.",
-            desarrollos: "5 números publicados entre 1975-1979. Formato rústico, mecanografiada e impresa en multicopista. Circulación limitada en círculos estudiantiles y literarios locales.",
-            continuidad: "Último número: Año 4 Nº 5 (agosto 1979). Mantuvo su 'luminosidad' vigente hasta 1979."
+            origen: "Revista literaria de la Academia de Estudiantes del Instituto Central de Filosofía, Universidad de Concepción. Edición autorizada por la Dirección del Instituto Central de Filosofía. Título vinculado a Hölderlin, citado como epígrafe en el Nº 5.",
+            contexto: "Publicación estudiantil de orientación filosófico-humanista. La introducción del Nº 5 (Edison Arias A.) valora a los jóvenes que hacen poesía en un mundo 'deshumanizado, cínico y materialista' y define la poesía como modo de percibir la realidad e 'instalarse metafísicamente en ella'. Convocó estudiantes de múltiples carreras: Filosofía, Pedagogía en Español, Biología Marina, Instituto de Arte e Instituto de Lenguas.",
+            desarrollos: "5 números publicados entre 1975-1979. Formato mecanografiado con ilustraciones a mano. Contenido dividido en secciones: I. Poesías, II. Cuentos. El Nº 5 incluye 10 autores (todos hombres) y una mujer en rol técnico (mecanógrafa). Circulación en ámbito universitario.",
+            continuidad: "Último número conocido: Año IV Nº 5 (agosto 1979). No se registra actividad posterior."
         },
         fundadores: [
-            { nombre: "Víctor Rey", rol: "Fundador" },
-            { nombre: "Egor Mardones", rol: "Colaborador inicial" }
+            { nombre: "Víctor Rey", rol: "Fundador [fuente: Rey, 2021; no confirmado en el Nº 5]" },
+            { nombre: "Egor Mardones G.", rol: "Colaborador (Pedagogía en Español) [confirmado como autor en Nº 5]" }
         ],
-        integrantes: [],
+        integrantes: [
+            { nombre: "Aliro Bocaz S.", rol: "Director Responsable (5to. Pedagogía en Filosofía) [confirmado en Nº 5]" },
+            { nombre: "Jorge Salgado", rol: "Profesor Asesor [confirmado en Nº 5]" },
+            { nombre: "Alejandro Muñoz Belmar", rol: "Asesor Comité Directivo / cuentista (5to. Pedagogía en Filosofía) [confirmado en Nº 5]" },
+            { nombre: "Claudio Segovia Mella", rol: "Asesor Publicación / poeta (Educ. Media en Filosofía) [confirmado en Nº 5]" },
+            { nombre: "Carlos Vargas", rol: "Director Taller Literario / poeta (4to. Educación en Filosofía) [confirmado en Nº 5]" },
+            { nombre: "Guillermo Gangas Silva", rol: "Diseño e Impresión / poeta (Instituto de Arte) [confirmado en Nº 5]" },
+            { nombre: "Mónica Zavala T.", rol: "Mecanógrafa [única mujer identificada en Nº 5]" },
+            { nombre: "Andrés Sáez", rol: "Impresión [confirmado en Nº 5]" },
+            { nombre: "Edison Arias A.", rol: "Autor de la Introducción del Nº 5" },
+            { nombre: "Roberto Manriquez M.", rol: "Poeta e ilustrador (1er. Año E. Media en Filosofía) [confirmado en Nº 5]" },
+            { nombre: "David Bustos C.", rol: "Poeta [carrera no especificada en Nº 5]" },
+            { nombre: "Gustavo Riffo", rol: "Poeta (Estudiante de Biología Marina) [confirmado en Nº 5]" },
+            { nombre: "Jorge E. Ojeda S.", rol: "Poeta (2do. Año Español y Filosofía, Instituto de Lenguas) [confirmado en Nº 5]" }
+        ],
+        mujeresPoetas: [],
+        nota: "El Nº 5 no incluye obra de ninguna mujer poeta. La única mujer identificada es Mónica Zavala T. en rol de mecanógrafa. Dato relevante para documentar la subrepresentación de mujeres en publicaciones estudiantiles del período.",
         publicaciones: [
             {
                 titulo: "Sol Oscuro",
                 años: "1975–1979",
-                numeros: "Revista literaria (5 números)",
+                numeros: "Revista literaria (5 números, Año IV = 4 años de publicación)",
                 detalles: [
-                    "Nº 1 (1975) - No digitalizado",
-                    "Nº 2 (1976) - No digitalizado",
-                    "Nº 3 (ca. 1977) - No confirmado en registros",
-                    "Nº 4 (ca. 1978) - No digitalizado",
-                    "Año 4 Nº 5 (agosto 1979) - Digitalizado"
+                    "Nº 1 (ca. 1975/1976) — No digitalizado, no localizado",
+                    "Nº 2 (ca. 1976/1977) — No digitalizado, no localizado",
+                    "Nº 3 (ca. 1977) — Existencia no confirmada en registros",
+                    "Nº 4 (ca. 1978) — No digitalizado, no localizado",
+                    "Año IV Nº 5 (agosto 1979) — Digitalizado en Memoria Chilena, 41 páginas"
                 ],
-                personas: [],
+                personas: [
+                    "Nº 5: Carlos Vargas (3 poemas), Egor Mardones G. (2 poemas), Roberto Manriquez M. (poemas + ilustraciones), David Bustos C. (1 poema), Gustavo Riffo (2 poemas), Jorge E. Ojeda S. (1 poema), Guillermo Gangas S. (2 poemas), Claudio Segovia M. (2 poemas), Aliro Bocaz S. (2 poemas), Alejandro Muñoz B. (2 cuentos). Introducción: Edison Arias A."
+                ],
                 existencias: [
-                    { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121787.html", nota: "Año 4 Nº 5, agosto 1979 (MC0005937, digitalizado)" }
+                    { lugar: "Biblioteca Nacional de Chile / Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121787.html", nota: "Año IV Nº 5, agosto 1979 (MC0005937, digitalizado completo, 41 pp.)" }
                 ]
             }
         ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Vértice (Concepción)", id: "revista-vertice-concepcion", nota: "Jorge Salgado: Profesor Asesor en Sol Oscuro y co-director de Vértice (ambos 1979)" }
+            ]
+        },
         fuentes: [
             { autor: "Eloy, H.", año: "2000", titulo: "Revistas y publicaciones literarias durante la dictadura (1973-1990)", medio: "Simpson 7 / Memoria Chilena", link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0063468.pdf" },
             { autor: "Rey, V.", año: "2021", titulo: "Roque Dalton, poeta apasionado por la belleza y la justicia", medio: "Revista Carátula, Edición 125", link: "https://www.caratula.net/100-critica-abril-2021/" },
-            { autor: "Lagos Isla, V.", año: "2020", titulo: "Los jóvenes poetas de la Galaxia Tomé durante la dictadura militar", medio: "Resumen.cl", link: "https://resumen.cl/articulos/los-jovenes-poetas-de-la-galaxia-tome-durante-la-dictadura-militar" }
+            { autor: "Lagos Isla, V.", año: "2020", titulo: "Los jóvenes poetas de la Galaxia Tomé durante la dictadura militar", medio: "Resumen.cl", link: "https://resumen.cl/articulos/los-jovenes-poetas-de-la-galaxia-tome-durante-la-dictadura-militar" },
+            { autor: "Sol Oscuro [fuente primaria]", año: "1979", titulo: "Sol Oscuro, Año IV Nº 5, agosto 1979 (PDF digitalizado)", medio: "Academia de Estudiantes, Instituto Central de Filosofía, U. de Concepción", link: "https://www.memoriachilena.gob.cl/602/w3-article-121787.html" }
         ]
     },
     {
@@ -3664,7 +3700,9 @@ const talleres = [
         ],
         conexiones: {
             talleres: [],
-            revistas: []
+            revistas: [
+                { nombre: "Sol Oscuro", nota: "Jorge Salgado S. es co-director de Vértice y Profesor Asesor de Sol Oscuro (confirmado en ambos PDFs, 1979)" }
+            ]
         },
         fuentes: [
             { autor: "Vértice Nº 5", año: "1979", titulo: "Concepción, mayo 1979", medio: "PDF digitalizado", link: null },
@@ -6561,6 +6599,48 @@ const talleres = [
         ],
         fuentes: [
             { autor: "Revista Epicentro", año: "1989", titulo: "Epicentro Nº 2", medio: "Colección particular Paula Cucurella", link: null }
+        ]
+    },
+    {
+        nombre: "Taller Literario Ayllu",
+        id: "taller-ayllu",
+        coords: [-32.8338, -70.5983],
+        zona: "Los Andes (V Región de Valparaíso)",
+        region: "zona-central",
+        años: "ca. 1985–1986+",
+        tipo: "taller",
+        verificado: "fuente única: Añañuca Nº 20",
+        ultimaActualizacion: "2026-02-22",
+        historia: {
+            origen: "Taller literario con sede en Los Andes, dirigido por Ana Bustamante L. Dirección: Tres Carrera 285, Los Andes, Chile.",
+            contexto: "Documentado en la sección 'Publicaciones recibidas' de Añañuca Nº 20 (abril 1986, La Serena). Publicó un tríptico con motivo del Primer encuentro regional chileno-argentino de escritores, lo que indica actividad transfronteriza y articulación con redes literarias de ambos lados de la cordillera.",
+            desarrollos: "Por investigar. El tríptico es la única publicación documentada hasta ahora.",
+            continuidad: "Por investigar."
+        },
+        fundadores: [
+            { nombre: "Ana Bustamante L.", rol: "Directora" }
+        ],
+        integrantes: [],
+        mujeresPoetas: [],
+        nota: "Directora mujer (Ana Bustamante L.). Dato relevante para documentar liderazgo femenino en talleres literarios del período. Fuente única: mención en Añañuca Nº 20 (abril 1986). Requiere verificación con segunda fuente.",
+        publicaciones: [
+            {
+                titulo: "Tríptico: Primer encuentro regional chileno-argentino de escritores",
+                años: "ca. 1986",
+                numeros: "Tríptico",
+                detalles: ["Taller literario Ayllu", "Primer encuentro regional chileno-argentino de escritores"],
+                personas: [],
+                existencias: []
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Revista Añañuca", id: "ananuca" }
+            ]
+        },
+        fuentes: [
+            { autor: "Añañuca [fuente primaria]", año: "1986", titulo: "Añañuca Nº 20, abril 1986 — sección 'Publicaciones recibidas'", medio: "Revista de poesía, narrativa y gráfica, La Serena", link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html" }
         ]
     },
     {
@@ -14766,6 +14846,61 @@ const poetas = [
         },
         fuentes: [
             { autor: "Revista El Organillo", año: "1986", titulo: "El Organillo Nº3, marzo-abril 1986 (p. 2: créditos editoriales)", medio: "Colección particular Paula", link: null }
+        ]
+    },
+    // --- SUR ---
+    {
+        nombre: "Cecilia Pérez",
+        nombreReal: null,
+        coords: [-39.8142, -73.2459],
+        zona: "Los Ríos (Valdivia)",
+        region: "sur",
+        años: "Activa 1986",
+        verificado: "fuente primaria: Añañuca Nº 19, 20, 21",
+        ultimaActualizacion: "2026-02-22",
+        foto: null,
+        biografia: {
+            nacimiento: "Por determinar. Procedencia: Valdivia, Chile.",
+            formacion: "Por determinar.",
+            contexto: "Poeta y corresponsal de la revista Añañuca (La Serena) en Valdivia. Publicó poemas en al menos tres números consecutivos (Nº 19, 20 y 21) entre 1986, lo que indica una colaboración sostenida con la red literaria del norte chico desde el sur de Chile.",
+            trayectoria: "Obra publicada en Añañuca: 'El poeta y yo' (Nº 19, ca. marzo 1986), 'Para el otoño donde estabas tú' (Nº 20, abril 1986), 'Rojo' (prosa poética, Nº 21, mayo-junio 1986). La 'Sentida disculpa' del Nº 20 corrige erratas del poema del Nº 19, evidenciando que la revista valoraba su contribución. Por investigar trayectoria posterior y otras publicaciones."
+        },
+        publicaciones: [
+            {
+                titulo: "'Para el otoño donde estabas tú'",
+                años: "1986",
+                tipo: "Poema en revista",
+                detalles: ["Añañuca Nº 20, abril 1986, p. 5"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html", nota: "Añañuca Nº 20 digitalizado" }
+                ]
+            },
+            {
+                titulo: "'El poeta y yo'",
+                años: "1986",
+                tipo: "Poema en revista",
+                detalles: ["Añañuca Nº 19, ca. marzo 1986. Erratas corregidas en 'Sentida disculpa' del Nº 20"],
+                existencias: []
+            },
+            {
+                titulo: "'Rojo'",
+                años: "1986",
+                tipo: "Prosa poética en revista",
+                detalles: ["Añañuca Nº 21, mayo-junio 1986, p. 12"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Añañuca Nº 21 digitalizado" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [],
+            revistas: [
+                { nombre: "Revista Añañuca", id: "ananuca" }
+            ]
+        },
+        fuentes: [
+            { autor: "Añañuca [fuente primaria]", año: "1986", titulo: "Añañuca Nº 20, abril 1986 (p. 5: poema; p. 5: sentida disculpa por erratas Nº 19)", medio: "Revista de poesía, narrativa y gráfica, La Serena", link: "https://www.memoriachilena.gob.cl/602/w3-article-99279.html" },
+            { autor: "Añañuca [fuente primaria]", año: "1986", titulo: "Añañuca Nº 21, mayo-junio 1986 (p. 12: 'Rojo')", medio: "Revista de poesía, narrativa y gráfica, La Serena", link: "https://www.memoriachilena.gob.cl/" }
         ]
     }
     ];
