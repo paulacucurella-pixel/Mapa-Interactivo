@@ -850,7 +850,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
-    display: flex;
+    display: none; /* DESACTIVADO — no mostrar hasta completar vacíos */
     align-items: center;
     gap: 6px;
     letter-spacing: 0.5px;
@@ -1130,7 +1130,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 23 febrero 2026</p>
+        <p>Última actualización: 24 febrero 2026</p>
         <p style="font-size: 0.85em;">Contacto: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4535243029246b263026303720292924052228242c296b262a28">[email&#160;protected]</a></p>
     </div>
     <div class="header-right">
@@ -1350,8 +1350,8 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
             </div>
             
             <div class="silencio-item" onclick="focusSilencio('Matra')">
-                <h5>Taller Cultural MATRA (¿Valdivia/Concepción?)</h5>
-                <p>Bio de D. Miralles (Caballo de Proa Nº4, 1984): 'fue integrante del Taller Cultural MATRA [...] entidades generadoras de actividad poética en el sur de Chile'. Miralles era poeta valdiviano; verificar si MATRA funcionaba en Valdivia o Concepción.</p>
+                <h5>Matra (Concepción)</h5>
+                <p>Publicaciones: sin verificar existencias en MC</p>
                 <span class="vacio-tipo">Por documentar</span>
             </div>
             
@@ -1374,7 +1374,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         </div>
     </div>
     <div class="silencios-panel-footer">
-        Click en un nombre para ver en el mapa · Actualizado: 20 febrero 2026
+        Click en un nombre para ver en el mapa · Actualizado: 24 febrero 2026
     </div>
 </div>
 
@@ -1671,15 +1671,15 @@ const talleres = [
         coords: [-33.4380, -70.6480],
         zona: "Región Metropolitana (Santiago centro, Barrio Yungay)",
         region: "metropolitana",
-        años: "Fines 1970s–1988",
+        años: "Fines 1970s–ca. 1990",
         tipo: "taller",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-02-24",
         historia: {
             origen: "Colectivo de creación literaria fundado por Pedro Araucario, junto a Eledino Parraguez, Javier Vives y Horacio Eloy. Nombre formal: 'Centro Urbanístico de Artes y Letras'.",
             contexto: "Activo en Santiago centro, especialmente en el sector de Barrio Yungay. Reunía a poetas y artistas que creaban en la clandestinidad o semiclandestinidad bajo la dictadura militar.",
-            desarrollos: "Editó la revista Contramuro (1983–1988), subtitulada 'Revista Latinoamericana de Artes y Letras', uno de los órganos de difusión más activos de la época.",
-            continuidad: "El taller celebró su aniversario en 1984. La revista Contramuro se publicó hasta 1988 (17 números documentados)."
+            desarrollos: "Editó la revista Contramuro (1983–1988), subtitulada 'Revista Latinoamericana de Artes y Letras', uno de los órganos de difusión más activos de la época. Descrito por Javier Vives (co-fundador) como 'precursor de tanta actividad cultural en Santiago' y 'uno de los grupos culturales de vanguardia en los tiempos de tinieblas' (Revista Calíope Nº 1, julio 1990, p. 3).",
+            continuidad: "El taller se disolvió ca. 1988–1990, según la editorial de Javier Vives en Calíope Nº 1 (julio 1990): 'nos vemos enfrentado nuevamente a otro golpe: Uno de los grupos culturales de vanguardia [...] se disuelve. Me estoy refiriendo al Taller Urbano'. Varios integrantes (Araucario, Vives, Pancho Lobo) continuaron en la Agrupación Cultural Barracón de Lo Hermida, que publicó Calíope y otros títulos bajo el sello Ediciones Urbarígen."
         },
         fundadores: [
             { nombre: "Pedro Araucario", rol: "Fundador" },
@@ -1714,7 +1714,8 @@ const talleres = [
             { autor: "Santa Cruz, E.", año: "2003", titulo: "Revistas y publicaciones literarias (1973–2000)", medio: "Letras de Chile, 12(51), pp. 76–79", link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0063468.pdf" },
             { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Contramuro (1983–1988)", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/630/w3-article-353168.html" },
             { autor: "Biblioteca Nacional de Chile", año: "2018", titulo: "Nuevo en Biblioteca Nacional Digital: Boletín SONAMI y 12 revistas desde Hemeroteca", medio: "BND Noticias", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/612/w3-article-349928.html" },
-            { autor: "Museo de la Solidaridad Salvador Allende", año: "n.d.", titulo: "Contramuro. Taller Urbano – Poesía – Gráfica. Nº 12", medio: "Archivo MSSA (consulta presencial)", link: "https://archivo.mssa.cl/" }
+            { autor: "Museo de la Solidaridad Salvador Allende", año: "n.d.", titulo: "Contramuro. Taller Urbano – Poesía – Gráfica. Nº 12", medio: "Archivo MSSA (consulta presencial)", link: "https://archivo.mssa.cl/" },
+            { autor: "Agrupación Cultural Barracón", año: "1990", titulo: "Revista Calíope Nº 1, julio 1990 — Editorial de Javier Vives sobre disolución del Taller Urbano", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -2172,7 +2173,7 @@ const talleres = [
             { autor: "Varas Alarcón, P. & Manzi, J.", año: "2019", titulo: "Coordinadoras Culturales: formaciones transversales en Chile durante la dictadura", medio: "Cuadernos de Música, Artes Visuales y Artes Escénicas, 14(2)", link: "https://revistas.javeriana.edu.co/index.php/cma/article/view/24607" },
             { autor: "Vicaría de la Solidaridad", año: "1979", titulo: "Declaración del Taller Contemporáneo, 27 de abril de 1979", medio: "Archivo FDAVS, Caja 2943", link: null },
             { autor: "La Bicicleta", año: "1979", titulo: "Nota sobre ciclo 'El sentido y el canto'", medio: "Revista La Bicicleta", link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0049315.pdf" },
-            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, ago-sep 1979, pp. 10-11: 'Alto en el camino' — Taller Contemporáneo", medio: "Ejemplar físico (PDF)", link: null }
+            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, ago-sep 1979, pp. 10-11: 'Alto en el camino' — Taller Contemporáneo", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -2338,7 +2339,7 @@ const talleres = [
                 ],
                 existencias: [
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-3658.html", nota: "Registrado en catálogo (no digitalizado)" },
-                    { lugar: "Biblioteca del Congreso Nacional", tiene: true, link: null, nota: "Ejemplar físico" }
+                    { lugar: "Biblioteca del Congreso Nacional", tiene: true, link: null, nota: "Copia física" }
                 ]
             }
         ],
@@ -2468,7 +2469,7 @@ const talleres = [
             { nombre: "Jorge Montealegre", rol: "Poeta" },
             { nombre: "Alejandra Basualto", rol: "Cuentista" },
             { nombre: "Sonia González", rol: "Cuentista" },
-            { nombre: "Carmen Basañez", rol: "Cuentista" }
+            { nombre: "Carmen Basáñez", rol: "Cuentista; publicó cuento en El Organillo Nº 4 (1986)" }
         ],
         publicaciones: [
             {
@@ -2485,6 +2486,19 @@ const talleres = [
                 existencias: [
                     { lugar: "WorldCat", tiene: true, link: "https://search.worldcat.org/title/Ergo-sum-:-cuentos/oclc/38670549", nota: "OCLC 38670549" }
                 ]
+            },
+            {
+                titulo: "Miedos Transitorios (Pía Barros)",
+                años: "1986",
+                numeros: "Libro individual de cuentos breves (Ed. Ergo Sum)",
+                detalles: [
+                    "Cuentos breves, entre 2 y 5 páginas cada uno",
+                    "Reseñado en El Organillo Nº 4 (mayo-junio 1986) por Ulises, fechado 30 mayo 1986",
+                    "Tema político-social post-golpe; pasajes de crudeza y erotismo",
+                    "Cuentos destacados: Estanvito, El heredero de la sabiduría"
+                ],
+                personas: [{ nombre: "Pía Barros", rol: "Autora" }],
+                existencias: []
             },
             {
                 titulo: "Los incontables (Pedro Lemebel)",
@@ -2551,7 +2565,8 @@ const talleres = [
             { autor: "Editorial Asterión", año: "2017", titulo: "Colectivo Ergo-Sum", medio: "Página institucional", link: "https://editorialasterion.wixsite.com/chile/ergo-sum" },
             { autor: "Memoria Chilena", año: "n.d.", titulo: "Pía Barros", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-96697.html" },
             { autor: "Misivas en Colectivo", año: "2025", titulo: "Entre letras y resistencia: El caso de Ediciones Ergo Sum", medio: "MisivasEnColectivo.cl", link: "https://www.misivasencolectivo.cl/2025/01/13/entre-lineas-y-resistencia-el-caso-de-ediciones-ergo-sum/" },
-            { autor: "Roche Rodríguez, M.", año: "2023", titulo: "El ejercicio de la libertad a través de los talleres literarios", medio: "Literal Magazine", link: "https://literalmagazine.com/el-ejercicio-de-la-libertad-a-traves-de-los-talleres-literarios/" }
+            { autor: "Roche Rodríguez, M.", año: "2023", titulo: "El ejercicio de la libertad a través de los talleres literarios", medio: "Literal Magazine", link: "https://literalmagazine.com/el-ejercicio-de-la-libertad-a-traves-de-los-talleres-literarios/" },
+            { autor: "Ulises [seudónimo]", año: "1986", titulo: "Comentario: Miedos Transitorios (Pía Barros)", medio: "El Organillo, Nº 4, mayo-junio 1986, p. 18", link: null }
         ]
     },
     {
@@ -2675,7 +2690,7 @@ const talleres = [
                     "18 autoras: Gémina Ahumada, Alejandra Basualto, Carmen Berenguer, Eugenia Brito, Rosanna Byrne, Teresa Calderón, Violeta Camerati, Inge Corssen, Luisa Eguiluz, Soledad Fariña, Astrid Fugellie, Ivonne Grimal, Elvira Hernández, Paz Molina, Heddy Navarro, Dixiana Rivera, Eliana Vásquez, Verónica Zondek"
                 ],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -2740,42 +2755,52 @@ const talleres = [
     {
         nombre: "Revista El Organillo",
         coords: [-33.4510, -70.6620],
-        zona: "Santiago (Región Metropolitana, Barrio Bellavista)",
+        zona: "Santiago (Región Metropolitana, Barrio Bellavista). Dirección: A. Simpson 7, Santiago de Chile",
         region: "metropolitana",
         años: "1985–1990",
         tipo: "revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-02-24",
         historia: {
-            origen: "Revista literaria independiente (poesía y cuento) fundada en septiembre de 1985 por el poeta Erwin Díaz. Parte de la 'escena underground' cultural de los '80.",
+            origen: "Revista literaria independiente (cuento y poesía) fundada en septiembre de 1985 por el poeta Erwin Díaz. Parte de la 'escena underground' cultural de los '80.",
             contexto: "Distribución artesanal y semi-clandestina en Barrio Bellavista. Usaba papel kraft y diseño de vanguardia. Junto a La Castaña, sirvió para romper el bloqueo estético impuesto por el régimen.",
             desarrollos: "13 números en total (sept. 1985 – otoño 1990). Desde el Nº 7 (1987) incluía separatas temáticas. En 1988 publicó separata de microcuento chileno (compilada por Juan Armando Epple).",
             continuidad: "Nº 13 (otoño 1990) cerró la revista simbólicamente con el retorno a la democracia."
         },
         fundadores: [
-            { nombre: "Erwin Díaz", rol: "Fundador y director" }
+            { nombre: "Erwin Díaz M.", rol: "Fundador, director y editor literario" },
+            { nombre: "Viviana Ramírez Ch.", rol: "Editora gráfica (Nº 3 como Claudia Winther; Nº 4 como Viviana Ramírez)" }
         ],
         integrantes: [
-            { nombre: "Pía Barros", rol: "Colaboradora desde Nº 1" },
+            { nombre: "Pía Barros", rol: "Colaboradora desde Nº 1; reseñada en Nº 4 (Miedos Transitorios, Ed. Ergo Sum, 1986)" },
             { nombre: "Eduardo Llanos", rol: "Colaborador desde Nº 1" },
-            { nombre: "Jorge Montealegre", rol: "Poeta, editor de La Castaña" },
-            { nombre: "Hernán Venegas", rol: "Artista gráfico" }
+            { nombre: "Jorge Montealegre", rol: "Poeta, editor de La Castaña; colaborador (Nº 4, p. 19)" },
+            { nombre: "Hernán Venegas", rol: "Artista gráfico" },
+            { nombre: "María Elcira Torres", rol: "Colaboradora (Nº 3, Nº 4)" },
+            { nombre: "María Inés Taulis", rol: "Ensayista, Doctora en Literatura (Nº 4: ensayo lit. caribeña anglófona)" },
+            { nombre: "Carmen Basáñez", rol: "Narradora (Nº 4: cuento 'Con la fuerza suficiente', 1985)" },
+            { nombre: "Leonor Gutiérrez C.", rol: "Composición electrónica IBM (Nº 4, p. 19)" }
         ],
         publicaciones: [
             {
-                titulo: "El Organillo: poesía y cuento",
+                titulo: "El Organillo: cuento y poesía",
                 años: "1985–1990",
                 numeros: "Revista (13 números)",
                 detalles: [
                     "Nº 1: sept.-oct. 1985",
-                    "Nº 4: mayo-junio 1986",
+                    "Nº 4: mayo-junio 1986 — Ensayo: M.I. Taulis (lit. caribeña); Poesía: B. Serrano, P. Lastra, E. Herrera, J.M. Arguedas, J. Solorza, O. Sarmiento, F. Jamís, Cavafis; Cuento: C. Basáñez; Comentario: Ulises (reseña Miedos Transitorios, Pía Barros)",
                     "Nº 6: [1986-1987]",
                     "Nº 7: marzo-abril 1987 (inicio de separatas)",
                     "Nº 9: nov.-dic. 1987",
                     "Nº 13: otoño 1990 (último número)",
                     "Separata de microcuento chileno (1988, 24 textos)"
                 ],
-                personas: [],
+                personas: [
+                    { nombre: "María Inés Taulis", rol: "Ensayista (Nº 4)" },
+                    { nombre: "Carmen Basáñez", rol: "Narradora (Nº 4)" },
+                    { nombre: "Pía Barros", rol: "Colaboradora y reseñada (Nº 4)" },
+                    { nombre: "Viviana Ramírez Ch.", rol: "Editora gráfica (Nº 4)" }
+                ],
                 existencias: [
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99316.html", nota: "Registro general (MC0005514)" },
                     { lugar: "Biblioteca Nacional de Chile", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100431.html", nota: "Nº 4, mayo-junio 1986 (MC0005513)" },
@@ -2785,10 +2810,11 @@ const talleres = [
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "n.d.", titulo: "El Organillo: poesía y cuento (1985-1987)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-99316.html" },
+            { autor: "Memoria Chilena", año: "n.d.", titulo: "El Organillo: cuento y poesía (1985-1987)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-99316.html" },
             { autor: "Castillo de Berchenko, A.", año: "1996", titulo: "La expresión de una voluntad rupturista: el discurso de La Castaña y El Organillo", medio: "América: Cahiers du CRICCAL, 15-16", link: null },
             { autor: "González Valenzuela, S.", año: "2017", titulo: "Publicaciones culturales de resistencia durante la dictadura", medio: "Revista Chilena de Diseño y Creación Pensamiento, 2(2)", link: null },
-            { autor: "Scielo Argentina", año: "2010", titulo: "Los desafueros del coleccionista: microrrelato, antología y compilación", medio: "Scielo", link: "http://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1852-96152010000200005" }
+            { autor: "Scielo Argentina", año: "2010", titulo: "Los desafueros del coleccionista: microrrelato, antología y compilación", medio: "Scielo", link: "http://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1852-96152010000200005" },
+            { autor: "El Organillo", año: "1986", titulo: "El Organillo: cuento y poesía, Nº 4, mayo-junio 1986", medio: "Fuente primaria (PDF analizado feb. 2026)", link: null }
         ]
     },
 
@@ -4549,7 +4575,7 @@ const talleres = [
                 titulo: "POESIA INDICE",
                 años: "ca. 1982–1983",
                 numeros: "Nº 1 (al menos)",
-                detalles: ["Publicación del grupo Índice", "Reeditada como separata de América Joven (Rotterdam, Holanda, 1983)"],
+                detalles: ["Publicación del grupo Índice", "David Miralles publicó aquí (bio en Caballo de Proa Nº4, 1984)"],
                 personas: [
                     { nombre: "David Miralles", rol: "Poeta publicado" }
                 ],
@@ -4572,7 +4598,7 @@ const talleres = [
             { autor: "Galindo, Ó. y Miralles, D.", año: "1993", titulo: "Poetas actuales del sur de Chile: Antología-crítica", medio: "Ediciones Paginadura, Valdivia", link: "https://miralles.com.mx/wp-content/uploads/2023/06/poetas-actuales-del-sur-de-chile.pdf" },
             { autor: "González L., R.", año: "1982", titulo: "Publicaciones literarias en Valdivia 1982", medio: "El Diario Austral", link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0226152.pdf" },
             { autor: "Mendoza, R. (entrevista)", año: "2024", titulo: "En Caballo de Proa — Edición Facsimilar Completa, Tomo I, p. 27", medio: "Kultrún / Ediciones UACh, Valdivia", link: "" },
-            { autor: "Caballo de Proa Nº4", año: "1984", titulo: "Bio de David Miralles (contraportada): Taller Cultural MATRA, cofundador de INDICE, publicaciones FOXAS y POESIA INDICE", medio: "Ejemplar físico analizado (PDF)", link: null }
+            { autor: "Caballo de Proa Nº4", año: "1984", titulo: "Bio de David Miralles (contraportada): Taller Cultural MATRA, cofundador de INDICE, publicaciones FOXAS y POESIA INDICE", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -4646,7 +4672,7 @@ const talleres = [
                     "Nº1 Primavera 1981: poetas mexicanos",
                     "Nº2: poetas del sur de Chile (Torres, Piñones, Mansilla, Díaz Eterovic, Contreras Vega)",
                     "Nº3 Verano 1983: dedicado al Haikú (Basho, Buson, Issa)",
-                    "Nº4 (Junio 1984): número monográfico dedicado a David Miralles — serie 'Zona transitiva', 15 poemas. Ediciones La Abadía. Ilustración portada: Ramiro Miralles. Bio: Miralles (1957), integrante del Taller Cultural MATRA y cofundador de INDICE [=Grupo Índice]; profesor Castellano y Filosofía, estudiante Licenciatura en Letras, U. Austral; Primer Premio Concurso Apollinaire (UFSM Valparaíso, 1983); publicó en FOXAS (ed. Grupo Índice), POESIA INDICE Nº1, AMERICA JOVEN (Rotterdam). Mencionado Concurso Municipalidad de Valdivia (1977, 1979)",
+                    "Nº4 (Junio 1984): número monográfico dedicado a David Miralles — serie 'Zona transitiva', 15 poemas. Ediciones La Abadía. Ilustración portada: Ramiro Miralles. Bio: Miralles (1957), integrante del Taller Cultural MATRA y cofundador de INDICE [=Grupo Índice]; profesor Castellano y Filosofía, estudiante Licenciatura en Letras, U. Austral; Primer Premio Concurso Apollinaire (UFSM Valparaíso, 1983); publicó en FOXAS (ed. Grupo Índice), POESIA INDICE Nº1, AMERICA JOVEN (Rotterdam). Mención Concurso Municipalidad de Valdivia (1977, 1979)",
                     "Sin mujeres poetas identificadas en los 4 números (1981–1984)"
                 ],
                 personas: [
@@ -4658,7 +4684,7 @@ const talleres = [
                 ],
                 existencias: [
                     { lugar: "Edición facsimilar Kultrún/UACh 2024", tiene: true, link: "https://catalogo.edicionesuach.cl/libro/caballo-de-proa-edicion-facsimilar-completa-1981-2013-tomos-i-y-ii/", nota: "Tomo I, ISBN 978-956-344-173-4, tiraje 200 ej., mayo 2024" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Nº4 (junio 1984), ejemplar físico digitalizado (PDF)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Nº4 (junio 1984), copia digitalizada" }
                 ]
             },
             {
@@ -4697,7 +4723,7 @@ const talleres = [
             { autor: "Hermosilla, D. y Urrutia, G. (eds.)", año: "2024", titulo: "Caballo de Proa — Edición Facsimilar Completa, 1981–2013, Tomo I", medio: "Kultrún / Ediciones UACh (Colección Artes), Valdivia. ISBN 978-956-344-173-4", link: "https://catalogo.edicionesuach.cl/libro/caballo-de-proa-edicion-facsimilar-completa-1981-2013-tomos-i-y-ii/" },
             { autor: "Espinosa, G.", año: "2018", titulo: "Microrrelatos y protocolos de lectura: la revista Caballo de Proa (Valdivia, 1981-2013)", medio: "Microtextualidades", link: "https://revistascientificas.uspceu.com/microtextualidades/article/download/86/2857" },
             { autor: "Hermosilla, D.", año: "2023", titulo: "El archivo es solo una excusa. (Documentando el Caballo de Proa)", medio: "Comunidad Creativa de Los Ríos", link: "https://www.danielahermosilla.com/research-books/revistas-del-sur-magazines-from-the-south/texto-el-archivo-es-solo-una-excusa/" },
-            { autor: "Revista Caballo de Proa", año: "1984", titulo: "Caballo de Proa Nº4 — David Miralles, 'Zona transitiva', junio 1984", medio: "Ejemplar físico analizado (PDF)", link: null }
+            { autor: "Revista Caballo de Proa", año: "1984", titulo: "Caballo de Proa Nº4 — David Miralles, 'Zona transitiva', junio 1984", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -5426,8 +5452,8 @@ const talleres = [
         publicaciones: [],
         fuentes: [
             { autor: "Memoria Chilena", año: "1980", titulo: "La Bicicleta N° 8, noviembre-diciembre 1980", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-100795.html" },
-            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, agosto-septiembre 1979", medio: "Ejemplar físico analizado (PDF)", link: null },
-            { autor: "Revista La Bicicleta", año: "1981", titulo: "N°16, octubre 1981", medio: "Ejemplar físico analizado (PDF)", link: null }
+            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, agosto-septiembre 1979", medio: "Copia digitalizada", link: null },
+            { autor: "Revista La Bicicleta", año: "1981", titulo: "N°16, octubre 1981", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -5942,7 +5968,7 @@ const talleres = [
         historia: {
             origen: "Revista de Poesía y Gráfica. Nació en Temuco, en el hogar universitario de calle San Martín. Bajo el sello 'Ediciones Ariete de Temuco' publicó también la serie 'Volante de Poesía' (hojas sueltas plegadas con poemas y xilografías).",
             contexto: "Declarado objetivo: ofrecer muestra de poesía y gráfica y constituir espacio de publicación abierto al trabajo creador de los jóvenes chilenos. 'Un impulso vital contra la inercia que nos consumía'. Editores literarios: Víctor Hugo Díaz (Santiago, 1965) y Luis Riffo (1965), ambos residentes en Temuco. Gráfica: Pablo Chiuminatto.",
-            desarrollos: "Dos series editoriales: (1) Revista Ariete N°2 (julio 1986, Santiago) incluye poemas de Pedro Araucario (Taller Urbano), Gonzalo Millán (del libro inédito 'Virus'), Jorge Montealegre ('Exilios'). (2) Volante de Poesía N°2 (verano 1986, Temuco): hoja plegada con poemas de Luis Riffo ('El mal estar antes de partir') y Víctor Hugo Díaz ('Despertador', 'Entonces desperté esa mañana'), xilografías de Pablo Chiuminatto.",
+            desarrollos: "Dos series editoriales: (1) Revista Ariete N°2 (julio 1986, Santiago) incluye poemas de Pedro Araucario (Taller Urbano), Gonzalo Millán (del libro inédito 'Virus'), Jorge Montealegre ('Exilios'). (2) Volante de Poesía N°2 (verano 1986, Temuco): hoja plegada tríptico, papel verde, con poemas de Luis Riffo ('El mal estar antes de partir') y Víctor Hugo Díaz ('Despertador', 'Entonces desperté esa mañana'), xilografías de Pablo Chiuminatto.",
             continuidad: "Vinculada al circuito de revistas jóvenes de Santiago y Temuco."
         },
         fundadores: [
@@ -5953,7 +5979,7 @@ const talleres = [
         ],
         integrantes: [
             { nombre: "Jaime Lizama", rol: "Poeta (Ciudad en ruinas)" },
-            { nombre: "Pedro Araucario", rol: "Poeta (Taller Urbano)" },
+            { nombre: "Pedro Araucario", rol: "Poeta (Taller Urbano / Agrupación Cultural Barracón)" },
             { nombre: "Jorge Montealegre", rol: "Poeta (Exilios)" },
             { nombre: "Gonzalo Millán", rol: "Poeta (Virus)" },
             { nombre: "Eugenio Dávalos", rol: "Poeta" },
@@ -5977,7 +6003,7 @@ const talleres = [
                     { nombre: "Pablo Chiuminatto", rol: "Gráfica / xilografías" }
                 ],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico digitalizado (PDF)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada" }
                 ]
             }
         ],
@@ -5990,7 +6016,7 @@ const talleres = [
         nota: "⚠️ 0 mujeres poetas en Revista Ariete N°2 ni en Volante de Poesía N°2. Graciela Guzmán participa como artista gráfica.",
         fuentes: [
             { autor: "Memoria Chilena", año: "1986", titulo: "Ariete: Revista de Poesía y Gráfica N° 2, julio 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" },
-            { autor: "Ediciones Ariete de Temuco", año: "1986", titulo: "Volante de Poesía Nº2, verano 1986 — Luis Riffo y Víctor Hugo Díaz", medio: "Ejemplar físico analizado (PDF)", link: null }
+            { autor: "Ediciones Ariete de Temuco", año: "1986", titulo: "Volante de Poesía Nº2, verano 1986 — Luis Riffo y Víctor Hugo Díaz", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -6612,7 +6638,7 @@ const talleres = [
             origen: "Revista Latinoamericana de Artes y Letras publicada por el Centro Hurbanístico de Artes y Letras / Taller Urbano. Casilla 4532 - Correo 2, Santiago.",
             contexto: "Enfoque cultural latinoamericano; se posicionó explícitamente contra el aislamiento cultural del régimen de Pinochet (14 años). Enfoque humanista, independiente, democrático.",
             desarrollos: "El N° 16 (nov-dic 1987) incluía sección de libros recibidos con menciones de poetas latinoamericanas. Circulación restringida.",
-            continuidad: "La revista Galera (Taller Berghof) organizó concursos de poesía vinculados a Contramuro (5to Festival de Expresión Popular)."
+            continuidad: "La revista Galera (Taller Berghof) organizó concursos de poesía vinculados a Contramuro (5to Festival de Expresión Popular). El Taller Urbano se disolvió ca. 1988–1990; varios integrantes (Araucario, Vives, Pancho Lobo) continuaron en la Agrupación Cultural Barracón (Lo Hermida), que publicó Revista Calíope (1990) bajo sello Ediciones Urbarígen."
         },
         fundadores: [
             { nombre: "Felipe Banderas", rol: "Director" },
@@ -6621,7 +6647,7 @@ const talleres = [
         ],
         integrantes: [
             { nombre: "Horacio Eloy", rol: "Sección Poesía" },
-            { nombre: "Pancho Lobo", rol: "Sección Poesía" }
+            { nombre: "Pancho Lobo", rol: "Sección Poesía; luego integrante Agrupación Cultural Barracón" }
         ],
         publicaciones: [
             {
@@ -6742,7 +6768,7 @@ const talleres = [
                 tipo: "Revista",
                 detalles: ["Santiago", "Asociada a AEJ"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -6820,7 +6846,7 @@ const talleres = [
                 tipo: "Revista",
                 detalles: ["Ediciones del Mito", "Valparaíso"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -6853,7 +6879,7 @@ const talleres = [
                 tipo: "Revista",
                 detalles: ["Casa de la Cultura San Fernando"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -6888,7 +6914,7 @@ const talleres = [
                 tipo: "Revista",
                 detalles: ["Centro de Alumnos Castellano y Letras", "UACH, Valdivia"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -6923,7 +6949,7 @@ const talleres = [
                 tipo: "Revista",
                 detalles: [],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -7493,7 +7519,7 @@ const talleres = [
         ],
         nota: "Incluye actividad literaria (concurso 'El Hombre y su Esperanza') además de música y folclore. Fuente única: La Bicicleta N°4 (1979), pp. 8-9.",
         fuentes: [
-            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, ago-sep 1979, pp. 8-9: 'Los mil quinientos días de Javiera'", medio: "Ejemplar físico (PDF)", link: null }
+            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, ago-sep 1979, pp. 8-9: 'Los mil quinientos días de Javiera'", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -7548,7 +7574,7 @@ const talleres = [
         publicaciones: [],
         nota: "Incluida en el mapa como antecedente del circuito literario documentado. Fuente: La Bicicleta N°4, p. 16 (bibliografía pasiva de Pompier).",
         fuentes: [
-            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, p. 16: Bibliografía pasiva de don Gerardo de Pompier", medio: "Ejemplar físico (PDF)", link: null }
+            { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, p. 16: Bibliografía pasiva de don Gerardo de Pompier", medio: "Copia digitalizada", link: null }
         ]
     },
     {
@@ -7575,6 +7601,79 @@ const talleres = [
         nota: "Incluida por su rol como espacio de publicación de crítica literaria durante la dictadura. No es revista exclusivamente literaria. Fuente: La Bicicleta N°4, p. 16.",
         fuentes: [
             { autor: "Valdés, A.", año: "1979", titulo: "Escritura y silenciamiento", medio: "Revista Mensaje, Vol. XXVIII, N°276, enero-febrero 1979", link: null }
+        ]
+    },
+    // ==================== NUEVAS ENTIDADES - SESIÓN 24 FEBRERO 2026 (CALÍOPE) ====================
+    {
+        nombre: "Agrupación Cultural Barracón / Revista Calíope",
+        coords: [-33.4850, -70.5750],
+        zona: "Lo Hermida, Peñalolén (Región Metropolitana)",
+        region: "metropolitana",
+        años: "ca. 1988–1990+",
+        tipo: "taller",
+        verificado: true,
+        ultimaActualizacion: "2026-02-24",
+        historia: {
+            origen: "Taller literario de la Agrupación Cultural Barracón, población Lo Hermida, Peñalolén, Santiago. Surgió tras la disolución del Taller Urbano (ca. 1988–1990). Nombre tomado de un lugar significativo para la población.",
+            contexto: "Grupo poblacional que buscaba en la poesía y la narrativa reflejar al hombre del pueblo. Perspectiva explícitamente liberadora frente a la dictadura. Calíope = musa de la poesía heroica. Circulación restringida. Sello: Ediciones Urbarígen, Lo Hermida.",
+            desarrollos: "El Nº 1 de Calíope (julio 1990) debió aparecer ~1988 pero los originales fueron robados de un auto (una Citroneta AX330). Incluye separata dedicada a Ernesto Cardenal. También publicaron 'Poesía de la Revisión' (Manuel Ruíz, Gerardo Castillo, Pedro Araucario; Ed. Urbarígen, junio 1990). Epígrafe de Paul Éluard. Poemas y prosa sobre vida poblacional. Grabados y xilografías intercalados.",
+            continuidad: "Datos de continuidad post-1990 por determinar."
+        },
+        fundadores: [
+            { nombre: "Pedro Araucario", rol: "Integrante (ex-fundador Taller Urbano)" },
+            { nombre: "Javier Vives", rol: "Integrante, editorial y prosa (ex-co-fundador Taller Urbano)" }
+        ],
+        integrantes: [
+            { nombre: "Aureliano Días", rol: "Poeta, diagramación Calíope Nº 1" },
+            { nombre: "Sebastián Feliú", rol: "Poeta (nacido en el Valle de Aconcagua, reside en Lo Hermida)" },
+            { nombre: "Pancho Lobo", rol: "Poeta (ex-integrante Contramuro/Taller Urbano)" },
+            { nombre: "Carlos Hernández", rol: "Integrante" },
+            { nombre: "Jorge Amaro", rol: "Integrante" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Revista Calíope Nº 1",
+                años: "julio 1990",
+                numeros: "Nº 1",
+                detalles: [
+                    "Ediciones Urbarígen, Lo Hermida, Santiago",
+                    "Circulación restringida",
+                    "Contenido: Editorial colectiva (p. 4); 'Editorial Dos' de Javier Vives (p. 3) — testimonio sobre robo de originales y disolución del Taller Urbano; 'Los Apodos' (Pedro Araucario, pp. 5-6); 'Daniel / El Volantín' (Aureliano Dias, pp. 7-9); 'Manifiesto' (p. 10, atribución ambigua — bio lateral de Patricia Alarcón); poemas de Sebastián Feliú (pp. 19-21); poemas de Pancho Lobo (p. 22); 'Recolector' prosa de Javier Vives (pp. 23-24); 'Acerca de la Cultura' ensayo colectivo (pp. 25-26)",
+                    "Separata: Ernesto Cardenal (bio + Epigramas, Salmo 5, La Llegada, Acuarela, El Lugar 'Armonía')",
+                    "Publicaciones recibidas (p. 27): Cantoral Nº 1-3, Ruta Artística Nº 16, El Puente Nº 0-1, La Port, Poegramas (R. Gómez López)",
+                    "⚠️ 0 mujeres poetas confirmadas. Patricia Alarcón: bio presente pero sin poema explícitamente firmado"
+                ],
+                personas: [
+                    { nombre: "Pedro Araucario", rol: "Poeta" },
+                    { nombre: "Aureliano Días", rol: "Poeta y diagramación" },
+                    { nombre: "Sebastián Feliú", rol: "Poeta" },
+                    { nombre: "Pancho Lobo", rol: "Poeta" },
+                    { nombre: "Javier Vives", rol: "Prosista y editorial" }
+                ],
+                existencias: [
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (febrero 2026)" }
+                ]
+            },
+            {
+                titulo: "Poesía de la Revisión",
+                años: "junio 1990",
+                numeros: "Publicación única",
+                detalles: [
+                    "Manuel Ruíz, Gerardo Castillo, Pedro Araucario",
+                    "Ediciones Urbarígen, Santiago, junio 1990"
+                ],
+                personas: [
+                    { nombre: "Pedro Araucario", rol: "Poeta" }
+                ],
+                existencias: []
+            }
+        ],
+        mujeresOtrasCapacidades: [
+            { nombre: "Patricia Alarcón", rol: "Escritora poblacional (bio en Calíope Nº 1 p. 10: nacida en Concepción, en Lo Hermida desde 1970, escribe desde 1980, folleto 1984, publicó en Boletín 'El Pregón' de Parroquia Jesús Servidor 1989). Posible autora de 'Manifiesto' pero atribución no confirmada", enRevista: true }
+        ],
+        nota: "⚠️ 0 mujeres poetas confirmadas en Calíope Nº 1. Grupo desprendido del Taller Urbano tras su disolución. Patricia Alarcón: presencia ambigua (bio sin poema explícitamente firmado). 7 integrantes listados, todos hombres.",
+        fuentes: [
+            { autor: "Agrupación Cultural Barracón", año: "1990", titulo: "Revista Calíope Nº 1, julio 1990", medio: "Copia digitalizada", link: null }
         ]
     }
     ];
@@ -7699,7 +7798,7 @@ const poetas = [
                 tipo: "Poema en revista",
                 detalles: ["Nº 10", "Poema: 'Soy y Seré'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -7766,7 +7865,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Abril 1984", "Poema: 'Es la hora del lobo'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -7987,7 +8086,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR", "pp. 74-79", "Autora del prólogo 'MAIN'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -8291,7 +8390,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Abril 1984", "Poemas: 'Solo sé como se sienten los muertos' (dedicado a Salvador Allende), 'El francotirador', 'Santiago tango'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -8325,7 +8424,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -8522,7 +8621,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR", "Coordinadora general del proyecto"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -9000,7 +9099,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -9094,7 +9193,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR", "pp. 44-49"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -9207,7 +9306,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR", "Participó en selección de textos"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -9617,7 +9716,7 @@ const poetas = [
                 existencias: [
                     { lugar: "New York Public Library", tiene: true, link: "https://www.nypl.org/research/research-catalog/bib/b12083192", nota: "Registro de catálogo" },
                     { lugar: "Biblioteca Nacional Digital", tiene: true, link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0015836.pdf", nota: "Reseña de Hugo Montes (1988)" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -9817,7 +9916,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -10233,7 +10332,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Nº 4-5 (agosto 1984)", "Poema: 'Muleta'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -10272,7 +10371,7 @@ const poetas = [
                 tipo: "Antología",
                 detalles: ["Inge Corssen (ed.)", "Ediciones INCOR"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -10328,7 +10427,7 @@ const poetas = [
                 tipo: "Publicación de taller",
                 detalles: ["Poema: '(del atado de mugremas)' (escrito noviembre 1984)"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -10885,7 +10984,7 @@ const poetas = [
                 detalles: ["Año 2, Nº 2 (abril 1984): 'Consecuencia de un modelito', 'Oficio', 'Territorio libre', 'Censura y consejos de' (p. 5)", "Año 3, Nº 3 (octubre 1985): 'Clima siglo XX 21:00'"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "PDF descargable (MC0005673)" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico Nº3 consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada, Nº3 (septiembre 2025)" }
                 ]
             },
             {
@@ -11097,7 +11196,7 @@ const poetas = [
                 detalles: ["Directora editorial", "Poemas: '¿Qué busca la humanidad ciega?', 'Mundo' (junio 1987)", "Editorial sobre rol político de la poesía regional"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-100921.html", nota: "PDF descargable" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico junio 1987 consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada, junio 1987 (septiembre 2025)" }
                 ]
             },
             {
@@ -11190,7 +11289,7 @@ const poetas = [
                 detalles: ["Taller de Literatura 'Recital'", "Antofagasta", "Incluye poema 'Estatuaria'"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121739.html", nota: "Digitalizado (MC0005683)" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -11323,7 +11422,7 @@ const poetas = [
                 detalles: ["Prólogo de Carlos René Ibacache (Presidente Grupo Literario Ñuble)", "Incluye poema 'El otoño te trae en sus paredes'"],
                 existencias: [
                     { lugar: "Biblioteca Nacional Digital", tiene: true, link: "https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/RC/RC0118251.pdf", nota: "Recorte de prensa digitalizado" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             },
             {
@@ -11804,7 +11903,7 @@ const poetas = [
                 detalles: ["Taller Literario Gredazul, Santiago", "Ejemplares: Año 2 Nº2 (abril 1984), Año 3 Nº3 (octubre 1985)", "Poema publicado en Nº3 (oct 1985): 'Sólo para leer'"],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Números digitalizados en colección" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico Nº3 consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada, Nº3 (septiembre 2025)" }
                 ]
             },
             {
@@ -12548,7 +12647,7 @@ const poetas = [
                     "Poemas: 'pasatiempo', 'el árbol', 'taxi', 'rosado', 'anaranjado', 'turquesa', 'manzanillones', 'puertas de comedor'"
                 ],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -12637,7 +12736,7 @@ const poetas = [
                     "Poemas: 'Carnaval de Venecia', 'Inmigrantes', 'El jardín de los Finzi-Contini', 'Río Maule', 'Gitana de Modigliani', 'Conozco el preciso instante', 'La última cena', 'Ventana'"
                 ],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -12874,7 +12973,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Nº 2 (diciembre 1989)", "Poema: 'Alguien'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -12904,7 +13003,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Nº 5", "Poema: 'Testamento'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -12934,7 +13033,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Abril 1984", "Poema: 'Soy y Seré'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -12964,7 +13063,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Nº 14 (mayo 1985)", "Taller Urbano de Poesía", "Poema: 'En el principio corrieron a la nada...'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -12994,7 +13093,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Nº 16 (1985)", "Poema: 'Monólogo'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -13024,7 +13123,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Año 2, Nº 3 (diciembre 1989)", "Poema: 'Pena del niño'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -13054,7 +13153,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Poema: 'In (con) clusión'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (septiembre 2025)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
                 ]
             }
         ],
@@ -14939,7 +15038,7 @@ const poetas = [
                     { nombre: "Sonia Pérez", rol: "Poeta" }
                 ],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (febrero 2026)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (febrero 2026)" }
                 ]
             }
         ],
@@ -14993,7 +15092,7 @@ const poetas = [
                 tipo: "Revista",
                 detalles: ["Marzo-abril 1986", "Poema visual/gráfico (p. 13)"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Ejemplar físico consultado (febrero 2026)" }
+                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (febrero 2026)" }
                 ]
             }
         ],
