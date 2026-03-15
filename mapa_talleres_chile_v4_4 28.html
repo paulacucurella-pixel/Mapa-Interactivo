@@ -5446,10 +5446,39 @@ const talleres = [
             { nombre: "Emmy Kwant", rol: "Corresponsal Ámsterdam (N°16, 1981)", enRevista: true },
             { nombre: "Viviana Erazo", rol: "Corresponsal Ciudad de México (N°16, 1981)", enRevista: true },
             { nombre: "Paz Irarrazaval", rol: "Fotógrafa — Asociación Gremial de Fotógrafos Independientes (mencionada N°16)", enRevista: true },
-            { nombre: "Chantal de Rementería", rol: "Gráfica/ilustración desde Edmonton, Canadá (N°16, sección Creación)", enRevista: true }
+            { nombre: "Chantal de Rementería", rol: "Gráfica/ilustración desde Edmonton, Canadá (N°16, sección Creación)", enRevista: true },
+            { nombre: "Patricia Norambuena", rol: "Diagramación y Montaje (Serie Especial N°2, Neruda, agosto 1983)", enRevista: true },
+            { nombre: "Cecilia Moreno", rol: "Secretaria (Serie Especial N°2, agosto 1983)", enRevista: true },
+            { nombre: "Violeta Parra", rol: "Autora de 'La cueca de los poetas' (cancionero, Serie Especial N°2)", enRevista: true },
+            { nombre: "Danai", rol: "Musicalizadora de poemas de Neruda: '¿Dónde estará la Guillermina?', 'El monte y el río' (cancionero)", enRevista: true },
+            { nombre: "Margarita Aguirre", rol: "Testimonios sobre Neruda, biógrafa (Serie Especial N°2)", enRevista: true },
+            { nombre: "Matilde Urrutia", rol: "Testimonios sobre Neruda, tercera esposa del poeta (Serie Especial N°2)", enRevista: false },
+            { nombre: "Delia del Carril", rol: "Testimonios sobre Neruda, segunda esposa del poeta (Serie Especial N°2)", enRevista: false }
         ],
-        nota: "N°4 (ago-sep 1979) documenta extensamente la UNAC, Peña Doña Javiera, Taller Contemporáneo, UEJ, Encuentros de Juventud y Canto, y reseña libros de Lucía Pena y Fernando Valenzuela. Concurso de poesía con jurado presidido por Enrique Lihn (resultados en N°6). N°16 (oct. 1981): NO contiene poesía de mujeres en sección 'Creación' (solo autores varones en el exilio). Documenta redes culturales de resistencia y circulación Chile-exilio-Brasil. Ausencia de mujeres poetas en sección creación contrasta con presencia femenina en equipo editorial, corresponsalías, música e investigación.",
-        publicaciones: [],
+        nota: "N°4 (ago-sep 1979) documenta extensamente la UNAC, Peña Doña Javiera, Taller Contemporáneo, UEJ, Encuentros de Juventud y Canto, y reseña libros de Lucía Pena y Fernando Valenzuela. Concurso de poesía con jurado presidido por Enrique Lihn (resultados en N°6). N°16 (oct. 1981): NO contiene poesía de mujeres en sección 'Creación' (solo autores varones en el exilio). Serie Especial N°2 (agosto 1983): 'Redescubrimiento de Neruda: testimonios, recuerdos, anécdotas', incluye cancionero con musicalizaciones de Danai y Violeta Parra. Documenta redes culturales de resistencia y circulación Chile-exilio-Brasil.",
+        publicaciones: [
+            {
+                titulo: "Serie Especial N°2: Redescubrimiento de Neruda",
+                años: "agosto 1983",
+                numeros: "Número especial monográfico",
+                detalles: [
+                    "Testimonios, recuerdos, anécdotas sobre Neruda a 10 años de su muerte",
+                    "Cancionero con acordes de guitarra",
+                    "Cuadros documentales: musas inspiradoras, residencias, amigos/enemigos",
+                    "Precio de tapa: $100 IVA incluido"
+                ],
+                personas: [
+                    { nombre: "Paulina Elissetche Hurtado", rol: "Gerente, Colectivo La Bicicleta" },
+                    { nombre: "Gladys Muñoz", rol: "Secretaria, Colectivo La Bicicleta" },
+                    { nombre: "Patricia Norambuena", rol: "Diagramación y Montaje" },
+                    { nombre: "Violeta Parra", rol: "Canción 'La cueca de los poetas'" },
+                    { nombre: "Danai", rol: "Musicalizaciones de poemas de Neruda" }
+                ],
+                existencias: [
+                    { lugar: "Colección privada", tiene: true, link: null, nota: "PDF digitalizado analizado marzo 2026" }
+                ]
+            }
+        ],
         fuentes: [
             { autor: "Memoria Chilena", año: "1980", titulo: "La Bicicleta N° 8, noviembre-diciembre 1980", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-100795.html" },
             { autor: "Revista La Bicicleta", año: "1979", titulo: "N°4, agosto-septiembre 1979", medio: "Copia digitalizada", link: null },
@@ -5574,6 +5603,117 @@ const talleres = [
         ],
         fuentes: [
             { autor: "Colección privada Carlos Trujillo", año: "2025", titulo: "TRANSCIELO consultado", medio: "Consulta facilitada septiembre 2025", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Naderías",
+        coords: [-33.4380, -70.6520],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1987–[?]",
+        tipo: "Revista",
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
+        historia: {
+            origen: "Primer número publicado en invierno de 1987. Nombre tomado de un verso de Jorge Luis Borges. Editorial declara: 'Nos encontramos con la palabra NADERÍAS, en un verso de Borges. Y así, hemos nominado a este rectángulo, de papeles, prosas y poemas'.",
+            contexto: "Revista independiente con línea anti-dogmática y pluralista. El editorial expresa posición de resistencia cultural: 'Nacimos, porque la sensualidad y la creación, son estrépitos habituales... porque las crisis pueden más que la estabilidad, porque la palabra humanizada, es más honesta y generosa que el poder'. Se autodefinen como 'un grupo de voces, que vuelca su existencia sobre el arco-íris... desconfiamos de cualquier síntoma uniforme'.",
+            desarrollos: "Incluye poesía chilena, latinoamericana e internacional (Ernesto Cardenal, Mariátegui, Benedetti), prosa, ensayo crítico y homenajes. Ensayo sobre Waldo Rojas (exiliado en Francia). Sección 'Poesía Chilena de HOY (selección libre)'. Documenta red de librerías y espacios culturales alternativos en sector San Diego (Viera Libros, BUDI, Casetería Huente).",
+            continuidad: "Por determinar. Casilla postal 50820, Correo Central."
+        },
+        fundadores: [
+            { nombre: "Gregorio Angelcos", rol: "Director" },
+            { nombre: "Jaime Lizama", rol: "Subdirector" },
+            { nombre: "Carlos Muñoz H.", rol: "Coordinador" }
+        ],
+        integrantes: [
+            { nombre: "Armando Rubio", rol: "Poeta (prosa, fallecido)" },
+            { nombre: "Ricardo Rojas", rol: "Poeta" },
+            { nombre: "Samuel Núñez", rol: "Poeta serenense, Director de Añañuca" },
+            { nombre: "Toño Cadías", rol: "Gráfica/ilustraciones" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Carmen Berenguer", rol: "Poeta", obra: "La danza macabra (incluye 'Loba')", enRevista: true, nota: "Dedicado a Camilo Saint-Saens" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Naderías",
+                años: "1987–[?]",
+                numeros: "N° 1 (invierno 1987) documentado",
+                detalles: [
+                    "Casilla 50820, Correo Central, Santiago",
+                    "Contenido: poesía chilena, latinoamericana (Cardenal, Mariátegui, Benedetti)",
+                    "Ensayo de Jaime Lizama sobre Waldo Rojas (poeta del exilio)",
+                    "Conexión con revista Añañuca (La Serena, dir. Samuel Núñez)"
+                ],
+                personas: [
+                    { nombre: "Carmen Berenguer", rol: "Poeta" },
+                    { nombre: "Ernesto Cardenal", rol: "Poeta nicaragüense" },
+                    { nombre: "Mario Benedetti", rol: "Escritor uruguayo" }
+                ],
+                existencias: [
+                    { lugar: "Colección privada", tiene: true, link: null, nota: "Ejemplar digitalizado analizado marzo 2026" }
+                ]
+            }
+        ],
+        nota: "Datos extraídos de ejemplar digitalizado N° 1 (invierno 1987). Red documentada: revista Añañuca (La Serena), Ediciones Documentas, librerías del sector San Diego. Homenaje a poeta fallecido Armando Rubio.",
+        fuentes: [
+            { autor: "Naderías", año: "1987", titulo: "Naderías (N° 1, invierno 1987)", medio: "Ejemplar digitalizado", link: null }
+        ]
+    },
+    {
+        nombre: "Revista Garúa",
+        coords: [-33.4360, -70.6580],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "1990–[?]",
+        tipo: "Revista",
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
+        historia: {
+            origen: "Primer número publicado en noviembre de 1990. Dirección compartida entre Horacio Eloy y Lorenzo Peirano. Correspondencia: Esperanza 940, Santiago.",
+            contexto: "Revista literaria vinculada a la Generación Post 87. Lorenzo Peirano fue discípulo de Jorge Teillier y participó en el Taller de Enrique Valdés en la SECH (1982). Horacio Eloy se integró al Taller Urbano y revista Contramuro (1984). Carta manuscrita de Jorge Teillier incluida en el primer número.",
+            desarrollos: "Incluye poesía chilena y argentina. Agradecimiento a CENTROHURBANO. Vinculación con circuito de publicaciones artesanales del 'apagón cultural' (Contramuro, Aumen, El Organillo, Huelén, Para, Palabra Escrita).",
+            continuidad: "Por determinar. Número 1 registrado en Memoria Chilena."
+        },
+        fundadores: [
+            { nombre: "Horacio Eloy", rol: "Director" },
+            { nombre: "Lorenzo Peirano", rol: "Director" }
+        ],
+        integrantes: [
+            { nombre: "Korso", rol: "Diseño portada" },
+            { nombre: "Zono", rol: "Diseño interiores" },
+            { nombre: "Alberto Zamora", rol: "Diagramación" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Azucena Racosta", rol: "Poeta argentina", obra: "Los úteros blindados", enRevista: true, nota: "Procedencia: Río Negro, Argentina" },
+            { nombre: "Nora Altinier", rol: "Poeta argentina", obra: "Identidad Desordenada (1988)", enRevista: true, nota: "Procedencia: Buenos Aires" },
+            { nombre: "Gloria Quevedo", rol: "Colaboradora (Santiago)", obra: "Por identificar", enRevista: true, nota: "Chilena, pendiente investigar obra específica" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Garúa",
+                años: "1990–[?]",
+                numeros: "N° 1 (noviembre 1990) documentado",
+                detalles: [
+                    "Correspondencia: Esperanza 940, Santiago",
+                    "Dirección compartida: Horacio Eloy y Lorenzo Peirano",
+                    "Precio de venta: $250 (anotado a mano en portada)",
+                    "Incluye carta manuscrita de Jorge Teillier"
+                ],
+                personas: [
+                    { nombre: "Azucena Racosta", rol: "Poeta argentina" },
+                    { nombre: "Nora Altinier", rol: "Poeta argentina" },
+                    { nombre: "Gloria Quevedo", rol: "Colaboradora" }
+                ],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-150261.html", nota: "N° 1 (noviembre 1990) digitalizado" }
+                ]
+            }
+        ],
+        nota: "Datos extraídos de ejemplar digitalizado N° 1 (noviembre 1990). Lorenzo Peirano publicó 'Respirando callejones' (1990) y co-editó El Bastardo (1984-85). Horacio Eloy autor de 'Revistas y publicaciones literarias en Dictadura (1973-1990)'.",
+        fuentes: [
+            { autor: "Revista Garúa", año: "1990", titulo: "Garúa N° 1 (noviembre 1990)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-150261.html" },
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "Garúa (Chile)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-propertyvalue-150261.html" }
         ]
     },
     {
@@ -6164,18 +6304,76 @@ const talleres = [
     },
     {
         nombre: "Revista Carmina",
-        coords: [-33.455, -70.665],
-        zona: "Región Metropolitana (Santiago)",
+        coords: [-33.4400, -70.6500],
+        zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
-        años: "1980s",
+        años: "1983–1985",
         tipo: "Revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
-        descripcion: "Revista de poesía femenina.",
-        contexto: "Publicación dedicada a voces de mujeres.",
-        integrantes: [],
-        publicaciones: [],
-        fuentes: []
+        ultimaActualizacion: "2026-03-14",
+        historia: {
+            origen: "Publicación del Taller Gredazul, originalmente con sede en la Sociedad de Escritores de Chile (SECH). Primer número publicado en 1983.",
+            contexto: "Revista de circulación interna vinculada al Instituto Chileno-Alemán de Cultura (Goethe Institut) desde 1984. El N° 2 (1984) documenta el traslado desde la SECH: 'hay un movimiento pujante y creativo en la Sociedad de Escritores... este constante crecer ha dificultado, por lo estrecho que se hace el recinto, poder seguir trabajando en la Casa del Escritor'. Sede posterior: Esmeralda 650, Santiago.",
+            desarrollos: "El N° 3 (octubre 1985) declara línea editorial: 'Tratar de adquirir oficio, ser auténticos. Tener una relación fraterna con otros poetas, conocer de poesía y dar testimonio de nuestro tiempo y espacio.' La revista aclara su independencia respecto al Instituto anfitrión. Homenajeó a Jorge Teillier por sus 50 años (facsímil de poema manuscrito, 1953). Anunció visitas de Juan Cameron y Jorge Teillier. Homenaje a poeta alemana Anna Jonas (N° 2).",
+            continuidad: "Al menos 3 números publicados (1983-1985). Conexión documentada con revista Imágenes de Océanos (Antofagasta, editada por Alejandra Zarhi)."
+        },
+        fundadores: [
+            { nombre: "Victoria Valdés", rol: "Directora" }
+        ],
+        integrantes: [
+            { nombre: "Taller Gredazul", rol: "Colectivo editor" },
+            { nombre: "Edmundo Herrera", rol: "Primer y único director antes de dirección colectiva (N° 3)" }
+        ],
+        mujeresPoetas: [
+            { nombre: "Victoria Valdés", rol: "Directora y poeta", obra: "Esta pena, este hombre; En suma amigos míos (N° 2); Sólo para leer (N° 3)", enRevista: true },
+            { nombre: "Ximena Pokluda", rol: "Poeta", obra: "Consecuencia de un modelito; Oficio; Territorio libre; Censura y consejos de; Sabor amargo (N° 2); Clima siglo XX 21:00; Trigales rubios para una obsesión (N° 3)", enRevista: true },
+            { nombre: "Olga Salvo", rol: "Poeta", obra: "Consejos de Doña María a una madre inexperta; Para ser sincera; 'La comida, también entra por el olfato' (N° 2)", enRevista: true },
+            { nombre: "Hilda Angulo", rol: "Poeta", obra: "Girasoles en el viento (N° 2)", enRevista: true },
+            { nombre: "Alejandra Zarhi", rol: "Poeta invitada", obra: "Tú vas conmigo (N° 2)", enRevista: true, nota: "Editora de Imágenes de Océanos (Antofagasta)" },
+            { nombre: "Anna Jonas", rol: "Poeta homenajeada (alemana)", obra: "Usted puede (N° 2, traducido por 'una amiga del taller')", enRevista: true },
+            { nombre: "Irene García", rol: "Poeta", obra: "Ausencia; Ciclo rutinario; Intangibles (N° 3)", enRevista: true },
+            { nombre: "Graciela de Olivari", rol: "Poeta", obra: "Adiós a mis sueños; Pasajero; Nido de gaviotas (N° 3)", enRevista: true }
+        ],
+        mujeresMencionadas: [
+            { nombre: "Delia Domínguez", rol: "Creadora cercana al Taller (mencionada en editorial N° 3)" },
+            { nombre: "Edith Phillips", rol: "Facilitó recital en Instituto Chileno Italiano de Cultura" },
+            { nombre: "María Teresa Davanzo", rol: "Integrante conjunto Bostezum (música antigua en recitales)" },
+            { nombre: "Inés Moreno", rol: "Voces/Ilustración en recitales" }
+        ],
+        publicaciones: [
+            {
+                titulo: "Carmina — Poesía",
+                años: "1983–1985",
+                numeros: "Al menos 3 números",
+                detalles: [
+                    "Año 1 (1983): primer número",
+                    "N° 2, Año 2 (abril 1984): Homenaje a Anna Jonas, traslado al Goethe Institut",
+                    "N° 3, Año 3 (octubre 1985): Homenaje a Jorge Teillier (50 años), facsímil manuscrito",
+                    "Publicación de circulación interna",
+                    "Servicios técnicos: Diseño y fotomecánica Policrom (Tel. 773741); Impresión Imprenta Orellana (Tel. 728226)"
+                ],
+                personas: [
+                    { nombre: "Victoria Valdés", rol: "Directora" },
+                    { nombre: "Ximena Pokluda", rol: "Poeta" },
+                    { nombre: "Irene García", rol: "Poeta" },
+                    { nombre: "Graciela de Olivari", rol: "Poeta" },
+                    { nombre: "Olga Salvo", rol: "Poeta" },
+                    { nombre: "Hilda Angulo", rol: "Poeta" },
+                    { nombre: "Alejandra Zarhi", rol: "Poeta invitada" },
+                    { nombre: "Jorge Maser", rol: "Ilustración (N° 3)" }
+                ],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "N° 2, abril 1984 (digitalizado)" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "N° 3, octubre 1985 (digitalizado)" },
+                    { lugar: "Colección privada", tiene: true, link: null, nota: "Ejemplares digitalizados analizados marzo 2026" }
+                ]
+            }
+        ],
+        nota: "Datos extraídos de ejemplares digitalizados N° 2 (1984) y N° 3 (1985). Vinculada al Taller Gredazul (ver entrada separada). Red documentada con revista Imágenes de Océanos (Antofagasta).",
+        fuentes: [
+            { autor: "Carmina", año: "1984", titulo: "Carmina: Poesía (Año 2, N° 2, abril 1984)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" },
+            { autor: "Carmina", año: "1985", titulo: "Carmina: Poesía (Año 3, N° 3, octubre 1985)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html" }
+        ]
     },
     {
         nombre: "Revista Pluma y Pincel",
@@ -11040,22 +11238,26 @@ const poetas = [
         region: "metropolitana",
         años: "Activa 1984–1986",
         foto: null,
-        ultimaActualizacion: "2026-02-23",
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
         biografia: {
-            nacimiento: "Chile (datos biográficos no disponibles en ejemplar de revista)",
+            nacimiento: "Chile (datos biográficos no disponibles en ejemplares de revista).",
             formacion: "Autora en revista Carmina del Taller Literario Gredazul.",
-            contexto: "Texto editorial menciona su interés por 'rescatar la poesía' y entregar 'una visión de protesta'.",
-            trayectoria: "Publicó en Carmina N°2 (1984) y N°3 (1985), y en el cuadernillo colectivo Taller Gredazul — Poemas 1986. Su poema 'Lo tanto de tan poco' (1986) marca distancia irónica con la poesía de denuncia explícita, aludiendo a 'carros lanzagases' y 'descontento social' como lo que sus poemas no hablan. No se hallaron registros de libros individuales publicados en el periodo 1973-1990."
+            contexto: "Revista Carmina la describe: 'Con especial interés logra rescatar la poesía, dentro de un quehacer materialista [...] nos entrega una visión de protesta con afán de insistir en que el espíritu siempre superará a la materia.'",
+            trayectoria: "Publicó en Carmina N° 2 (1984) y N° 3 (1985), y en el cuadernillo colectivo Taller Gredazul — Poemas 1986. Su poema 'Lo tanto de tan poco' (1986) marca distancia irónica con la poesía de denuncia explícita. No se hallaron registros de libros individuales publicados en el período."
         },
         publicaciones: [
             {
                 titulo: "Poemas en revista Carmina",
                 años: "1984-1985",
-                tipo: "Revista",
-                detalles: ["Año 2, Nº 2 (abril 1984): 'Consecuencia de un modelito', 'Oficio', 'Territorio libre', 'Censura y consejos de' (p. 5)", "Año 3, Nº 3 (octubre 1985): 'Clima siglo XX 21:00'"],
+                tipo: "Poemas en revista",
+                detalles: [
+                    "N° 2 (abril 1984): 'Consecuencia de un modelito', 'Oficio', 'Territorio libre', 'Censura y consejos de', 'Sabor amargo'",
+                    "N° 3 (octubre 1985): 'Clima siglo XX, 21:00', 'Trigales rubios para una obsesión', 'Inventos para recordar', 'Cuidado, me advierto, me advierten', 'En el jardín mientras riego', 'Es por nuestro libro'"
+                ],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "PDF descargable (MC0005673)" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada, Nº3 (septiembre 2025)" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "N° 2 digitalizado" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "N° 3 digitalizado" }
                 ]
             },
             {
@@ -11064,8 +11266,7 @@ const poetas = [
                 tipo: "Cuadernillo colectivo",
                 detalles: ["'Lo tanto de tan poco' (p. 2)"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "MC0005681" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "PDF digitalizado" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "Digitalizado" }
                 ]
             }
         ],
@@ -11078,38 +11279,41 @@ const poetas = [
             ]
         },
         fuentes: [
-            { autor: "Memoria Chilena", año: "1984", titulo: "Carmina: año 2, n° 2, abril 1984", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" }
+            { autor: "Carmina", año: "1984", titulo: "Carmina: Poesía (Año 2, N° 2, abril 1984)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" },
+            { autor: "Carmina", año: "1985", titulo: "Carmina: Poesía (Año 3, N° 3, octubre 1985)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html" }
         ]
     },
     {
         nombre: "Hilda Angulo",
         nombreReal: null,
         coords: [-33.45, -70.66],
-        zona: "Santiago",
+        zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
-        años: "Activa durante dictadura, generación anterior",
+        años: "Activa 1984",
         foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
         biografia: {
-            nacimiento: "Chile, generación anterior a las autoras de los años 80. Eugenia Brito la incluye entre las voces de la 'post-vanguardia' marginal surgidas en Santiago bajo el régimen autoritario.",
-            formacion: "En 1984 mencionada como 'colaboradora especial' de revista Carmina N°2, junto a poetas más jóvenes, probablemente en rol de mentora.",
-            contexto: "Reconocida como nexo viviente con tradición poética anterior. Presencia en Carmina sugiere que editores buscaban tender lazos entre generaciones de escritoras en plena dictadura.",
-            trayectoria: "Poemario más conocido: 'La jaula olvidada' (1968), obra difícil de localizar (no figura en catálogos digitales de bibliotecas públicas chilenas)."
+            nacimiento: "Chile, generación anterior a las autoras de los años 80.",
+            formacion: "Integrante del Taller Gredazul. Publicó en revista Carmina N° 2 (abril 1984).",
+            contexto: "Revista Carmina la describe: 'Se da tiempo para buscar la temática que más le duele. No pierde con ello espontaneidad y es ella, identificada en el poema.'",
+            trayectoria: "Poemario anterior: 'La jaula olvidada' (1968), obra difícil de localizar."
         },
         publicaciones: [
             {
-                titulo: "Poema 'Porque siendo viejos'",
+                titulo: "Poema 'Girasoles en el viento'",
                 años: "1984",
-                tipo: "Revista",
-                detalles: ["Revista Carmina Nº2 (abril 1984)", "Texto emotivo que reflexiona sobre la vejez y la dignidad humana"],
+                tipo: "Poema en revista",
+                detalles: ["Revista Carmina N° 2 (abril 1984)"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "Revista Carmina digitalizada (MC0005673)" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "Revista Carmina digitalizada" }
                 ]
             },
             {
                 titulo: "La jaula olvidada",
                 años: "1968",
                 tipo: "Poemario",
-                detalles: ["Publicación anterior a dictadura", "No figura en catálogos digitales de bibliotecas públicas"],
+                detalles: ["Publicación anterior a dictadura", "No figura en catálogos digitales"],
                 existencias: []
             }
         ],
@@ -11122,8 +11326,50 @@ const poetas = [
             ]
         },
         fuentes: [
-            { autor: "Memoria Chilena", año: "1984", titulo: "Carmina: año 2, n° 2, abril 1984", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" },
-            { autor: "Brito, E.", año: "1990", titulo: "Campos minados: Literatura post-golpe en Chile", medio: "Editorial Cuarto Propio", link: null }
+            { autor: "Carmina", año: "1984", titulo: "Carmina: Poesía (Año 2, N° 2, abril 1984)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" }
+        ]
+    },
+    {
+        nombre: "Olga Salvo",
+        nombreReal: null,
+        coords: [-33.452, -70.658],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1984",
+        foto: null,
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
+        biografia: {
+            nacimiento: "Chile, datos biográficos no identificados en fuentes disponibles.",
+            formacion: "Integrante del Taller Gredazul. Publicó en revista Carmina N° 2 (abril 1984).",
+            contexto: "Revista Carmina la describe: 'Armonía, equilibrio, belleza, su trabajo es poesía sin otro comentario.'",
+            trayectoria: "Poemas documentados en Carmina N° 2 (1984). No se han identificado publicaciones individuales en el período."
+        },
+        publicaciones: [
+            {
+                titulo: "Poemas en revista Carmina N° 2",
+                años: "1984",
+                tipo: "Poemas en revista",
+                detalles: [
+                    "Consejos de Doña María a una madre inexperta",
+                    "Para ser sincera",
+                    "'La comida, también entra por el olfato' — Perogrullo"
+                ],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "Revista Carmina digitalizada" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [
+                { nombre: "Taller Gredazul", id: "gredazul" }
+            ],
+            revistas: [
+                { nombre: "Carmina", id: "carmina" }
+            ]
+        },
+        fuentes: [
+            { autor: "Carmina", año: "1984", titulo: "Carmina: Poesía (Año 2, N° 2, abril 1984)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" }
         ]
     },
     {
@@ -11187,6 +11433,15 @@ const poetas = [
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99257.html", nota: "Ejemplar año 0, Nº1 (1983) digitalizado" },
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99265.html", nota: "Ejemplar año 5, Nº2 (1988) - Homenaje a Braulio Arenas" }
+                ]
+            },
+            {
+                titulo: "Poema 'Tú vas conmigo' en Revista Carmina",
+                años: "1984",
+                tipo: "Poema en revista",
+                detalles: ["Revista Carmina N° 2 (abril 1984)", "Poeta invitada", "Editorial la destaca: 'sigue la Escuela de Generosidad de Andrés Sabella, divulgando tanto la poesía ajena como la propia'"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "Revista Carmina digitalizada" }
                 ]
             }
         ],
@@ -11955,26 +12210,31 @@ const poetas = [
         nombre: "Victoria Valdés",
         nombreReal: null,
         coords: [-33.44, -70.65],
-        zona: "Región Metropolitana (Santiago)",
+        zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
         años: "Activa 1983-1986",
         foto: null,
-        ultimaActualizacion: "2026-02-23",
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
         biografia: {
-            nacimiento: "Datos biográficos no localizados.",
+            nacimiento: "Chile. Datos biográficos específicos no localizados en fuentes disponibles.",
             formacion: "Directora de la revista Carmina del Taller Literario Gredazul (Santiago, 1983-1985).",
-            contexto: "El Taller Gredazul fue fundado en 1982. La revista Carmina fue editada durante 1983-1985 bajo la coordinación del taller.",
-            trayectoria: "Directora de Carmina; poema 'Sólo para leer' publicado en Nº3 (oct 1985). Poema 'Juego de pájaros' publicado en cuadernillo colectivo Taller Gredazul — Poemas 1986. Poema erótico-existencial: 'amarrarte con las piernas / y decirte / que esto de vivir / es nada más / ni nada menos / que un juego de pájaros.' No figura con obra poética individual publicada ni aparece en catálogos de escritores chilenos de la época."
+            contexto: "Revista Carmina la describe: 'Su poesía sugerente, íntima, personal puede identificarnos y hacerla nuestra.' El Taller Gredazul fue fundado en 1982, originalmente con sede en la SECH, luego trasladado al Goethe Institut.",
+            trayectoria: "Directora de Carmina. Publicó poemas en N° 2 (1984): 'Esta pena, este hombre', 'En suma amigos míos'; y en N° 3 (1985): 'Sólo para leer'. Poema 'Juego de pájaros' publicado en cuadernillo colectivo Taller Gredazul — Poemas 1986. No figura con obra poética individual publicada."
         },
         publicaciones: [
             {
-                titulo: "Revista Carmina (directora)",
+                titulo: "Revista Carmina (directora y poeta)",
                 años: "1983-1985",
                 tipo: "Revista (dirección)",
-                detalles: ["Taller Literario Gredazul, Santiago", "Ejemplares: Año 2 Nº2 (abril 1984), Año 3 Nº3 (octubre 1985)", "Poema publicado en Nº3 (oct 1985): 'Sólo para leer'"],
+                detalles: [
+                    "Taller Literario Gredazul, Santiago",
+                    "N° 2 (abril 1984): poemas 'Esta pena, este hombre', 'En suma amigos míos'",
+                    "N° 3 (octubre 1985): poema 'Sólo para leer'"
+                ],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Números digitalizados en colección" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada, Nº3 (septiembre 2025)" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html", nota: "N° 2 digitalizado" },
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "N° 3 digitalizado" }
                 ]
             },
             {
@@ -11983,8 +12243,7 @@ const poetas = [
                 tipo: "Cuadernillo colectivo",
                 detalles: ["'Juego de pájaros' (p. 6)"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "MC0005681" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "PDF digitalizado" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "Digitalizado" }
                 ]
             }
         ],
@@ -11997,8 +12256,8 @@ const poetas = [
             ]
         },
         fuentes: [
-            { autor: "Taller Literario Gredazul", año: "1984", titulo: "Carmina: año 2, nº 2", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/" },
-            { autor: "Silva, A.", año: "2008", titulo: "Pasiones del desencanto. La crisis del campo literario chileno en revistas literarias durante la dictadura", medio: "Tesis doctoral PUC", link: "https://es.scribd.com/document/656856228/TESIS-Pasiones-Del-Desencanto" }
+            { autor: "Carmina", año: "1984", titulo: "Carmina: Poesía (Año 2, N° 2, abril 1984)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121731.html" },
+            { autor: "Carmina", año: "1985", titulo: "Carmina: Poesía (Año 3, N° 3, octubre 1985)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html" }
         ]
     },
     // ==================== NUEVAS POETAS SESIÓN 13 ====================
@@ -15240,71 +15499,35 @@ const poetas = [
         nombre: "Graciela de Olivari",
         nombreReal: null,
         coords: [-33.456, -70.662],
-        zona: "Región Metropolitana (Santiago)",
-        region: "metropolitana",
-        años: "Activa 1986",
-        verificado: false,
-        ultimaActualizacion: "2026-02-23",
-        foto: null,
-        biografia: {
-            nacimiento: "Por determinar.",
-            formacion: "Por determinar.",
-            contexto: "Integrante del Taller Gredazul en Santiago, 1986. Publicó en el cuadernillo colectivo del taller.",
-            trayectoria: "Poema 'Pueda ser' publicado en Taller Gredazul — Poemas 1986. Texto en disposición diagonal sobre la página, poema de espera nocturna y deseo: 'Pueda ser que una noche de julio / llegue a mí tu voz en esquinas de lluvia incesante.' Fuente única."
-        },
-        publicaciones: [
-            {
-                titulo: "Poema en Taller Gredazul — Poemas 1986",
-                años: "1986",
-                tipo: "Cuadernillo colectivo",
-                detalles: ["'Pueda ser' (p. 5, texto en diagonal)"],
-                existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "PDF digitalizado" }
-                ]
-            }
-        ],
-        conexiones: {
-            talleres: [{ nombre: "Taller Gredazul", id: "gredazul" }],
-            revistas: []
-        },
-        fuentes: [
-            { autor: "Taller Gredazul", año: "1986", titulo: "Taller Gredazul — Poemas 1986 (p. 5)", medio: "Cuadernillo mecanografiado, colección particular (PDF)", link: null }
-        ]
-    },
-    {
-        nombre: "Irene García",
-        nombreReal: null,
-        coords: [-33.458, -70.664],
-        zona: "Región Metropolitana (Santiago)",
+        zona: "Santiago (Región Metropolitana)",
         region: "metropolitana",
         años: "Activa 1985–1986",
-        verificado: false,
-        ultimaActualizacion: "2026-02-23",
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
         foto: null,
         biografia: {
-            nacimiento: "Por determinar.",
-            formacion: "Por determinar.",
-            contexto: "Integrante del Taller Gredazul en Santiago. Publicó en revista Carmina N°3 (oct. 1985) y en el cuadernillo colectivo del taller (1986).",
-            trayectoria: "Poema 'Ausencia' publicado en Carmina N°3 (octubre 1985). Poema 'Espacios' publicado en Taller Gredazul — Poemas 1986, en disposición diagonal sobre la página, sobre distancia, deseo y cuerpo."
+            nacimiento: "Chile. Datos biográficos específicos no localizados en fuentes disponibles.",
+            formacion: "Integrante del Taller Gredazul en Santiago.",
+            contexto: "Publicó en revista Carmina N° 3 (octubre 1985) y en el cuadernillo colectivo del taller (1986).",
+            trayectoria: "Poemas en Carmina N° 3: 'Adiós a mis sueños', 'Pasajero', 'Nido de gaviotas'. Poema 'Pueda ser' publicado en Taller Gredazul — Poemas 1986."
         },
         publicaciones: [
             {
-                titulo: "Poema en revista Carmina N°3",
+                titulo: "Poemas en revista Carmina N° 3",
                 años: "1985",
-                tipo: "Revista",
-                detalles: ["'Ausencia' (Carmina, Año 3, Nº 3, octubre 1985)"],
+                tipo: "Poemas en revista",
+                detalles: ["'Adiós a mis sueños'", "'Pasajero'", "'Nido de gaviotas'"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "Nº 3, octubre 1985 (digitalizado)" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "N° 3 digitalizado" }
                 ]
             },
             {
                 titulo: "Poema en Taller Gredazul — Poemas 1986",
                 años: "1986",
                 tipo: "Cuadernillo colectivo",
-                detalles: ["'Espacios' (p. 6, texto en diagonal)"],
+                detalles: ["'Pueda ser' (p. 5, texto en diagonal)"],
                 existencias: [
-                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "MC0005681" },
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "PDF digitalizado" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "Digitalizado" }
                 ]
             }
         ],
@@ -15313,7 +15536,53 @@ const poetas = [
             revistas: [{ nombre: "Carmina", id: "carmina" }]
         },
         fuentes: [
-            { autor: "Taller Gredazul", año: "1986", titulo: "Taller Gredazul — Poemas 1986 (p. 6)", medio: "Cuadernillo mecanografiado, colección particular (PDF)", link: null }
+            { autor: "Carmina", año: "1985", titulo: "Carmina: Poesía (Año 3, N° 3, octubre 1985)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html" },
+            { autor: "Taller Gredazul", año: "1986", titulo: "Taller Gredazul — Poemas 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html" }
+        ]
+    },
+    {
+        nombre: "Irene García",
+        nombreReal: null,
+        coords: [-33.458, -70.664],
+        zona: "Santiago (Región Metropolitana)",
+        region: "metropolitana",
+        años: "Activa 1985–1986",
+        verificado: true,
+        ultimaActualizacion: "2026-03-14",
+        foto: null,
+        biografia: {
+            nacimiento: "Chile. Datos biográficos específicos no localizados en fuentes disponibles.",
+            formacion: "Integrante del Taller Gredazul en Santiago.",
+            contexto: "Publicó en revista Carmina N° 3 (octubre 1985) y en el cuadernillo colectivo del taller (1986).",
+            trayectoria: "Poemas en Carmina N° 3: 'Ausencia', 'Ciclo rutinario', 'Intangibles'. Poema 'Espacios' publicado en Taller Gredazul — Poemas 1986."
+        },
+        publicaciones: [
+            {
+                titulo: "Poemas en revista Carmina N° 3",
+                años: "1985",
+                tipo: "Poemas en revista",
+                detalles: ["'Ausencia'", "'Ciclo rutinario'", "'Intangibles'"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html", nota: "N° 3 digitalizado" }
+                ]
+            },
+            {
+                titulo: "Poema en Taller Gredazul — Poemas 1986",
+                años: "1986",
+                tipo: "Cuadernillo colectivo",
+                detalles: ["'Espacios' (p. 6, texto en diagonal)"],
+                existencias: [
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html", nota: "Digitalizado" }
+                ]
+            }
+        ],
+        conexiones: {
+            talleres: [{ nombre: "Taller Gredazul", id: "gredazul" }],
+            revistas: [{ nombre: "Carmina", id: "carmina" }]
+        },
+        fuentes: [
+            { autor: "Carmina", año: "1985", titulo: "Carmina: Poesía (Año 3, N° 3, octubre 1985)", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121660.html" },
+            { autor: "Taller Gredazul", año: "1986", titulo: "Taller Gredazul — Poemas 1986", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/602/w3-article-121737.html" }
         ]
     },
     // --- SUR ---
@@ -16835,7 +17104,7 @@ document.getElementById('typeFilter').addEventListener('change', function() {
     <strong>© Paula Cucurella 2025</strong> · Investigación y desarrollo del Mapa Literario de Talleres de Poesía en Chile (1973-1990)
     <br>
     <span>
-        Contacto: <a href="mailto:paula.cucurella@gmail.com" style="color: #8B4513; text-decoration: none;">paula.cucurella@gmail.com</a>
+        Contacto: <a href="/cdn-cgi/l/email-protection#92e2f3e7fef3bcf1e7f1e7e0f7fefef3d2f5fff3fbfebcf1fdff" style="color: #8B4513; text-decoration: none;"><span class="__cf_email__" data-cfemail="5e2e3f2b323f703d2b3d2b2c3b32323f1e39333f3732703d3133">[email&#160;protected]</span></a>
         · <button id="cite-btn" onclick="openCiteModal()">¿Cómo citar?</button>
     </span>
 </div>
@@ -16854,17 +17123,17 @@ document.getElementById('typeFilter').addEventListener('change', function() {
         </div>
         
         <div id="cite-apa" class="cite-content active">
-            <div class="cite-text">Cucurella, P. (2025). <em>Mapa literario de poesía escrita por mujeres en Chile (1973-1990)</em> [Mapa interactivo]. https://paulacucurella.com/mapa_talleres_chile_v4_4_28.html</div>
+            <div class="cite-text">Cucurella, P. (2025). <em>Mapa literario de poesía escrita por mujeres en Chile (1973-1990)</em> [Mapa interactivo]. https://paulacucurella.com/mapa_talleres_chile_v5.html</div>
             <button class="cite-copy-btn" onclick="copyCitation('apa')">Copiar</button>
         </div>
         
         <div id="cite-mla" class="cite-content">
-            <div class="cite-text">Cucurella, Paula. <em>Mapa literario de poesía escrita por mujeres en Chile (1973-1990)</em>. 2025. Mapa interactivo. https://paulacucurella.com/mapa_talleres_chile_v4_4_28.html. Consultado el [fecha].</div>
+            <div class="cite-text">Cucurella, Paula. <em>Mapa literario de poesía escrita por mujeres en Chile (1973-1990)</em>. 2025. Mapa interactivo. https://paulacucurella.com/mapa_talleres_chile_v5.html. Consultado el [fecha].</div>
             <button class="cite-copy-btn" onclick="copyCitation('mla')">Copiar</button>
         </div>
         
         <div id="cite-chicago" class="cite-content">
-            <div class="cite-text">Cucurella, Paula. "Mapa literario de poesía escrita por mujeres en Chile (1973-1990)." Mapa interactivo. 2025. https://paulacucurella.com/mapa_talleres_chile_v4_4_28.html</div>
+            <div class="cite-text">Cucurella, Paula. "Mapa literario de poesía escrita por mujeres en Chile (1973-1990)." Mapa interactivo. 2025. https://paulacucurella.com/mapa_talleres_chile_v5.html</div>
             <button class="cite-copy-btn" onclick="copyCitation('chicago')">Copiar</button>
         </div>
         
@@ -17045,7 +17314,7 @@ document.getElementById('typeFilter').addEventListener('change', function() {
 }
 </style>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Funciones del modal de citación
 function openCiteModal() {
     document.getElementById('cite-modal').classList.add('active');
@@ -17094,19 +17363,4 @@ function copyCitation(format) {
 }
 
 // Cerrar modal al hacer click fuera
-document.getElementById('cite-modal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeCiteModal();
-    }
-});
-
-// Cerrar modal con Escape
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeCiteModal();
-    }
-});
-</script>
-
-</body>
-</html>
+document.getElementById('cite-modal').addEventListener('cli
