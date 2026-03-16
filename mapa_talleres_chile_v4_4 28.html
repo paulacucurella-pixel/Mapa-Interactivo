@@ -1674,7 +1674,7 @@ const talleres = [
         años: "Fines 1970s–ca. 1990",
         tipo: "Taller",
         verificado: true,
-        ultimaActualizacion: "2026-02-24",
+        ultimaActualizacion: "2026-03-16",
         historia: {
             origen: "Colectivo de creación literaria fundado por Pedro Araucario, junto a Eledino Parraguez, Javier Vives y Horacio Eloy. Nombre formal: 'Centro Urbanístico de Artes y Letras'.",
             contexto: "Activo en Santiago centro, especialmente en el sector de Barrio Yungay. Reunía a poetas y artistas que creaban en la clandestinidad o semiclandestinidad bajo la dictadura militar.",
@@ -1687,6 +1687,26 @@ const talleres = [
             { nombre: "Javier Vives", rol: "Co-fundador" },
             { nombre: "Horacio Eloy", rol: "Co-fundador" }
         ],
+        integrantes: [
+            { nombre: "Felipe Banderas", rol: "Director revista Contramuro (Nº 14)" },
+            { nombre: "Demián Moreno", rol: "Relaciones Públicas (Nº 14)" },
+            { nombre: "Aureliano Díaz", rol: "Archivo (Nº 14)" },
+            { nombre: "Ernesto Rojas", rol: "Diagramación (Nº 14)" },
+            { nombre: "Carlos Sottolichio", rol: "Asesor Edupo (Nº 14)" },
+            { nombre: "Pancho Lobo", rol: "Comité de Redacción (Nº 14)" },
+            { nombre: "Cristina Farías", rol: "Comité de Redacción (Nº 14)" },
+            { nombre: "Samuel Núñez", rol: "Corresponsal nacional La Serena (Nº 14)" },
+            { nombre: "Joaquín Rueda", rol: "Corresponsal nacional Temuco (Nº 14)" },
+            { nombre: "Silvia Scarlatto", rol: "Corresponsal extranjera Uruguay (Nº 14)" },
+            { nombre: "Carlos Antonio Vergara", rol: "Corresponsal extranjero Francia (Nº 14)" },
+            { nombre: "Angeles Amberes", rol: "Corresponsal extranjera España (Nº 14)" },
+            { nombre: "Juan Samuel", rol: "Corresponsal extranjero Alemania (Nº 14)" },
+            { nombre: "Aristóteles España", rol: "Poeta publicado Nº 14 (n. Castro, 1955, Premio Gabriela Mistral 1983)" },
+            { nombre: "Oscar Sarmiento", rol: "Poeta publicado Nº 14 (Colectivo Escritores Jóvenes, Taller Patio de Luz)" },
+            { nombre: "Pablo Patricio Varas Pérez", rol: "Poeta publicado Nº 14 (preso político, Penitenciaría de Santiago)" },
+            { nombre: "Jorge Faúndez", rol: "Poeta publicado Nº 14" },
+            { nombre: "Cristian Lagos L.", rol: "Poeta publicado Nº 14 (Pudahuel)" }
+        ],
         publicaciones: [
             {
                 titulo: "Contramuro",
@@ -1697,25 +1717,41 @@ const talleres = [
                     "Nº 1: octubre 1983",
                     "Nº 5 y Nº 6: agosto-septiembre 1984",
                     "Nº 12: octubre-noviembre 1984",
+                    "Nº 14: marzo-abril-mayo 1985 (Director: Felipe Banderas, Subdirector: Pedro Araucario)",
                     "Nº 16: noviembre-diciembre 1987",
-                    "Nº 17: enero-abril 1988 (último número conocido)"
+                    "Nº 17: enero-abril 1988 (último número conocido)",
+                    "Nº 14 incluye homenaje póstumo a José Manuel Parada (asesinado 1985) y sección 'Publicaciones Recibidas' documentando redes latinoamericanas"
                 ],
-                personas: [],
+                personas: [
+                    { nombre: "Felipe Banderas", rol: "Director (Nº 14)" },
+                    { nombre: "Pedro Araucario", rol: "Subdirector (Nº 14)" },
+                    { nombre: "Malú García", rol: "Poeta publicada Nº 14, págs. 15-16" },
+                    { nombre: "Aristóteles España", rol: "Poeta publicado Nº 14" },
+                    { nombre: "Horacio Eloy", rol: "Poeta publicado Nº 14" },
+                    { nombre: "Oscar Sarmiento", rol: "Poeta publicado Nº 14" },
+                    { nombre: "José Manuel Parada", rol: "Homenaje póstumo Nº 14 (poema 'Tú Vencerás', autorretrato)" }
+                ],
                 existencias: [
                     { lugar: "Biblioteca Nacional de Chile (Hemeroteca)", tiene: true, link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/630/w3-article-353168.html", nota: "Colección completa (código RE0000476)" },
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99283.html", nota: "Nº 6, agosto-septiembre 1984 (digitalizado)" },
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-99308.html", nota: "Nº 5 (digitalizado)" },
                     { lugar: "Museo de la Solidaridad Salvador Allende", tiene: true, link: "https://archivo.mssa.cl/", nota: "Nº 12, oct-nov 1984 — CONSULTA PRESENCIAL (archivo@mssa.cl)" },
-                    { lugar: "AbeBooks (Librería Monte Sarmiento)", tiene: true, link: "https://www.abebooks.co.uk/servlet/BookDetailsPL?bi=22802936988", nota: "Nº 17, enero-abril 1988 (comercialización anticuaria)" }
+                    { lugar: "AbeBooks (Librería Monte Sarmiento)", tiene: true, link: "https://www.abebooks.co.uk/servlet/BookDetailsPL?bi=22802936988", nota: "Nº 17, enero-abril 1988 (comercialización anticuaria)" },
+                    { lugar: "Colección privada", tiene: true, link: null, nota: "Nº 14, marzo-abril-mayo 1985 (PDF digitalizado, analizado marzo 2026)" }
                 ]
             }
         ],
+        mujeresPoetas: [
+            { nombre: "Malú García", rol: "Poeta", obra: "3 poemas (Nº 14, págs. 15-16). Integrante Taller Mar Abierto. Autora de 'Atado de mugremas' y 'Profanario libre sin cargos' (obra inédita al momento de publicación, 1985)", enRevista: true }
+        ],
+        nota: "Actualizado marzo 2026 con datos del Nº 14 (PDF digitalizado). Red de corresponsales internacionales (Uruguay, Francia, España, Alemania) sugiere vínculo con exilio chileno. Subtítulo en Nº 14: 'Taller Urbano - Poesía - Gráfica'. Dirección postal: Casilla 4532, Correo 2, Santiago.",
         fuentes: [
             { autor: "Santa Cruz, E.", año: "2003", titulo: "Revistas y publicaciones literarias (1973–2000)", medio: "Letras de Chile, 12(51), pp. 76–79", link: "https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0063468.pdf" },
             { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Contramuro (1983–1988)", medio: "Biblioteca Nacional Digital", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/630/w3-article-353168.html" },
             { autor: "Biblioteca Nacional de Chile", año: "2018", titulo: "Nuevo en Biblioteca Nacional Digital: Boletín SONAMI y 12 revistas desde Hemeroteca", medio: "BND Noticias", link: "https://www.bibliotecanacionaldigital.gob.cl/bnd/612/w3-article-349928.html" },
             { autor: "Museo de la Solidaridad Salvador Allende", año: "n.d.", titulo: "Contramuro. Taller Urbano – Poesía – Gráfica. Nº 12", medio: "Archivo MSSA (consulta presencial)", link: "https://archivo.mssa.cl/" },
-            { autor: "Agrupación Cultural Barracón", año: "1990", titulo: "Revista Calíope Nº 1, julio 1990 — Editorial de Javier Vives sobre disolución del Taller Urbano", medio: "Copia digitalizada", link: null }
+            { autor: "Agrupación Cultural Barracón", año: "1990", titulo: "Revista Calíope Nº 1, julio 1990 — Editorial de Javier Vives sobre disolución del Taller Urbano", medio: "Copia digitalizada", link: null },
+            { autor: "Revista Contramuro", año: "1985", titulo: "Contramuro Nº 14, Marzo-Abril-Mayo 1985", medio: "Publicación original (PDF digitalizado)", link: null }
         ]
     },
     {
@@ -5771,18 +5807,19 @@ const talleres = [
         region: "metropolitana",
         años: "1976–1977+",
         tipo: "Revista",
-        verificado: false,
-        ultimaActualizacion: "2026-02-20",
-        nota: "⚠️ Años confirmados: Nº 1 (sept.-dic. 1976) y Nº 2 (ene.-mar. 1977). Probablemente continuó publicándose (el mapa ya citaba pp. 102-107 de números posteriores). Requiere segunda fuente independiente para marcar verificado.",
+        verificado: true,
+        ultimaActualizacion: "2026-03-16",
+        nota: "✅ VERIFICADA (2+ fuentes primarias). CORRECCIÓN IMPORTANTE: El Nº 2 de Junio 1976 revela que el director fundador fue José Martínez Fernández (con Medina Cárdenas como subdirector). Medina Cárdenas asumió la dirección entre junio y septiembre de 1976, posiblemente tras el incidente violento en la SECH (25 mayo 1976) documentado en el editorial. Números confirmados: Nº 2 (jun. 1976, dir. Martínez Fernández), Nº 1 '2ª Entrega' (sept.-dic. 1976, dir. Medina Cárdenas), Nº 2 '2º Período' (ene.-mar. 1977, dir. Medina Cárdenas).",
         historia: {
-            origen: "Revista de Poesía y Teoría Poética fundada en Santiago en 1976 por Francisco Medina Cárdenas (director) y Enrique Volpe (subdirector). Publicación bimestral. Desde el Nº 2 se incorpora Ricardo de la Castilleja como Representante Legal y Redactor.",
-            contexto: "Declaró ser apolítica y sin sectarismos, enfocada exclusivamente en la calidad poética. Sin embargo, su existencia como espacio de publicación independiente durante dictadura, su vínculo con la Vicaría Sur (Casa Cultural 'Puelche' / Unión de Escritores Jóvenes de Chile) y sus redes de intercambio internacional la sitúan en el circuito de resistencia cultural.",
+            origen: "Revista de Poesía y Teoría Poética fundada en Santiago. El Nº 2 de Junio 1976 revela que el director fundador fue José Martínez Fernández, con Francisco Medina Cárdenas como subdirector. Medina Cárdenas asumió la dirección desde el Nº 1 '2ª Entrega' (sept.-dic. 1976), con Enrique Volpe como subdirector. Desde el Nº 2 '2º Período' se incorpora Ricardo de la Castilleja como Representante Legal y Redactor.",
+            contexto: "Declaró ser apolítica y sin sectarismos, enfocada en la calidad poética. Sin embargo, su existencia como espacio de publicación independiente durante dictadura, su vínculo con la Vicaría Sur (Casa Cultural 'Puelche' / Unión de Escritores Jóvenes de Chile), la SECH (Fraternidad del Agua, Ciclo de Poesía Joven 'Altazor'), y sus redes de intercambio internacional la sitúan en el circuito de resistencia cultural. El Nº 2 de Junio 1976 documenta el incidente violento en la SECH (25 mayo 1976) donde Oreste Plath agredió a la poetisa Stella Díaz Varín; el director Martínez Fernández intervino y fue atacado. Como consecuencia, los talleres literarios fueron expulsados de la SECH.",
             desarrollos: "Publicó poetas chilenos (10 en Nº 1, incluyendo 3 mujeres), poetas internacionales (España, Francia, Grecia clásica, Venezuela, Argentina, Rep. Dominicana, Panamá, Perú, Brasil, Senegal/África), ensayos de teoría y crítica literaria, reseñas de libros, y noticias literarias. Mantuvo intercambio con revistas de Perú, Brasil, España, Venezuela, EE.UU. y Chile (incluida Aumen de Castro). El director (Medina Cárdenas) era miembro del directorio de la Unión de Escritores Jóvenes de Chile, vinculada a la Vicaría Sur.",
             continuidad: "El mapa ya contenía referencias a páginas 102-107 de números posteriores (vía Memoria Chilena). Existencia confirmada en UCLA. Por determinar número total de entregas."
         },
         fundadores: [
-            { nombre: "Francisco Medina Cárdenas", rol: "Director (n. 1943). Autor de 'Sol Invisible' (1973) y 'La Poética del Hombre' (1975). Creador de talleres de poesía. Vicepresidente de 'Fraternidad del Agua' (SECH)." },
-            { nombre: "Enrique Volpe", rol: "Subdirector (n. 1939, origen italiano). Fundó grupo 'Rosa del Maule' en Linares (1957). Autor de 'Cabaña entre las rosas' (1959)." }
+            { nombre: "José Martínez Fernández", rol: "Director fundador (Nº 2, jun. 1976). Firmó el editorial denunciando el incidente en la SECH (9 jun. 1976). Posteriormente dejó la dirección." },
+            { nombre: "Francisco Medina Cárdenas", rol: "Subdirector fundador (Nº 2, jun. 1976); luego Director (desde Nº 1 '2ª Entrega', sept. 1976). N. 1943. Autor de 'Sol Invisible' (1973) y 'La Poética del Hombre' (1975). Vicepresidente de 'Fraternidad del Agua' (SECH). Colaborador permanente del periódico 'Pudahuel'." },
+            { nombre: "Enrique Volpe", rol: "Subdirector (desde Nº 1 '2ª Entrega', sept. 1976). N. 1939, origen italiano. Fundó grupo 'Rosa del Maule' en Linares (1957). Autor de 'Cabaña entre las rosas' (1959)." }
         ],
         integrantes: [
             { nombre: "Ricardo de la Castilleja", rol: "Representante Legal y Redactor (desde Nº 2). Argentino, criado en Fuentes Vaqueros, educado en Toledo." },
@@ -5796,6 +5833,25 @@ const talleres = [
             { nombre: "Miriam Litvak (Froimovich)", rol: "Poeta", poema: "'Búsqueda' (Nº 2, 1977)", enRevista: true }
         ],
         publicaciones: [
+            {
+                titulo: "Nueva Línea Nº 2 (Junio 1976)",
+                años: "Junio 1976",
+                tipo: "Revista",
+                detalles: [
+                    "Subtítulo: Revista de Poesía",
+                    "Director: José Martínez Fernández; Subdirector: Francisco Medina Cárdenas",
+                    "Editorial: 'El atentado en la SECH' — denuncia del incidente del 25 mayo 1976 donde Oreste Plath agredió a la poetisa Stella Díaz Varín",
+                    "Poetas publicados: Francisco Medina Cárdenas, Fernando Hernández (19 años), Miguel Ángel Jaramillo (16 años), Roberto Ormázabal (23 años, poeta inédito hasta este número), Roberto Araya Gallegos",
+                    "Artículo: 'Tarea de poetas: Tarea de honestidad' — línea editorial invocando a Neruda, Huidobro y De Rokha",
+                    "Mujeres mencionadas: Stella Díaz Varín (poetisa, víctima del incidente), Lola Nieva, Cecilia Marcos (testigos)",
+                    "Sin mujeres con obra publicada en este número",
+                    "Grupos mencionados: Fraternidad del Agua (SECH), Ciclo de Poesía Joven 'Altazor' (suspendido), talleres literarios SECH (expulsados)",
+                    "24 páginas. Portada con grabado/xilografía abstracta en rojo."
+                ],
+                existencias: [
+                    { lugar: "Colección privada (PDF digitalizado)", tiene: true, link: null, nota: "Ejemplar analizado marzo 2026" }
+                ]
+            },
             {
                 titulo: "Nueva Línea Nº 1 (2ª Entrega)",
                 años: "Septiembre-Diciembre 1976",
@@ -5828,10 +5884,18 @@ const talleres = [
             }
         ],
         conexiones: {
-            talleres: [{ nombre: "Grupo Literario Tamarugal", id: "revista-tamarugal" }],
-            revistas: [{ nombre: "Revista Aumen", id: "taller-aumen" }]
+            talleres: [
+                { nombre: "Grupo Literario Tamarugal", id: "revista-tamarugal" },
+                { nombre: "Fraternidad del Agua (SECH)", id: null },
+                { nombre: "Unión de Escritores Jóvenes de Chile", id: null }
+            ],
+            revistas: [
+                { nombre: "Revista Aumen", id: "taller-aumen" },
+                { nombre: "Orfeo (revista de poesía)", id: null }
+            ]
         },
         fuentes: [
+            { autor: "Revista Nueva Línea Nº 2", año: "1976", titulo: "Junio 1976 (Dir. José Martínez Fernández)", medio: "PDF digitalizado (colección privada)", link: null },
             { autor: "Revista Nueva Línea Nº 1", año: "1976", titulo: "Año 1º Nº 1 (2ª Entrega), sept.-dic. 1976", medio: "Ejemplar UCLA (A 000 916 743)", link: null },
             { autor: "Revista Nueva Línea Nº 2", año: "1977", titulo: "Año 1 Nº 2 (2º Período), ene.-mar. 1977", medio: "Ejemplar UCLA (A 000 916 743)", link: null }
         ]
@@ -9929,7 +9993,7 @@ const poetas = [
         biografia: {
             nacimiento: "La Serena, 11 de agosto de 1926. Apodada 'La Colorina'.",
             formacion: "Comenzó estudios de Medicina en Santiago (1947), abandonados pronto. Generación del '50, única mujer visible junto a Lihn, Teillier, Arteche, Neruda.",
-            contexto: "Participó en Alianza de Intelectuales (Neruda). Frecuentó bohemia del café Il Bosco. Militante comunista, se tatuó calavera con Lihn y Lafourcade como pacto contra González Videla. Tras golpe 1973: allanada, detenida, torturada, atropellada intencionalmente.",
+            contexto: "Participó en Alianza de Intelectuales (Neruda). Frecuentó bohemia del café Il Bosco. Militante comunista, se tatuó calavera con Lihn y Lafourcade como pacto contra González Videla. Tras golpe 1973: allanada, detenida, torturada, atropellada intencionalmente. En mayo 1976 fue agredida físicamente por Oreste Plath en la SECH; el incidente fue denunciado en Revista Nueva Línea Nº 2 (junio 1976) y provocó la expulsión de los talleres literarios de la SECH.",
             trayectoria: "Premio Pedro de Oña 1986 por 'Los dones previsibles'. Documental 'La Colorina' (2008). Precursora del feminismo literario chileno. 'Poeta maldita' y símbolo de resistencia."
         },
         publicaciones: [
@@ -9974,13 +10038,14 @@ const poetas = [
             }
         ],
         conexiones: {
-            talleres: [],
-            revistas: []
+            talleres: [{ nombre: "SECH (Sociedad de Escritores de Chile)", id: null }],
+            revistas: [{ nombre: "Revista Nueva Línea (mencionada, no publicó)", id: "revista-nueva-linea" }]
         },
         fuentes: [
             { autor: "Memoria Chilena", año: "2016", titulo: "Memoria Chilena recuerda a Stella Díaz Varín a 10 años de su muerte", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-316570.html" },
             { autor: "Memoria Chilena", año: "s.f.", titulo: "Stella Díaz Varín (1926-2006)", medio: "Biblioteca Nacional de Chile", link: "https://www.memoriachilena.gob.cl/602/w3-article-3707.html" },
-            { autor: "Emol", año: "2008", titulo: "Jodorowsky sobre Stella: 'era cautivante'", medio: "El Mercurio Online", link: "https://www.emol.com/noticias/magazine/2008/08/14/317517/jodorowsky-sobre-la-escritora-que-lo-deslumbro-en-su-juventud-stella-era-cautivante.html" }
+            { autor: "Emol", año: "2008", titulo: "Jodorowsky sobre Stella: 'era cautivante'", medio: "El Mercurio Online", link: "https://www.emol.com/noticias/magazine/2008/08/14/317517/jodorowsky-sobre-la-escritora-que-lo-deslumbro-en-su-juventud-stella-era-cautivante.html" },
+            { autor: "Revista Nueva Línea Nº 2", año: "1976", titulo: "Editorial 'El atentado en la SECH' (incidente mayo 1976)", medio: "PDF digitalizado (colección privada)", link: null }
         ]
     },
     {
@@ -13019,26 +13084,46 @@ const poetas = [
         años: "Activa 1985",
         foto: null,
         verificado: true,
-        ultimaActualizacion: "2025-09-15",
+        ultimaActualizacion: "2026-03-16",
         biografia: {
             nacimiento: "Por determinar.",
             formacion: "Integrante del Taller Mar Abierto.",
-            contexto: "Poeta publicada en Revista Contramuro del Taller Urbano de Poesía. Autora de 'atado de mugremas' y 'Profanario libre sin cargos', su obra poética permaneció mayormente inédita.",
-            trayectoria: "Poema 'En el principio corrieron a la nada...' publicado en Contramuro Nº 14 (mayo 1985)."
+            contexto: "Poeta publicada en Revista Contramuro Nº 14 (marzo-abril-mayo 1985, págs. 15-16), editada por Taller Urbano bajo dirección de Felipe Banderas. Contexto de dictadura militar, estado de sitio.",
+            trayectoria: "Al momento de publicación en Contramuro (1985), era autora de 'Atado de mugremas' (publicado) y 'Profanario libre sin cargos' (obra inédita). Publicó 3 poemas en Contramuro Nº 14. Trayectoria posterior pendiente de investigar."
         },
         publicaciones: [
             {
-                titulo: "Revista Contramuro",
+                titulo: "Atado de mugremas",
+                años: "pre-1985",
+                tipo: "Poemario",
+                detalles: ["Mencionado en nota biográfica de Contramuro Nº 14"],
+                existencias: []
+            },
+            {
+                titulo: "Profanario libre sin cargos",
+                años: "inédito al 1985",
+                tipo: "Poemario (inédito)",
+                detalles: ["Obra inédita al momento de publicación en Contramuro Nº 14"],
+                existencias: []
+            },
+            {
+                titulo: "3 poemas en Contramuro Nº 14",
                 años: "1985",
-                tipo: "Revista",
-                detalles: ["Nº 14 (mayo 1985)", "Taller Urbano de Poesía", "Poema: 'En el principio corrieron a la nada...'"],
+                tipo: "Publicación en revista",
+                detalles: ["Págs. 15-16", "Revista Contramuro, Taller Urbano - Poesía - Gráfica", "Director: Felipe Banderas"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
+                    { lugar: "Colección privada", tiene: true, link: null, nota: "PDF digitalizado Nº 14 (mar-abr-may 1985), analizado marzo 2026" }
                 ]
             }
         ],
-        conexiones: { talleres: [{ nombre: "Taller Mar Abierto", id: "mar-abierto" }], revistas: [{ nombre: "Revista Contramuro", id: "contramuro" }] },
-        fuentes: [{ autor: "Revista Contramuro", año: "1985", titulo: "Contramuro Nº 14", medio: "Colección particular Paula Cucurella", link: null }]
+        conexiones: { 
+            talleres: [{ nombre: "Taller Mar Abierto", id: "mar-abierto" }], 
+            revistas: [{ nombre: "Revista Contramuro", id: "contramuro" }] 
+        },
+        nota: "⚠️ Actualizado marzo 2026 con datos del PDF digitalizado de Contramuro Nº 14. Taller Mar Abierto pendiente de investigar.",
+        fuentes: [
+            { autor: "Revista Contramuro", año: "1985", titulo: "Contramuro Nº 14, Marzo-Abril-Mayo 1985, págs. 15-16", medio: "Publicación original (PDF digitalizado)", link: null }
+        ]
     },
     {
         nombre: "Margarita Pino Illanes",
