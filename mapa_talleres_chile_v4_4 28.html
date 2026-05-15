@@ -1130,8 +1130,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
     <div class="header-left">
         <h1>Mapa literario de poesía escrita por mujeres en Chile</h1>
         <p class="subtitle">Talleres, revistas y poetas (1973-90)</p>
-        <p>Última actualización: 1 abril 2026</p>
-        <p style="font-size: 0.85em;">Contacto: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4535243029246b263026303720292924052228242c296b262a28">[email&#160;protected]</a></p>
+        <p>Última actualización: 15 mayo 2026</p>
     </div>
     <div class="header-right">
         <select id="typeFilter">
@@ -1374,7 +1373,7 @@ body { display: flex; flex-direction: column; background: #1a1a1a; }
         </div>
     </div>
     <div class="silencios-panel-footer">
-        Click en un nombre para ver en el mapa · Actualizado: 1 abril 2026
+        Click en un nombre para ver en el mapa · Actualizado: 9 abril 2026
     </div>
 </div>
 
@@ -2738,16 +2737,16 @@ const talleres = [
     {
         nombre: "Revista La Gota Pura",
         coords: [-33.4480, -70.6580],
-        zona: "Santiago (Región Metropolitana)",
+        zona: "Santiago (Región Metropolitana). Casilla 95, Correo 14, Santiago, Chile",
         region: "metropolitana",
         años: "1981–1984 / 1995",
         tipo: "Revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-09",
+        ultimaActualizacion: "2026-05-15",
         historia: {
             origen: "Revista literaria de poesía fundada en 1981 por Ramón Díaz Eterovic, Leonora Vicuña y Aristóteles España. Nombre tomado del bar 'La Unión Chica' (apodado La Gota Pura) donde se reunían poetas.",
-            contexto: "Medio de publicación alternativo para voces jóvenes marginadas por canales oficiales durante la dictadura. Primer tiraje: 500 ejemplares (7 nov. 1981), llegó hasta 1000 ejemplares. En 1983 organizó Concurso Nacional de Poesía (ganador: Óscar Galindo).",
-            desarrollos: "Primera época (1981–1984): 10 números exclusivamente de poesía. Segunda época (1995): 5 números adicionales bajo Grafitti Ediciones/Mosquito Comunicaciones, incluyendo narrativa.",
+            contexto: "Medio de publicación alternativo para voces jóvenes marginadas por canales oficiales durante la dictadura. Primer tiraje: 500 ejemplares (7 nov. 1981), llegó hasta 1000 ejemplares. En 1983 organizó Concurso Nacional de Poesía (ganador: Óscar Galindo). Suscripciones: $500 nacional / US$16 extranjero por 4 números (a nombre de Ramón Díaz Eterovic, según Nº 10).",
+            desarrollos: "Primera época (1981–1984): 10 números exclusivamente de poesía. Segunda época (1995): 5 números adicionales bajo Grafitti Ediciones/Mosquito Comunicaciones, incluyendo narrativa. Impresión del Nº 10 (abril 1984): Imprenta Teper. Ilustración Nº 10: Jorge Llorer. Agradecimiento editorial Nº 10: Jacobo Borizón R.",
             continuidad: "Total: 15 ediciones. Colección completa en Biblioteca Nacional de Chile."
         },
         fundadores: [
@@ -2758,7 +2757,24 @@ const talleres = [
         integrantes: [
             { nombre: "Claudio Bertoni", rol: "Portada/ilustraciones Nº 2" },
             { nombre: "Germán Arestizábal", rol: "Portada/ilustraciones Nº 1" },
-            { nombre: "Marino Muñoz Lagos", rol: "Corresponsal Punta Arenas" }
+            { nombre: "Jorge Llorer", rol: "Ilustración Nº 10 (abril 1984)" },
+            { nombre: "Jacobo Borizón R.", rol: "Colaborador editorial agradecido en Nº 10" },
+            { nombre: "Roberto Araya Gallegos", rol: "Colaborador (consignado en Nº 10)" },
+            { nombre: "José Miguel Vicuña", rol: "Colaborador (consignado en Nº 10)" },
+            { nombre: "Rolando Cárdenas", rol: "Colaborador (consignado en Nº 10)" },
+            { nombre: "Jorge Teillier", rol: "Colaborador (consignado en Nº 10)" },
+            { nombre: "Iván Teillier", rol: "Colaborador (consignado en Nº 10)" },
+            { nombre: "Luis Aravena", rol: "Colaborador (consignado en Nº 10)" },
+            { nombre: "Marino Muñoz Lagos", rol: "Corresponsal Punta Arenas" },
+            { nombre: "Luis Alberto Barría", rol: "Corresponsal Punta Arenas (Nº 10)" },
+            { nombre: "Rosabetty Muñoz", rol: "Corresponsal Ancud (Nº 10)" },
+            { nombre: "Juan Cameron", rol: "Corresponsal Valparaíso (Nº 10)" },
+            { nombre: "Juan Armando Epple", rol: "Corresponsal EE.UU. (Nº 10)" },
+            { nombre: "Hernán Castellano Girón", rol: "Corresponsal EE.UU. (Nº 10)" },
+            { nombre: "Juan Samuel", rol: "Corresponsal Francia (Nº 10)" },
+            { nombre: "Miguel Vicuña", rol: "Corresponsal España (Nº 10)" },
+            { nombre: "Willy Nikiforos", rol: "Corresponsal Argentina (Nº 10)" },
+            { nombre: "Carlos A. Trujillo", rol: "Corresponsal Castro (Nº 10)" }
         ],
         publicaciones: [
             {
@@ -2785,6 +2801,74 @@ const talleres = [
             { autor: "Barrientos Bradasic, Ó.", año: "2022", titulo: "Un brindis por Ramón Díaz Eterovic", medio: "Ciper Chile / Letras.mysite", link: "http://www.letras.mysite.com/rdet150722.html" },
             { autor: "Biblioteca Nacional de Chile", año: "n.d.", titulo: "Revistas y publicaciones literarias (1960-1990)", medio: "Memoria Chilena", link: "https://www.memoriachilena.gob.cl/602/w3-article-3682.html" },
             { autor: "Díaz Eterovic, R.", año: "2023", titulo: "Puentes de imaginación y palabras. Escrito en dictadura", medio: "Letras.mysite", link: "http://letras.mysite.com/rdet091223.html" }
+        ]
+    },
+    {
+        nombre: "La Gota Pura — Nº 10 (abril 1984)",
+        coords: [-33.4485, -70.6585],
+        zona: "Santiago (Región Metropolitana). Casilla 95, Correo 14, Santiago, Chile",
+        region: "metropolitana",
+        años: "abril 1984",
+        tipo: "Revista (número específico)",
+        verificado: true,
+        ultimaActualizacion: "2026-05-15",
+        historia: {
+            origen: "Número 10 de la primera época de La Gota Pura, último de la serie inicial (1981–1984). Año II de la publicación.",
+            contexto: "Edición codirigida por Ramón Díaz Eterovic y Leonora Vicuña. Tres mujeres poetas chilenas aparecen en sumario: Lita Gutiérrez, Leonora Vicuña y Carmen Berenguer. Suscripciones: $500 nacional / US$16 extranjero por 4 números.",
+            desarrollos: "Sumario internacional con traducciones de René Daumal (Francia), Federico García Lorca (España), Fernando Pessoa (Portugal), Bertolt Brecht (Alemania). Poetas chilenos consagrados y emergentes: Humberto Díaz Casanueva, Gustavo Ossorio, Eduardo Díaz, Daniel Molina Núñez, Boris Hiche, Fernando Viveros, Carlos Alberto Trujillo, José Paredes, Andrés Morales, además de Daniel Chirom (Argentina). Texto de cierre: 'La guerra santa' de René Daumal (Primavera 1940).",
+            continuidad: "Cierra la primera época de la revista. La segunda época comenzaría en 1995 bajo Grafitti Ediciones/Mosquito Comunicaciones."
+        },
+        fundadores: [
+            { nombre: "Ramón Díaz Eterovic", rol: "Director (en este número)" },
+            { nombre: "Leonora Vicuña", rol: "Directora (en este número)" }
+        ],
+        integrantes: [
+            { nombre: "Jorge Llorer", rol: "Ilustración" },
+            { nombre: "Jacobo Borizón R.", rol: "Colaborador editorial (agradecido en el número)" },
+            { nombre: "Roberto Araya Gallegos", rol: "Colaborador" },
+            { nombre: "José Miguel Vicuña", rol: "Colaborador" },
+            { nombre: "Rolando Cárdenas", rol: "Colaborador" },
+            { nombre: "Jorge Teillier", rol: "Colaborador" },
+            { nombre: "Iván Teillier", rol: "Colaborador" },
+            { nombre: "Luis Aravena", rol: "Colaborador" },
+            { nombre: "Marino Muñoz Lagos", rol: "Corresponsal Punta Arenas" },
+            { nombre: "Luis Alberto Barría", rol: "Corresponsal Punta Arenas" },
+            { nombre: "Rosabetty Muñoz", rol: "Corresponsal Ancud" },
+            { nombre: "Juan Cameron", rol: "Corresponsal Valparaíso" },
+            { nombre: "Juan Armando Epple", rol: "Corresponsal EE.UU." },
+            { nombre: "Hernán Castellano Girón", rol: "Corresponsal EE.UU." },
+            { nombre: "Juan Samuel", rol: "Corresponsal Francia" },
+            { nombre: "Miguel Vicuña", rol: "Corresponsal España" },
+            { nombre: "Willy Nikiforos", rol: "Corresponsal Argentina" },
+            { nombre: "Carlos A. Trujillo", rol: "Corresponsal Castro" }
+        ],
+        publicaciones: [
+            {
+                titulo: "La Gota Pura Nº 10",
+                años: "abril 1984",
+                numeros: "Año II, Nº 10",
+                detalles: [
+                    "Impresión: Imprenta Teper",
+                    "Ilustración: Jorge Llorer",
+                    "Casilla 95, Correo 14, Santiago",
+                    "Suscripciones: Nacional $500 / Extranjero US$16 (por 4 números), a nombre de Ramón Díaz Eterovic",
+                    "Mujeres poetas en sumario (3): Lita Gutiérrez ('Sur' y 'Soy y Seré'), Leonora Vicuña ('Es la hora del lobo' y 'Mujeres'), Carmen Berenguer ('Sólo sé cómo se sienten los muertos' ded. a Salvador Allende G., 'El francotirador', 'Santiago Tango')",
+                    "Revistas anunciadas para canje: Andrómeda (San José, Costa Rica), La Castaña (Santiago), Aconcagua (Buenos Aires, Argentina), Obsidiana (Santiago)"
+                ],
+                personas: [
+                    { nombre: "Lita Gutiérrez", rol: "Poeta — 'Sur' y 'Soy y Seré' (del libro inédito 'Tiempo de Cuervos')" },
+                    { nombre: "Leonora Vicuña", rol: "Codirectora y poeta — 'Es la hora del lobo' y 'Mujeres'" },
+                    { nombre: "Carmen Berenguer", rol: "Poeta — 'Sólo sé cómo se sienten los muertos' (ded. a Salvador Allende G.), 'El francotirador', 'Santiago Tango'" },
+                    { nombre: "Rosabetty Muñoz", rol: "Corresponsal de la revista en Ancud" }
+                ],
+                existencias: [
+                    { lugar: "Colección particular Paula Cucurella", tiene: true, link: null, nota: "Copia digitalizada PDF (mayo 2026)" },
+                    { lugar: "Biblioteca Nacional de Chile / Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121682.html", nota: "Nº 10, abril 1984 (digitalizado)" }
+                ]
+            }
+        ],
+        fuentes: [
+            { autor: "La Gota Pura", año: "1984", titulo: "La Gota Pura Nº 10, Año II, abril 1984", medio: "Copia digitalizada PDF (colección particular)", link: null }
         ]
     },
     {
@@ -3000,6 +3084,42 @@ const talleres = [
             { nombre: "Yerny González", rol: "Poeta", obra: "Poema 'Vuelo' (Nº 2, Año 1, p. 4)", enRevista: true, nota: "Concordancia femenina en el poema ('llévame atada', 'déjame allí atada'). Género pendiente de verificación." }
         ],
         nota: "Números consultados: Nº 2 (Año 1, 6 pp.), Nº 9 (nov. 1985, 6 pp.) y Nº 13 (Año IV, julio, 6 pp.). El Nº 9 organiza poetas por ciudades (Arica, Iquique, Copiapó, Antofagasta), documentando una red poética del Norte Grande que incluye a Hernán Rivera Letelier y Arturo Volantines. El poema 'Desaparecido' de Jaime Ceballos alude a detenidos desaparecidos. Yerny González (Nº 2) emplea concordancia femenina, posible mujer poeta. El Nº 13 es temático sobre La Tirana. La dirección del Nº 9 (Avda. Gómez Carreño 2320) difiere de la Casilla 2223 usada en otros números."
+    },
+    {
+        nombre: "Er (plaquette)",
+        coords: [-20.2208, -70.1431],
+        zona: "Tarapacá (Iquique)",
+        region: "norte-grande",
+        años: "1985",
+        tipo: "Plaquette",
+        verificado: false,
+        ultimaActualizacion: "2026-04-09",
+        historia: {
+            origen: "Cuadernillo unipersonal de poesía de resistencia, producido en Iquique en diciembre de 1985. Título parcialmente legible en portada.",
+            contexto: "Poesía de denuncia contra la dictadura. Dedicado a compañeros y camaradas. Contiene referencias explícitas a detenidos desaparecidos ('¡¡¡Entregadme el cuerpo de él!!!') y denuncia directa de la 'DICTADURA PINOCHETISTA'. Referencia a Salvador Allende en p. 4. Vinculado al circuito poético iquiqueño de los años 80 (posible relación con Pobresía).",
+            desarrollos: "6 páginas mecanografiadas con grabados/xilografías. Incluye retrato fotográfico no identificado en p. 1 (¿detenido desaparecido?).",
+            continuidad: "No hay evidencia de números adicionales."
+        },
+        fundadores: [
+            { nombre: "Pichón Taberna", rol: "Autor (seudónimo). Firma manuscrita al final: 'Juvenal Pichón'. Posible relación con Pichón Taberna colaborador de Pobresía Nº 11 (agosto 1985). Identidad por confirmar." }
+        ],
+        integrantes: [],
+        publicaciones: [
+            {
+                titulo: "Er [título parcialmente legible]",
+                años: "Diciembre 1985",
+                tipo: "Plaquette",
+                detalles: ["Iquique", "6 páginas mecanografiadas", "Poemas: 'Si mi cuerpo es el de él', 'Libertad', 'En Navidades', 'He sido un perro de siete colores', entre otros"],
+                existencias: [
+                    { lugar: "Colección particular", tiene: true, link: null, nota: "PDF digitalizado proporcionado por la investigadora (abril 2026)" }
+                ]
+            }
+        ],
+        mujeresPoetas: [],
+        fuentes: [
+            { autor: "Pichón Taberna", año: "1985", titulo: "Er [plaquette]", medio: "Colección particular — copia digitalizada", link: null }
+        ],
+        nota: "Publicación unipersonal, no revista periódica. Clasificada como plaquette. No contiene mujeres poetas. Incluida por su valor documental como micromedio de resistencia iquiqueño y por la posible conexión de su autor con el circuito de Pobresía. Campos pendientes: identidad de Pichón Taberna (¿seudónimo de Juvenal Ayala?), identificación de persona fotografiada en portada."
     },
     {
         nombre: "Taller Literario — Agrupación Cultural Tarapacá (ACT)",
@@ -3598,42 +3718,41 @@ const talleres = [
         ]
     },
 
-    // ==================== ZONA CENTRAL (O'HIGGINS) ====================
     {
         nombre: "Revista La Oruga",
-        coords: [-34.1708, -70.7444],
-        zona: "O'Higgins (Rancagua, Río Cachapoal)",
-        region: "sur",
-        años: "1980s",
+        coords: [-33.4150, -70.6850],
+        zona: "Lugar de edición no especificado en el documento (autores radicados en Santiago)",
+        region: "metropolitana",
+        años: "s.f. (sin fecha en el documento)",
         tipo: "Revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-10",
+        ultimaActualizacion: "2026-05-15",
         historia: {
-            origen: "Publicación orientada a difundir voces poéticas emergentes. Presenta poetas jóvenes autodefinidos como 'inéditos'.",
-            contexto: "Epígrafe de Charles Baudelaire: 'Sin pan podréis vivir tres días pero sin poesía, nunca'. Referencias al Río Cachapoal sugieren vínculo con zona de O'Higgins/Rancagua.",
-            desarrollos: "El N°1 incluye poemas de Lorenzo Peirano A. (Santiago, 1962) y Mauricio Ramírez Pino (Santiago, 1967), ambos declarados 'poetas inéditos'. Francisca Agurto Vigneaux (Santiago, 1955) publicó en esta revista.",
+            origen: "Revista de poesía. El N°1 está dedicado íntegramente a difundir obra de dos autores jóvenes autodefinidos como 'poetas inéditos'.",
+            contexto: "Epígrafe de Charles Baudelaire en portada: 'Sin pan podréis vivir tres días pero sin poesía, nunca'. El documento no declara fecha de publicación, lugar de edición, director responsable, editorial ni línea editorial. Atribución geográfica retirada por carecer de respaldo documental directo.",
+            desarrollos: "El N°1 contiene 6 poemas de 2 autores hombres (no detallados aquí, por estar fuera del foco del catálogo). Francisca Agurto Vigneaux publicó en la revista según Villegas (1985), aunque no en este número.",
             continuidad: "Por determinar."
         },
         fundadores: [],
         integrantes: [
-            { nombre: "Mario López V.", rol: "Diseño" },
-            { nombre: "Lorenzo Peirano A.", rol: "Poeta (Santiago, 1962)" },
-            { nombre: "Mauricio Ramírez Pino", rol: "Poeta (Santiago, 1967)" },
-            { nombre: "Francisca Agurto Vigneaux", rol: "Colaboradora (Santiago, 1955)" }
+            { nombre: "Mario López V.", rol: "Diseño" }
         ],
         mujeresColaboradoras: [
-            { nombre: "Ana Magdalena Labbé", rol: "Ilustradora (portada)", enRevista: true },
-            { nombre: "Francisca Agurto Vigneaux", rol: "Poeta colaboradora", enRevista: true }
+            { nombre: "Ana Magdalena Labbé", rol: "Ilustradora de portada del N°1", enRevista: true },
+            { nombre: "Francisca Agurto Vigneaux", rol: "Poeta colaboradora (confirmada por Villegas 1985; número no especificado)", enRevista: true }
         ],
         publicaciones: [
             {
                 titulo: "La Oruga N° 1",
-                años: "s.f. (1980s probable)",
+                años: "s.f.",
                 tipo: "Revista",
                 detalles: [
-                    "Poemas: 'Al Río Cachapoal', 'Escondo las manos', 'A Miguel Hernández' (Lorenzo Peirano A.)",
-                    "Poemas: 'Gregorio Samsa ha resucitado', 'El diálogo con la muerte', 'Espero' (Mauricio Ramírez Pino)",
-                    "Anotación manuscrita última página: 'Bhern/Behm' (posible firma archivo)"
+                    "6 páginas (portada + 4 pp. de contenido + colofón)",
+                    "Epígrafe de Baudelaire en portada",
+                    "Ilustración de portada: Ana Magdalena Labbé",
+                    "Diseño: Mario López V.",
+                    "Anotación manuscrita en última página: 'Bhem/Behm' (parcialmente legible; posible nota de archivo)",
+                    "No se mencionan otras revistas ni publicaciones literarias en el ejemplar"
                 ],
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Ejemplar digitalizado" }
@@ -3641,8 +3760,8 @@ const talleres = [
             }
         ],
         fuentes: [
-            { autor: "Memoria Chilena", año: "s.f.", titulo: "La Oruga N° 1", medio: "Ejemplar digitalizado", link: "https://www.memoriachilena.gob.cl/" },
-            { autor: "Villegas, J.", año: "1985", titulo: "Antología de la nueva poesía femenina chilena", medio: "La Noria, Santiago (biografía Francisca Agurto)", link: null }
+            { autor: "Memoria Chilena", año: "s.f.", titulo: "La Oruga N° 1", medio: "Ejemplar digitalizado (fuente primaria directa)", link: "https://www.memoriachilena.gob.cl/" },
+            { autor: "Villegas, J.", año: "1985", titulo: "Antología de la nueva poesía femenina chilena", medio: "La Noria, Santiago (confirma colaboración de F. Agurto)", link: null }
         ]
     },
 
@@ -7092,15 +7211,20 @@ const talleres = [
         años: "1980s",
         tipo: "Revista",
         verificado: true,
-        ultimaActualizacion: "2025-09-15",
+        ultimaActualizacion: "2026-04-09",
         historia: {
             origen: "Revista literaria de la Casa de la Cultura de San Fernando.",
-            contexto: "Publicación regional vinculada a espacios culturales de la zona de O'Higgins.",
-            desarrollos: "Nº 12 incluye homenaje a Juan Danus.",
-            continuidad: "Por investigar."
+            contexto: "Publicación regional vinculada a espacios culturales de la zona de O'Higgins. Línea editorial de poesía comprometida: Nº 12 incluye cita de Pablo Neruda bajo el título 'La poesía es una insurrección' (p. 5). Portada con grabado original de estilo precolombino.",
+            desarrollos: "Nº 12 incluye homenaje a Juan Danús (grafía con tilde, confirmada en portada). Colaboradores: María Cristina Palma P., Carlos Amador Marchant, Lorenzo González Carrera/Cabrera, Alberto Cuevas Illanes, Bernardo Rebolledo Silva.",
+            continuidad: "Por investigar. El Nº 12 sugiere publicación con trayectoria sostenida."
         },
         fundadores: [],
-        integrantes: [],
+        integrantes: [
+            { nombre: "Carlos Amador Marchant", rol: "Colaborador (Nº 12)", nota: "Poema 'De repente'" },
+            { nombre: "Lorenzo González Carrera", rol: "Colaborador (Nº 12)", nota: "Poema 'Ventana'. Aparece también como 'González Cabrera' en p. 8 — posible errata" },
+            { nombre: "Alberto Cuevas Illanes", rol: "Colaborador (Nº 12)", nota: "Poema 'Canción del nuevo abuelo'" },
+            { nombre: "Bernardo Rebolledo Silva", rol: "Colaborador (Nº 12)", nota: "Poemas 'Grandes plazas', 'Aurora grávida de ustedes'" }
+        ],
         publicaciones: [
             {
                 titulo: "Fragua Nº 12 - Homenaje a Juan Danus",
@@ -7113,7 +7237,7 @@ const talleres = [
             }
         ],
         mujeresPoetas: [
-            { nombre: "María Cristina Palma P.", rol: "Poeta", poema: "'En la enorme sala de la espera...', 'Angustias'", enRevista: true }
+            { nombre: "María Cristina Palma P.", rol: "Poeta", poema: "'Madre', 'En la enorme sala de la espera...', 'Angustias'", enRevista: true }
         ],
         fuentes: [
             { autor: "Revista Fragua", año: "s.f.", titulo: "Fragua Nº 12", medio: "Colección particular Paula Cucurella", link: null }
@@ -7242,43 +7366,59 @@ const talleres = [
         años: "1985–",
         tipo: "Revista",
         verificado: true,
-        ultimaActualizacion: "2026-01-15",
+        ultimaActualizacion: "2026-05-15",
         historia: {
-            origen: "Revista del Colectivo Takicardia, nacida 'como tribuna de toda la expresión cultural' con el propósito de 'difundir una cultura de vida diametralmente opuesta a aquella cultura de muerte'. Lema: 'La cultura sin censura'.",
-            desarrollos: "Director: Jorge Oporto Marín. Administración: Salas 687 Depto. 3, Copiapó. Representante Legal: Blanca Aguilera. Integrantes del Colectivo: Gabriel Indey, Fernando Rivera, Jorge Oporto.",
-            continuidad: "Por investigar números posteriores."
+            origen: "Revista del Colectivo Takicardia, nacida en octubre-noviembre 1985 'como tribuna de toda la expresión cultural' con el propósito de 'difundir una cultura de vida diametralmente opuesta a aquella cultura de muerte'. Lema: 'La cultura sin censura'. Primer número dedicado a la literatura.",
+            contexto: "El Colectivo Takicardia fue fundado en octubre de 1982 (declaración explícita de Gabriel Indey en entrevista en este Nº 1, p. 9), originalmente como 'Grupo de Letras Takicardia'. Sus integrantes provenían de la Sociedad de Escritores de Atacama (SEA), de la cual se distanciaron por considerar que la literatura tradicional regional vivía 'un oscurantismo'. La revista declara explícitamente su intención de 'romper formas tradicionales en el arte, ya sea subvirtiendo el lenguaje y cuestionando dogmas o rescatando la cultura popular'.",
+            desarrollos: "Director: Jorge Oporto Marín. Administración: Salas 687 Depto. 13, Copiapó. Representante Legal: Blanca Aguilera. Integrantes del Colectivo: Gabriel Indey, Fernando Rivera, Jorge Oporto. Inscripción legal declarada 'en trámite'. La revista acepta intercambios. Periodicidad declarada (en el editorial): intención mensual ('mes a mes estaremos en la calle').",
+            continuidad: "Por investigar números posteriores. El Nº 1 (octubre-noviembre 1985) es el único ejemplar verificado en este momento."
         },
         fundadores: [
             { nombre: "Jorge Oporto Marín", rol: "Director" },
-            { nombre: "Gabriel Indey", rol: "Colectivo Takicardia" },
-            { nombre: "Fernando Rivera", rol: "Colectivo Takicardia" }
+            { nombre: "Gabriel Indey", rol: "Colectivo Takicardia (co-fundador, declara haber sido socio fundador de la SEA)" },
+            { nombre: "Fernando Rivera", rol: "Colectivo Takicardia (co-fundador)" }
         ],
         integrantes: [
             { nombre: "Blanca Aguilera", rol: "Representante Legal" },
-            { nombre: "Kika", rol: "Portada" },
-            { nombre: "Guaren", rol: "Humor" },
-            { nombre: "Bermudo", rol: "Dibujo" }
+            { nombre: "Kika", rol: "Portada (pseudónimo / firma única; género no confirmado documentalmente)" },
+            { nombre: "Guaren", rol: "Humor (pseudónimo)" },
+            { nombre: "Bermudo", rol: "Dibujo (pseudónimo; firma 'Bermudo / Guaren 85' en p. 17)" }
         ],
         publicaciones: [
             {
                 titulo: "Presión 27 Nº 1",
                 años: "octubre-noviembre 1985",
-                numeros: "Año 1, Nº 1",
+                numeros: "Año 1, Nº 1 (17 páginas escaneadas)",
                 detalles: [
-                    "Propone 'romper formas tradicionales en el arte, ya sea subvirtiendo el lenguaje y cuestionando dogmas o rescatando la cultura popular'",
-                    "Artículo sobre Tercer Encuentro Regional de Escritores de Atacama",
-                    "Mención de SEA (Sociedad de Escritores de Atacama)",
-                    "Acuerdo de publicar 'Antología Poética Contemporánea del Norte'"
+                    "Editorial programático del Colectivo Takicardia: 'la cultura como herramienta eficaz en la construcción de una nueva sociedad: justa, libre y fraterna' (p. 4)",
+                    "Poesía de Fernando Rivera (pp. 5-6): 'Sucede', 'Tiempo', 'Ya va siendo tiempo', 'Sueño sedicioso', 'Olor', 'Gioconda'",
+                    "Poesía de Gabriel Indey (pp. 7-8): 'Esa cosa linda que muchos llaman amor' (poema-secuencia alfabético-numerada, secciones A, B, C, Z con subsecciones Z(1)–Z(6))",
+                    "Entrevista a Gabriel Indey por Jorge Oporto (pp. 9-14): 'Vivimos un oscurantismo literario con poetas que se autoengañan y alaban'. Indey declara 32 años, fundación del Colectivo en octubre 1982, ruptura con SEA",
+                    "Reportaje (p. 15): 'Importantes acuerdos tomaron escritores nortinos' sobre el Tercer Encuentro Regional de Escritores de Atacama / Primer Encuentro de Escritores del Norte (Copiapó, 26-28 septiembre 1985)",
+                    "Presidente SEA declarado en este encuentro: Eduardo Aramburú García",
+                    "Ciudades participantes del Encuentro (red interregional documentada): Iquique, Antofagasta, Taltal, El Salvador, Chañaral, Diego de Almagro, Vallenar, La Serena, Coquimbo, San Felipe, Concepción y Copiapó (sede)",
+                    "Acuerdos del Encuentro: publicar 'Antología Poética Contemporánea del Norte' (proyecto, no obra existente); pedir derogación del IVA al libro; adherir a Confederación Nacional de Literatura de Chile",
+                    "Mención al Instituto de Artes y Letras 'Fernando Binvignat' de Coquimbo",
+                    "Poesía de Jorge Oporto (p. 16): 'Ecologista', 'Hombrecito', 'Arma peligrosa'",
+                    "Caricatura de Bermudo/Guaren (p. 17): 'La personalidad como partido político con varios organismos de fachada'",
+                    "Portada xilográfica/grabado en tonos rojizos firmada por Kika",
+                    "Cruce con red nortina: Fernando Rivera publica también en Pobresía Nº 9 (Iquique, noviembre 1985, sección Copiapó), confirmando circulación entre ambas publicaciones"
                 ],
-                personas: [],
+                personas: [
+                    { nombre: "Fernando Rivera", rol: "Poeta (6 poemas, pp. 5-6) + Colectivo Takicardia" },
+                    { nombre: "Gabriel Indey", rol: "Poeta (pp. 7-8) + Entrevistado (pp. 9-14)" },
+                    { nombre: "Jorge Oporto", rol: "Poeta (p. 16) + Entrevistador + Director" }
+                ],
                 existencias: [
-                    { lugar: "Colección particular", tiene: true, link: null, nota: "Ejemplar consultado" }
+                    { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/", nota: "Ejemplar digitalizado. Código de archivo: MC0005662 (PDF 17 págs.)" }
                 ]
             }
         ],
         mujeresPoetas: [],
+        nota: "Este Nº 1 NO incluye obra de mujeres poetas. Los tres autores con obra publicada (Fernando Rivera, Gabriel Indey, Jorge Oporto) son hombres y conforman íntegramente el Colectivo Takicardia. Únicas mujeres con rol institucional declarado: Blanca Aguilera (Representante Legal) y, con atribución de género NO confirmada por el documento, Kika (autora de portada, pseudónimo sin apellido). La referencia a 'Gioconda' en el poema de Fernando Rivera es ambigua (posible persona o referencia pictórica) y no se registra como mujer documentada. Ejemplar digitalizado verificado en Memoria Chilena (código MC0005662).",
         fuentes: [
-            { autor: "Presión 27 Nº 1", año: "octubre-noviembre 1985", titulo: "Año 1, Nº 1", medio: "Ejemplar consultado", link: null }
+            { autor: "Presión 27 Nº 1", año: "octubre-noviembre 1985", titulo: "Año 1, Nº 1 (17 págs.)", medio: "Ejemplar digitalizado", link: null },
+            { autor: "Memoria Chilena", año: "1985", titulo: "Presión 27 Nº 1 (Copiapó, Colectivo Takicardia)", medio: "Ejemplar digitalizado, código MC0005662", link: "https://www.memoriachilena.gob.cl/" }
         ]
     },
     {
@@ -8018,26 +8158,61 @@ const poetas = [
         años: "1937–",
         foto: null,
         verificado: true,
-        ultimaActualizacion: "2025-09-15",
+        ultimaActualizacion: "2026-05-15",
         biografia: {
             nacimiento: "Gorbea, Chile (1937).",
             formacion: "Poeta con extensa producción desde fines de los años 60.",
-            contexto: "Publicó en revista La Gota Pura N° 10 (abril 1984). Poema 'Soy y Seré'.",
-            trayectoria: "Libros: Siluetas Extraviadas (1969), El Reino del Agua (1974)."
+            contexto: "Publicó en revista La Gota Pura N° 10 (abril 1984). Poemas 'Sur' y 'Soy y Seré', ambos procedentes de su libro inédito 'Tiempo de Cuervos' (según nota biográfica del N° 10).",
+            trayectoria: "Libros publicados: Siluetas Extraviadas (1969), El Reino del Agua (1974), Poemigramas (1974), De la sangre a la luz (1974)."
         },
         publicaciones: [
             {
                 titulo: "Revista La Gota Pura",
                 años: "abril 1984",
-                tipo: "Poema en revista",
-                detalles: ["Nº 10", "Poema: 'Soy y Seré'"],
+                tipo: "Poemas en revista",
+                detalles: ["Nº 10, Año II", "Poemas: 'Sur' y 'Soy y Seré'", "Ambos del libro inédito 'Tiempo de Cuervos'"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
+                    { lugar: "Colección particular Paula Cucurella", tiene: true, link: null, nota: "Copia digitalizada (mayo 2026)" }
                 ]
+            },
+            {
+                titulo: "Siluetas Extraviadas",
+                años: "1969",
+                tipo: "Poemario",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "El Reino del Agua",
+                años: "1974",
+                tipo: "Poemario",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Poemigramas",
+                años: "1974",
+                tipo: "Poemario",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "De la sangre a la luz",
+                años: "1974",
+                tipo: "Poemario",
+                detalles: [],
+                existencias: []
+            },
+            {
+                titulo: "Tiempo de Cuervos",
+                años: "ca. 1984",
+                tipo: "Poemario (inédito al momento de la publicación en La Gota Pura Nº 10)",
+                detalles: ["Libro fuente de los poemas 'Sur' y 'Soy y Seré' publicados en La Gota Pura Nº 10"],
+                existencias: []
             }
         ],
         conexiones: { talleres: [], revistas: [{ nombre: "Revista La Gota Pura", id: "la-gota-pura" }] },
-        fuentes: [{ autor: "La Gota Pura", año: "1984", titulo: "La Gota Pura N° 10", medio: "Memoria Chilena", link: null }]
+        fuentes: [{ autor: "La Gota Pura", año: "1984", titulo: "La Gota Pura N° 10, Año II, abril 1984 (nota biográfica)", medio: "Copia digitalizada PDF (colección particular)", link: null }]
     },
     {
         nombre: "Lucía Pena",
@@ -8082,14 +8257,14 @@ const poetas = [
         coords: [-33.4490, -70.6590],
         zona: "Región Metropolitana (Santiago)",
         region: "metropolitana",
-        años: "Activa 1981–",
+        años: "1952–",
         foto: null,
         verificado: true,
-        ultimaActualizacion: "2026-01-12",
+        ultimaActualizacion: "2026-05-15",
         biografia: {
-            nacimiento: "Por determinar.",
+            nacimiento: "Santiago, 1952 (confirmado en nota biográfica de La Gota Pura Nº 10, abril 1984).",
             formacion: "Poeta y gestora cultural.",
-            contexto: "Cofundadora de revista La Gota Pura (1981) junto a Ramón Díaz Eterovic y Aristóteles España.",
+            contexto: "Cofundadora de revista La Gota Pura (1981) junto a Ramón Díaz Eterovic y Aristóteles España. Al momento de la publicación del Nº 10 (abril 1984) residía en Francia. Publicada en la antología 'Ganymedes'.",
             trayectoria: "Directora de La Gota Pura (1981-1984)."
         },
         publicaciones: [
@@ -8097,14 +8272,21 @@ const poetas = [
                 titulo: "Revista La Gota Pura",
                 años: "1984",
                 tipo: "Revista",
-                detalles: ["Abril 1984", "Poema: 'Es la hora del lobo'"],
+                detalles: ["Nº 10, Año II, abril 1984", "Poemas: 'Es la hora del lobo' y 'Mujeres' (soneto)"],
                 existencias: [
-                    { lugar: "Colección particular Paula", tiene: true, link: null, nota: "Copia digitalizada (septiembre 2025)" }
+                    { lugar: "Colección particular Paula Cucurella", tiene: true, link: null, nota: "Copia digitalizada (mayo 2026)" }
                 ]
+            },
+            {
+                titulo: "Antología Ganymedes",
+                años: "s.f.",
+                tipo: "Antología",
+                detalles: ["Publicada según nota biográfica de La Gota Pura Nº 10"],
+                existencias: []
             }
         ],
         conexiones: { talleres: [], revistas: [{ nombre: "Revista La Gota Pura", id: "la-gota-pura" }] },
-        fuentes: []
+        fuentes: [{ autor: "La Gota Pura", año: "1984", titulo: "La Gota Pura N° 10, Año II, abril 1984 (nota biográfica)", medio: "Copia digitalizada PDF (colección particular)", link: null }]
     },
     {
         nombre: "Alicia Puig",
@@ -10875,8 +11057,8 @@ const poetas = [
         biografia: {
             nacimiento: "La Serena (¿?), ca. 1950s. Dato no confirmado.",
             formacion: "Vinculada a Universidad de La Serena (posiblemente estudiante o profesora de literatura).",
-            contexto: "Publicó poemas en revista 'A muro descubierto' (Universidad de La Serena, ca. 1986-1987). Poesía introspectiva: soledad, angustia, espera.",
-            trayectoria: "No publicó libros durante dictadura. Rol modesto pero significativo como voz poética femenina de la IV Región."
+            contexto: "Publicó poemas en revista 'A muro descubierto' (Universidad de La Serena, ca. 1986-1987) y en revista 'Fragua' Nº 12 (Casa de la Cultura, San Fernando, s.f. [1980s]). Poesía introspectiva: soledad, angustia, espera. Su presencia en Fragua amplía su circuito de publicación hacia la VI Región.",
+            trayectoria: "No publicó libros durante dictadura. Rol modesto pero significativo como voz poética femenina con alcance interregional (IV y VI Región)."
         },
         publicaciones: [
             {
@@ -10887,12 +11069,22 @@ const poetas = [
                 existencias: [
                     { lugar: "Memoria Chilena", tiene: true, link: "https://www.memoriachilena.gob.cl/602/w3-article-121716.html", nota: "Revista digitalizada" }
                 ]
+            },
+            {
+                titulo: "Poemas en revista Fragua Nº 12",
+                años: "s.f. [1980s]",
+                tipo: "Revista",
+                detalles: ["Casa de la Cultura, San Fernando", "Poemas: 'Madre', 'En la enorme sala de la espera...', 'Angustias'"],
+                existencias: [
+                    { lugar: "Colección particular Paula Cucurella", tiene: true, link: null, nota: "Copia digitalizada" }
+                ]
             }
         ],
         conexiones: {
             talleres: [],
             revistas: [
-                { nombre: "A muro descubierto", id: "muro-descubierto" }
+                { nombre: "A muro descubierto", id: "muro-descubierto" },
+                { nombre: "Fragua", id: "fragua" }
             ]
         },
         fuentes: [
@@ -12548,7 +12740,7 @@ const poetas = [
             trayectoria: "Antologada en GRUPOGRAMA (1985). Vinculada a circuitos literarios de talleres SECH."
         },
         publicaciones: [
-            { titulo: "Publicaciones en Revista La Oruga", años: "ca. 1981-1985", tipo: "Poesía en revista", detalles: ["Revista de la zona de O'Higgins"], existencias: [] },
+            { titulo: "Publicaciones en Revista La Oruga", años: "ca. 1981-1985", tipo: "Poesía en revista", detalles: ["Lugar de edición de la revista no documentado"], existencias: [] },
             { titulo: "Poemas en Antología Nueva Poesía Femenina Chilena", años: "1985", tipo: "Antología", detalles: ["Juan Villegas (ed.)", "Poemas: 'Desesperanza', 'Intento al padre', 'Poemas'"], existencias: [] }
         ],
         conexiones: {
@@ -15792,11 +15984,7 @@ function createPoetaPopup(p) {
                     }).join('');
                     
                     existenciasHtml = `<div class="existencias-list"><h6>📚 Existencias</h6>${existItems}</div>`;
-                } else {
-                    existenciasHtml = `<div class="existencias-list" style="border-top-color: #ddd;"><div class="exist-item" style="color: #999; font-style: italic;"><span style="color: #c75b39;">⚠</span> <span>[Sin existencia rastreable]</span></div></div>`;
                 }
-            } else {
-                existenciasHtml = `<div class="existencias-list" style="border-top-color: #ddd;"><div class="exist-item" style="color: #999; font-style: italic;"><span style="color: #c75b39;">⚠</span> <span>[Sin existencia rastreable]</span></div></div>`;
             }
             
             let detallesHtml = '';
@@ -16948,4 +17136,12 @@ function copyCitation(format) {
 }
 
 // Cerrar modal al hacer click fuera
-document.getElementById('cite-modal').addEventListener('cli
+document.getElementById('cite-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeCiteModal();
+    }
+});
+
+</script>
+</body>
+</html>
