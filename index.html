@@ -32941,8 +32941,8 @@ const map = L.map('map', {
     zoomControl: true
 });
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
+L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_4gjg_1_63a4e96eba57bba942cab030', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
     maxZoom: 18
 }).addTo(map);
 
@@ -34464,10 +34464,8 @@ document.getElementById('typeFilter').addEventListener('change', function() {
 <style>
 /* Footer */
 #copyright-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    flex-shrink: 0;
     background: rgba(255, 255, 255, 0.95);
     border-top: 2px solid #8B4513;
     padding: 8px 15px;
