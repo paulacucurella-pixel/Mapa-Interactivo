@@ -40719,10 +40719,7 @@ function createExpandedPopup(t) {
         pubContent = t.publicaciones.map(p => {
             let extractoHtml = '';
             if (p.extracto && p.extracto.texto) {
-                const versos = p.extracto.texto
-                    .split('\n')
-                    .map(l => l.trim() === '' ? '' : l.replace(/&/g,'&amp;').replace(/</g,'&lt;'))
-                    .join('<br>');
+                const versos = versosEntreComillas(p.extracto.texto);
                 extractoHtml = `<blockquote class="pub-extracto">${versos}<cite>${p.extracto.nota}</cite></blockquote>`;
             }
 
@@ -40857,12 +40854,29 @@ function createExpandedPopup(t) {
 function escTxt(s) {
     return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+// Los versos citados van entre comillas angulares; las comillas que trae el propio verso pasan a “ ”.
+function comillasInternas(s) {
+    return s.replace(/«/g, '“').replace(/»/g, '”').replace(/(^|[\s(\[—–-])"/g, '$1“').replace(/"/g, '”');
+}
+function versosEntreComillas(texto) {
+    const L = String(texto).split('\n');
+    const a = L.findIndex(l => l.trim() !== '');
+    let b = -1;
+    for (let i = L.length - 1; i >= 0; i--) { if (L[i].trim() !== '') { b = i; break; } }
+    return L.map((l, i) => {
+        if (l.trim() === '') return '';
+        let t = comillasInternas(l);
+        if (i === a) t = '«' + t.replace(/^\s+/, '');
+        if (i === b) t = t.replace(/\s+$/, '') + '»';
+        return escTxt(t);
+    }).join('<br>');
+}
 function renderExtractos(pub) {
     const lista = [];
     if (pub.extracto && pub.extracto.texto) lista.push(pub.extracto);
     if (Array.isArray(pub.extractos)) pub.extractos.forEach(e => { if (e && e.texto) lista.push(e); });
     return lista.map(ex => {
-        const versos = ex.texto.split('\n').map(l => l.trim() === '' ? '' : escTxt(l)).join('<br>');
+        const versos = versosEntreComillas(ex.texto);
         const poema = ex.poema ? `<span class="pub-extracto-poema">${escTxt(ex.poema)}</span>` : '';
         return `<blockquote class="pub-extracto">${poema}${versos}<cite>${escTxt(ex.nota || 'Extracto')}` +
             `<button type="button" class="extracto-info" onclick="event.stopPropagation(); openRightsModal('extractos')" ` +
